@@ -1,2 +1,2 @@
 # Master FP TU Dortmund
-## Mathias Becker & Max Nöthe
+## Mathias Becker & Kai Brügge
