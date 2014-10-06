@@ -1,0 +1,34 @@
+\input{header.tex}
+
+%%% Hier definiert man Titel, Autor und Datum %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subject{VERSUCH NUMMER}
+\title{TITEL}
+\subtitle{Fortgeschrittenen Praktikum -- Master}
+\date{
+  \centering
+  \parbox{0pt}{
+    \begin{tabbing}
+      Durchführung:\hspace{2em} \= DATUM \\
+    Abgabe: \> DATUM
+    \end{tabbing}
+  }
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+\tableofcontents
+\newpage
+
+\input{content/1-theorie.tex}
+\input{content/2-durchfuehrung.tex}
+\input{content/3-auswertung.tex}
+\input{content/4-diskussion.tex}
+
+\printbibliography
+
+\end{document}
