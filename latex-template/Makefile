@@ -1,13 +1,28 @@
-all: main.pdf
-	
-main.pdf: content/*.tex header.tex lit.bib main.tex | build
-	max_print_line=1048576 TEXINPUTS=build:.: lualatex --output-directory=build --interaction=nonstopmode --halt-on-error main.tex
-	BIBINPUTS=build:. biber build/main.bcf
-	max_print_line=1048576 TEXINPUTS=build:.: lualatex --output-directory=build --interaction=nonstopmode --halt-on-error main.tex
-	max_print_line=1048576 TEXINPUTS=build:.: lualatex --output-directory=build --interaction=nonstopmode --halt-on-error main.tex
+all: build/main.pdf
+
+# hier Python-Skripte:
+build/plot.pdf: plot.py matplotlibrc header-matplotlib.tex | build
+	TEXINPUTS=$(shell pwd): python plot.py
+
+# hier weitere Abhängigkeiten für build/main.pdf deklarieren:
+build/main.pdf: build/plot.pdf
+
+build/main.pdf: FORCE | build
+	TEXINPUTS=build: \
+	max_print_line=1048576 \
+	latexmk \
+	  --lualatex \
+	  --output-directory=build \
+	  --interaction=nonstopmode \
+	  --halt-on-error \
+	main.tex
 
 build:
 	mkdir -p build
 
 clean:
 	rm -rf build
+
+FORCE:
+
+.PHONY: all clean
