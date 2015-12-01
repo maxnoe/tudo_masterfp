@@ -1,5 +1,4 @@
 import numpy as np
-import pandas as pd
 import matplotlib.pyplot as plt
 import scipy.stats as stats
 plt.style.use('ggplot')
@@ -13,9 +12,9 @@ from sklearn import metrics
 from sklearn import calibration
 import sklearn.feature_selection
 from sklearn.linear_model import LogisticRegression
-
-
 from tqdm import tqdm
+
+from preparation import read_data, drop_useless
 
 
 def welch_test(a, b, significance=0.05):
@@ -28,7 +27,7 @@ def welch_test(a, b, significance=0.05):
 
 
 def classifier_crossval_performance(
-        X, y, classifier=GaussianNB(), n_folds=10, weights=None, bins=50
+        X, y, classifier=GaussianNB(), n_folds=10, bins=50
         ):
 
     # create axis and figure
@@ -37,7 +36,7 @@ def classifier_crossval_performance(
     # create inset axis for zooming
     axins = zoomed_inset_axes(ax, 3.5, loc=1)
 
-    labels_predctions = []
+    labels_predictions = []
 
     # save all aucs and confusion matrices for each cv fold
     roc_aucs = []
@@ -48,7 +47,6 @@ def classifier_crossval_performance(
 
     # iterate over test and training sets
     cv = cross_validation.StratifiedKFold(y, n_folds=n_folds)
-    test_weights = None
 
     for train, test in tqdm(cv):
         # select data
@@ -59,7 +57,7 @@ def classifier_crossval_performance(
         classifier.fit(xtrain, ytrain)
         y_probas = classifier.predict_proba(xtest)[:, 1]
         y_prediction = classifier.predict(xtest)
-        labels_predctions.append((ytest, y_prediction, y_probas))
+        labels_predictions.append((ytest, y_prediction, y_probas))
 
     # calculate metrics
     # save all aucs and confusion matrices for each cv fold
@@ -69,12 +67,12 @@ def classifier_crossval_performance(
     recalls = np.zeros(n_folds)
     f_scores = np.zeros(n_folds)
 
-    for i, (test, prediction, proba) in enumerate(labels_predctions):
+    for i, (test, prediction, proba) in enumerate(labels_predictions):
         matrix = metrics.confusion_matrix(test, prediction)
         p, r, f, _ = metrics.precision_recall_fscore_support(
-            test, prediction, sample_weight=test_weights
+            test, prediction,
         )
-        auc = metrics.roc_auc_score(test, proba, sample_weight=test_weights)
+        auc = metrics.roc_auc_score(test, proba)
 
         confusion_matrices[i] = matrix
         roc_aucs[i] = auc
@@ -83,16 +81,16 @@ def classifier_crossval_performance(
         f_scores[i] = f[1]
 
     # plot roc aucs
-    for test, prediction, proba in labels_predctions:
+    for test, prediction, proba in labels_predictions:
         fpr, tpr, thresholds = metrics.roc_curve(
-            test, proba, sample_weight=test_weights
+            test, proba
         )
-        ax.plot(fpr, tpr, linestyle='-', color='0.4')
-        axins.plot(fpr, tpr, linestyle='-', color='0.4')
+        ax.plot(fpr, tpr, linestyle='-', color='k', alpha=0.3)
+        axins.plot(fpr, tpr, linestyle='-', color='k', alpha=0.3)
 
     # plot stuff with confidence cuts
     matrices = np.zeros((n_folds, bins, 2, 2))
-    for fold, (test, prediction, probas) in enumerate(labels_predctions):
+    for fold, (test, prediction, probas) in enumerate(labels_predictions):
         for i, cut in enumerate(np.linspace(0, 1, bins)):
             cutted_prediction = prediction.copy()
             cutted_prediction[probas < cut] = 0
@@ -172,8 +170,8 @@ def print_performance(
     tn = confusion_matrices[:, 1, 1]
 
     print('''Confusion Matrix:
-        {:.2f} +- {:.2f} \t {:.2f} +- {:.2f}
-        {:.2f} +- {:.2f} \t {:.2f} +- {:.2f}
+        {:>8.2f} +- {:>8.2f}  {:>8.2f} +- {:>8.2f}
+        {:>8.2f} +- {:>8.2f}  {:>8.2f} +- {:>8.2f}
     '''.format(
         tp.mean(), tp.std(),
         fn.mean(), fn.std(),
@@ -184,138 +182,78 @@ def print_performance(
     fpr = fp / (fp + tn)
     relative_error = (fpr.std() / fpr.mean()) * 100
     print('Mean False Positive Rate: ')
-    print('{:.5f} +- {:.5f} \t (+- {:.1f} % )'.format(
+    print('{:.5f} +- {:.5f} (+- {:.1f} %)'.format(
         fpr.mean(), fpr.std(), relative_error
     ))
 
     print('Mean area under ROC curve: ')
     relative_error = (roc_aucs.std() / roc_aucs.mean()) * 100
-    print('{:.5f} +- {:.5f} \t (+- {:.1f} %)'.format(
+    print('{:.5f} +- {:.5f} (+- {:.1f} %)'.format(
         roc_aucs.mean(), roc_aucs.std(), relative_error
     ))
 
     print('Mean recall:')
     relative_error = (recalls.std() / recalls.mean()) * 100
-    print('{:.5f} +- {:.5f} \t (+- {:.1f} %)'.format(
+    print('{:.5f} +- {:.5f} (+- {:.1f} %)'.format(
         recalls.mean(), recalls.std(), relative_error
     ))
 
     print('Mean fscore:')
     relative_error = (f_scores.std() / f_scores.mean()) * 100
-    print('{:.5f} +- {:.5f} \t (+- {:.1f} %)'.format(
+    print('{:.5f} +- {:.5f} (+- {:.1f} %)'.format(
         f_scores.mean(), f_scores.std(), relative_error
     ))
 
 
-def plot_recall_precission_curve(y, y_prediction, weights=None, bins=50):
+def plot_recall_precision_curve(
+        y, y_prediction, bins=50, outputfile=None
+        ):
+    print(y)
     precision, recall, thresholds = metrics.precision_recall_curve(
-        y, y_prediction, sample_weight=weights
+        y, y_prediction
     )
+    thresholds = np.append(thresholds, 1)
 
     fraction_of_positives, mean_predicted_value = calibration.calibration_curve(
         y, y_prediction, n_bins=bins
     )
     fig, ((ax1, ax2), (ax3, ax4)) = plt.subplots(2, 2, figsize=(13, 5))
-    ax1.hist(y_prediction, bins=bins)
-    ax1.set_title('Histogram of predicted probabilities')
+    delta = 1 / bins
+    bins = np.linspace(0 - delta / 2, 1 + delta / 2, bins)
+    ax1.hist(y_prediction[y == 1], bins=bins, histtype='step', label='signal')
+    ax1.hist(y_prediction[y == 0], bins=bins, histtype='step', label='background')
+    ax1.set_xlim(-delta, 1 + delta)
+    ax1.legend(loc='upper center')
     ax1.set_xlabel('Probabilities')
 
-    ax2.plot(recall, precision, label='Recall / TPR', linestyle='-')
-    ax2.set_xlabel('Recall')
-    ax2.set_ylabel('Precision')
-    ax2.set_title('Precision/Recall curve')
+    ax2.plot(thresholds, recall, label='Recall', linestyle='-')
+    ax2.plot(thresholds, precision, label='Precision', linestyle='-')
+    ax2.set_ylim(0, 1.05)
+    ax2.set_xlim(-0.05, 1.05)
+    ax2.legend(loc='lower center')
+    ax2.set_xlabel('Confidence Threshold')
 
     ax3.plot(mean_predicted_value, fraction_of_positives)
     ax3.plot([0, 1], [0, 1], color='gray', linestyle='--')
     ax3.set_xlabel('Mean Predicted Value')
     ax3.set_ylabel('Fraction of positives')
 
-    plt.tight_layout()
-    plt.show()
+    fig.tight_layout(pad=0)
+    if outputfile:
+        fig.savefig(outputfile)
+    else:
+        plt.show()
 
 
 if __name__ == '__main__':
 
-    df_signal = pd.read_csv('signal.csv', sep=';')
-    df_signal.dropna(axis=[1, 0], how='all', inplace=True)
-    print('Number of signal Features: {}. Label {}'.format(
-        len(df_signal.columns), df_signal.label.iloc[0])
-    )
+    df = read_data('signal.csv', 'background.csv')
 
-    df_background = pd.read_csv('background.csv', sep=';')
-    df_background.dropna(axis=[1, 0], how='all', inplace=True)
-    print('Number of background features: {}. Label: {}'.format(
-        len(df_background.columns), df_background.label.iloc[0])
-    )
+    df = drop_useless(df)
 
-    # lets only take columns that appear in both datasets
-    df = pd.concat([df_signal, df_background], axis=0, join='inner')
-
-    # match  all columns containing the name 'corsika'
-    c = df.filter(regex='((C|c)orsika)(\w*[\._\-]\w*)?').columns
-    df = df.drop(c, axis=1)
-
-    # match any column containing header, MC, utc, mjd, date or ID.
-    # Im sure there are better regexes for this.
-    c = df.filter(regex='\w*[\.\-_]*(((u|U)(t|T)(c|C))|(MC)|((m|M)(j|J)(d|D))|(Weight)|((h|H)eader)|((d|D)ate)|(ID))+\w*[\.\-_]*\w*').columns
-    df = df.drop(c, axis=1)
-
-    # drop columns containing only a single value
-    df = df.drop(df[df.var() == 0].index, axis=1)
-    # some features are weird. Pearsons r is NaN. Better drop those columns
-    # corr = df.apply(lambda c: stats.pearsonr(c, df.label)[0])
-    # df = df.drop(corr[corr.isnull()].index, axis=1)
-    # print(df.columns)
-    print('Combined Features: {}'.format(len(df.columns)))
-
-    signal_weight = df_signal['Weight.HoSa'].sum()
-    background_weight = df_background['Weight.HoSa'].sum()
-    print('Signal Weight: ')
-    print(signal_weight)
-
-    print('Background Weight: ')
-    print(background_weight)
-
-    print('Ratio:')
-    ratio = background_weight / signal_weight
-    print(ratio)
-
-    factor = 10000 / ratio
-    df_background['Weight.HoSa'] *= factor
-    background_weight = df_background['Weight.HoSa'].sum()
-    ratio = background_weight / signal_weight
-
-    # normalize
-    sample_weights = np.append(
-        df_background['Weight.HoSa'].values, df_signal['Weight.HoSa'].values
-    )
-    sample_weights /= np.abs(sample_weights.max() - sample_weights.min())
-
-    # I haven't quite figured out how to use these weights for evaluating
-    # classfiers within sklearn.
-    # Feeding these to performance metric functions does nothing.
-    # I'm not going to use them further.
-
-    # Gaussian Naive Bayes Classifier
-    #
-    # Lets try the Gaussian Naive Bayes algorithm first.
-    # It assumes that the values of the features are distributed according
-    # to a Gaussian. To quote wikipedia:
-    #
-    # > Let $\mu_c$ be the mean of the values in $x$ associated with class $c$,
-    # > and let $\sigma^2_c$ be the variance of the
-    # > values in $x$ associated with class $c$.
-    # > Then, the probability distribution of some value given a class,
-    # > $p(x=v|c)$, can be computed by plugging v into the equation for a
-    # > Normal distribution parameterized by
-    # > $\mu_c$ and $\sigma^2_c$. That is,
-    # > $$p(x=v|c)=\frac{1}{\sqrt{2\pi\sigma^2_c}}\,e^{ -\frac{(v-\mu_c)^2}{2\sigma^2_c} } $$
-    #
-    # Feature scaling or mean shifting is not needed for NaiveBayes.
-    # It would have no effect. All NaNs and Infs have to removed however.
-
-    # In[ ]:
-
+    print(80*'=')
+    print('{:^80}'.format('GaussianNB'))
+    print(80*'=')
     gnb = GaussianNB()
     df_nb_label = df.dropna(axis=1)['label']
     df_nb = df.dropna(axis=1).drop('label', axis=1)
@@ -324,43 +262,53 @@ if __name__ == '__main__':
     ))
 
     nb_aucs = classifier_crossval_performance(
-        df_nb.values, df_nb_label.values, classifier=gnb, weights=sample_weights
+        df_nb.values, df_nb_label.values, classifier=gnb
     )
 
-    X_train, X_test, y_train, y_test, _, weights_test = cross_validation.train_test_split(df_nb, df_nb_label, sample_weights, test_size=0.33)
+    X_train, X_test, y_train, y_test = cross_validation.train_test_split(
+        df_nb.values, df_nb_label.values, test_size=0.33
+    )
 
     gnb.fit(X_train, y_train)
     y_prediction = gnb.predict_proba(X_test)[:, 1]
 
-    plot_recall_precission_curve(y_test, y_prediction)
+    plot_recall_precision_curve(y_test, y_prediction)
 
+    print(80*'=')
+    print('{:^80}'.format('RandomForestClassifier'))
+    print(80*'=')
     rf = ensemble.RandomForestClassifier(
-        n_jobs=48, n_estimators=48, criterion='entropy'
+        n_jobs=-1, n_estimators=48, criterion='entropy'
     )
     X = df.dropna(axis=1).drop('label', axis=1).values
     y = df.dropna(axis=1)['label'].values
     rf_aucs = classifier_crossval_performance(X, y, classifier=rf, bins=120)
 
-    X_train, X_test, y_train, y_test, _, weights_test = cross_validation.train_test_split(X, y, sample_weights, test_size=0.33)
+    X_train, X_test, y_train, y_test = cross_validation.train_test_split(
+        X, y, test_size=0.33
+    )
 
     rf.fit(X_train, y_train)
     y_prediction = rf.predict_proba(X_test)[:, 1]
+    plot_recall_precision_curve(y_test, y_prediction, bins=rf.n_estimators + 1)
 
-    plot_recall_precission_curve(y_test, y_prediction, weights=None, bins=100)
-
+    print(80*'=')
+    print('{:^80}'.format('Calibrated RandomForestClassifier'))
+    print(80*'=')
     rf_sigmoid = calibration.CalibratedClassifierCV(rf, cv=10, method='sigmoid')
     rf_sigmoid.fit(X_train, y_train)
     y_prediction = rf_sigmoid.predict_proba(X_test)[:, 1]
 
-    plot_recall_precission_curve(y_test, y_prediction, weights=None, bins=100)
-
     calibrated_rf_aucs = classifier_crossval_performance(
-        X, y, classifier=rf_sigmoid, bins=120
+        X, y, classifier=rf_sigmoid, bins=rf.n_estimators + 1
     )
+    plot_recall_precision_curve(y_test, y_prediction, bins=100)
 
-    from sklearn import ensemble
+    print(80*'=')
+    print('{:^80}'.format('ExtraTreesClassifier'))
+    print(80*'=')
     extra_rf = ensemble.ExtraTreesClassifier(
-        n_jobs=24, n_estimators=2*24, criterion='entropy'
+        n_jobs=-1, n_estimators=48, criterion='entropy'
     )
     X = df.dropna(axis=1).drop('label', axis=1).values
     y = df.dropna(axis=1)['label'].values
@@ -368,25 +316,35 @@ if __name__ == '__main__':
         X, y, classifier=extra_rf, bins=120
     )
 
-    X_train, X_test, y_train, y_test, _, weights_test = cross_validation.train_test_split(X, y, sample_weights, test_size=0.33)
+    X_train, X_test, y_train, y_test, = cross_validation.train_test_split(
+        X, y, test_size=0.33
+    )
     extra_rf.fit(X_train, y_train)
 
     y_prediction = extra_rf.predict_proba(X_test)[:, 1]
+    plot_recall_precision_curve(
+        y_test, y_prediction, bins=extra_rf.n_estimators + 1
+    )
 
-    plot_recall_precission_curve(y_test, y_prediction, weights=None)
-
+    print(80*'=')
+    print('{:^80}'.format('Calibrated ExtraTreesClassifier'))
+    print(80*'=')
     extra_rf_sigmoid = calibration.CalibratedClassifierCV(
         extra_rf, cv=10, method='sigmoid'
     )
-    extra_rf_sigmoid.fit(X_train, y_train)
-    y_prediction = extra_rf_sigmoid.predict_proba(X_test)[:, 1]
-
-    plot_recall_precission_curve(y_test, y_prediction, weights=None, bins=100)
-
     calibrated_erf_aucs = classifier_crossval_performance(
         X, y, classifier=extra_rf_sigmoid, bins=120
     )
 
+    extra_rf_sigmoid.fit(X_train, y_train)
+    y_prediction = extra_rf_sigmoid.predict_proba(X_test)[:, 1]
+    plot_recall_precision_curve(
+        y_test, y_prediction, bins=extra_rf.n_estimators + 1
+    )
+
+    print(80*'=')
+    print('{:^80}'.format('GradientBoostingClassifier'))
+    print(80*'=')
     gbc = ensemble.GradientBoostingClassifier(n_estimators=10, max_depth=3)
     X = df.dropna(axis=1).drop('label', axis=1).values
     y = df.dropna(axis=1)['label'].values
@@ -398,7 +356,7 @@ if __name__ == '__main__':
     gbc.fit(X_train, y_train)
 
     y_prediction = gbc.predict_proba(X_test)[:, 1]
-    plot_recall_precission_curve(y_test, y_prediction)
+    plot_recall_precision_curve(y_test, y_prediction)
 
     print('Compare Naive Bayes to Random Forest')
     welch_test(nb_aucs, rf_aucs)
@@ -419,7 +377,7 @@ if __name__ == '__main__':
     print(rfe.ranking_)
 
     fs_extra_rf = ensemble.ExtraTreesClassifier(
-        n_jobs=24, n_estimators=2*24, criterion='entropy'
+        n_jobs=-1, n_estimators=48, criterion='entropy'
     )
     fs_erf_aucs = classifier_crossval_performance(
         X_sel, y.values, classifier=fs_extra_rf, bins=120
