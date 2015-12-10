@@ -4,8 +4,11 @@ all: build/main.pdf
 plots/langevin.pdf: langevin.py ../matplotlibrc ../header-matplotlib.tex | build
 	TEXINPUTS=$(shell pwd)/..: python langevin.py
 
+plots/strom.pdf: strom.py ../matplotlibrc ../header-matplotlib.tex | build
+	TEXINPUTS=$(shell pwd)/..: python strom.py
+
 # hier weitere Abhängigkeiten für build/main.pdf deklarieren:
-build/main.pdf: plots/langevin.pdf
+build/main.pdf: plots/langevin.pdf plots/strom.pdf
 
 build/main.pdf: FORCE | build
 	TEXINPUTS=build:..: \
