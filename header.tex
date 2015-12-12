@@ -97,6 +97,9 @@
 % Verbesserungen am Schriftbild
 \usepackage{microtype}
 
+\usepackage{expl3}
+\usepackage{xparse}
+
 % Literaturverzeichnis
 \usepackage[
   backend=biber,
@@ -118,17 +121,19 @@
 % Trennung von Wörtern mit Strichen
 \usepackage[shortcuts]{extdash}
 
+\input{commands.tex}
+
 \author{
-  AUTOR A%
+  Kai Brügge%
   \texorpdfstring{
     \\
-    \href{mailto:authorA@udo.edu}{authorA@udo.edu}
+    \href{mailto:kai.bruegge@udo.edu}{kai.bruegge@udo.edu}
   }{}%
   \texorpdfstring{\and}{, }
-  AUTOR B%
+  Maximilian Nöthe%
   \texorpdfstring{
     \\
-    \href{mailto:authorB@udo.edu}{authorB@udo.edu}
+    \href{mailto:maximilian.noethe@udo.edu}{maximilian.noethe@udo.edu}
   }{}%
 }
 \publishers{TU Dortmund – Fakultät Physik}

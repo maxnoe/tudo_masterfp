@@ -1,0 +1,21 @@
+\ExplSyntaxOn
+
+\NewDocumentCommand\I{}{\ensuremath{\symup{i}}}
+\NewDocumentCommand\E{}{\ensuremath{\symup{e}}}
+\NewDocumentCommand\PI{}{\ensuremath{\symup{π}}}
+
+\NewDocumentCommand\dif{m}{\mathinner{\symup{d} #1}}} 
+
+\let\vaccent=\v % alten Befehl kopieren
+\RenewDocumentCommand \v {} % Befehl überschreiben
+{
+	\TextOrMath{
+		\vaccent % Textmodus
+	}{
+	\symbf % Mathemodus
+	}
+}
+
+\ExplSyntaxOff
+
+
