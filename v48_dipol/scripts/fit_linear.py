@@ -40,7 +40,6 @@ def main():
     func = lambda x, a, b: linear(x, a, b, x0=fit_region.invT.mean())
 
     params, cov = curve_fit(func, fit_region['invT'], fit_region['logI'])
-
     a, b = unc.correlated_values(params, cov)
 
     with open('build/fit_parameters.tex', 'w') as f:
@@ -49,13 +48,14 @@ def main():
         f.write(r'b &= {}'.format(num(b)))
 
     with open('build/activation_work.tex', 'w') as f:
+        f.write('W = ')
         f.write(SI(- a * const.k, r'\joule'))
         f.write(' = ')
         f.write(SI(- a * const.k / const.e, r'\electronvolt'))
 
     px = np.linspace(3.335e-3, 3.7e-3, 2)
 
-    plt.plot(px, func(px, *params), label='Ausgleichsgerade')
+    plt.plot(px, func(px, a.n, b.n), label='Ausgleichsgerade')
     plt.plot(data.invT, data.logI, '+', ms=3, label='Nicht berücksichtigt')
     plt.plot(fit_region.invT, fit_region.logI, '+', ms=3, label='Fit-Region')
     plt.legend()
@@ -63,6 +63,7 @@ def main():
     plt.xlabel(r'$T^{-1} \mathrel{/} \si{\per\kelvin}$')
     plt.ylabel(r'$\ln(I \mathrel{/} \si{\pico\ampere})$')
 
+    plt.xlim(0.0031, 0.00445)
     plt.ylim(6, 8.1)
 
     plt.tight_layout(pad=0)
