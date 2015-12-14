@@ -13,4 +13,4 @@ plt.legend(loc='best')
 
 # in matplotlibrc leider (noch) nicht möglich
 plt.tight_layout(pad=0, h_pad=1.08, w_pad=1.08)
-plt.savefig('plots/strom.pdf')
+plt.savefig('build/strom.pdf')
