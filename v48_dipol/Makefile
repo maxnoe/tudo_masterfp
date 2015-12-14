@@ -1,11 +1,14 @@
 all: build/main.pdf
 
-# hier Python-Skripte:
-build/langevin.pdf: plots/langevin.py ../matplotlibrc ../header-matplotlib.tex | build/plots
-	TEXINPUTS=$(shell pwd)/..: python plots/langevin.py
+mplfiles = ../matplotlibrc ../header-matplotlib.tex
 
-build/strom.pdf: plots/strom.py ../matplotlibrc ../header-matplotlib.tex | build/plots
-	TEXINPUTS=$(shell pwd)/..: python plots/strom.py
+# hier Python-Skripte:
+build/langevin.pdf: scripts/langevin.py $(mplfiles) | build
+	MATPLOTLIBRC=.. TEXINPUTS=$(shell pwd)/..: python scripts/langevin.py
+
+build/strom.pdf: scripts/strom.py $(mplfiles) | build
+	MATPLOTLIBRC=.. TEXINPUTS=$(shell pwd)/..: python scripts/strom.py
+
 
 # hier weitere Abhängigkeiten für build/main.pdf deklarieren:
 build/main.pdf: build/langevin.pdf build/strom.pdf
