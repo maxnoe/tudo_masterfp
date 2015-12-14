@@ -1,41 +1,82 @@
 \section{Messvorgang}
 \label{sec:messvorgang}
 
-Ist die Probe für eine genügend lange Zeit $t \gg \tau(T)$ dem elektrischen Feld ausgesetzt,
+Ist die Probe für eine genügend lange Zeit $t \gg τ(T)$ dem elektrischen Feld ausgesetzt,
 sind bei Temperatur $T_p$ etwa $L(T_p) \approx \frac{m E}{3 k_B T}$ Dipole in Richtung des Feldes ausgerichtet.
-Wird das Feld konstant gehalten und dabei die Probe abgekühlt so wird die Relaxationszeit $\tau(T)$ sehr groß.
+Wird das Feld konstant gehalten und dabei die Probe abgekühlt so wird die Relaxationszeit $τ(T)$ sehr groß.
 Dadurch bleibt dann auch bei abschalten des externen Feldes die Polarisation beibehalten.
 Sind keine freien Elektronen auf dem Kondensator vorhanden so lässt sich beim langsamen erwärmen der Probe der sogennnate Depolarisationsstrom messen.
 Die Depolarisationsstromdichte $j(T)$ lässt sich nach \eqref{eq:dichte} durch $L(T_p)$, die Relaxationsrate
-$\frac{dN}{dt}$ und das Dipolmoment $m$ ausdrücken.
+$\dd{N}{t}$ und das Dipolmoment $m$ ausdrücken:
 \begin{equation}
   \label{eq:strom}
-  j(T) = L(T_p) m \frac{dN}{dT}
+  j(T) = L(T_p) m \dd{N}{T}
 \end{equation}
 
 
-Die Relaxationsrate lässt sich durch die einfache Differentialgleichung $\frac{dN}{dt} = - \frac{N}{\tau{T}}$ beschreiben.
-Nach einsetzen in Gleichung \ref{eq:strom} und Näherung bei gleichbleibender Erwärmung ergibt sich für die Depolarisationsstromdichte
-Gleichung \eqref{eq:sol}
+Die Relaxationsrate lässt sich durch die einfache Differentialgleichung 
+\begin{equation}
+  \dd{N}{t} = - \frac{N}{τ(T)}
+\end{equation}
+beschreiben.
+Nach einsetzen in \eqref{eq:strom} und Näherung bei gleichbleibender Erwärmung ergibt sich für die Depolarisationsstromdichte
 \begin{equation}
   \label{eq:sol}
-  j(T) = \frac{p^2 E}{3 k_B T} \frac{N_p}{\tau(T)} \exp{-\frac{1}{b} \int_{T_0}^{T} \frac{dT^{\prime}}{\tau{T^{\prime}}}}
+  j(T) =
+    \frac{p^2 E}{3 k_B T_p}
+    \frac{N_p}{τ(T)}
+    \exp\!\left(
+      -\frac{1}{b} \int_{T_0}^{T} \frac{\dif{T'}}{τ(T')}
+    \right).
 \end{equation}
 
 
-Nach einsetzen von Gleichung \ref{eq:time} und Näherung für kleine $T - T_0$ folgt Gleichung \ref{eq:sol_approx}.
+Nach einsetzen von Gleichung \ref{eq:time} und Näherung für kleine $T - T_0$ folgt 
 \begin{equation}
   \label{eq:sol_approx}
-  j(T) = \frac{p^2 E}{3 k_B T} \frac{N_p}{\tau_0} e^{- \frac{W}{k_B T}}
+  j(T) = \frac{p^2 E N_p}{3 k_B T_p τ_0} \cdot \E^{- \frac{W}{k_B T}}.
 \end{equation}
 
+Anwedung des natürlichen Logarithmus auf \eqref{eq:sol_approx} ergibt einen linearen Zusammenhang zwischen $\ln{j(T)}$ und $\sfrac{1}{T}$:
+\begin{equation}
+  \label{eq:linear}
+  \ln{j(T)} = \underbrace{\ln\!\left(
+      \frac{p^2 E N_p}{3 k_B T_p τ_0}
+    \right)}_{\mathclap{\text{konst}}}
+    \overbrace{- \frac{W}{k_B}}^{\mathclap{\text{Steigung}}}
+    \cdot \frac{1}{T}
+\end{equation}
 
-In Abbildung \ref{fig:lnj} ist der Logarithmus der Stromdichte gegen $1/T$ aufgetragen. Aus der Steigung der Geraden lässt sich $W$ bestimmen.
+Die Aktivierungsenergie ergibt sich damit aus der Steigung der Geraden $a$ zu
+\begin{equation}
+  W = - a \cdot k_B
+\end{equation}
+
+In Abbildung \ref{fig:lnj} ist der Logarithmus der Stromdichte gegen $\sfrac{1}{T}$ aufgetragen.
+
 \begin{figure}
+  \includegraphics{fit_linear.pdf}
+  \caption{%
+    Logarithmus des Stroms gegen den Kehrwert der Temperatur für die gemessenen Werte. 
+    Die für die Berechnung der Ausgleichsgeraden genutzten Werte sind in violett markiert.
+  }
   \label{fig:lnj}
-  \includegraphics{strom.pdf}
-  \caption{Verlauf der Funktion  $j(T) = e^{- \frac{1}{T}}$ }
 \end{figure}
+
+Die markierten Punkte wurden für die Bestimmung der linearen Ausgleichsgerade der Form
+\begin{equation}
+  f(x) = a (x - x_0) + b 
+\end{equation}
+genutzt.
+Für $x_0$ wird der Mittelwert von $\sfrac{1}{T}$ im gewählten Bereicht gewählt, dies minimiert die Korrelation zwischen $a$ und $b$.
+Für die Parameter ergibt sich:
+\begin{align}
+  \input{fit_parameters.tex}
+\end{align}
+Damit ergibt sich für die Aktivierungsenergie:
+\begin{equation}
+  W = \input{activation_work.tex}
+\end{equation}
 
 Die zweite Möglichkeit zur Messung der Aktivierungsenergie $W$ beutzt den gesamten Kurvenverlauf des gemessen Stroms.
 Für die Gesamtpolarisation $P$ gilt Differentialgleichung \eqref{eq:pol}
