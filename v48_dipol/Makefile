@@ -22,6 +22,8 @@ build/activation_work.pdf build/fit_parameters.tex: build/fit_linear.pdf
 # hier weitere Abhängigkeiten für build/main.pdf deklarieren:
 build/main.pdf: build/langevin.pdf build/strom.pdf build/fit_linear.pdf
 
+build/main.pdf: build/fit_non_linear.pdf build/fit_non_linear_corr.pdf
+
 build/main.pdf: FORCE | build
 	TEXINPUTS=build:..: \
 	BIBINPUTS=..: \
