@@ -80,26 +80,42 @@ Damit ergibt sich für die Aktivierungsenergie:
 \end{equation}
 
 Die zweite Möglichkeit zur Messung der Aktivierungsenergie $W$ benutzt den gesamten Kurvenverlauf des gemessen Stroms.
-Für die Gesamtpolarisation $P$ gilt Differentialgleichung \eqref{eq:pol}.
+Für die Gesamtpolarisation $P$ gilt die Differentialgleichung
 \begin{equation}
-  \dd{P}{t} = - \frac{P(t)}{\tau{T(t)}}
+  \dd{P}{t} = - \frac{P(t)}{\tau{T(t)}}.
   \label{eq:pol}
 \end{equation}
-Der Strom welcher durch die Polarisationänderung hervorgerufen wird ist hängt vom Probenquerschnitt $F$ über \eqref{eq:i} ab.
+Der Strom, welcher durch die Polarisationänderung hervorgerufen wird, hängt vom Probenquerschnitt $F$ über
 \begin{align}
   i(t) &= F \dd{P}{t} \\
+  \shortintertext{mit}
   \int_t^{\infty} i(t) \d{t} &= -FP(t)
   \label{eq:i}
 \end{align}
-Durch Integration von  \eqref{eq:i} und einsetzen in \eqref{eq:pol} folgt Gleichung \eqref{eq:tau_t}.
+ab.
+Durch Integration von  \eqref{eq:i} und einsetzen in \eqref{eq:pol} folgt:
 \begin{equation}
-  \tau(T(t)) = -\frac{F P(t)}{i(t)}
+  \tau(T(t)) = -\frac{F P(t)}{i(t)}.
   \label{eq:tau_t}
 \end{equation}
 Nimmt man einen linearen zusammenhang zwischen der Zeit $t$ und der Temperatur $T$ an, so kann man die Integrationsvariable in \eqref{eq:i} durch $T$ ersetzen.
-Zusammen mit Gleichung \eqref{eq:time} ergibt sich \eqref{eq:final}. Da sich das Integral ab einer Temperatur mit $i(T^{\prime}) \approx 0$ nicht mehr ändert,
-kann die obere Integrationsgrenze durch $T^{\prime}$ ersetzt werden.
+Zusammen mit Gleichung \eqref{eq:time} ergibt sich \eqref{eq:final}. Da sich das Integral ab einer Temperatur mit $i(T') \approx 0$ nicht mehr ändert,
+kann die obere Integrationsgrenze durch $T'$ ersetzt werden.
 \begin{equation}
-  W = k_B T \ln \frac{\int_T^{T^{\prime}} i(T)}{ i(T) \tau_0}
+  W = k_B T \ln \frac{\int_T^{T'} i(T)}{ i(T) \tau_0}
   \label{eq:final}
 \end{equation}
+
+\begin{figure}
+  \centering
+  \includegraphics{fit_non_linear.pdf}
+  \caption{Exp-Fit an die gemessenen Werte außerhalb des Maximums}
+  \label{fig:fit_non_linear}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics{fit_non_linear_corr.pdf}
+  \caption{Fit-Ergebnis von den Messwerten abgezogen.}
+  \label{fig:fit_non_linear}
+\end{figure}
