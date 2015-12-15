@@ -14,7 +14,7 @@ $\dd{N}{t}$ und das Dipolmoment $m$ ausdrücken:
 \end{equation}
 
 
-Die Relaxationsrate lässt sich durch die einfache Differentialgleichung 
+Die Relaxationsrate lässt sich durch die einfache Differentialgleichung
 \begin{equation}
   \dd{N}{t} = - \frac{N}{τ(T)}
 \end{equation}
@@ -31,13 +31,13 @@ Nach einsetzen in \eqref{eq:strom} und Näherung bei gleichbleibender Erwärmung
 \end{equation}
 
 
-Nach einsetzen von Gleichung \ref{eq:time} und Näherung für kleine $T - T_0$ folgt 
+Nach einsetzen von Gleichung \ref{eq:time} und Näherung für kleine $T - T_0$ folgt
 \begin{equation}
   \label{eq:sol_approx}
   j(T) = \frac{p^2 E N_p}{3 k_B T_p τ_0} \cdot \E^{- \frac{W}{k_B T}}.
 \end{equation}
 
-Anwedung des natürlichen Logarithmus auf \eqref{eq:sol_approx} ergibt einen linearen Zusammenhang zwischen $\ln{j(T)}$ und $\sfrac{1}{T}$:
+Anwendung des natürlichen Logarithmus auf \eqref{eq:sol_approx} ergibt einen linearen Zusammenhang zwischen $\ln{j(T)}$ und $\sfrac{1}{T}$:
 \begin{equation}
   \label{eq:linear}
   \ln{j(T)} = \underbrace{\ln\!\left(
@@ -57,7 +57,7 @@ In Abbildung \ref{fig:lnj} ist der Logarithmus der Stromdichte gegen $\sfrac{1}{
 \begin{figure}
   \includegraphics{fit_linear.pdf}
   \caption{%
-    Logarithmus des Stroms gegen den Kehrwert der Temperatur für die gemessenen Werte. 
+    Logarithmus des Stroms gegen den Kehrwert der Temperatur für die gemessenen Werte.
     Die für die Berechnung der Ausgleichsgeraden genutzten Werte sind in violett markiert.
   }
   \label{fig:lnj}
@@ -65,10 +65,11 @@ In Abbildung \ref{fig:lnj} ist der Logarithmus der Stromdichte gegen $\sfrac{1}{
 
 Die markierten Punkte wurden für die Bestimmung der linearen Ausgleichsgerade der Form
 \begin{equation}
-  f(x) = a (x - x_0) + b 
+  f(x) = a (x - x_0) + b
 \end{equation}
 genutzt.
-Für $x_0$ wird der Mittelwert von $\sfrac{1}{T}$ im gewählten Bereicht gewählt, dies minimiert die Korrelation zwischen $a$ und $b$.
+
+Für $x_0$ wird der Mittelwert von $\sfrac{1}{T}$ im gewählten Bereich gewählt, dies minimiert die Korrelation zwischen $a$ und $b$.
 Für die Parameter ergibt sich:
 \begin{align}
   \input{fit_parameters.tex}
@@ -78,5 +79,27 @@ Damit ergibt sich für die Aktivierungsenergie:
   \input{activation_work.tex}
 \end{equation}
 
-Die zweite Möglichkeit zur Messung der Aktivierungsenergie $W$ beutzt den gesamten Kurvenverlauf des gemessen Stroms.
-Für die Gesamtpolarisation $P$ gilt Differentialgleichung \eqref{eq:pol}
+Die zweite Möglichkeit zur Messung der Aktivierungsenergie $W$ benutzt den gesamten Kurvenverlauf des gemessen Stroms.
+Für die Gesamtpolarisation $P$ gilt Differentialgleichung \eqref{eq:pol}.
+\begin{equation}
+  \dd{P}{t} = - \frac{P(t)}{\tau{T(t)}}
+  \label{eq:pol}
+\end{equation}
+Der Strom welcher durch die Polarisationänderung hervorgerufen wird ist hängt vom Probenquerschnitt $F$ über \eqref{eq:i} ab.
+\begin{align}
+  i(t) &= F \dd{P}{t} \\
+  \int_t^{\infty} i(t) \d{t} &= -FP(t)
+  \label{eq:i}
+\end{align}
+Durch Integration von  \eqref{eq:i} und einsetzen in \eqref{eq:pol} folgt Gleichung \eqref{eq:tau_t}.
+\begin{equation}
+  \tau(T(t)) = -\frac{F P(t)}{i(t)}
+  \label{eq:tau_t}
+\end{equation}
+Nimmt man einen linearen zusammenhang zwischen der Zeit $t$ und der Temperatur $T$ an, so kann man die Integrationsvariable in \eqref{eq:i} durch $T$ ersetzen.
+Zusammen mit Gleichung \eqref{eq:time} ergibt sich \eqref{eq:final}. Da sich das Integral ab einer Temperatur mit $i(T^{\prime}) \approx 0$ nicht mehr ändert,
+kann die obere Integrationsgrenze durch $T^{\prime}$ ersetzt werden.
+\begin{equation}
+  W = k_B T \ln \frac{\int_T^{T^{\prime}} i(T)}{ i(T) \tau_0}
+  \label{eq:final}
+\end{equation}
