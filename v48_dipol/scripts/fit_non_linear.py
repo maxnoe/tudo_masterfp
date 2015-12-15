@@ -44,12 +44,10 @@ def main():
     fit1 = data.query('(250 < T < 270) | (T > 310)')
 
     func = exponential
-    # func = lambda x, a, b: exponential(x, a, b, fit1['T'].min()100, 5, 500r)
+    params = 10, 0.1, data['I'].min()
     params, cov = curve_fit(
-        func, fit1['T'] - fit1['T'], fit1['I'], [12.5, 0.08, data['I'].min()]
+        func, fit1['T'] - fit1['T'].min(), fit1['I'],  params
     )
-    print(params)
-    params = 12.5, 0.08, data['I'].min()
 
     px = np.linspace(240, 320, 1000)
     plt.plot(px, func(px - fit1['T'].min(), *params))
@@ -69,7 +67,12 @@ def main():
         data['T'],
         data['I'] - func(data['T'] - fit1['T'].min(), *params),
     )
-    plt.savefig('build/fit_non_linear.pdf')
+
+    plt.xlabel(r'$T \mathrel{/} \si{\kelvin}$')
+    plt.ylabel(r'$I \mathrel{/} \si{\pico\ampere}$')
+
+    plt.tight_layout(pad=0)
+    plt.savefig('build/fit_non_linear_corr.pdf')
 
 
 if __name__ == '__main__':
