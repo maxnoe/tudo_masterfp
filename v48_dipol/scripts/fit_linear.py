@@ -56,7 +56,7 @@ def main():
     px = np.linspace(3.335e-3, 3.7e-3, 2)
 
     plt.plot(px, func(px, a.n, b.n), label='Ausgleichsgerade')
-    plt.plot(data.invT, data.logI, '+', ms=3, label='Nicht berücksichtigt')
+    plt.plot(data.invT, data.logI, '+', ms=3, label='Nicht berücksichtigt', color="#949494")
     plt.plot(fit_region.invT, fit_region.logI, '+', ms=3, label='Fit-Region')
     plt.legend()
 

@@ -54,8 +54,10 @@ def main():
 
     px = np.linspace(220, 320, 1000)
     plt.plot(px, func(px - T0, *params))
-    plt.plot(data['T'], data['I'], '+', ms=4)
-    plt.plot(fit1['T'], fit1['I'], '+', ms=4)
+    plt.plot(data['T'], data['I'], '+', ms=4, label='Nicht berücksichtigt', color="#949494")
+    plt.plot(fit1['T'], fit1['I'], '+', ms=4, label='Fit-Region')
+
+    plt.legend(loc='upper left')
 
     plt.xlabel(r'$T \mathrel{/} \si{\kelvin}$')
     plt.ylabel(r'$I \mathrel{/} \si{\pico\ampere}$')
@@ -65,6 +67,7 @@ def main():
     plt.tight_layout(pad=0)
     plt.savefig('build/fit_non_linear.pdf')
 
+
     plt.figure()
     plt.plot(
         data['T'],
@@ -72,7 +75,6 @@ def main():
         '+',
         ms=4,
     )
-
     plt.xlabel(r'$T \mathrel{/} \si{\kelvin}$')
     plt.ylabel(r'$I \mathrel{/} \si{\pico\ampere}$')
 
