@@ -15,6 +15,8 @@ build/fit_linear.pdf: scripts/fit_linear.py data/messwerte_2.csv $(mplfiles) | b
 build/fit_non_linear.pdf: scripts/fit_non_linear.py data/messwerte_2.csv $(mplfiles) | build
 	MATPLOTLIBRC=.. TEXINPUTS=$(shell pwd)/..: python scripts/fit_non_linear.py
 
+build/fit_non_linear_corr.pdf: build/fit_non_linear.pdf
+
 build/activation_work.pdf build/fit_parameters.tex: build/fit_linear.pdf
 
 # hier weitere Abhängigkeiten für build/main.pdf deklarieren:

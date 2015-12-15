@@ -41,18 +41,21 @@ def main():
     )
     data['T'] = data['T'].apply(const.C2K)
 
-    fit1 = data.query('(250 < T < 270) | (T > 310)')
+    fit1 = data.query('(245 < T < 270) | (T > 310)')
+
+    T0 = fit1['T'].min()
 
     func = exponential
     params = 10, 0.1, data['I'].min()
     params, cov = curve_fit(
-        func, fit1['T'] - fit1['T'].min(), fit1['I'],  params
+        func, fit1['T'] - T0, fit1['I'],  params
     )
+    print(params)
 
-    px = np.linspace(240, 320, 1000)
-    plt.plot(px, func(px - fit1['T'].min(), *params))
-    plt.plot(data['T'], data['I'], '+', ms=3)
-    plt.plot(fit1['T'], fit1['I'], '+', ms=3)
+    px = np.linspace(220, 320, 1000)
+    plt.plot(px, func(px - T0, *params))
+    plt.plot(data['T'], data['I'], '+', ms=4)
+    plt.plot(fit1['T'], fit1['I'], '+', ms=4)
 
     plt.xlabel(r'$T \mathrel{/} \si{\kelvin}$')
     plt.ylabel(r'$I \mathrel{/} \si{\pico\ampere}$')
@@ -65,7 +68,9 @@ def main():
     plt.figure()
     plt.plot(
         data['T'],
-        data['I'] - func(data['T'] - fit1['T'].min(), *params),
+        data['I'] - func(data['T'] - T0, *params),
+        '+',
+        ms=4,
     )
 
     plt.xlabel(r'$T \mathrel{/} \si{\kelvin}$')
