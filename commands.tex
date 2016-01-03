@@ -5,7 +5,9 @@
 \NewDocumentCommand\PI{}{\ensuremath{\symup{π}}}
 
 \NewDocumentCommand\dif{m}{\ensuremath{\mathinner{\symup{d} #1}}}
-
+\NewDocumentCommand\dd{m m}{\ensuremath{
+	\frac{\mathinner{\symup{d} #1}}{\mathinner{\symup{d} #2}
+}}}
 \let\vaccent=\v % alten Befehl kopieren
 \RenewDocumentCommand \v {} % Befehl überschreiben
 {
@@ -17,5 +19,3 @@
 }
 
 \ExplSyntaxOff
-
-

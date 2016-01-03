@@ -38,16 +38,18 @@
 ]{unicode-math}
 
 % traditionelle Fonts für Mathematik
-\setmathfont{Latin Modern Math}
+\setromanfont{Linux Libertine O}
+\setsansfont{Linux Biolinum O}
+\setmathfont{Tex Gyre Pagella Math}
 \setmathfont{XITS Math}[range={scr, bfscr}]
 \setmathfont{XITS Math}[range={cal, bfcal}, StylisticSet=1]
+\recalctypearea
 
 % Zahlen und Einheiten
 \usepackage[
   locale=DE,                 % deutsche Einstellungen
   separate-uncertainty=true, % immer Fehler mit \pm
-  per-mode=reciprocal,       % ^-1 für inverse Einheiten
-  output-decimal-marker=.,   % . statt , für Dezimalzahlen
+  per-mode=symbol-or-fraction,       % ^-1 für inverse Einheiten
 ]{siunitx}
 
 % chemische Formeln
