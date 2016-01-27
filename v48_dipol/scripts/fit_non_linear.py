@@ -3,6 +3,7 @@ import numpy as np
 import pandas as pd
 import scipy.constants as const
 from scipy.optimize import curve_fit
+from scipy.integrate import quad
 from functools import partial
 import uncertainties as unc
 
@@ -18,9 +19,10 @@ def exponential(x, a, b, c):
 def poly(x, a0, a1, a2):
     return a2 * x**2 + a1 * x * a0
 
-def diese_funktion_aus_der_anleitung(temperature, i_T, T_star = 318.15):
-    integral = np.sum(i_T[temperature:T_star])
-    return np.log(integral/i_T[temperature])
+def diese_funktion_aus_der_anleitung(row, data, T_star = 318.15):
+    mask = (data['T'] <= T_star) & (data['T'] >= row['T'])
+    integral = np.trapz(data['I_corrected'][mask], data['T'][mask])
+    return np.log(integral / row['I_corrected'])
 
 
 def SI(value, unit):
@@ -59,33 +61,33 @@ def main():
 
     data['I_corrected'] = data['I'] - func(data['T'] - T0, *params)
 
-    px = np.linspace(220, 320, 1000)
-
-    #plot current
-    plt.figure()
-    plt.plot(px, func(px - T0, *params))
-    plt.plot(data['T'], data['I'], '+', ms=4, label='Nicht berücksichtigt', color="#949494")
-    plt.plot(fit1['T'], fit1['I'], '+', ms=4, label='Fit-Region')
-    plt.legend(loc='upper left')
-    plt.xlabel(r'$T \mathrel{/} \si{\kelvin}$')
-    plt.ylabel(r'$I \mathrel{/} \si{\pico\ampere}$')
-    plt.ylim(0, 3200)
-    plt.tight_layout(pad=0)
-    plt.savefig('build/fit_non_linear.pdf')
-
-
-    #plot corrected current
-    plt.figure()
-    plt.plot(
-        data['T'],
-        data['I_corrected'],
-        '+',
-        ms=4,
-    )
-    plt.xlabel(r'$T \mathrel{/} \si{\kelvin}$')
-    plt.ylabel(r'$I \mathrel{/} \si{\pico\ampere}$')
-    plt.tight_layout(pad=0)
-    plt.savefig('build/fit_non_linear_corr.pdf')
+    # px = np.linspace(220, 320, 1000)
+    #
+    # #plot current
+    # plt.figure()
+    # plt.plot(px, func(px - T0, *params))
+    # plt.plot(data['T'], data['I'], '+', ms=4, label='Nicht berücksichtigt', color="#949494")
+    # plt.plot(fit1['T'], fit1['I'], '+', ms=4, label='Fit-Region')
+    # plt.legend(loc='upper left')
+    # plt.xlabel(r'$T \mathrel{/} \si{\kelvin}$')
+    # plt.ylabel(r'$I \mathrel{/} \si{\pico\ampere}$')
+    # plt.ylim(0, 3200)
+    # plt.tight_layout(pad=0)
+    # plt.savefig('build/fit_non_linear.pdf')
+    #
+    #
+    # #plot corrected current
+    # plt.figure()
+    # plt.plot(
+    #     data['T'],
+    #     data['I_corrected'],
+    #     '+',
+    #     ms=4,
+    # )
+    # plt.xlabel(r'$T \mathrel{/} \si{\kelvin}$')
+    # plt.ylabel(r'$I \mathrel{/} \si{\pico\ampere}$')
+    # plt.tight_layout(pad=0)
+    # plt.savefig('build/fit_non_linear_corr.pdf')
 
 
     #fit activaiton energy
@@ -93,16 +95,16 @@ def main():
     print('T_max = {} Kevins'.format(data['T'][T_max]))
 
     data = data.drop_duplicates(subset=['T'])
-    i_T = data['I_corrected']
-    i_T.index = data['T']
-    f = partial(diese_funktion_aus_der_anleitung, i_T=i_T, T_star=318.15)
-    data['activation'] = data['T'].apply(f)
+    f = partial(diese_funktion_aus_der_anleitung, data=data, T_star=310)
+    data['activation'] = data.apply(f, axis=1)
+
 
     data = data.replace([np.inf, -np.inf], np.nan).dropna()
     data['T_inv'] = 1/ data['T']
+    # data = data.query('(T > 275)')
 
-    fit_data =data.query('(0.0030 < T_inv < 0.0037)')
-    ignored_data =data.query('(T_inv >= 0.0037)')
+    fit_data =data.query('(0.0033 < T_inv < 0.00345)')
+    ignored_data = data[~data.index.isin(fit_data.index)]
     func = partial(linear, x0=fit_data['T_inv'].mean())
     params, cov = curve_fit(
         func, fit_data['T_inv'], fit_data['activation'],
@@ -113,9 +115,9 @@ def main():
 
     with open('build/activation_work_fit.tex', 'w') as f:
         f.write('W = ')
-        f.write(SI(- a * const.k, r'\joule'))
+        f.write(SI( a * const.k, r'\joule'))
         f.write(' = ')
-        f.write(SI(- a * const.k / const.e, r'\electronvolt'))
+        f.write(SI( a * const.k / const.e, r'\electronvolt'))
 
     plt.figure()
     plt.plot(fit_data['T_inv'], fit_data['activation'], '+', ms=4)

@@ -79,6 +79,7 @@ Damit ergibt sich für die Aktivierungsenergie:
   \input{activation_work.tex}
 \end{equation}
 
+
 Die zweite Möglichkeit zur Messung der Aktivierungsenergie $W$ benutzt den gesamten Kurvenverlauf des gemessen Stroms.
 Für die Gesamtpolarisation $P$ gilt die Differentialgleichung
 \begin{equation}
@@ -131,3 +132,21 @@ In \autoref{fig:fit_energy} wird diese Funktiongegen $\frac{1}{T}$ aufgetragen. 
   \caption{Bestimmung der Aktivierungsenergie. Punkte die für den Fit nicht benutzt wurden, sind grau gefärbt.}
   \label{fig:fit_energy}
 \end{figure}
+
+
+Als letztes soll die charackteristische Relaxationszeit $\tau_0$ bestimmt werden. Dafür wird Gleichung \eqref{eq:sol} differenziert.
+\begin{equation}
+  \label{eq:crazy}
+  \dd{j(T)}{T} \propto
+    \frac{1}{\tau_0}
+    \exp\!\left(
+      -\frac{1}{\tau_0} \int_{T_0}^{T} \exp\! \left( \frac{W}{k_B T} \right)  \dif{T'} - \frac{W}{k_B T}
+    \right) \left( \frac{W}{k_B T^2} -   \frac{1}{\tau_0}\exp(-\frac{W}{k_B T}) \right).
+\end{equation}
+
+Im Maximum wird der hintere Klammerausdruck gleich null. Daraus folgt für $\tau_0$ in Abhängigkeit der maximalen Temperatur:
+
+\begin{equation}
+  \label{eq:tau}
+  \tau_0 = \frac{k_B T^2}{W b} \exp(-\frac{W}{k_B T}
+\end{equation}
