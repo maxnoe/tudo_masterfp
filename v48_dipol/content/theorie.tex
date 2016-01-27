@@ -20,10 +20,15 @@ Durch Einbringung eines fremden Ions in den Kristall kann eine Leerstelle entste
 Dieser Gitterdefekt ändert zumindest lokal die Eigenschaften des Kristalls.
 Das periodische Potential ist gegenüber dem reinen Kristall gestört.
 So kann in Cäsiumiodid durch einbau eines Strontiumions $\ce{Sr++}$ eine Leerstelle im Gitter erzeugt werden.
-Wie in \autoref{fig:anleitung} dargestellt, 
+Wie in \autoref{fig:anleitung} dargestellt,
 bildet sich ein Dipol zwischen der Leerstelle und dem Strontiumion.
 Die Dipolachse der Störung zeigt dabei in Richtung einer der Translationsachsen des Kristalls.
 Die Ausrichtung des Dipols kann sich durch sogenannte Leerstellendiffusion ändern.
+\begin{figure}
+  \includegraphics[width=0.8\textwidth]{pictures/leerstelle.png}
+  \caption{Eine Leerstelle entsteht im Kristall durch einbringung von $\ce{Sr++}$ \cite{v48}. }
+  \label{fig:langevin}
+\end{figure}
 Dafür muss Arbeit aufgebracht werden um das Gitterpotential an der Stelle zu überwinden.
 Die thermische Energieverteilung der Dipole ist durch die Boltzmannstatistik nach \eqref{eq:boltzmann} vorgegeben.
 Dabei ist $W$ die Arbeit, die verrichtet werden muss, damit die Leerstelle die Gitterstelle wechselt.
@@ -47,12 +52,12 @@ Ziel dieses Versuches wird sein, die Aktivierungsenergie $W$ und die charackteri
 Wird das dotierte Gitter einem elektrischen Feld ausgesetzt, so werden sich die Dipole,
 soweit wie es die Gitterstruktur zulässt, in Feldlinienrichtung ausrichten.
 Durch thermische Energie wird jedoch zu jeder Zeit ein Teil der Dipole die Ausrichtung ändern.
-Der Anteil der in Feldrichtung ausgerichteten Dipole ist somit stochastisch bestimmt. 
+Der Anteil der in Feldrichtung ausgerichteten Dipole ist somit stochastisch bestimmt.
 Dies ist die Grundlage für die Anwendbarkeit der Langevin-Formel~\eqref{eq:langevin}.
 Diese beschreibt ursprünglich die Magnetisierung eines paramagnetischen Materials unter Einfluss eines äußeren Magnetfelds.
 Die Langevin-Formel ist die klassische
 Näherung der Brillouin-Formel~\eqref{eq:brillouin}.
-Dabei ist 
+Dabei ist
 \begin{equation}
   x = \frac{\v{m}_B \v{B}}{k_B T},
 \end{equation}
@@ -65,7 +70,7 @@ mit dem elektrischen Dipolmoment $\v{m}$ und dem externen elektrischen Feld $\v{
 Bei richtiger Ausrichtung der elektrischen Feldlinien zu den Gittervektoren des Kristalls ist die Richtung des Dipolmoments im Mittel paralell zum elektrischen Feld.
 Dann lässt sich die Langevin-Funktion parametrisieren mit
 \begin{equation}
-  x= \frac{\v{m} \v{E}}{k_B T}.
+  x= \frac{m E}{k_B T}.
 \end{equation}
 Der Verlauf der Langevin-Funktion ist in \autoref{fig:langevin} skizziert.
 
@@ -87,8 +92,10 @@ Der Verlauf der Langevin-Funktion ist in \autoref{fig:langevin} skizziert.
 \end{figure}
 
 
-Im folgenden Versuchsaufbau ist $ x \ll 1 $ wodurch die Näherung $L(x) \approx \frac{x}{3}$ genutzt werden kann.
+Im folgenden Versuchsaufbau ist $ x \ll 1 $. In diesem Bereich ist die Langevin Funktion annähernd Linear.
+Dadurch kann die Näherung $L(x) \approx \frac{x}{3}$ genutzt werden.
 Somit ergibt sich für den Anteil der zur Feldrichtung ausgerichteten Dipole
+
 \begin{equation}
   L(T) \approx \frac{m E}{3 k_B T}.
   \label{eq:dipoles}
