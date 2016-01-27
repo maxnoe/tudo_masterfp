@@ -131,7 +131,9 @@ def main():
 
     print(relaxation_time.to(u.second))
 
+
     tau_0 = relaxation_time * unp.exp(W.to(u.joule).magnitude / (const.k *  T_max.magnitude) )
+    print('Tau 0 : {}'.format(tau_0))
 
     with open('build/activation_work_fit.tex', 'w') as f:
         f.write('W = ')
