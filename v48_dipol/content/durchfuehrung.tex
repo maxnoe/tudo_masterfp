@@ -90,7 +90,6 @@ Der Strom, welcher durch die Polarisationänderung hervorgerufen wird, hängt vo
 \begin{align}
   i(t) &= F \dd{P}{t} \\
   \shortintertext{mit}
-
   \int_t^{\infty} i(t) \dif{t} &= -FP(t)
   \label{eq:i}
 \end{align}
@@ -147,9 +146,14 @@ Als letztes soll die charackteristische Relaxationszeit $\tau_0$ bestimmt werden
     \right) \left( \frac{W}{k_B T^2} -   \frac{1}{\tau_0}\exp(-\frac{W}{k_B T}) \right).
 \end{equation}
 
-Im Maximum wird der hintere Klammerausdruck gleich null. Daraus folgt für $\tau_0$ in Abhängigkeit der maximalen Temperatur:
+Im Maximum wird der hintere Klammerausdruck gleich null. Daraus folgt für $\tau$ in Abhängigkeit der maximalen Temperatur:
 
 \begin{equation}
   \label{eq:tau}
-  \tau_0 = \frac{k_B T^2}{W b} \exp(-\frac{W}{k_B T}
+  \tau(T_{max}) = \frac{k_B T_{max}^2}{W b} \exp\left(-\frac{W}{k_B T_{max}} \right)
+\end{equation}
+
+Einsetzen in \eqref{eq:time} liefert die  charackteristische Relaxationszeit
+\begin{equation}
+  \input{tau.tex}
 \end{equation}
