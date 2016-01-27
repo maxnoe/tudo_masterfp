@@ -90,7 +90,8 @@ Der Strom, welcher durch die Polarisationänderung hervorgerufen wird, hängt vo
 \begin{align}
   i(t) &= F \dd{P}{t} \\
   \shortintertext{mit}
-  \int_t^{\infty} i(t) \d{t} &= -FP(t)
+
+  \int_t^{\infty} i(t) \dif{t} &= -FP(t)
   \label{eq:i}
 \end{align}
 ab.
@@ -102,6 +103,7 @@ Durch Integration von  \eqref{eq:i} und einsetzen in \eqref{eq:pol} folgt:
 Nimmt man einen linearen zusammenhang zwischen der Zeit $t$ und der Temperatur $T$ an, so kann man die Integrationsvariable in \eqref{eq:i} durch $T$ ersetzen.
 Zusammen mit Gleichung \eqref{eq:time} ergibt sich \eqref{eq:final}. Da sich das Integral ab einer Temperatur mit $i(T') \approx 0$ nicht mehr ändert,
 kann die obere Integrationsgrenze durch $T'$ ersetzt werden.
+
 In \autoref{fig:fit_energy} wird diese Funktiongegen $\frac{1}{T}$ aufgetragen. Die Steigung der Ausgleichsgeraden liefert die Aktivierungsenergie zu:
 \begin{equation}
   \input{activation_work_fit.tex}
@@ -125,6 +127,7 @@ In \autoref{fig:fit_energy} wird diese Funktiongegen $\frac{1}{T}$ aufgetragen. 
   \caption{Fit-Ergebnis von den Messwerten abgezogen.}
   \label{fig:fit_non_linear_corr}
 \end{figure}
+
 
 \begin{figure}
   \centering
