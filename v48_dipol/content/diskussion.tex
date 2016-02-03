@@ -1,19 +1,35 @@
 \section{Diskussion}\label{sec:Diskussion}
 
 
-Ein Literaturwert für die Aktivierungsenergie beträgt:
+Ein Wert aus \cite{dipoles} für die Aktivierungsenergie beträgt:
 \begin{equation}
   W_\text{lit} = \SI{0.66}{\electronvolt} \quad \text{\cite{dipoles}}
 \end{equation}
 
-Dies scheint verträglich mit unseren Messwerten.
+Dies ist in der selben Größenordnung wie der von uns gemessene Wert von
 
-Die Relaxationszeit weicht jedoch deutlich vom Literaturwert ab.
+\begin{equation}
+  \input{activation_work_fit.tex}
+\end{equation}
+
+Die relative Abweichung zum Wert aus \cite{dipoles} beträgt demnach $\Delta W = 24.2 \%$
+
+
+
+Die von uns bestimmte Relaxationszeit von
+
+\begin{equation}
+  \input{tau.tex}
+\end{equation}
+
+ weicht jedoch deutlich und um einige Größenordnungen vom Literaturwert ab.
 \begin{equation}
   \tau_\text{lit} = \SI{4E-10}{\second} \quad \text{\cite{dipoles}}
 \end{equation}
 
+
+
 Eine große Fehlerquelle bei diesem Versuch wird die Messung des Stromes durch das
 Ampermeter sein. Die Anzeige schien sich während der Messung instabil zu verhalten.
 Auch ist die Wahl von Punkten die in den Fit eingehen und die Wahl von $T'$ eher beliebig
-wirkt sich aber stark auf das Endergebniss aus.  
+wirkt sich aber stark auf das Endergebniss aus.
