@@ -2,7 +2,7 @@
 \label{sec:messvorgang}
 
 Ist die Probe für eine genügend lange Zeit $t \gg τ(T)$ dem elektrischen Feld ausgesetzt,
-sind bei Temperatur $T_p$ etwa $L(T_p) \approx \frac{m E}{3 k_\mathrm{B} T}$ Dipole in Richtung des Feldes ausgerichtet.
+sind bei Temperatur $T_p$ etwa $L(T_p) \approx \frac{m E}{3 k_\text{B} T}$ Dipole in Richtung des Feldes ausgerichtet.
 Wird das Feld konstant gehalten und dabei die Probe abgekühlt so wird die Relaxationszeit $τ(T)$ sehr groß.
 Dadurch bleibt dann auch bei abschalten des externen Feldes die Polarisation beibehalten.
 Sind keine freien Elektronen auf dem Kondensator vorhanden so lässt sich beim langsamen erwärmen der Probe der sogennnate Depolarisationsstrom messen.
@@ -23,7 +23,7 @@ Nach einsetzen in \eqref{eq:strom} und Näherung bei gleichbleibender Erwärmung
 \begin{equation}
   \label{eq:sol}
   j(T) =
-    \frac{p^2 E}{3 k_\mathrm{B} T_p}
+    \frac{p^2 E}{3 k_\text{B} T_p}
     \frac{N_p}{τ(T)}
     \exp\!\left(
       -\frac{1}{b} \int_{T_0}^{T} \frac{\dif{T'}}{τ(T')}
@@ -34,22 +34,22 @@ Nach einsetzen in \eqref{eq:strom} und Näherung bei gleichbleibender Erwärmung
 Nach einsetzen von Gleichung \ref{eq:time} und Näherung für kleine $T - T_0$ folgt
 \begin{equation}
   \label{eq:sol_approx}
-  j(T) = \frac{p^2 E N_p}{3 k_\mathrm{B} T_p τ_0} \cdot \E^{- \frac{W}{k_\mathrm{B} T}}.
+  j(T) = \frac{p^2 E N_p}{3 k_\text{B} T_p τ_0} \cdot \E^{- \frac{W}{k_\text{B} T}}.
 \end{equation}
 
 Anwendung des natürlichen Logarithmus auf \eqref{eq:sol_approx} ergibt einen linearen Zusammenhang zwischen $\ln{j(T)}$ und $\sfrac{1}{T}$:
 \begin{equation}
   \label{eq:linear}
   \ln{j(T)} = \underbrace{\ln\!\left(
-      \frac{p^2 E N_p}{3 k_\mathrm{B} T_p τ_0}
+      \frac{p^2 E N_p}{3 k_\text{B} T_p τ_0}
     \right)}_{\mathclap{\text{konst}}}
-    \overbrace{- \frac{W}{k_\mathrm{B}}}^{\mathclap{\text{Steigung}}}
+    \overbrace{- \frac{W}{k_\text{B}}}^{\mathclap{\text{Steigung}}}
     \cdot \frac{1}{T}
 \end{equation}
 
 Die Aktivierungsenergie ergibt sich damit aus der Steigung der Geraden $a$ zu
 \begin{equation}
-  W = - a \cdot k_\mathrm{B}
+  W = - a \cdot k_\text{B}
 \end{equation}
 
 In Abbildung \ref{fig:lnj} ist der Logarithmus der Stromdichte gegen $\sfrac{1}{T}$ aufgetragen.
@@ -58,7 +58,7 @@ In Abbildung \ref{fig:lnj} ist der Logarithmus der Stromdichte gegen $\sfrac{1}{
   \includegraphics{fit_linear.pdf}
   \caption{%
     Logarithmus des Stroms gegen den Kehrwert der Temperatur für die gemessenen Werte.
-    Die für die Berechnung der Ausgleichsgeraden genutzten Werte sind in violett markiert.
+    Die für die Berechnung der Ausgleichsgeraden genutzten Werte sind in bläulicher Farbe markiert.
   }
   \label{fig:lnj}
 \end{figure}
@@ -109,7 +109,7 @@ In \autoref{fig:fit_energy} wird diese Funktiongegen $\frac{1}{T}$ aufgetragen. 
 \end{equation}
 
 \begin{equation}
-  W = k_\mathrm{B} T \ln \frac{\int_T^{T'} i(T)}{ i(T) \tau_0}
+  W = k_\text{B} T \ln \frac{\int_T^{T'} i(T)}{ i(T) \tau_0}
   \label{eq:final}
 \end{equation}
 
@@ -142,15 +142,15 @@ Als letztes soll die charackteristische Relaxationszeit $\tau_0$ bestimmt werden
   \dd{j(T)}{T} \propto
     \frac{1}{\tau_0}
     \exp\!\left(
-      -\frac{1}{\tau_0} \int_{T_0}^{T} \exp\! \left( \frac{W}{k_\mathrm{B} T} \right)  \dif{T'} - \frac{W}{k_\mathrm{B} T}
-    \right) \left( \frac{W}{k_\mathrm{B} T^2} -   \frac{1}{\tau_0}\exp(-\frac{W}{k_\mathrm{B} T}) \right).
+      -\frac{1}{\tau_0} \int_{T_0}^{T} \exp\! \left( \frac{W}{k_\text{B} T} \right)  \dif{T'} - \frac{W}{k_\text{B} T}
+    \right) \left( \frac{W}{k_\text{B} T^2} -   \frac{1}{\tau_0}\exp(-\frac{W}{k_\text{B} T}) \right).
 \end{equation}
 
 Im Maximum wird der hintere Klammerausdruck gleich null. Daraus folgt für $\tau$ in Abhängigkeit der maximalen Temperatur:
 
 \begin{equation}
   \label{eq:tau}
-  \tau(T_{max}) = \frac{k_\mathrm{B} T_{max}^2}{W b} \exp\left(-\frac{W}{k_\mathrm{B} T_{max}} \right)
+  \tau(T_\text{max}) = \frac{k_\text{B} T_\text{max}^2}{W b} \exp\left(-\frac{W}{k_\text{B} T_\text{max}} \right)
 \end{equation}
 
 Es übergibt sich
@@ -162,3 +162,5 @@ Einsetzen in \eqref{eq:time} liefert die  charackteristische Relaxationszeit
 \begin{equation}
   \input{tau_0.tex}
 \end{equation}
+
+Die Fehler wurden durch Gaußsche Fehlerfortpflanzung.

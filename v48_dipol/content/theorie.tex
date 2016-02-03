@@ -32,16 +32,16 @@ Die Ausrichtung des Dipols kann sich durch sogenannte Leerstellendiffusion ände
 Dafür muss Arbeit aufgebracht werden um das Gitterpotential an der Stelle zu überwinden.
 Die thermische Energieverteilung der Dipole ist durch die Boltzmannstatistik nach \eqref{eq:boltzmann} vorgegeben.
 Dabei ist $W$ die Arbeit, die verrichtet werden muss, damit die Leerstelle die Gitterstelle wechselt.
-$T$ ist die Temperatur und $k_\mathrm{B} = \SI{1,38064852e-23}{\joule \per \kelvin}$ die Boltzmannkonstante.
+$T$ ist die Temperatur und $k_\text{B} = \SI{1,38064852e-23}{\joule \per \kelvin}$ die Boltzmannkonstante.
 \begin{equation}
-  E_D \propto \E^{- \frac{W}{k_\mathrm{B} T}}
+  E_D \propto \E^{- \frac{W}{k_\text{B} T}}
   \label{eq:boltzmann}
 \end{equation}
 
 Die Relaxationszeit, die Zeit nach der die Dipole ihre Orientierung wechseln,
 beträgt im Mittel
 \begin{equation}
-  τ(T) = τ_0 \E^{\frac{W}{k_\mathrm{B} T}}.
+  τ(T) = τ_0 \E^{\frac{W}{k_\text{B} T}}.
   \label{eq:time}
 \end{equation}
 
@@ -59,18 +59,18 @@ Die Langevin-Formel ist die klassische
 Näherung der Brillouin-Formel~\eqref{eq:brillouin}.
 Dabei ist
 \begin{equation}
-  x = \frac{\v{m}_B \v{B}}{k_\mathrm{B} T},
+  x = \frac{\v{m}_B \v{B}}{k_\text{B} T},
 \end{equation}
 mit dem äußeren Magnetfeld $\v{B}$ und dem magnetischen Dipolmoment $\v{m}_B$.
 Analog ist im Fall äußerer elektrische Felder, wie in diesem Versuch,
 \begin{equation}
-  x = \frac{\v{m} \v{E}}{k_\mathrm{B} T}
+  x = \frac{\v{m} \v{E}}{k_\text{B} T}
 \end{equation}
 mit dem elektrischen Dipolmoment $\v{m}$ und dem externen elektrischen Feld $\v{E}$.
 Bei richtiger Ausrichtung der elektrischen Feldlinien zu den Gittervektoren des Kristalls ist die Richtung des Dipolmoments im Mittel paralell zum elektrischen Feld.
 Dann lässt sich die Langevin-Funktion parametrisieren mit
 \begin{equation}
-  x= \frac{m E}{k_\mathrm{B} T}.
+  x= \frac{m E}{k_\text{B} T}.
 \end{equation}
 Der Verlauf der Langevin-Funktion ist in \autoref{fig:langevin} skizziert.
 
@@ -97,6 +97,6 @@ Dadurch kann die Näherung $L(x) \approx \frac{x}{3}$ genutzt werden.
 Somit ergibt sich für den Anteil der zur Feldrichtung ausgerichteten Dipole
 
 \begin{equation}
-  L(T) \approx \frac{m E}{3 k_\mathrm{B} T}.
+  L(T) \approx \frac{m E}{3 k_\text{B} T}.
   \label{eq:dipoles}
 \end{equation}
