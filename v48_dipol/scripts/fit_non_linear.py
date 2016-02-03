@@ -62,7 +62,8 @@ def main():
     plt.tight_layout(pad=0)
     plt.savefig('build/heating_rate.pdf')
 
-    fit1 = data.query('(245 < T < 270) | (T > 310)')
+    fit_start = data['T'][data['I'].argmin()]
+    fit1 = data.query('({} <= T <= 270) | (T > 310)'.format(fit_start)).iloc[:-1]
 
     T0 = fit1['T'].min()
 
@@ -153,11 +154,17 @@ def main():
 
     plt.figure()
     plt.plot(fit_data['T_inv'], fit_data['activation'], '+', ms=4)
-    plt.plot(ignored_data['T_inv'], ignored_data[
-             'activation'], '+', ms=4, color='#626262')
-    plt.plot(fit_data['T_inv'], func(
-        fit_data['T_inv'], *params), color='darkgray')
+    plt.plot(
+        ignored_data['T_inv'], ignored_data['activation'],
+        '+', ms=4, color='#626262',
+    )
+    plt.plot(
+        fit_data['T_inv'], func(fit_data['T_inv'], *params),
+        color='darkgray',
+    )
     plt.xlabel(r'$T^{-1} \mathrel{/} \si{\per\kelvin}$')
+    plt.ylabel(r"$\ln{\frac{\int_T^{T'}i(T)\dif{T'}}{i(T)τ_0}}$")
+    plt.tight_layout(pad=0)
     plt.savefig('build/activation_energy.pdf')
 
 
