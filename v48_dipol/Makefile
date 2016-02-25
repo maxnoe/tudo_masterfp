@@ -9,11 +9,15 @@ build/langevin.pdf: scripts/langevin.py $(mplfiles) | build
 build/strom.pdf: scripts/strom.py $(mplfiles) | build
 	MATPLOTLIBRC=.. TEXINPUTS=$(shell pwd)/..: python scripts/strom.py
 
-build/fit_linear.pdf: scripts/fit_linear.py data/messwerte_2.csv $(mplfiles) | build
+build/fit_linear.pdf: scripts/fit_linear.py build/data_corrected.csv $(mplfiles) | build
 	MATPLOTLIBRC=.. TEXINPUTS=$(shell pwd)/..: python scripts/fit_linear.py
 
-build/fit_non_linear.pdf: scripts/fit_non_linear.py data/messwerte_2.csv $(mplfiles) | build
+build/fit_non_linear.pdf: scripts/fit_non_linear.py build/data_corrected.csv $(mplfiles) | build
 	MATPLOTLIBRC=.. TEXINPUTS=$(shell pwd)/..: python scripts/fit_non_linear.py
+
+build/data_corrected.csv: scripts/correct_data.py | build
+	MATPLOTLIBRC=.. TEXINPUTS=$(shell pwd)/..: python $^
+
 
 build/fit_non_linear_corr.pdf: build/fit_non_linear.pdf
 
