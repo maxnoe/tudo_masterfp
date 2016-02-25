@@ -12,6 +12,7 @@ build/main.pdf: FORCE | build
 
 plots = $(addprefix build/plots/, $(addsuffix .pdf, \
 	bethe_air \
+	pulse_with_amp \
 ))
 
 
