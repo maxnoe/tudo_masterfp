@@ -38,7 +38,7 @@ speed = np.sqrt(2 * alpha_energy / alpha_mass)
 # nitrogen exitation?
 I = 14 * u.eV
 
-pressure = np.linspace(0, 250, 1000) * u.mbar
+pressure = np.linspace(0, 1100, 2000) * u.mbar
 rho = gas_density(pressure, Q(20, u.celsius), R_air)
 stopping = bethe(electron_density(rho), 4, speed, I).to('MeV/cm')
 
@@ -46,5 +46,9 @@ stopping = bethe(electron_density(rho), 4, speed, I).to('MeV/cm')
 plt.plot(pressure.to('millibar'), stopping)
 plt.xlabel(r'$p \mathrel{/} \si{\milli\bar}$')
 plt.ylabel(r'$\dd{E}{x} \Biggm/ \si{\mega\electronvolt\per\centi\meter}$')
+#draw energy of alpha particles form am 241
+am_energy = 5.408 * u.MeV
+plt.axhline(y=am_energy.magnitude, linestyle='--', color='darkgray', label="Mittlere Energie der Alpha-Teilchen")
+plt.legend(loc='lower right', fancybox=True, framealpha=0.4)
 plt.tight_layout(pad=0)
 plt.savefig('build/plots/bethe_air.pdf')
