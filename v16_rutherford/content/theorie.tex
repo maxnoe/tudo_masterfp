@@ -1,3 +1,10 @@
+\section{Einleitung}
+\label{sec:einleitung}
+In diesem Verusch sollen der Streuprozess von Alpha-Teilchen an Golffolie untersucht werden. Im folgenden werden zunächst einige theoretische
+Grundlagen beschrieben und Anschließend der Versuchsaufbau und die Durchführung erklärt. Im Anschluss werden die Ergebnisse dargestellt.
+
+
+
 \section{Theorie der Rutherfordstreuung}
 \label{sec:theorie}
 
@@ -35,10 +42,34 @@ Außerdem wird die Bewegung der Elektronen im Probenmaterial vernachlässigt.
 
 
 \subsection{Streuquerschnitt}
+Die rutherfordsche Streuquerschnitt beschreibt die Streuung zweier spinloser punktförmiger Teilchen. Da in diesem Experiment nur Geschwindigkeiten
+$v \ll c_0$ auftreten, reicht es den nicht-relativistischen Fall zu betrachten.
+
 Nach Fermis Goldener Regel ist der differentielle Wirkungsquerschnitt $\dd{\sigma}{\Omega}$ proportional zum Quadrat der Übergangsamplitude $M$ multipliziert mit dem Phasenraumfaktor $\rho$.
 
 \begin{equation}
   \dd{\sigma}{\Omega} \propto \abs{M}^2 \rho
 \end{equation}
 
-Der Vorgang ist isotropisch in alle Raumrichtungen. Der phasenraumfaktor
+Die Übergangsamplitude ergibt sich hier aus der Cuolomb Wechselwirkung und ist abhängig von der Ladung der Streupartner.
+
+
+\begin{equation}
+  M \propto Z_1 Z_2
+\end{equation}
+
+
+Aus geometrischen Überlegungen zur Raumwinkelgröße und zum Phasenraumfaktor folgt die Abhängikeit zum Streuwinkel $\theta$ im Vorfaktor $\kappa$
+
+\begin{equation}
+  \kappa \propto \frac{1}{\sin^4{\frac{\theta}{2}}}
+\end{equation}
+
+Insgesamt folgt die Rutherfordsche Streuformel wie in der Anleitung zu
+
+\begin{equation}
+  \label{ruther}
+  \dd{\sigma}{\Omega} (\theta) = \frac{1}{(4 \pi \epsilon_0)^2} \left( \frac{Z_1 Z_2}{4 E_{\alpha}} \right)^2 \frac{1}{\sin^4{\frac{\theta}{2}}}
+\end{equation}
+
+wobei $E_{\alpha}$ die mittlere kinetische Energie der einfallenden Alpha Strahlung ist.
