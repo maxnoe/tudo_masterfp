@@ -31,8 +31,9 @@ def drop_useless(df):
     df = df.drop(c, axis=1)
 
     # drop columns containing only a single value
-    df = df.drop(df.var()[df.var() == 0].index, axis=1)
-    df.drop('Weight.HoSa')
-    print('Combined Features: {}'.format(len(df.columns)))
+    df = df.loc[:, df.var() != 0]
 
+    # drop nans
+    df = df.dropna()
+    print('Combined Features: {}'.format(len(df.columns)))
     return df
