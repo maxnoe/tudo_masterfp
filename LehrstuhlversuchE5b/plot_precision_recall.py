@@ -2,7 +2,6 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import os
 
-plt.style.use('ggplot')
 fig = plt.figure()
 ax1 = fig.add_subplot(1, 2, 1, aspect='equal')
 ax2 = fig.add_subplot(1, 2, 2, aspect='equal')
@@ -17,11 +16,10 @@ for ax in (ax1, ax2):
 infiles = [
     './build/AdaBoost.hdf5',
     './build/RandomForest.hdf5',
-    './build/ExtraTrees.hdf5',
     './build/NaiveBayes.hdf5',
 ]
 
-colors = ['b', 'r', 'c', 'k']
+colors = [elem['color'] for elem in plt.rcParams['axes.prop_cycle']]
 
 for infile, color in zip(infiles, colors):
     performance = pd.read_hdf(infile)
@@ -62,5 +60,5 @@ for infile, color in zip(infiles, colors):
     )
 
 ax1.legend(loc='lower right')
-fig.tight_layout()
-plt.show()
+fig.tight_layout(pad=0)
+fig.savefig('build/precision_recall.pdf', bbox_inches='tight')

@@ -1,0 +1,32 @@
+\usepackage{fontspec}
+\setromanfont{Linux Libertine O}
+\setsansfont{Linux Biolinum O}
+\setmonofont{Anonymous Pro for Powerline}
+
+\usepackage{polyglossia}
+\setdefaultlanguage{german}
+\usepackage[autostyle]{csquotes}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+
+\usepackage[
+  math-style=ISO,
+  bold-style=ISO,
+  sans-style=italic,
+  nabla=upright, partial=upright,
+]{unicode-math}
+\setmathfont{Tex Gyre Pagella Math}
+
+\usepackage{xfrac}  
+
+\usepackage[
+  locale=DE,
+  separate-uncertainty=true,
+  per-mode=symbol-or-fraction,
+]{siunitx}
+
+\DeclareSIUnit\parsec{pc}
+\DeclareSIUnit\lightyear{ly}
+\sisetup{math-micro=\text{µ},text-micro=µ}

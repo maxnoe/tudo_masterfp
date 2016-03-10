@@ -17,6 +17,7 @@
 \usepackage{csquotes}
 \usepackage{microtype}
 \usepackage{mathtools}
+\usepackage{booktabs}
 
 \usepackage[
   math-style=ISO,
@@ -112,6 +113,37 @@
           \node at (10cm, -2cm) {\includegraphics[height=4.5cm]{images/scikit-learn.pdf}};
         \end{tikzpicture}
       \end{block}
+      \begin{block}{Verwendete Algorithmen}
+        Zur Signal/Untergrund-Trennung werden folgende Modelle erprobt:
+        \begin{description}
+          \item[Gaussian Naive Bayes] Ein einfaches Modell, dass von Gaußverteilten
+            Population ausgeht und ein Ereignis in die Population klassifiziert, für
+            die die Wahrscheinlichkeit am größten ist.
+          \item[Random Forest] Der Random Forest besteht aus vielen Entscheidungsbäumen,
+            die auf per Bootstrapping erzeugten Datensätzen gebildet werden.
+            An jedem Knoten der Bäume wird nur ein zufälliges Subset aller Attribute betrachtet.
+          \item[AdaBoosted Trees] Ähnlich dem Random Forest sind AdaBoosted Trees
+            ebenfalls ein Ensemble-Modell aus Entscheidungsbäumen.
+            Diese werden allerdings sequentiell trainiert und bei jedem neuen
+            Training bekommen fehlklassifizierte Ereignisse ein erhöhtes Gewicht.
+            Zur Anwedung wird ein gewichtetes Mittel über alle Bäume gebildet.
+        \end{description}
+      \end{block}
+      \begin{block}{ROC-Kurven}
+        \begin{multicols}{2}
+          \begin{figure}
+            \centering
+            \includegraphics[width=\linewidth]{rocs.pdf}
+            \caption{ROC-Kurven für die drei Untersuchten Modelle aus einer 10-fachen
+            Kreuzvalidierung. AdaBoost und Random Forest sind ungefähr gleich stark,
+          der Naive-Bayes Algorithmus ist start abgeschlagen.}
+            \label{fig:name}
+          \end{figure}
+          \begin{center}
+            \input{roc_table.tex}
+          \end{center}
+        \end{multicols}
+      \end{block}
     \end{column}%
     \begin{column}{0.5\textwidth}%
       \begin{block}{Data-Mining}%
@@ -138,6 +170,24 @@
           ausgewertet.
         \end{multicols}
       \end{block}%
+
+      \begin{block}{Der Datensatz}
+      Der untersuchte Datensatz enthält je \num{20000} Neutrino- bzw. Untergrund-Ereignisse
+      und eine hohe Anzahl von 264 bzw. 224 Attributen.
+
+      Im ersten Schritt müssen alle Attribute verworfen werden, die nicht für
+      die Klassifizierung genutzt werden können.
+      Dies sind zum Beispiel:
+      \begin{itemize}
+        \item Monte-Carlo Wahrheiten, zum Beispiel die Energie des Primärteilchens
+        \item Metadaten, wie Datum, Uhrzeit, Run-Nummer
+        \item Gewichte der Ereignisse aus der Simulation
+      \end{itemize}
+
+      Hiernach bleiben 150 Attribute übrig, die sowohl für Signal, als auch für
+      Untergrund vorhanden sind.
+      \end{block}
+
       \begin{block}{Modell-Evaluierung}
         \begin{multicols}{2}
           \begin{figure}
@@ -177,6 +227,9 @@
           aufgetragen.
           Für eine perfekte Klassifikation beträgt die Fläche unter dem ROC-Graph $1$.
         \end{multicols}
+      \end{block}
+      \begin{block}{Reinheit und Effizienz}
+        \includegraphics[width=\linewidth]{precision_recall.pdf}
       \end{block}
     \end{column}%
   \end{columns}%

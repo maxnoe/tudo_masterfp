@@ -5,9 +5,7 @@ from mpl_toolkits.axes_grid1.inset_locator import (
     zoomed_inset_axes, mark_inset
 )
 
-plt.style.use('ggplot')
-
-fig = plt.figure()
+fig = plt.figure(figsize=(4, 4))
 ax = fig.add_subplot(1, 1, 1, aspect='equal')
 ax.set_xlabel('False positive rate')
 ax.set_ylabel('True positive rate')
@@ -24,12 +22,11 @@ ax_zoom.xaxis.set_label_position('top')
 infiles = [
     './build/AdaBoost.hdf5',
     './build/RandomForest.hdf5',
-    './build/ExtraTrees.hdf5',
     './build/NaiveBayes.hdf5',
 ]
 names = [os.path.splitext(os.path.basename(f))[0] for f in infiles]
 
-colors = ['b', 'r', 'c', 'k']
+colors = [elem['color'] for elem in plt.rcParams['axes.prop_cycle']]
 lines = []
 for infile, color in zip(infiles, colors):
     perf = pd.read_hdf(infile)
@@ -67,5 +64,5 @@ mark_inset(
     ax, ax_zoom, loc1=1, loc2=3, fc='none', ec="1", alpha=0.6,
 )
 ax.legend(lines, names)
-fig.tight_layout()
-plt.show()
+fig.tight_layout(pad=0)
+fig.savefig('build/rocs.pdf')
