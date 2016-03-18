@@ -6,13 +6,42 @@ sind bei Temperatur $T_p$ etwa $L(T_p) \approx \frac{m E}{3 k_\text{B} T}$ Dipol
 Wird das Feld konstant gehalten und dabei die Probe abgekühlt so wird die Relaxationszeit $τ(T)$ sehr groß.
 Dadurch bleibt dann auch bei abschalten des externen Feldes die Polarisation beibehalten.
 Sind keine freien Elektronen auf dem Kondensator vorhanden so lässt sich beim langsamen erwärmen der Probe der sogennnate Depolarisationsstrom messen.
+
+\subsection{Korrektur der gemessenen Daten}
+\begin{figure}
+  \centering
+  \includegraphics{data_correction_fit.pdf}
+  \caption{Exp-Fit an die gemessenen Werte außerhalb des Maximums}
+  \label{fig:data_correction_fit}
+\end{figure}
+
+Der Depolarisationsstrom wird in der realen Messung von einem generellen
+Anstieg des Stromes mit der Temperatur überlagert.
+Um nur den Beitrag des Depolarisationsstromes zur erhalten,
+wird eine Funktion der Form
+
+\begin{figure}
+  \centering
+  \includegraphics{data_corrected.pdf}
+  \caption{Fit-Ergebnis von den Messwerten abgezogen.}
+  \label{fig:data_corrected}
+\end{figure}
+\begin{equation}
+    f(T) = a \cdot \exp(b  T) + c
+\end{equation}
+an die Messwerte vor und nach dem lokalen Maximum des Depolarisationsstromes angepasst und anschließend von den
+Messwerten abgezogen.
+Die gemessenen Werte für $I$ sind in \autoref{fig:data_correction_fit} 
+gegen die Temperatur $T$ aufgetragen.
+In \autoref{fig:data_corrected} sind die um das Fitergebnis korrigierten Ströme aufgetragen.
+
+\subsection{Berechnung der Aktivierungsenergie nach der ersten Methode}
 Die Depolarisationsstromdichte $j(T)$ lässt sich nach \eqref{eq:dichte} durch $L(T_p)$, die Relaxationsrate
 $\dd{N}{t}$ und das Dipolmoment $m$ ausdrücken:
 \begin{equation}
   \label{eq:strom}
   j(T) = L(T_p) m \dd{N}{T}
 \end{equation}
-
 
 Die Relaxationsrate lässt sich durch die einfache Differentialgleichung
 \begin{equation}
@@ -55,7 +84,7 @@ Die Aktivierungsenergie ergibt sich damit aus der Steigung der Geraden $a$ zu
 In Abbildung \ref{fig:lnj} ist der Logarithmus der Stromdichte gegen $\sfrac{1}{T}$ aufgetragen.
 
 \begin{figure}
-  \includegraphics{fit_linear.pdf}
+  \includegraphics{method1.pdf}
   \caption{%
     Logarithmus des Stroms gegen den Kehrwert der Temperatur für die gemessenen Werte.
     Die für die Berechnung der Ausgleichsgeraden genutzten Werte sind in bläulicher Farbe markiert.
@@ -72,14 +101,14 @@ genutzt.
 Für $x_0$ wird der Mittelwert von $\sfrac{1}{T}$ im gewählten Bereich gewählt, dies minimiert die Korrelation zwischen $a$ und $b$.
 Für die Parameter ergibt sich:
 \begin{align}
-  \input{fit_parameters.tex}
+  \input{fit_parameters_1.tex}
 \end{align}
 Damit ergibt sich für die Aktivierungsenergie:
 \begin{equation}
-  \input{activation_work.tex}
+  \input{activation_work_1.tex}
 \end{equation}
 
-
+\subsection{Bestimmung der Aktivierungsenergie nach der zweiten Methode}
 Die zweite Möglichkeit zur Messung der Aktivierungsenergie $W$ benutzt den gesamten Kurvenverlauf des gemessen Stroms.
 Für die Gesamtpolarisation $P$ gilt die Differentialgleichung
 \begin{equation}
@@ -100,37 +129,38 @@ Durch Integration von  \eqref{eq:i} und einsetzen in \eqref{eq:pol} folgt:
   \label{eq:tau_t}
 \end{equation}
 Nimmt man einen linearen zusammenhang zwischen der Zeit $t$ und der Temperatur $T$ an, so kann man die Integrationsvariable in \eqref{eq:i} durch $T$ ersetzen.
-Zusammen mit Gleichung \eqref{eq:time} ergibt sich \eqref{eq:final}. Da sich das Integral ab einer Temperatur mit $i(T') \approx 0$ nicht mehr ändert,
-kann die obere Integrationsgrenze durch $T'$ ersetzt werden.
-
-In \autoref{fig:fit_energy} wird diese Funktiongegen $\frac{1}{T}$ aufgetragen. Die Steigung der Ausgleichsgeraden liefert die Aktivierungsenergie zu:
+Zusammen mit Gleichung \eqref{eq:time} ergibt sich \eqref{eq:final}.
+In \autoref{fig:rate} ist die Temperatur $T$ gegen die Messzeit $t$ aufgetragen, eine linearer Zusammenhang wurde über große Teile der
+Messung erreicht, die Heizrate wurde mit einer linearen Regression
+zu 
 \begin{equation}
-  \input{activation_work_fit.tex}
+  \input{build/rate.tex}
 \end{equation}
+bestimmt.
 
+\begin{figure}
+  \centering
+  \includegraphics{rate.pdf}
+  \caption{Lineare Regression zur Ermittlung der Heizrate. Aufgetragen ist die Temperatur $T$ gegen die Messzeit $t$.}
+  \label{fig:rate}
+\end{figure}
+
+ Da sich das Integral ab einer Temperatur mit $i(T') \approx 0$ nicht mehr ändert,
+kann die obere Integrationsgrenze durch $T'$ ersetzt werden.
+In \autoref{fig:fit_energy} wird diese Funktiongegen $\frac{1}{T}$ aufgetragen.
+Die Steigung der Ausgleichsgeraden liefert die Aktivierungsenergie zu:
+\begin{equation}
+  \input{activation_work_2.tex}
+\end{equation}
 \begin{equation}
   W = k_\text{B} T \ln \frac{\int_T^{T'} i(T)}{ i(T) \tau_0}
   \label{eq:final}
 \end{equation}
 
-\begin{figure}
-  \centering
-  \includegraphics{fit_non_linear.pdf}
-  \caption{Exp-Fit an die gemessenen Werte außerhalb des Maximums}
-  \label{fig:fit_non_linear}
-\end{figure}
 
 \begin{figure}
   \centering
-  \includegraphics{fit_non_linear_corr.pdf}
-  \caption{Fit-Ergebnis von den Messwerten abgezogen.}
-  \label{fig:fit_non_linear_corr}
-\end{figure}
-
-
-\begin{figure}
-  \centering
-  \includegraphics{activation_energy.pdf}
+  \includegraphics{method2.pdf}
   \caption{Bestimmung der Aktivierungsenergie. Punkte die für den Fit nicht benutzt wurden, sind grau gefärbt.}
   \label{fig:fit_energy}
 \end{figure}
@@ -142,8 +172,8 @@ Als letztes soll die charackteristische Relaxationszeit $\tau_0$ bestimmt werden
   \dd{j(T)}{T} \propto
     \frac{1}{\tau_0}
     \exp\!\left(
-      -\frac{1}{\tau_0} \int_{T_0}^{T} \exp\! \left( \frac{W}{k_\text{B} T} \right)  \dif{T'} - \frac{W}{k_\text{B} T}
-    \right) \left( \frac{W}{k_\text{B} T^2} -   \frac{1}{\tau_0}\exp(-\frac{W}{k_\text{B} T}) \right).
+      -\frac{1}{b\tau_0} \int_{T_0}^{T} \exp\! \left( \frac{W}{k_\text{B} T} \right)  \dif{T'} - \frac{W}{k_\text{B} T}
+    \right) \left( \frac{W}{k_\text{B} T^2} -   \frac{1}{b\tau_0}\exp(-\frac{W}{k_\text{B} T}) \right).
 \end{equation}
 
 Im Maximum wird der hintere Klammerausdruck gleich null. Daraus folgt für $\tau$ in Abhängigkeit der maximalen Temperatur:

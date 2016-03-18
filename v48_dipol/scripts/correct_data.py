@@ -18,7 +18,7 @@ if __name__ == '__main__':
     fit_start = data['T'][data['I'].argmin()]
     fit1 = data.query('({} <= T <= 270) | (T > 310)'.format(fit_start)).iloc[:-1]
 
-    T0 = fit1['T'].min()
+    T0 = fit1['T'][data['I'].argmin()]
     func = exponential
     params = 10, 0.1, data['I'].min()
     params, cov = curve_fit(
@@ -40,7 +40,7 @@ if __name__ == '__main__':
     plt.ylabel(r'$I \mathrel{/} \si{\pico\ampere}$')
     plt.ylim(0, 3200)
     plt.tight_layout(pad=0)
-    plt.savefig('build/fit_non_linear.pdf')
+    plt.savefig('build/data_correction_fit.pdf')
 
     # plot corrected current
     plt.figure()
@@ -53,4 +53,4 @@ if __name__ == '__main__':
     plt.xlabel(r'$T \mathrel{/} \si{\kelvin}$')
     plt.ylabel(r'$I \mathrel{/} \si{\pico\ampere}$')
     plt.tight_layout(pad=0)
-    plt.savefig('build/fit_non_linear_corr.pdf')
+    plt.savefig('build/data_corrected.pdf')
