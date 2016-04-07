@@ -9,6 +9,7 @@ import uncertainties as unc
 from uncertainties import unumpy as unp
 
 from pint import UnitRegistry
+from IPython import embed
 u = UnitRegistry()
 
 
@@ -23,7 +24,7 @@ def diese_funktion_aus_der_anleitung(row, data, T_star=318.15):
 
 
 def SI(value, unit):
-    result = r'\SI{{{:.2}}}{{{}}}'.format(value, unit)
+    result = r'\SI{{{:.3}}}{{{}}}'.format(value, unit)
     result = result.replace('(', '').replace(')', '').replace('+/-', r'\pm')
     return result
 
@@ -40,18 +41,13 @@ def main():
         skiprows=(1, 2, 3, 4, 5),
     )
 
+    data = data.query('T > 255')
+
     func = lambda x, a, b: linear(x, a, b, x0=data['t'].mean())
     params, cov = curve_fit(func, data['t'], data['T'])
     heating_rate, _ = unc.correlated_values(params, cov)
     heating_rate *= u.kelvin / u.minute
     print('Rate = {}'.format(heating_rate))
-    plt.plot(data['t'], data['T'], '+', ms=2)
-    plt.plot(data['t'], func(data['t'], *params),
-             label='Ausgleichsgerade', color='gray')
-    plt.xlabel(r'$t \mathrel{/} \si{\second}$')
-    plt.ylabel(r'$T \mathrel{/} \si{\kelvin}$')
-    plt.tight_layout(pad=0)
-    plt.savefig('build/heating_rate.pdf')
 
     # fit activaiton energy
     T_max = data['T'][data['I_corrected'].argmax()] * u.kelvin
@@ -65,13 +61,14 @@ def main():
     data['T_inv'] = 1 / data['T']
     # data = data.query('(T > 275)')
 
-    fit_data = data.query('(0.0033 < T_inv < 0.00345)')
+    fit_data = data.query('(0.00343 < T_inv < 0.00371)')
     ignored_data = data[~data.index.isin(fit_data.index)]
     func = partial(linear, x0=fit_data['T_inv'].mean())
     params, cov = curve_fit(
         func, fit_data['T_inv'], fit_data['activation'],
     )
     a, b = unc.correlated_values(params, cov)
+    print(a, b)
     W = a * u.kelvin * u.boltzmann_constant
     print('Activation Energy {} / {}'.format(
         W.to(u.joule), W.to(u.eV))
@@ -85,11 +82,13 @@ def main():
 
     print(relaxation_time.to(u.second))
 
-    tau_0 = relaxation_time / \
+    tau_0 = (
+        relaxation_time /
         unp.exp(W.to(u.joule).magnitude / (const.k * T_max.magnitude))
+    )
     print('Tau 0 : {}'.format(tau_0))
 
-    with open('build/activation_work_fit.tex', 'w') as f:
+    with open('build/activation_work_2.tex', 'w') as f:
         f.write('W = ')
         f.write(SI(W.to('J').magnitude, r'\joule'))
         f.write(' = ')
@@ -116,7 +115,17 @@ def main():
     plt.xlabel(r'$T^{-1} \mathrel{/} \si{\per\kelvin}$')
     plt.ylabel(r"$\ln{\frac{\int_T^{T'}i(T)\dif{T'}}{i(T)τ_0}}$")
     plt.tight_layout(pad=0)
-    plt.savefig('build/activation_energy.pdf')
+    plt.savefig('build/method2.pdf')
+
+
+    plt.figure()
+
+    T = np.linspace(data['T'].min(), data['T'].max(), 1000)
+    plt.plot(T, tau_0.to('s').magnitude.n * np.exp((W.to('J').magnitude.n / const.k / T)))
+    plt.xlabel(r'$T \mathbin{/} \si{\kelvin}$')
+    plt.ylabel(r'$\tau(T) \mathbin{/} \si{\second}$')
+    plt.tight_layout(pad=0)
+    plt.savefig('build/tau.pdf')
 
 
 if __name__ == '__main__':
