@@ -13,7 +13,7 @@ R_air = 287.058 * u.joule / (u.kilogram * u.kelvin)  # dry air
 m_e = c.m_e * u.kg
 epsilon_0 = c.epsilon_0 * (u.ampere * u.second / (u.volt * u.meter))
 
-I = 14 * u.eV
+I = 82 * u.eV
 
 pressures = range(20, 1001, 10)
 
@@ -22,10 +22,8 @@ def gas_density(p, T, R_specific):
     return p / (R_specific * T.to('kelvin'))
 
 
-def electron_density(rho):
+def electron_density(rho, Z=7, A=14):
     # assume air is made of nitrogen and nothing else. -> We all die.
-    Z = 7
-    A = Z + 7  # plus 7 neutrons
     n = (Z * rho) / (A * u.amu)  # multiply atomic mass unit
     return n
 
@@ -33,10 +31,13 @@ def electron_density(rho):
 def inv_bethe(E, n, z, I, m):
     E = E * u.MeV
     v = np.sqrt(2 * E / m)
+
     ln = np.log((2 * m_e * v**2) / I)
-    a = (4 * np.pi * n * z**2) / (m_e * v**2) * \
-        ((c.e * u.coulomb)**2 / (4 * np.pi * epsilon_0))**2
-    return 1 / (a * ln).to('MeV / cm').magnitude
+
+    a = (4 * np.pi * n * z**2) / (m_e * v**2)
+    b = ((c.e * u.coulomb)**2 / (4 * np.pi * epsilon_0))**2
+
+    return 1 / (a * b * ln).to('MeV / cm').magnitude
 
 
 def mean_free_path(p):
@@ -66,6 +67,7 @@ if __name__ == '__main__':
     plt.xlabel(r'$p \mathbin{/} \si{\milli\bar}$')
     plt.ylabel(r'$d \mathbin{/} \si{\centi\meter}$')
     plt.axhline(10, color=colors[1])
+    plt.axvline(342, color=colors[2])
     plt.xlim(0, 1000)
     plt.plot(pressures, -distances, '+', label='10000')
     plt.tight_layout(pad=0)

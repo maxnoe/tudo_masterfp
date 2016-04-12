@@ -3,6 +3,14 @@ from os import path
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.optimize import curve_fit
+import uncertainties as unc
+from pint import UnitRegistry
+
+from .plot_range_alpha import electron_density
+
+u = UnitRegistry()
+
+x0 = 10.1 * u.cm
 
 
 def linear(x, m, b):
@@ -28,7 +36,7 @@ def find_maxima(folder):
             names=['t', 'U'],
         )
 
-        pulse['smooth'] = pd.rolling_mean(pulse['U'], 50, center=True)
+        pulse['smooth'] = pulse['U'].rolling(50, center=True).mean()
         maxima[i] = pulse['smooth'].max()
 
     data['max'] = maxima
@@ -44,6 +52,20 @@ def main():
     params_without, cov_without = curve_fit(
         linear, without_foil['p'], without_foil['max']
     )
+
+    m_w, b_w = unc.correlated_values(params_with, cov_with)
+    m_wo, b_wo = unc.correlated_values(params_without, cov_without)
+
+    p_w = - b_w / m_w * u.millibar
+    p_wo = - b_wo / m_wo * u.millibar
+
+    r_w = p_w * x0 / (1023 * u.millibar)
+    r_wo = p_wo * x0 / (1023 * u.millibar)
+
+    delta_r = r_wo - r_w
+
+    print(delta_r)
+
 
     p = np.linspace(0, 350, 2)
 
