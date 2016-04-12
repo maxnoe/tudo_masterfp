@@ -4,12 +4,17 @@ import numpy as np
 import matplotlib.pyplot as plt
 from scipy.optimize import curve_fit
 import uncertainties as unc
+import uncertainties.unumpy as unp
+import scipy.constants as c
+
 from pint import UnitRegistry
-
-from .plot_range_alpha import electron_density
-
 u = UnitRegistry()
+Q = u.Quantity
 
+m_e = c.m_e * u.kg
+epsilon_0 = c.epsilon_0 * (u.ampere * u.second / (u.volt * u.meter))
+alpha_energy = 5.408 * u.MeV
+alpha_mass = c.physical_constants['alpha particle mass'][0] * u.kg
 x0 = 10.1 * u.cm
 
 
@@ -43,6 +48,29 @@ def find_maxima(folder):
     return data
 
 
+def gas_density(p, T = (273.15 + 20) * u.kelvin, R_specific = 287.058 * u.joule / (u.kilogram * u.kelvin)  ):
+    return p / (R_specific * T)
+
+
+def electron_density(rho, Z=7, A=14):
+    # assume air is made of nitrogen and nothing else. -> We all die.
+    n = (Z * rho) / (A * u.amu)  # multiply atomic mass unit
+    return n
+
+
+def bethe(E, n, z, I, m):
+    print(E, n, z, I, m)
+    v = unp.sqrt((2 * E / m).to_base_units().magnitude) * (u.meter/u.second)
+    print(v.to('m/s'))
+
+    ln = unp.log(((2 * m_e * v**2) / I).to_base_units().magnitude)
+
+    a = (4 * np.pi * n * z**2) / (m_e * v**2)
+    b = ((c.e * u.coulomb)**2 / (4 * np.pi * epsilon_0))**2
+
+    return  (a * b * ln).to('MeV / cm')
+
+
 def main():
 
     with_foil = find_maxima('with_foil')
@@ -56,16 +84,17 @@ def main():
     m_w, b_w = unc.correlated_values(params_with, cov_with)
     m_wo, b_wo = unc.correlated_values(params_without, cov_without)
 
-    p_w = - b_w / m_w * u.millibar
-    p_wo = - b_wo / m_wo * u.millibar
+    rho_gold = 19.32 * u.gram / (u.cm**3)
+    density_gold = electron_density(rho_gold, Z = 79, A = 197)
 
-    r_w = p_w * x0 / (1023 * u.millibar)
-    r_wo = p_wo * x0 / (1023 * u.millibar)
 
-    delta_r = r_wo - r_w
+    delta_E = alpha_energy*(1 - b_w/b_wo)
+    print(delta_E)
+    mean_E = alpha_energy - 0.5*delta_E
 
-    print(delta_r)
-
+    print(mean_E)
+    thickness =  delta_E /  bethe(E = mean_E, n = density_gold, m = alpha_mass, I = 790*u.eV , z= 2)
+    print(thickness.to('micrometer'))
 
     p = np.linspace(0, 350, 2)
 

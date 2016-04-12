@@ -12,14 +12,11 @@ m_e = c.m_e * u.kg
 epsilon_0 = c.epsilon_0 * (u.ampere * u.second / (u.volt * u.meter))
 
 
-def gas_density(p, T, R_specific):
+def gas_density(p, T = Q(20, u.celsius), R_specific = 287.058 * u.joule / (u.kilogram * u.kelvin)  ):
     return p / (R_specific * T.to('kelvin'))
 
 
-def electron_density(rho):
-    # assume air is made of nitrogen and nothing else. -> We all die.
-    Z = 7
-    A = Z + 7  # plus 7 neutrons
+def electron_density(rho, Z = 7, A = 14):
     n = (Z * rho) / (A * u.amu)  # multiply atomic mass unit
     return n
 
@@ -36,7 +33,7 @@ alpha_mass = c.physical_constants['alpha particle mass'][0] * u.kg
 speed = np.sqrt(2 * alpha_energy / alpha_mass)
 
 # nitrogen exitation?
-I = 14 * u.eV
+I = 82 * u.eV
 
 pressure = np.linspace(0, 1100, 2000) * u.mbar
 rho = gas_density(pressure, Q(20, u.celsius), R_air)

@@ -18,7 +18,7 @@ I = 82 * u.eV
 pressures = range(20, 1001, 10)
 
 
-def gas_density(p, T, R_specific):
+def gas_density(p, T = Q(20, u.celsius), R_specific = 287.058 * u.joule / (u.kilogram * u.kelvin)  ):
     return p / (R_specific * T.to('kelvin'))
 
 
