@@ -13,6 +13,7 @@ build/main.pdf: FORCE | build
 plots = $(addprefix build/plots/, $(addsuffix .pdf, \
 	bethe_air \
 	pulse_with_amp \
+	range_alpha \
 ))
 
 
@@ -21,7 +22,7 @@ build/plots/%.pdf: scripts/plot_%.py ../header-matplotlib.tex ../matplotlibrc | 
 	MATPLOTLIBRC=$(shell pwd)/../ TEXINPUTS=$(shell pwd)/..: python $<
 
 build/main.pdf: FORCE $(plots) | build
-	TEXINPUTS=build:..: \
+	TEXINPUTS=build:..:build/plots: \
 	BIBINPUTS=..: \
 	max_print_line=1048576 \
 	latexmk \
@@ -33,8 +34,7 @@ build/main.pdf: FORCE $(plots) | build
 
 
 preview: FORCE $(plots) | build
-
-	TEXINPUTS=build:..: \
+	TEXINPUTS=build:..:build/plots: \
 	BIBINPUTS=..: \
 	max_print_line=1048576 \
 	latexmk \

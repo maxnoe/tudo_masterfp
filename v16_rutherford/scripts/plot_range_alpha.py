@@ -61,8 +61,12 @@ if __name__ == '__main__':
     with Parallel(4, verbose=10) as pool:
         distances = np.array(pool(delayed(mean_free_path)(p) for p in pressures))
 
-    plt.xlabel('pressure in mb')
-    plt.ylabel('mean free path in cm')
+    colors = [e['color'] for e in plt.rcParams['axes.prop_cycle']]
+
+    plt.xlabel(r'$p \mathbin{/} \si{\milli\bar}$')
+    plt.ylabel(r'$d \mathbin{/} \si{\centi\meter}$')
+    plt.axhline(10, color=colors[1])
     plt.xlim(0, 1000)
     plt.plot(pressures, -distances, '+', label='10000')
-    plt.savefig('build/plots/mean_free_path.pdf')
+    plt.tight_layout(pad=0)
+    plt.savefig('build/plots/range_alpha.pdf')

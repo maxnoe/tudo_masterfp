@@ -1,13 +1,31 @@
 \section{Versuchsaufbau}
 
 Der Versuchsaufbau besteht im wesentlichen aus der Strahlungsquelle, einer Goldfolie und einem Surface-Barrier Detektor.
-Der Aufbau befinded sich in einer Vakuumkammer welche durch eine Drehschieberpumpe evakuiert werden kann.
-Die Alpha-Strahlen aus der Quelle werden durch \SI{2}{\mm} Schlitzblenden kollimiert bevor sie auf die Goldfolie treffen.
+Der Aufbau befindet sich in einer Vakuumkammer welche durch eine Drehschieberpumpe evakuiert werden kann.
+Die Alpha-Teilchen aus der Quelle werden durch \SI{2}{\mm} Schlitzblenden kollimiert bevor sie auf die Goldfolie treffen.
 
 
 \section{Versuchsdurchführung}
 
-Als Quelle für Alpha-Teilchen wird in diesem Versuch \ce{Am241} genutzt. Als Vorbereitungsaufgabe sollte das Bremsvermögen
+Als Quelle für Alpha-Teilchen wird in diesem Versuch \ce{^{241}Am} genutzt.
+Dieses Isotop besitzt drei Alpha-Linien\cite{alpha-spectrum}:
+\begin{center}
+  \begin{tabular}{S[table-format=1.3] @{\,} s S[table-format=1.2]}
+    \toprule
+    \multicolumn{2}{c}{Energie} & {Anteil} \\
+    \midrule
+    5.486 & MeV & 0.85 \\
+    5.443 & MeV & 0.13 \\
+    5.388 & MeV & 0.01 \\
+    \bottomrule
+  \end{tabular}
+\end{center}
+
+Die Probe hatte im Oktober 1994 eine Aktivität von \SI{330}{\kilo\becquerel},
+hieraus ergibt sich mit der Halbwertszeit von \ce{^{241}Am} von \num{432.5} Jahren eine Aktivität zur Zeit der Versuchsdurchführung \SI{318}{\kilo\becquerel}.
+
+
+Als Vorbereitungsaufgabe sollte das Bremsvermögen
 der Alpha-Teilchen in Luft berechnet bestimmt werden. Daraus solte dann der Kammerdruck bestimmt werden ab dem  ein Energieverlust
 bemerkbar wird. In Abbildung~\ref{fig:bethe} ist das Bremsvermögen dargestellt.
 
@@ -18,16 +36,26 @@ bemerkbar wird. In Abbildung~\ref{fig:bethe} ist das Bremsvermögen dargestellt.
   \label{fig:bethe}
 \end{figure}
 
-Im vorliegenden Versuchaufbau befinden sich etwa \SI{10}{\cm} Atmosphäre zwischen Quelle und Detektor. Ein Großteil der Alpha-Teilchen würde also schon bei einem Kammerdruck
-von ungefähr \SI{100}{\milli \bar} nicht mehr beim Detektor ankommen.
+Integriert man den Kehrwert des Energieverlusts von der Teilchenenergie bis $0$ erhält man die Reichweite der Alphastrahlung.
+In \autoref{fig:alpha_range} ist die Reichweite der Alpha-Strahlung für mehrere Drücke aufgetragen.
 
+\begin{figure}
+  \centering
+  \includegraphics{range_alpha.pdf}
+  \caption{Reichweite von Alpha-Strahlung für verschiedene Drücke in einer Stickstoff-Atmosphäre.}
+  \label{fig:alpha_range}
+\end{figure}
 
-An den Surface-Barrier Detektor wird ein Osziloskop angeschlossen. Nach Vorverstärkung werden Pulse sichtbar. Exemplarisch ist ein Puls in Abbidlung~\ref{fig:pulse} dargestellt.
+Im vorliegenden Versuchaufbau befinden sich etwa \SI{10}{\cm} Atmosphäre zwischen Quelle und Detektor.
+Eine Reichweite von \SI{10}{\centi\meter} wird bei ca.\  \SI{200}{\milli\bar} erreicht.
 
+An den Surface-Barrier Detektor wird ein Osziloskop angeschlossen.
+In \autoref{fig:pulse} sind beispielhaft zwei Pulse gezeigt.
+Der obere Puls ist ohne Vorverstärker aufgenommen, der untere mit.
 
 \begin{figure}
   \centering
   \includegraphics[width=0.9\textwidth]{./build/plots/pulse_with_amp.pdf}
-  \caption{Ein vom Oszilloskop aufgenommener Puls.}
+  \caption{Vom Oszilloskop aufgenommene Pulse ohne (oben) und mit (unten) Vorverstärkung.}
   \label{fig:pulse}
 \end{figure}
