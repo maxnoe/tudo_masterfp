@@ -14,6 +14,8 @@ plots = $(addprefix build/plots/, $(addsuffix .pdf, \
 	bethe_air \
 	pulse_with_amp \
 	range_alpha \
+	scattering \
+	scattering_theory \
 ))
 
 
