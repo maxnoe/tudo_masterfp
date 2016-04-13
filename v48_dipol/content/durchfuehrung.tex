@@ -31,12 +31,12 @@ wird eine Funktion der Form
 \end{equation}
 an die Messwerte vor und nach dem lokalen Maximum des Depolarisationsstromes angepasst und anschließend von den
 Messwerten abgezogen.
-Die gemessenen Werte für $I$ sind in \autoref{fig:data_correction_fit} 
+Die gemessenen Werte für $I$ sind in \autoref{fig:data_correction_fit}
 gegen die Temperatur $T$ aufgetragen.
 In \autoref{fig:data_corrected} sind die um das Fitergebnis korrigierten Ströme aufgetragen.
 
 \subsection{Berechnung der Aktivierungsenergie nach der ersten Methode}
-Die Depolarisationsstromdichte $j(T)$ lässt sich nach \eqref{eq:dichte} durch $L(T_p)$, die Relaxationsrate
+Die Depolarisationsstromdichte $j(T)$ lässt sich nach \eqref{eq:strom} durch $L(T_p)$, die Relaxationsrate
 $\dd{N}{t}$ und das Dipolmoment $m$ ausdrücken:
 \begin{equation}
   \label{eq:strom}
@@ -132,7 +132,7 @@ Nimmt man einen linearen zusammenhang zwischen der Zeit $t$ und der Temperatur $
 Zusammen mit Gleichung \eqref{eq:time} ergibt sich \eqref{eq:final}.
 In \autoref{fig:rate} ist die Temperatur $T$ gegen die Messzeit $t$ aufgetragen, eine linearer Zusammenhang wurde über große Teile der
 Messung erreicht, die Heizrate wurde mit einer linearen Regression
-zu 
+zu
 \begin{equation}
   \input{build/rate.tex}
 \end{equation}
@@ -193,4 +193,12 @@ Einsetzen in \eqref{eq:time} liefert die  charackteristische Relaxationszeit
   \input{tau_0.tex}
 \end{equation}
 
-Die Fehler wurden durch Gaußsche Fehlerfortpflanzung.
+Die Fehler wurden durch Gaußsche Fehlerfortpflanzung bestimmt.
+Wenn die charackteristische Relaxationszeit $\tau_0$ in \eqref{eq:time} eingesetzt wird,
+erhält man den Verlauf der  Relaxationszeit in Abhängigkeit der Temperatur wie er in \autoref{fig:tau} zu sehen ist.
+\begin{figure}
+  \centering
+  \includegraphics{tau.pdf}
+  \caption{Temperaturabhängigkeit der Relaxationszeit.}
+  \label{fig:tau}
+\end{figure}

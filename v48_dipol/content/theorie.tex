@@ -59,6 +59,10 @@ soweit wie es die Gitterstruktur zulässt, in Feldlinienrichtung ausrichten.
 Durch thermische Energie wird jedoch zu jeder Zeit ein Teil der Dipole die Ausrichtung ändern.
 Der Anteil der in Feldrichtung ausgerichteten Dipole ist somit stochastisch bestimmt.
 Dies ist die Grundlage für die Anwendbarkeit der Langevin-Formel~\eqref{eq:langevin}.
+\begin{equation}
+  \label{eq:langevin}
+  L(x) = \coth(x) - \frac{1}{x}
+\end{equation}
 Diese beschreibt ursprünglich die Magnetisierung eines paramagnetischen Materials unter Einfluss eines äußeren Magnetfelds.
 Die Langevin-Formel ist die klassische
 Näherung der Brillouin-Formel~\eqref{eq:brillouin}.
@@ -77,7 +81,6 @@ Dann lässt sich die Langevin-Funktion parametrisieren mit
 \begin{equation}
   x= \frac{m E}{k_\text{B} T}.
 \end{equation}
-Der Verlauf der Langevin-Funktion ist in \autoref{fig:langevin} skizziert.
 
 \begin{equation}
   B_J(x) =   \frac{2J + 1}{2J} \coth\!\left( \frac{2J + 1}{2J} x \right)
@@ -85,10 +88,7 @@ Der Verlauf der Langevin-Funktion ist in \autoref{fig:langevin} skizziert.
   \label{eq:brillouin}
 \end{equation}
 
-\begin{equation}
-  \label{eq:langevin}
-  L(x) = \coth(x) - \frac{1}{x}
-\end{equation}
+
 %
 % \begin{figure}
 %   \includegraphics{langevin.pdf}
