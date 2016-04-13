@@ -98,9 +98,20 @@ Der Energieverlust ergibt sich zu:
   = \input{delta_E.tex}
 \end{equation}
 
-Mithilfe 
+Die Bethe–Bloch-Formel \eqref{eq:bethe} wird zu 
 \begin{equation}
-  d_\text{Gold} = \input{thickness.tex} .
+  \label{eq:bethe}
+  \frac{\increment E}{\increment x} = \frac{4 \pi^4 z^2 n e^4}{m_0 v^2 (4 \pi \epsilon_0)^2} \ln \frac{2 m_0 v^2}{I}
+\end{equation}
+genähert. 
+Für die Geschwindigkeit wird die mittlere Geschwindigkeit im Gold eingesetzt, die sich über 
+\begin{equation}
+  \bar{v} = \sqrt{\frac{2 (E + \sfrac{\increment E}{2})}{m_α}}\label{eq:shit-approximation}
+\end{equation}
+ergibt.
+Die Dicke der Goldfolie ergibt sich nun zu
+\begin{equation}
+  \increment x_\text{Gold} = \input{thickness.tex} .
 \end{equation}
 
 \begin{figure}
