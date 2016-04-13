@@ -12,10 +12,9 @@ build/main.pdf: FORCE | build
 
 plots = $(addprefix build/plots/, $(addsuffix .pdf, \
 	bethe_air \
-	pulse_with_amp \
+	pulses \
 	range_alpha \
-	scattering \
-	scattering_theory \
+	cross_section \
 ))
 
 

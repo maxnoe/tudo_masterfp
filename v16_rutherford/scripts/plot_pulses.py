@@ -35,7 +35,7 @@ def main():
     plt.ylabel('Spannung in Volt')
 
     plt.tight_layout(pad=0)
-    plt.savefig('build/plots/pulse_with_amp.pdf')
+    plt.savefig('build/plots/pulses.pdf')
 
 
 
