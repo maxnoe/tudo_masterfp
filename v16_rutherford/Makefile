@@ -13,6 +13,7 @@ build/main.pdf: FORCE | build
 plots = $(addprefix build/plots/, $(addsuffix .pdf, \
 	bethe_air \
 	pulses \
+	gold_thickness \
 	range_alpha \
 	cross_section \
 ))

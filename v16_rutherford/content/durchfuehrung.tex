@@ -21,10 +21,15 @@ Dieses Isotop besitzt drei Alpha-Linien\cite{alpha-spectrum}:
   \end{tabular}
 \end{center}
 
-Die Probe hatte im Oktober 1994 eine Aktivität von \SI{330}{\kilo\becquerel},
+Die Probe hatte im Oktober 1994 eine Aktivität von $A_0 = \SI{330}{\kilo\becquerel}$,
 hieraus ergibt sich mit der Halbwertszeit von \ce{^{241}Am} von \num{432.5} Jahren eine Aktivität zur Zeit der Versuchsdurchführung \SI{318}{\kilo\becquerel}.
 In den folgenden Berechnungen wird nur die Hauptlinie des Spektrums bei \SI{5.486}{MeV} berücksichtigt.
 
+\begin{equation}
+  A = A_0 \cdot \E^{
+    - \ln(2) \frac{t}{T_{\sfrac{1}{2}}}
+  } = \SI{318}{\kilo\becquerel}.
+\end{equation}
 
 Als Vorbereitungsaufgabe sollte das Bremsvermögen
 der Alpha-Teilchen in Luft berechnet bestimmt werden. Daraus solte dann der Kammerdruck bestimmt werden ab dem  ein Energieverlust
@@ -48,7 +53,7 @@ In \autoref{fig:alpha_range} ist die Reichweite der Alpha-Strahlung für mehrere
 \end{figure}
 
 Im vorliegenden Versuchaufbau befinden sich etwa \SI{10}{\cm} Atmosphäre zwischen Quelle und Detektor.
-Eine Reichweite von \SI{10}{\centi\meter} wird bei ca.\  \SI{200}{\milli\bar} erreicht.
+Eine Reichweite von \SI{10}{\centi\meter} wird bei ca.\  \SI{350}{\milli\bar} erreicht.
 
 An den Surface-Barrier Detektor wird ein Osziloskop angeschlossen.
 In \autoref{fig:pulse} sind beispielhaft zwei Pulse gezeigt.
@@ -57,6 +62,45 @@ Der obere Puls ist ohne Vorverstärker aufgenommen, der untere mit.
 \begin{figure}
   \centering
   \includegraphics[width=0.9\textwidth]{./build/plots/pulses.pdf}
-  \caption{Vom Oszilloskop aufgenommene Pulse ohne (oben) und mit (unten) Vorverstärkung.}
+  \caption{%
+    Vom Oszilloskop aufgenommene Pulse ohne (oben) und mit (unten) Vorverstärkung.
+  }%
   \label{fig:pulse}
+\end{figure}
+
+
+\subsection{Bestimmung der Foliendicke}
+
+Zunächst soll die Dicke der Goldfolie durch eine Energieverlustmessung bestimmt werden.
+
+Hierzu wird die mittlere Amplitude der Pulse des
+Surface-Barrier-Detektors für verschiedene Drücke bestimmt.
+Die Messung wird einmal mit und einmal ohne Folie durchgeführt.
+
+Da beim Surface-Barrier-Detektor die Höhe der Pulse proportional zur Energie der eintreffenden Teilchen ist,
+kann über den Unterschied zwischen der Messung mit und ohne Folie den Energieverlust $\increment E$ ermitteln.
+
+In \autoref{fig:thickness} sind die beiden Messreihen aufgetragen.
+Über eine lineare Extrapolation wird die Energie der α-Teilchen bei einem Druck von $0$ bestimmt, also für keinerlei Energieverlust in der Atmosphäre.
+
+Für die Parameter der linearen Regression ergibt sich:
+\input{fit_results.tex}
+Der Energieverlust ergibt sich zu:
+\begin{equation}
+  \increment E = E_α \cdot \left(1 - \frac{b_\text{ohne}}{b_\text{mit}}\right)
+  = \input{delta_E.tex}
+\end{equation}
+
+Hieraus ergibt sich über die Bethe-Bloch-Formel die Dicke der Goldfolie zu:
+\begin{equation}
+  d_\text{Gold} = \input{thickness.tex} .
+\end{equation}
+
+\begin{figure}
+  \centering
+  \includegraphics{gold_thickness.pdf}
+  \caption{%
+    Mittlere Pulshöhe am Oszilloskop gegen Kammerdruck für die Messungen mit bzw.\ ohne Folie.
+    Die durchgezogenen Linien zeigen das Ergebnis der linearen Regression.%
+  }\label{fig:thickness}
 \end{figure}

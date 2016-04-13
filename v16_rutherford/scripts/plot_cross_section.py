@@ -39,17 +39,17 @@ cross_section = N_meassurement / (N_source * n_0 * delta_omega)
 # print((N_source * n_0 * delta_omega).to('1/cm^2  1/s  1/radian^2'))
 print('cross_section is {}'.format(cross_section.to('barn/degree')))
 
-plt.plot(df.index, cross_section.to('barn/radian^2'), '+', label='Gemessener Streuquerschnitt')
+plt.plot(df.index, cross_section.to('barn/radian'), '+', label='Gemessener Streuquerschnitt')
 
 e = (c.e * u.coulomb)
 epsilon_0 = c.epsilon_0 * (u.ampere * u.second / (u.volt * u.meter))
 ts = np.linspace(0, df.index.max(), 2000) * u.degree
 alpha_energy = 5.408 * u.MeV
-scatter =  scattering(theta = ts, z = 2, Z =  79, alpha_energy =  alpha_energy).to('barn/degree')
+scatter =  scattering(theta = ts, z = 2, Z =  79, alpha_energy =  alpha_energy).to('barn/radian')
 
 plt.plot(ts[scatter.magnitude < 1e9], scatter[scatter.magnitude < 1e9], '-', label='Theoretischer Streuquerschnitt')
 plt.xlabel('Winkel in Grad')
-plt.ylabel(r'$\dd{\sigma}{\Omega} \Biggm/ \si{\barn\per\degree}$')
+plt.ylabel(r'$\dd{\sigma}{\Omega} \Biggm/ \si{\barn\per\steradian}$')
 
 plt.legend()
 # plt.show()
@@ -58,5 +58,5 @@ plt.legend()
 
 # df  = pd.read_csv('data/scattering_gold_4_micrometer.csv', comment='#', index_col=0)
 # plt.plot(df.index, df.counts, '+', label='4 ')
-# plt.tight_layout()
+plt.tight_layout(pad=0)
 plt.savefig('build/plots/cross_section.pdf')
