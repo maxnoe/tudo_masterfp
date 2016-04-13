@@ -74,19 +74,18 @@ def main():
         W.to(u.joule), W.to(u.eV))
     )
 
-    relaxation_time = (((u.boltzmann_constant * T_max**2) /
-                        (W * heating_rate)) *
-                       unp.exp(- W.to(u.joule).magnitude /
-                               (const.k * T_max.magnitude))
-                       )
+    tau_T_max = (
+        ((u.boltzmann_constant * T_max**2) / (W * heating_rate)) *
+        unp.exp((- W / (const.k * (u.joule / u.kelvin) * T_max)).to_base_units().magnitude)
+    )
 
-    print(relaxation_time.to(u.second))
+    print(tau_T_max.to(u.second))
 
     tau_0 = (
-        relaxation_time /
+        tau_T_max /
         unp.exp(W.to(u.joule).magnitude / (const.k * T_max.magnitude))
     )
-    print('Tau 0 : {}'.format(tau_0))
+    print('Tau 0 : {}'.format(tau_0.to(u.second)))
 
     with open('build/activation_work_2.tex', 'w') as f:
         f.write('W = ')
@@ -96,7 +95,7 @@ def main():
 
     with open('build/tau.tex', 'w') as f:
         f.write('\\tau(T_{max}) = ')
-        f.write(SI(relaxation_time.to('s').magnitude, r'\second'))
+        f.write(SI(tau_T_max.to('s').magnitude, r'\second'))
 
     with open('build/tau_0.tex', 'w') as f:
         f.write('\\tau_0 = ')
