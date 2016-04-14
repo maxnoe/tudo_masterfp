@@ -17,9 +17,18 @@
 
 \input{content/theorie.tex}
 \input{content/durchfuehrung.tex}
-% \input{content/auswertung.tex}
 \input{content/diskussion.tex}
 
 \printbibliography
+
+\newpage
+\appendix
+\section{Messdaten}
+\begin{table}
+  \centering
+  \caption{Gemessene Zählraten $N$ für eine Messdauer von $t = \SI{60}{\second}$ und verschiedene Winkel $θ$ für die Goldfolie mit $d=\SI{2}{\micro\meter}$.}
+  \label{tab:scattering}
+  \input{scattering_gold_2_micrometer.tex}
+\end{table}
 
 \end{document}
