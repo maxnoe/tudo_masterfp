@@ -7,8 +7,7 @@ from sklearn.cross_validation import StratifiedKFold
 from sklearn.ensemble import (
     RandomForestClassifier, ExtraTreesClassifier, GradientBoostingClassifier
 )
-from sklearn.pipeline import Pipeline
-from IPython import embed
+# from IPython import embed
 from sklearn.naive_bayes import GaussianNB
 
 from preparation import read_data, drop_useless
@@ -64,12 +63,12 @@ classifiers = {
     #     n_estimators=100, criterion='entropy', n_jobs=-1
     # ),
     'AdaBoost': GradientBoostingClassifier(
-        n_estimators=100, loss='exponential',
+        n_estimators=10, loss='exponential',
     ),
     'NaiveBayes': GaussianNB()
 }
 
-n_crossval = 10
+n_crossval = 3
 X = data.drop('label', axis=1).values
 y = data['label'].values
 for name, classifier in classifiers.items():
@@ -79,8 +78,8 @@ for name, classifier in classifiers.items():
 
 model = SelectFromModel(classifiers['RandomForest'], prefit=True)
 X_reduced = model.transform(X)
-print('Feature selection selected {} columns'.format(print(X_reduced.shape[1])))
+print('Feature selection selected {} columns'.format(X_reduced.shape[1]))
 for name, classifier in classifiers.items():
     print(name)
     performances_reduced = crossval(X_reduced, y, classifier, n_crossval)
-    performances.to_hdf(os.path.join('build/', name + '.hdf5'), 'performance_feature_selection')
+    performances_reduced.to_hdf(os.path.join('build/', name + '.hdf5'), 'performance_feature_selection')

@@ -22,7 +22,7 @@ infiles = [
 colors = [elem['color'] for elem in plt.rcParams['axes.prop_cycle']]
 
 for infile, color in zip(infiles, colors):
-    performance = pd.read_hdf(infile)
+    performance = pd.read_hdf(infile, 'performance')
 
     mean_precision = performance.mean(axis=0)['precision']
     std_precision = performance.std(axis=0)['precision']

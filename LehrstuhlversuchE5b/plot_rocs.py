@@ -4,6 +4,14 @@ import os
 from mpl_toolkits.axes_grid1.inset_locator import (
     zoomed_inset_axes, mark_inset
 )
+import sys
+
+if len(sys.argv) > 1:
+    group = sys.argv[1]
+else:
+    group = 'performance'
+
+print('plotting group {}'.format(group))
 
 fig = plt.figure(figsize=(4, 4))
 ax = fig.add_subplot(1, 1, 1, aspect='equal')
@@ -29,7 +37,7 @@ names = [os.path.splitext(os.path.basename(f))[0] for f in infiles]
 colors = [elem['color'] for elem in plt.rcParams['axes.prop_cycle']]
 lines = []
 for infile, color in zip(infiles, colors):
-    perf = pd.read_hdf(infile)
+    perf = pd.read_hdf(infile, key=group)
 
     # df = perf.mean(axis=0)
     # line, = ax.plot(
@@ -65,4 +73,4 @@ mark_inset(
 )
 ax.legend(lines, names)
 fig.tight_layout(pad=0)
-fig.savefig('build/rocs.pdf')
+fig.savefig('build/rocs_{}.pdf'.format(group))
