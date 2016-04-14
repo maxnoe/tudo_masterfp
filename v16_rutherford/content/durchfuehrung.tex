@@ -33,6 +33,7 @@ hieraus ergibt sich mit der Halbwertszeit von \ce{^{241}Am} von \num{432.5} Jahr
 In den folgenden Berechnungen wird nur die Hauptlinie des Spektrums bei \SI{5.486}{MeV} berücksichtigt.
 
 \begin{equation}
+  \label{eq:activity}
   A = A_0 \cdot \E^{
     - \ln(2) \frac{t}{T_{\sfrac{1}{2}}}
   } = \SI{318}{\kilo\becquerel}.
@@ -98,19 +99,19 @@ Der Energieverlust ergibt sich zu:
   = \input{delta_E.tex}
 \end{equation}
 
-Die Bethe–Bloch-Formel \eqref{eq:bethe} wird zu 
+Die Bethe–Bloch-Formel \eqref{eq:bethe} wird zu
 \begin{equation}
   \frac{\increment E}{\increment x} = \frac{4 \pi^4 z^2 n e^4}{m_0 v^2 (4 \pi \epsilon_0)^2} \ln \frac{2 m_0 v^2}{I}
 \end{equation}
-genähert. 
-Für die Geschwindigkeit wird die mittlere Geschwindigkeit im Gold eingesetzt, die sich über 
+genähert.
+Für die Geschwindigkeit wird die mittlere Geschwindigkeit im Gold eingesetzt, die sich über
 \begin{equation}
   \bar{v} = \sqrt{\frac{2 (E + \sfrac{\increment E}{2})}{m_α}}\label{eq:shit-approximation}
 \end{equation}
 ergibt.
 Die Dicke der Goldfolie ergibt sich nun zu
 \begin{equation}
-  \increment x_\text{Gold} = \input{thickness.tex} .
+  \increment x_{\ce{Au}} = \input{thickness.tex} .
 \end{equation}
 
 \begin{figure}
@@ -120,4 +121,44 @@ Die Dicke der Goldfolie ergibt sich nun zu
     Mittlere Pulshöhe am Oszilloskop gegen Kammerdruck für die Messungen mit bzw.\ ohne Folie.
     Die durchgezogenen Linien zeigen das Ergebnis der linearen Regression.%
   }\label{fig:thickness}
+\end{figure}
+
+\subsection{Bestimmung des Streuquerschnittes}
+\label{subs:cross_section}
+
+Zur Bestimmung des Streuquerschnittes werden Zählraten bei verschiedenen Winkeln $\theta$ bei evakuierter Kammer gemessen.
+Die gemessenen Werte sind in \autoref{tab:counts} aufgelistet. Zur Umrechnung in den differentiellen Streuquerschnitt wird zunächst
+aus der in \eqref{eq:activity} berechneten Quellaktivität von \SI{318}{\kilo \becquerel} abgeschätzt wieviele Teilchen von der Quelle
+am Detektor ankommen. Dazu wurde angenommen, dass die Quelle homogen in alle Richtungen abstrahlt.
+Aus der aktiven Detektoberfläche hinter dem Spalt $A_{Det} = \SI{2}{\mm} \cdot \SI{10}{\mm} = \SI{20}{\milli \meter \square}$ ergibt sich
+\begin{equation}
+  \label{eq:rate}
+  N_\text{Quelle} = \frac{A_{Det}}{4  \pi  R^2} \cdot \SI{318}{\kilo \becquerel} = \SI{389.6}{\becquerel}
+\end{equation}
+mit dem Abstand von Detektor zur Quelle $R = \SI{10,1}{\centi \meter}$.
+Der Raumwinkel $\Delta \Omega$ den der Spalt von der Streuposition in der Goldfolie einnimmt ergibt sich aus dem Abstand der Folie zum Detektor
+$l = \SI{45}{\mm}$ und der Spaltgröße $dx = \SI{2}{\mm}$ $dy = \SI{10}{\mm}$ zu
+\begin{equation}
+\increment \Omega = \arctan(\frac{dy}{2  l})  \arctan(\frac{dx}{2  l}) \cdot 4.
+\end{equation}
+
+Die Anzahl der Streupartner in der Goldfolie kann abgeschätzt werden durch die Dichte von Gold $\rho_{\ce{Au}} =  \SI{19.3}{\gram \per \cubic \centi \meter}$
+die Dicke der Folie $d_{\ce{Au}}  = \SI{2}{\micro \meter}$, die Avogadro-Konstante $N_\text{A} = \SI{6,022E23}{\per \mol}$ und die Molare Masse
+von Gold $M_{\ce{Au}} = \SI{197}{\gram \per \mol}$ zu
+\begin{equation}
+  n_0 = \frac{\rho_{\ce{Au}}  d_{\ce{Au}} N_\text{A} }{M_{\ce{Au}}}.
+\end{equation}
+
+Damit lässt sich der differentielle Streuquerschnitt berechnen zu
+\begin{equation}
+  \dd{\sigma}{\Omega} = \frac{N_\text{Messung}}{n_0 N_\text{Quelle} \increment \Omega}.
+\end{equation}
+
+Die Ergebnisse sind zusammen mit der Theoriekurve in \autoref{fig:cross_section} dargestellt.
+\begin{figure}
+  \centering
+  \includegraphics{cross_section.pdf}
+  \caption{%
+    Theoretischer und gemessener Streuquerschnitt von Alpha-Teilchen an einer Goldfolie.
+  }\label{fig:cross_section}
 \end{figure}
