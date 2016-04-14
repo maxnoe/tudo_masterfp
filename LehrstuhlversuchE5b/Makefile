@@ -9,7 +9,7 @@ all: build/poster.pdf
 
 
 build/poster.pdf: FORCE build/rocs.pdf build/precision_recall.pdf build/roc_table.tex| build
-	TEXINPUTS=images:build: latexmk $(texoptions) poster.tex
+	BIBINPUTS=.. TEXINPUTS=images:build: latexmk $(texoptions) poster.tex
 
 build/rocs.pdf: plot_rocs.py matplotlibrc $(performances) | build
 	TEXINPUTS=$(shell pwd): python plot_rocs.py
