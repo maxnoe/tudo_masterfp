@@ -5,11 +5,11 @@ import os
 fig = plt.figure()
 ax1 = fig.add_subplot(1, 2, 1, aspect='equal')
 ax2 = fig.add_subplot(1, 2, 2, aspect='equal')
-ax1.set_ylabel('Precision')
-ax2.set_ylabel('Recall')
+ax1.set_ylabel('Reinheit')
+ax2.set_ylabel('Effizienz')
 
 for ax in (ax1, ax2):
-    ax.set_xlabel('Prediction Threshold')
+    ax.set_xlabel('Vorhersageschwelle')
     ax.set_xlim(0.5, 1.02)
     ax.set_ylim(0.5, 1.02)
 
@@ -60,5 +60,5 @@ for infile, color in zip(infiles, colors):
     )
 
 ax1.legend(loc='lower right')
-fig.tight_layout(pad=0)
+fig.tight_layout(pad=0.1)
 fig.savefig('build/precision_recall.pdf', bbox_inches='tight')
