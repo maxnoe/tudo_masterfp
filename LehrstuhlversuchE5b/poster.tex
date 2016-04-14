@@ -88,7 +88,7 @@
           \end{column}\hfill
           \begin{column}{0.48\textwidth}%
             \justifying
-            Das IceCube Experiment befindent sich im Eis des geographischen Südpols.
+            Das IceCube Experiment befindet sich im Eis des geographischen Südpols.
             Das Ziel des Experiments ist das Messen von kosmischen Neutrinos.
             Hierbei stellt ein Untergrund aus atmosphärischen Myonen und Neutrinos eine
             große Herausforderung dar.
@@ -118,7 +118,7 @@
         Zur Signal/Untergrund-Trennung werden folgende Modelle erprobt:
         \begin{description}
           \item[Gaussian Naive Bayes] Ein einfaches Modell, dass von Gaußverteilten
-            Population ausgeht und ein Ereignis in die Population klassifiziert, für
+            Populationen ausgeht und ein Ereignis in die Population klassifiziert, für
             die die Wahrscheinlichkeit am größten ist.
           \item[Random Forest] Der Random Forest \cite{rf} besteht aus vielen Entscheidungsbäumen,
             die auf per Bootstrapping erzeugten Datensätzen gebildet werden.
@@ -127,7 +127,7 @@
             ebenfalls ein Ensemble-Modell aus Entscheidungsbäumen.
             Diese werden allerdings sequentiell trainiert und bei jedem neuen
             Training bekommen fehlklassifizierte Ereignisse ein erhöhtes Gewicht.
-            Zur Anwedung wird ein gewichtetes Mittel über alle Bäume gebildet.
+            Zur Anwendung wird ein gewichtetes Mittel über alle Bäume gebildet.
         \end{description}
       \end{block}
       \begin{block}{ROC-Kurven}
@@ -135,7 +135,7 @@
           \begin{figure}
             \centering
             \includegraphics[width=\linewidth]{rocs.pdf}
-            \caption{ROC-Kurven für die drei Untersuchten Modelle aus einer 10-fachen
+            \caption{ROC-Kurven für die drei untersuchten Modelle aus einer 10-fachen
             Kreuzvalidierung. AdaBoost und Random Forest sind ungefähr gleich stark,
           der Naive-Bayes Algorithmus ist start abgeschlagen.}
             \label{fig:name}
@@ -150,8 +150,8 @@
       \begin{block}{Data-Mining}%
         \begin{multicols}{2}
           Das sehr kleine Signal-zu-Untergrund-Verhältnis von ca.\ $1:10^6$ und die
-          riesigen Datenmengen des IceCube Exeperiments machen das
-          verwenden von Verfahren des maschinellen Lernens bzw. Data Minings nötig,
+          riesigen Datenmengen des IceCube Experiments machen das
+          Verwenden von Verfahren des maschinellen Lernens bzw. Data Minings nötig,
           um Signal-Ereignisse aus den Daten zu extrahieren.
 
           In diesem Versuch wird die Leistungsfähigkeit verschiedener Verfahren
@@ -161,8 +161,8 @@
           Signal sind hierbei alle Neutrino-Ereignisse, Untergrund sind hauptsächlich
           atmosphärische Myonen.
 
-          Verwendet werden Methoded des überwachten maschinellen Lernens.
-          Überwachte Lerner müssen auf einem Datensatzt mit bekannten Wahrheiten
+          Verwendet werden Methoden des überwachten maschinellen Lernens.
+          Überwachte Lerner müssen auf einem Datensatz mit bekannten Wahrheiten
           \enquote{trainiert} werden und können dann auf Daten mit unbekannter
           Wahrheit angewendet werden.
 
@@ -220,7 +220,7 @@
               \end{equation}
           \end{description}
 
-          Für Modelle die Wahrscheinlichkeitsaussagen treffen können, zum Beispiel
+          Für Modelle, die Wahrscheinlichkeitsaussagen treffen können, zum Beispiel
           ein Random Forest, sind diese Werte abhängig von der Vorhersageschwelle, ab
           der ein Ereignis einer Klasse zugewiesen wird.
 
