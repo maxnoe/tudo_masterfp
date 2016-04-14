@@ -49,7 +49,7 @@ n_0 = (density_gold * thickness * c.N_A / u.mol) / gold_mass
 print('n_0 is {}'.format(n_0.to('1/cm^2')))
 
 R = (41 + 39 + 17 + 4) * u.mm
-A_detector = 2 * np.pi * (0.5 * u.cm)**2
+A_detector = 2 * u.mm * 10 * u.mm
 N_source = (A_detector / (4 * np.pi * R**2)) * (318000) / u.second
 print('N_source is {} '.format(N_source.to('1/s')))
 
@@ -88,5 +88,5 @@ plt.xlabel('Winkel in Grad')
 plt.ylabel(r'$\dd{\sigma}{\Omega} \Biggm/ \si{\barn\per\steradian}$')
 
 plt.legend(loc='best')
-plt.tight_layout(pad=0)
+plt.tight_layout(pad=0.4)
 plt.savefig('build/plots/cross_section.pdf')
