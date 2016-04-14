@@ -124,7 +124,7 @@ def main():
     plt.plot(T, tau_0.to('s').magnitude.n * np.exp((W.to('J').magnitude.n / const.k / T)))
     plt.xlabel(r'$T \mathbin{/} \si{\kelvin}$')
     plt.ylabel(r'$\tau(T) \mathbin{/} \si{\second}$')
-    plt.tight_layout(pad=0)
+    plt.tight_layout(pad=1)
     plt.savefig('build/tau.pdf')
 
 
