@@ -41,7 +41,7 @@
 
 %% this is used to create an inline bibliography
 \usepackage[backend=biber, style=numeric]{biblatex}
-\addbibresource{biblatex-phys.bib}
+\addbibresource{lit.bib}
 
 \DeclareFieldFormat*{title}{\textit{#1}}
 \renewcommand*{\bibfont}{\footnotesize}
@@ -83,7 +83,7 @@
           \begin{column}{0.48\textwidth}%
             \begin{figure}
               \includegraphics[width=\linewidth]{images/icecube_schema.jpg}\\
-              \caption{Schematische Übersicht des IceCube Detektors.}
+              \caption{Schematische Übersicht des IceCube Detektors~\cite{icecube_pic}.}
             \end{figure}
           \end{column}\hfill
           \begin{column}{0.48\textwidth}%
@@ -100,8 +100,8 @@
             die an \num{86} einzelnen Strängen in einer Tiefe zwischen
             \SI{1450}{\meter} und \SI{2450}{\meter} im Eis eingelassen sind.
 
-            IceCube nimmt pro Tag etwa \SI{1}{\tera\byte} Daten. 
-            Der erste Nachweis kosmischer Neutrinos gelang 2013.
+            IceCube nimmt pro Tag etwa \SI{1}{\tera\byte} Daten.
+            Der erste Nachweis kosmischer Neutrinos gelang 2013~\cite{icecube_science}.
           \end{column}%
         \end{columns}%
       \end{block}%
@@ -120,10 +120,10 @@
           \item[Gaussian Naive Bayes] Ein einfaches Modell, dass von Gaußverteilten
             Population ausgeht und ein Ereignis in die Population klassifiziert, für
             die die Wahrscheinlichkeit am größten ist.
-          \item[Random Forest] Der Random Forest besteht aus vielen Entscheidungsbäumen,
+          \item[Random Forest] Der Random Forest \cite{rf} besteht aus vielen Entscheidungsbäumen,
             die auf per Bootstrapping erzeugten Datensätzen gebildet werden.
             An jedem Knoten der Bäume wird nur ein zufälliges Subset aller Attribute betrachtet.
-          \item[AdaBoosted Trees] Ähnlich dem Random Forest sind AdaBoosted Trees
+          \item[AdaBoosted Trees] Ähnlich dem Random Forest sind AdaBoosted Trees \cite{adaboost}
             ebenfalls ein Ensemble-Modell aus Entscheidungsbäumen.
             Diese werden allerdings sequentiell trainiert und bei jedem neuen
             Training bekommen fehlklassifizierte Ereignisse ein erhöhtes Gewicht.
@@ -149,13 +149,13 @@
     \begin{column}{0.5\textwidth}%
       \begin{block}{Data-Mining}%
         \begin{multicols}{2}
-          Das sehr kleine Signal-zu-Untergrund-Verhältnis von ca.\ $1:10^6$ und die 
-          riesigen Datenmengen des IceCube Exeperiments machen das 
-          verwenden von Verfahren des maschinellen Lernens bzw. Data Minings nötig, 
+          Das sehr kleine Signal-zu-Untergrund-Verhältnis von ca.\ $1:10^6$ und die
+          riesigen Datenmengen des IceCube Exeperiments machen das
+          verwenden von Verfahren des maschinellen Lernens bzw. Data Minings nötig,
           um Signal-Ereignisse aus den Daten zu extrahieren.
 
           In diesem Versuch wird die Leistungsfähigkeit verschiedener Verfahren
-          des maschinellen Lernens auf simulierten Daten des IceCube Experiments 
+          des maschinellen Lernens auf simulierten Daten des IceCube Experiments
           zur Klassifizierung in Signal bzw. Untergrund evaluiert.
 
           Signal sind hierbei alle Neutrino-Ereignisse, Untergrund sind hauptsächlich
@@ -163,7 +163,7 @@
 
           Verwendet werden Methoded des überwachten maschinellen Lernens.
           Überwachte Lerner müssen auf einem Datensatzt mit bekannten Wahrheiten
-          \enquote{trainiert} werden und können dann auf Daten mit unbekannter 
+          \enquote{trainiert} werden und können dann auf Daten mit unbekannter
           Wahrheit angewendet werden.
 
           Von großer Wichtigkeit ist die Validierung der Performanz des Modells.
@@ -195,8 +195,9 @@
             \centering
             \includegraphics[width=0.9\linewidth]{images/precisionrecall-crop.pdf}
             \caption{Darstellung der Konfusionsmatrix. Links: alle Signalereignisse,
-            rechts: alle Untergrundereignisse. Im Kreis befinden sich die als Signal klassifizierten Ereignisse, außerhalb die als Untergrund klassifizierten Ereignisse.}
-          \end{figure}        
+            rechts: alle Untergrundereignisse. Im Kreis befinden sich die als Signal klassifizierten Ereignisse,
+            außerhalb die als Untergrund klassifizierten Ereignisse~\cite{recall_precission_pic}.}
+          \end{figure}
           \columnbreak
 
           Ausgehend von der Konfusionsmatrix werden verschiedene Gütemaße für die maschinellen
@@ -219,14 +220,14 @@
               \end{equation}
           \end{description}
 
-          Für Modelle die Wahrscheinlichkeitsaussagen treffen können, zum Beispiel 
+          Für Modelle die Wahrscheinlichkeitsaussagen treffen können, zum Beispiel
           ein Random Forest, sind diese Werte abhängig von der Vorhersageschwelle, ab
           der ein Ereignis einer Klasse zugewiesen wird.
 
           Ein Gütemaß, welches unabhängig von der Vorhersageschwelle ist, ist die Fläche
           unter dem ROC-Graphen. Im ROC-Graphen wird die Effizienz gegen die Falsch-Positiv-Rate
           aufgetragen.
-          Für eine perfekte Klassifikation beträgt die Fläche unter dem ROC-Graph $1$.
+          Für eine perfekte Klassifikation beträgt die Fläche unter dem ROC-Graphen~$1$.
         \end{multicols}
       \end{block}
       \begin{block}{Reinheit und Effizienz}
