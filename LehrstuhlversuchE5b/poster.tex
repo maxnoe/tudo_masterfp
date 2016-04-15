@@ -8,7 +8,7 @@
 ]{beamerposter}
 
 \usetheme{tudoposter}
-
+\tcbuselibrary{breakable}
 \usepackage{fontspec}
 
 \usepackage{polyglossia}
@@ -108,21 +108,24 @@
       \begin{block}{Verwendete Software}%
         Für den Versuch wird der sogenannte \enquote{Scientific Python Stack} verwendet \cite{scipy,matplotlib,sklearn,numpy}.\par
         \begin{tikzpicture}
-          \node at (0, 0) {\includegraphics[height=3.5cm]{images/python.pdf}};
-          \node at (19cm, -0.5cm) {\includegraphics[height=3.5cm]{./images/pandas_logo.png}};
-          \node at (-3cm, -6cm) {\includegraphics[height=2.5cm]{images/matplotlib.pdf}};
-          \node at (10cm, -2cm) {\includegraphics[height=4.5cm]{images/scikit-learn.pdf}};
+          \node at (0, 0) {\includegraphics[height=2.5cm]{images/python.pdf}};
+          \node at (15cm, 0.0cm) {\includegraphics[height=2.5cm]{./images/pandas_logo.png}};
+          \node at (0, -4cm) {\includegraphics[height=2.5cm]{images/matplotlib.pdf}};
+          \node at (15cm, -4cm) {\includegraphics[height=3.0cm]{images/scikit-learn.pdf}};
         \end{tikzpicture}
       \end{block}
       \begin{block}{Verwendete Algorithmen}
         Zur Signal/Untergrund-Trennung werden folgende Modelle erprobt:
         \begin{description}
           \item[Gaussian Naive Bayes] Ein einfaches Modell, dass von Gaußverteilten
-            Populationen ausgeht und ein Ereignis in die Population klassifiziert, für
+            Population ausgeht und ein Ereignis in die Populationen klassifiziert, für
             die die Wahrscheinlichkeit am größten ist.
           \item[Random Forest] Der Random Forest \cite{rf} besteht aus vielen Entscheidungsbäumen,
             die auf per Bootstrapping erzeugten Datensätzen gebildet werden.
-            An jedem Knoten der Bäume wird nur ein zufälliges Subset aller Attribute betrachtet.
+            An jedem Knoten der Bäume wird nur ein zufälliges Subset aller Attribute betrachtet und davon das mit der
+            stärksten Trennkraft benutzt.
+            Random Forests können zusätzlich die \emph{Wichtigkeit} der Attribute für die Klassifikation
+            schätzen.
           \item[AdaBoosted Trees] Ähnlich dem Random Forest sind AdaBoosted Trees \cite{adaboost}
             ebenfalls ein Ensemble-Modell aus Entscheidungsbäumen.
             Diese werden allerdings sequentiell trainiert und bei jedem neuen
@@ -134,7 +137,7 @@
         \begin{multicols}{2}
           \begin{figure}
             \centering
-            \includegraphics[width=\linewidth]{rocs.pdf}
+            \includegraphics[width=\linewidth]{rocs_performance.pdf}
             \caption{ROC-Kurven für die drei untersuchten Modelle aus einer 10-fachen
             Kreuzvalidierung. AdaBoost und Random Forest sind ungefähr gleich stark,
           der Naive-Bayes Algorithmus ist start abgeschlagen.}
@@ -142,6 +145,22 @@
           \end{figure}
           \begin{center}
             \input{roc_table.tex}
+          \end{center}
+        \end{multicols}
+      \end{block}
+
+      \begin{block}[height=23.42cm]{Attributsauswahl}
+        \begin{multicols}{2}
+          \begin{figure}
+            \centering
+            \includegraphics[width=\linewidth]{rocs_performance_feature_selection.pdf}
+            \caption{ROC-Kurven für die drei Untersuchten Modelle nach einer
+              engeren Attributsauswahl. Die Auswahl erfolgte durch einen Random Forest.
+              Wie erwartet, wird die Klassifikationsgüte der auf Entscheidungsbäumen basierten Modelle nicht besser.}
+            \label{fig:name}
+          \end{figure}
+          \begin{center}
+            \input{roc_table_feature_selection.tex}
           \end{center}
         \end{multicols}
       \end{block}
@@ -203,12 +222,12 @@
           Ausgehend von der Konfusionsmatrix werden verschiedene Gütemaße für die maschinellen
           Lernverfahren berechnet.
           \begin{description}
-            \item[Reinheit] Anteil der wahren Signalereignisse in allen als Signal klassifizierten
+            \item[Reinheit (Precision)] Anteil der wahren Signalereignisse in allen als Signal klassifizierten
               Ereignisse:
               \begin{equation}
                 \mathrm{Reinheit} = \frac{\mathrm{tp}}{\mathrm{tp} + \mathrm{fp}}
               \end{equation}
-            \item[Effizienz] Anteil der als Signal klassifizierten Signalereignisse an
+            \item[Effizienz (Recall)] Anteil der als Signal klassifizierten Signalereignisse an
               allen Signalereignissen.
               \begin{equation}
                 \mathrm{Effizienz} = \frac{\mathrm{tp}}{\mathrm{tp} + \mathrm{fn}}
@@ -233,14 +252,15 @@
       \begin{block}{Reinheit und Effizienz}
         \includegraphics[width=\linewidth]{precision_recall.pdf}
       \end{block}
+
+      \begin{block}[]{Referenzen}
+        \begin{multicols}{2}
+          \footnotesize%
+          \printbibliography%
+        \end{multicols}
+      \end{block}
     \end{column}%
   \end{columns}%
 
-  \vspace*{\fill}
-  \begin{block}[equal height group=bottom, fonttitle=\normalsize]{Referenzen}
-    \begin{multicols}{3}
-      \nocite{*}\footnotesize%
-      \printbibliography%
-    \end{multicols}
-  \end{block}
+  % \vspace*{\fill}
 \end{document}
