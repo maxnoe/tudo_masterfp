@@ -57,18 +57,18 @@ data = drop_useless(read_data('./signal.csv', './background.csv'))
 nb = GaussianNB()
 classifiers = {
     'RandomForest': RandomForestClassifier(
-        n_estimators=5, criterion='entropy', n_jobs=-1
+        n_estimators=100, criterion='entropy', n_jobs=-1
     ),
     # 'ExtraTrees': ExtraTreesClassifier(
     #     n_estimators=100, criterion='entropy', n_jobs=-1
     # ),
     'AdaBoost': GradientBoostingClassifier(
-        n_estimators=5, loss='exponential',
+        n_estimators=100, loss='exponential',
     ),
     'NaiveBayes': GaussianNB()
 }
 
-n_crossval = 3
+n_crossval = 10
 X = data.drop('label', axis=1).values
 y = data['label'].values
 for name, classifier in classifiers.items():
