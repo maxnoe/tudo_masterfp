@@ -1,0 +1,61 @@
+\section{Einleitung}
+% In diesem Versuch soll die Relaxationszeit von Dipolen in Kristallen vermessen werden.
+%
+In diesem Versuch werden die Leitungseigenschaften von verschiedenen Koaxialkabeln vermessen.
+
+
+\section{Koaxialkabel}
+\label{sec:koax}
+Koaxialkabel werden zur störungsfreien Übertragung von hochfrequenten Signalen genutzt.
+Sie bestehen aus einem Leiter im Inneren, einer Isolationsschicht und einer weiteren Leitungsschicht außen.
+Durch die äußere Schicht werden externe Störsignale abgeschirmt.
+In Abbildung \ref{fig:koax} ist der Querschnitt durch ein Koaxialkabel dargestellt.
+Eingezeichnet sind außerdem die Richtungen der Feldkomponenten des Elektrischen und Magnetischen Felds $\vec{E}$ und $\vec{H}$.
+\begin{figure}
+  \centering
+  \input{./pictures/koax.tex}
+  \caption{Schematische Darstellung eines Koaxialkabels.}
+  \label{fig:koax}
+\end{figure}
+
+Das elektrische Feld breitet sich radial vom Innen- zum Außenleiter aus.
+Das Magnetfeld läuft an jeder Stelle orthogonal zum E-Feld kreisförmig um den inneren Leiter.
+An das Koaxialkabel werden Wechselspannungen angelegt.
+Solang eine materialabhängige Grenzfrequenz nicht überschritten wird breiten sich dann die Felder in dem Kabel
+wellenförmig aus.
+Die Ausbreitungsrichtung der Wellen, also die des Energie- und Informationsübertrags, geht in Richtung des Poynting-Vektors.
+Dieser ist definiert als
+\begin{equation}
+  \label{eq:poynting}
+  \vec{S} = \vec{E} \times \vec{B}.
+\end{equation}
+Durch das Kreuzprodukt steht der Poynting-Vektor immer senkrecht auf den Feldern. In der Zeichnung steht er also senkrecht
+zur Bildfläche.
+
+Zwischen den leitenden Elementen des Kabels entsteht durch Potentialunterschied eine Kapazität $C$.
+Abhängig vom Material welches für die Isolationsschicht verwendet wird, entsteht eine Induktivität $L$.
+Das Koaxialkabel kann durch die Ersatzschaltung in Abbildung~\ref{fig:circuit} dargestellt werden.
+\begin{figure}
+  \centering
+  \input{./pictures/circuit.tex}
+  \caption{Ersatzschaltbild eines optimalen Koaxialkabels.}
+  \label{fig:circuit}
+\end{figure}
+
+In einem physikalischen Leiter kommt es außerdem zu Ohmschen Verlusten. Zu dem Ersatzschaltbild müssen demnach noch Widerstände hinzugefügt werden.
+\begin{figure}
+  \centering
+  \input{./pictures/circuit_ohm.tex}
+  \caption{Ersatzschaltbild eines Koaxialkabels mit ohmschen Verlusten.}
+  \label{fig:circuit_ohm}
+\end{figure}
+
+
+\subsection{Telegraphengleichung}
+Die Ausbreitung der elektromagnetischen Wellen kann durch die Telegraphengleichung beschrieben werden.
+Es handelt sich dabei um eine gedämpfte Wellengleichung.
+
+\begin{equation}
+  \label{eq:telegraph}
+  \frac{\partial^2 U}{\partial x^2} = LC \dddp{U}{t} + (LG + RC)\ddp{U}{t} + RGU
+\end{equation}

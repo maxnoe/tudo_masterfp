@@ -8,6 +8,18 @@
 \NewDocumentCommand\dd{m m}{\ensuremath{
 	\frac{\mathinner{\symup{d} #1}}{\mathinner{\symup{d} #2}
 }}}
+
+
+\NewDocumentCommand\ddp{m m}{\ensuremath{
+	\frac{\mathinner{\partial #1}}{\mathinner{\partial #2}
+}}}
+
+\NewDocumentCommand\dddp{m m}{\ensuremath{
+	\frac{\mathinner{\partial^2 #1}}{\mathinner{\partial #2^2}
+}}}
+
+
+
 \let\vaccent=\v % alten Befehl kopieren
 \RenewDocumentCommand \v {} % Befehl überschreiben
 {

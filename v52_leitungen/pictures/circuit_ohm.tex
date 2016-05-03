@@ -1,0 +1,13 @@
+\begin{circuitikz}[american voltages]
+\draw
+  % stator circuit
+  (0,0) to [open, v^>=$U$] (0,3) %
+  to [short, *- ] (2,3) %
+  to [R, l=$R_L$] (3,3) %
+  to [L, l=$L$] (5,3) %
+  to [R, l=$G$] (5,0) %
+  (7,3) to [C, l=$C$] (7,0) %
+  (5,3)    to [short, -*] (10,3) %
+
+  (0,0) to [short, *-*] (10,0);
+\end{circuitikz}
