@@ -68,8 +68,8 @@ if __name__ == '__main__':
     fft_long['f'] /= 1e6
     fft_short['f'] /= 1e6
 
-    peaks_long, _ = peakdet(fft_long['A'].values, 10)
-    peaks_short, _ = peakdet(fft_short['A'].values, 10)
+    peaks_long, _ = peakdet(fft_long['A'].values, 11)
+    peaks_short, _ = peakdet(fft_short['A'].values, 11)
 
     assert len(peaks_long) == len(peaks_short)
 
@@ -105,5 +105,5 @@ if __name__ == '__main__':
     ax2.set_ylim(-6, 0.5)
 
 
-    fig.tight_layout(pad=0)
+    fig.tight_layout(pad=0.3)
     fig.savefig('build/attenuation.pdf')
