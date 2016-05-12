@@ -5,11 +5,17 @@ mplfiles = ../matplotlibrc ../header-matplotlib.tex
 pyoptions = MATPLOTLIBRC=$(shell pwd)/../ TEXINPUTS=$(shell pwd)/..: 
 
 
-build/attenuation.pdf: data/att_long_102_9kHz_fft.csv data/att_short_102_9kHz_fft.csv scripts/attenuation_factor.py $(mplfiles)
+build/attenuation_fft.pdf build/attenuation_signal.pdf: data/att_long_102_9kHz_fft.csv data/att_short_102_9kHz_fft.csv scripts/attenuation_factor.py $(mplfiles)
 	$(pyoptions) python scripts/attenuation_factor.py
 
 
-build/main.pdf: FORCE | build
+plots = $(addprefix build/, $(addsuffix .pdf, \
+	attenuation_signal \
+	attenuation_fft \
+	))
+
+
+build/main.pdf: FORCE $(plots) | build
 	TEXINPUTS=build:..: \
 	BIBINPUTS=..: \
 	max_print_line=1048576 \
@@ -20,7 +26,7 @@ build/main.pdf: FORCE | build
 	  --halt-on-error \
 	main.tex
 
-preview: FORCE | build
+preview: FORCE $(plots) | build
 	TEXINPUTS=build:..: \
 	BIBINPUTS=..: \
 	max_print_line=1048576 \

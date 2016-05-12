@@ -56,6 +56,33 @@ def peakdet(v, delta, x=None):
 
 if __name__ == '__main__':
 
+    # just plot the two rectangular pulses
+    data_short = pd.read_csv(
+        './data/att_short_102_9kHz.csv',
+        header=2, names=['f', 'U']
+    )
+
+    data_long = pd.read_csv(
+        './data/att_long_102_9kHz.csv',
+        header=2, names=['f', 'U']
+    )
+    data_long['f'] /= 1e6
+    data_short['f'] /= 1e6
+
+    fig, ax = plt.subplots()
+
+    ax.plot('f', 'U', data=data_short, label='kurzes Kabel')
+    ax.plot('f', 'U', data=data_long, label='\SI{85}{\meter}-Kabel')
+
+    ax.set_xlabel(r'$f \mathbin{/} \si{\mega\hertz}$')
+    ax.set_ylabel(r'$U \mathbin{/} \si{\volt}$')
+
+    ax.legend(loc='best')
+
+    fig.tight_layout(pad=0)
+    fig.savefig('build/attenuation_signal.pdf')
+
+    # now let's plot the fft and calculate the actual attenuation
     fft_short = pd.read_csv(
         './data/att_short_102_9kHz_fft.csv',
         header=2, names=['f', 'A']
@@ -76,7 +103,7 @@ if __name__ == '__main__':
     attenuation = fft_long['A'].loc[peaks_long].values - fft_short['A'].loc[peaks_short].values
 
     fig, (ax1, ax2) = plt.subplots(2, 1, sharex=True)
-    ax1.plot('f', 'A', data=fft_long, label='85m-Kabel')
+    ax1.plot('f', 'A', data=fft_long, label='\SI{85}{\meter}-Kabel')
     ax1.plot('f', 'A', data=fft_short, label='kurzes Kabel')
 
     ax1.plot(
@@ -104,6 +131,5 @@ if __name__ == '__main__':
 
     ax2.set_ylim(-6, 0.5)
 
-
     fig.tight_layout(pad=0.3)
-    fig.savefig('build/attenuation.pdf')
+    fig.savefig('build/attenuation_fft.pdf')
