@@ -2,6 +2,12 @@ all: build/main.pdf
 
 mplfiles = ../matplotlibrc ../header-matplotlib.tex
 
+pyoptions = MATPLOTLIBRC=$(shell pwd)/../ TEXINPUTS=$(shell pwd)/..: 
+
+
+build/attenuation.pdf: data/att_long_102_9kHz_fft.csv data/att_short_102_9kHz_fft.csv scripts/attenuation_factor.py $(mplfiles)
+	$(pyoptions) python scripts/attenuation_factor.py
+
 
 build/main.pdf: FORCE | build
 	TEXINPUTS=build:..: \

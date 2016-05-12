@@ -1,35 +1,11 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
-from scipy.signal import find_peaks_cwt
-from IPython import embed
 
 
 def peakdet(v, delta, x=None):
     """
     see https://gist.github.com/endolith/250860
-    Converted from MATLAB script at http://billauer.co.il/peakdet.html
-
-    Returns two arrays
-
-    function [maxtab, mintab]=peakdet(v, delta, x)
-    %PEAKDET Detect peaks in a vector
-    %        [MAXTAB, MINTAB] = PEAKDET(V, DELTA) finds the local
-    %        maxima and minima ("peaks") in the vector V.
-    %        MAXTAB and MINTAB consists of two columns. Column 1
-    %        contains indices in V, and column 2 the found values.
-    %
-    %        With [MAXTAB, MINTAB] = PEAKDET(V, DELTA, X) the indices
-    %        in MAXTAB and MINTAB are replaced with the corresponding
-    %        X-values.
-    %
-    %        A point is considered a maximum peak if it has the maximal
-    %        value, and was preceded (to the left) by a value lower by
-    %        DELTA.
-
-    % Eli Billauer, 3.4.05 (Explicitly not copyrighted).
-    % This function is released to the public domain; Any use is allowed.
-
     """
     maxtab = []
     mintab = []
@@ -64,13 +40,13 @@ def peakdet(v, delta, x=None):
 
         if lookformax:
             if this < mx-delta:
-                maxtab.append((mxpos, mx))
+                maxtab.append(mxpos)
                 mn = this
                 mnpos = x[i]
                 lookformax = False
         else:
             if this > mn+delta:
-                mintab.append((mnpos, mn))
+                mintab.append(mnpos)
                 mx = this
                 mxpos = x[i]
                 lookformax = True
@@ -80,26 +56,54 @@ def peakdet(v, delta, x=None):
 
 if __name__ == '__main__':
 
-    rectangle_short = pd.read_csv(
+    fft_short = pd.read_csv(
         './data/att_short_102_9kHz_fft.csv',
         header=2, names=['f', 'A']
     )
-    rectangle_long = pd.read_csv(
+    fft_long = pd.read_csv(
         './data/att_long_102_9kHz_fft.csv',
         header=2, names=['f', 'A']
     )
 
-    peaks_long, _ = peakdet(rectangle_long['A'].values, 10)
-    peaks_short, _ = peakdet(rectangle_short['A'].values, 10)
-    print(peaks_short.shape)
-    print(peaks_long.shape)
+    fft_long['f'] /= 1e6
+    fft_short['f'] /= 1e6
 
-    fig, ax = plt.subplots()
-    ax.plot('f', 'A', data=rectangle_long, label='85m-Kabel')
-    ax.plot('f', 'A', data=rectangle_short, label='kurzes Kabel')
+    peaks_long, _ = peakdet(fft_long['A'].values, 10)
+    peaks_short, _ = peakdet(fft_short['A'].values, 10)
 
-    ax.plot('f', 'A', '.', data=rectangle_long.iloc[peaks_long[:, 0]], label='85m-Kabel')
-    ax.plot('f', 'A', '.', data=rectangle_short.iloc[peaks_short[:, 0]], label='kurzes Kabel')
+    assert len(peaks_long) == len(peaks_short)
 
-    ax.legend()
-    plt.show()
+    attenuation = fft_long['A'].loc[peaks_long].values - fft_short['A'].loc[peaks_short].values
+
+    fig, (ax1, ax2) = plt.subplots(2, 1, sharex=True)
+    ax1.plot('f', 'A', data=fft_long, label='85m-Kabel')
+    ax1.plot('f', 'A', data=fft_short, label='kurzes Kabel')
+
+    ax1.plot(
+        'f', 'A', '.',
+        data=fft_long.iloc[peaks_long], label='85m-Kabel'
+    )
+    ax1.plot(
+        'f', 'A', '.',
+        data=fft_short.iloc[peaks_short],
+        label='kurzes Kabel',
+    )
+
+    ax1.legend(ncol=2)
+    ax1.set_ylabel(r'$A \mathbin{/} \si{\deci\bel}$')
+
+    ax1.set_xlim(0, 5)
+    ax1.set_ylim(-35, 25)
+
+    print(fft_long['f'].loc[peaks_long].values.shape)
+    print(attenuation.shape)
+
+    ax2.plot(fft_long['f'].loc[peaks_long], attenuation, '.')
+    ax2.set_xlabel(r'$f \mathbin{/} \si{\mega\hertz}$')
+    ax2.set_ylabel(r'$α \mathbin{/} \si{\deci\bel}$')
+
+    ax2.set_ylim(-6, 0.5)
+
+
+    fig.tight_layout(pad=0)
+    fig.savefig('build/attenuation.pdf')
