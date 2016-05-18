@@ -1,2 +1,39 @@
 \section{Auswertung}
 \label{sec:Auswertung}
+
+
+\subsection{Messung der Dämpfungskonstante}
+
+Für die Messung der frequenzabhängingen Dämpfung wird eine Rechteckspannung 
+jeweils über ein kurzes Kabel (ca.\ \SI{25}{\centi\meter}) und das zu untersuchende \SI{85}{\meter}-Kabel in ein Oszilloskop gespeist.
+
+Da eine Rechteckspannung durch eine Fourierreihe aus vielen Frequenzen erzeugt wird,
+kann die Dämpfungskonstante in einer Messung für viele Frequenzen bestimmt werden.
+Hierzu werden die gemessenen Spannungen im Oszilloskop Fourier-transformiert.
+
+Die eingespeisten Rechteckspannungen sind in \autoref{fig:attenuation_signal} dargestellt.
+Es lässt sich erkennen, dass die Form für das kurze Kabel deutlich \enquote{eckiger} ist als bei dem Signal, dass durch das \SI{85}{\meter}-Kabel geleitet wurde.
+Dies deutet auf eine Abschwächung der höheren Frequenzen hin.
+
+\begin{figure}
+  \centering
+  \includegraphics{attenuation_signal.pdf}
+  \caption{%
+    Rechteckspannung im Oszilloskop nach Leitung durch das kurze bzw.\ \SI{85}{\meter}-Kabel.%
+  }\label{fig:attenuation_signal}
+\end{figure}
+
+In \autoref{fig:attenuation_fft} sind die Fourier-transformierten Spannungswerte gegen die Frequenzen aufgetragen.
+Die Dämpfungskonstante wird für jedes lokale Maxima im Frequenzraum bestimmt,
+da das Oszilloskop bereits die Amplitude $A$ in \si{\deci\bel} ermittelt, ergibt sich die Dämpfungskonstante $α$ zu
+\begin{equation}
+  α / \si{\deci\bel} = (A_{\SI{85}{\meter}} - A_\text{kurz}) / \si{\deci\bel}
+\end{equation}
+
+\begin{figure}
+  \centering
+  \includegraphics{attenuation_fft.pdf}
+  \caption{%
+    Fourier-transformiertes Signal mit lokalen Maxima für beide Kabel, sowie die für die lokalen Maxima bestimmte Dämpfungskonstante $α$.
+  }\label{fig:attenuation_fft}
+\end{figure}
