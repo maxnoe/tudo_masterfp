@@ -1,32 +1,39 @@
 import numpy as np
 from configparser import ConfigParser
+import re
 
 
 def read_nid(filename):
 
-    metadata = ConfigParser()
     with open(filename, 'rb') as f:
+        raw_metadata, raw_data = f.read().split(b'#!')
 
-        found_empty_lines = 0
-        lines = []
-        while found_empty_lines < 2:
-            line = f.readline()
-            if line == b'\r\n':
-                found_empty_lines += 1
-            else:
-                found_empty_lines = 0
+    metadata_lines = raw_metadata.decode('latin1').splitlines()
+    # remove lines starting with --
+    metadata_str = '\n'.join(filter(lambda x: not x.startswith('--'), metadata_lines))
+    metadata = ConfigParser()
+    metadata.read_string(metadata_str)
 
-            if not line.startswith(b'--'):
-                lines.append(line)
-        rawdata = f.read()
+    keys = [
+        key for key in metadata.keys()
+        if re.match('DataSet-[0-9]+:[0-9]+', key)
+    ]
 
-    metadata.read_string(b''.join(lines).decode('latin1'))
+    data = []
+    bytesread = 0
+    for key in keys:
+        points = metadata.getint(key, 'points')
+        lines = metadata.getint(key, 'lines')
+        bits = metadata.getint(key, 'savebits')
+        data.append(np.frombuffer(
+            raw_data,
+            dtype='float{}'.format(bits),
+            count=lines * points,
+            offset=bytesread,
+        ).reshape((lines, points)))
+        bytesread += lines * points * bits // 8
 
-    data = np.frombuffer(rawdata, dtype='float16')
-    N = np.sqrt((data.shape[0] - 1) / 4)
-
-    return metadata, data[1:].reshape((4, N, N))
-
+    return metadata, np.array(data)
 
 if __name__ == '__main__':
     import sys
@@ -47,4 +54,3 @@ if __name__ == '__main__':
         plt.colorbar(ax=plt.gca())
 
     plt.show()
-
