@@ -1,6 +1,15 @@
 \section{Auswertung}
 \label{sec:Auswertung}
 
+\subsection{Messung der Kabeleigenschaften}
+
+\begin{figure}
+  \centering
+  \includegraphics{lcr.pdf}
+  \caption{Widerstand $R$, Kapazität $C$ und Induktivität $L$ für das \texttt{rg085}-Kabel mit einer Länge von \SI{85}{\meter} in Abhängigkeit der Frequenz der angelegten Sinusspannung.}
+  \label{fig:lcr}
+\end{figure}
+
 
 \subsection{Messung der Dämpfungskonstante}
 
@@ -36,4 +45,22 @@ da das Oszilloskop bereits die Amplitude $A$ in \si{\deci\bel} ermittelt, ergibt
   \caption{%
     Fourier-transformiertes Signal mit lokalen Maxima für beide Kabel, sowie die für die lokalen Maxima bestimmte Dämpfungskonstante $α$.
   }\label{fig:attenuation_fft}
+\end{figure}
+
+\subsection{Bestimmung der Kabellänge}
+
+\begin{figure}
+  \centering
+  \includegraphics{length_measurement.pdf}
+  \caption{Signal des NIM-Pulses mit Reflektion, der Zeitabstand zwischen den beiden Pulsen wird zur Bestimmung der Kabellänge genutzt.}
+  \label{fig:length}
+\end{figure}
+
+\subsection{Vermessung von unbekannten Abschlusswiderständen}
+
+\begin{figure}
+  \centering
+  \includegraphics{unknown.pdf}
+  \caption{Signalspannung am Oszilloskop für drei unbekannte Abschlusswiderstände.}
+  \label{fig:unknown}
 \end{figure}
