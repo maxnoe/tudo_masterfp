@@ -76,6 +76,7 @@ if __name__ == '__main__':
 
     ax.set_xlabel(r'$f \mathbin{/} \si{\mega\hertz}$')
     ax.set_ylabel(r'$U \mathbin{/} \si{\volt}$')
+    ax.set_ylim(-12, 18)
 
     ax.legend(loc='best')
 
