@@ -26,6 +26,9 @@ plots = $(addprefix build/, $(addsuffix .pdf, \
 	attenuation_signal \
 	attenuation_fft \
 	lcr \
+	length_measurement \
+	unknown \
+	multiple_reflection \
 	))
 
 

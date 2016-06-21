@@ -34,7 +34,7 @@ def main():
     c_koax = c(epsilon_r*epsilon, d, D)
 
     l_koax = l(mu, d, D)
-    print('Kapazitätsbelag: {}, Induktivitätsbelag: {}'.format(c_koax.to('nF / m'), l_koax.to('mH / m')))
+    print('Kapazitätsbelag: {}, Induktivitätsbelag: {}'.format(c_koax.to('nF / m'), l_koax.to('nH / m')))
     # mu_r = 1
     # Rs = np.sqrt(np.pi )
 
