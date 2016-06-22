@@ -17,7 +17,6 @@ if __name__ == '__main__':
 
         ax.plot('f', key, 'o', data=data, ms=4, mew=0)
 
-
         ax.set_ylabel(r'${} \mathbin{{/}} \si{{{}}} $'.format(key, unit))
         ax.set_xlabel('')
 
