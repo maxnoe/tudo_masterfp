@@ -2,7 +2,7 @@ all: build/main.pdf
 
 mplfiles = ../matplotlibrc ../header-matplotlib.tex
 
-pyoptions = MATPLOTLIBRC=$(shell pwd)/../ TEXINPUTS=$(shell pwd)/..: 
+pyoptions = MATPLOTLIBRC=$(shell pwd)/../ TEXINPUTS=$(shell pwd)/..:
 
 build/impuls.pdf: scripts/plot_impuls.py
 	$(pyoptions) python scripts/plot_impuls.py
@@ -23,6 +23,11 @@ build/unknown.pdf: scripts/plot_unknown.py | build
 build/multiple_reflection.pdf: scripts/plot_multiple_reflection.py | build
 	$(pyoptions) python scripts/plot_multiple_reflection.py
 
+build/length.tex: scripts/calc_length.py | build
+	python scripts/calc_length.py
+
+
+
 
 
 plots = $(addprefix build/, $(addsuffix .pdf, \
@@ -32,10 +37,11 @@ plots = $(addprefix build/, $(addsuffix .pdf, \
 	length_measurement \
 	unknown \
 	multiple_reflection \
+	impuls \
 	))
 
 
-build/main.pdf: FORCE $(plots) | build
+build/main.pdf: FORCE $(plots) build/length.tex | build
 	TEXINPUTS=build:..: \
 	BIBINPUTS=..: \
 	max_print_line=1048576 \
@@ -46,7 +52,7 @@ build/main.pdf: FORCE $(plots) | build
 	  --halt-on-error \
 	main.tex
 
-preview: FORCE $(plots) | build
+preview: FORCE $(plots) build/length.tex | build
 	TEXINPUTS=build:..: \
 	BIBINPUTS=..: \
 	max_print_line=1048576 \
