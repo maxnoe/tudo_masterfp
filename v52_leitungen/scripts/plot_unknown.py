@@ -3,10 +3,6 @@ import matplotlib.pyplot as plt
 
 
 if __name__ == '__main__':
-
-    df2 = pd.read_csv('./data/k2a2.csv', header=2, names=['t', 'U'])
-    df3 = pd.read_csv('./data/k1a6.csv', header=2, names=['t', 'U'])
-
     fig, axs = plt.subplots(3, 1, sharex=True)
 
     for ax, label in zip(axs, ('k1a4', 'k2a2', 'k1a6')):
@@ -26,4 +22,3 @@ if __name__ == '__main__':
 
     fig.tight_layout(pad=0, h_pad=0.5)
     fig.savefig('build/unknown.pdf')
-
