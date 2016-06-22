@@ -13,7 +13,7 @@
 
 \subsection{Messung der Dämpfungskonstante}
 
-Für die Messung der frequenzabhängingen Dämpfung wird eine Rechteckspannung 
+Für die Messung der frequenzabhängingen Dämpfung wird eine Rechteckspannung
 jeweils über ein kurzes Kabel (ca.\ \SI{25}{\centi\meter}) und das zu untersuchende \SI{85}{\meter}-Kabel in ein Oszilloskop gespeist.
 
 Da eine Rechteckspannung durch eine Fourierreihe aus vielen Frequenzen erzeugt wird,
@@ -58,12 +58,22 @@ da das Oszilloskop bereits die Amplitude $A$ in \si{\deci\bel} ermittelt, ergibt
 \end{figure}
 
 \subsection{Vermessung von unbekannten Abschlusswiderständen}
+Es sollte der Spannungsverlauf für verschiedene Abschlüsse gemessen werden. Mithilfe des Oszilloskops wurde der Zeitverlauf der Spannung für
+drei unbekannte Abschlusswiderstände angeschlossen. Für Kasten 1 der Anschluss mit der Nummer 4. Für Kasten 2 jeweils Anschlüsse 2 und 6.
+Die aufgezeichneten Spannungsverläufe werden mit denen verglichen, welche in Tabelle 2 der Anleitung~\cite{anleitung} dargestellt sind.
+Die Spannungskurve für den Anschluss 4 von Kasten 1 ähnelt dem Verlauf von Reihe 4 in Tabelle 2.
+Es handelt sich also mutmasslich um einen Abschlusses welcher aus einer Reihenschaltung aus ohmschen Widerstand und Induktivität besteht (siehe
+Abbildung~\ref{fig:end1}).
+
+
 
 \begin{figure}
   \centering
   \includegraphics{unknown.pdf}
   \caption{%
     Signalspannung am Oszilloskop für drei unbekannte Abschlusswiderstände.
+    Kasten 1 der Anschluss mit der Nummer 4 in der obersten Spannungskurve. Kasten 2 jeweils Anschlüsse 2 und 6 in den
+    unteren Spannungskurven.
   }\label{fig:unknown}
 \end{figure}
 
