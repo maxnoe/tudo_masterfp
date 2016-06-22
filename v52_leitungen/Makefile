@@ -4,6 +4,9 @@ mplfiles = ../matplotlibrc ../header-matplotlib.tex
 
 pyoptions = MATPLOTLIBRC=$(shell pwd)/../ TEXINPUTS=$(shell pwd)/..: 
 
+build/impuls.pdf: scripts/plot_impuls.py
+	$(pyoptions) python scripts/plot_impuls.py
+
 
 build/attenuation_fft.pdf build/attenuation_signal.pdf: data/att_long_102_9kHz_fft.csv data/att_short_102_9kHz_fft.csv scripts/attenuation_factor.py $(mplfiles)
 	$(pyoptions) python scripts/attenuation_factor.py

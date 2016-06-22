@@ -16,6 +16,8 @@ if __name__ == '__main__':
     pulse['t'] *= 1e6
     nim['t'] *= 1e6
 
+    pulse['U'] -= pulse['U'].loc[:300].mean()
+
     max_position = pulse['U'].argmax()
     pulse['t'] -= pulse['t'].loc[max_position]
     min_position = nim['U'].argmin()
@@ -32,7 +34,7 @@ if __name__ == '__main__':
     ax2.set_xlim(-0.05, 0.6)
     ax2.set_ylim(-0.55, 0.15)
 
-    ax1.set_ylim(-0.62, 0.02)
+    # ax1.set_ylim(-0.62, 0.02)
 
     fig.tight_layout(pad=0, h_pad=0.3)
     fig.savefig('build/multiple_reflection.pdf')

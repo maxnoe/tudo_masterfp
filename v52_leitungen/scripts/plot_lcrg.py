@@ -22,6 +22,7 @@ if __name__ == '__main__':
         ax.set_xlabel('')
 
     axs[0].set_ylim(2.3, 3.4)
+    axs[0].set_yticks(np.arange(2.4, 3.4, 0.3))
 
     axs[1].set_ylim(20.0, 21.3)
     axs[1].set_yticks(np.arange(20.0, 21.3, 0.3))
@@ -32,7 +33,9 @@ if __name__ == '__main__':
 
     axs[3].set_xscale('log')
     axs[3].set_xlim(90, 1.1e5)
-    axs[3].set_ylim(0.9, 1.45)
+    axs[3].set_ylim(0.9, 1.5)
+    axs[3].set_yticks(np.arange(0.9, 1.55, 0.2))
+    axs[2].set_yticks(np.arange(8.5, 8.61, 0.025))
 
     fig.tight_layout(pad=0, h_pad=0.5)
     fig.savefig('build/lcrg.pdf')
