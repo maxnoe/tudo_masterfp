@@ -20,6 +20,9 @@ build/length_measurement.pdf: data/reflek1.csv scripts/plot_length_measurement.p
 build/unknown.pdf: scripts/plot_unknown.py | build
 	$(pyoptions) python scripts/plot_unknown.py
 
+build/time_constant_fit.pdf: scripts/plot_time_constant_fit.py | build
+	$(pyoptions) python scripts/plot_time_constant_fit.py
+
 build/multiple_reflection.pdf: scripts/plot_multiple_reflection.py | build
 	$(pyoptions) python scripts/plot_multiple_reflection.py
 
@@ -38,6 +41,7 @@ plots = $(addprefix build/, $(addsuffix .pdf, \
 	unknown \
 	multiple_reflection \
 	impuls \
+	time_constant_fit \
 	))
 
 
