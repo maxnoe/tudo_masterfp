@@ -63,9 +63,29 @@ drei unbekannte Abschlusswiderstände angeschlossen. Für Kasten 1 der Anschluss
 Die aufgezeichneten Spannungsverläufe werden mit denen verglichen, welche in Tabelle 2 der Anleitung~\cite{anleitung} dargestellt sind.
 Die Spannungskurve für den Anschluss 4 von Kasten 1 ähnelt dem Verlauf von Reihe 4 in Tabelle 2.
 Es handelt sich also mutmasslich um einen Abschlusses welcher aus einer Reihenschaltung aus ohmschen Widerstand und Induktivität besteht (siehe
-Abbildung~\ref{fig:end1}).
+Abbildung~\ref{fig:end_1}).
 
-
+\begin{figure}
+    \centering
+    \begin{subfigure}[b]{0.3\textwidth}
+        \input{./pictures/end_1.tex}
+        \caption{Widerstand in Reihe mit Induktivität}
+        \label{fig:end_1}
+    \end{subfigure}
+    ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc.
+    \begin{subfigure}[b]{0.3\textwidth}
+        \input{./pictures/end_2.tex}
+        \caption{Widerstand in Reihe mit Kapazität}
+        \label{fig:end_2}
+    \end{subfigure}
+    ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc.
+    \begin{subfigure}[b]{0.3\textwidth}
+        \input{./pictures/end_3.tex}
+        \caption{Widerstand parallel zur Kapazität}
+        \label{fig:end_3}
+    \end{subfigure}
+    \caption{Die mutmasslichen Abschlüsse der Koaxialkabel.}\label{fig:ends}
+\end{figure}
 
 \begin{figure}
   \centering
