@@ -62,7 +62,7 @@ da das Oszilloskop bereits die Amplitude $A$ in \si{\deci\bel} ermittelt, ergibt
   \caption{%
     Laufzeitunterschied $\increment t$ und
     Kabellänge $l$ für die drei untersuchten Kabel
-  }\label{tab:label}
+  }\label{tab:length}
   \input{build/length.tex}
 \end{table}
 
@@ -127,7 +127,8 @@ Die Induktivität hinter Anschluss 6 an Kasten 1 hat einen Wert von $\input{buil
   \includegraphics{time_constant_fit.pdf}
   \caption{%
     Signalspannung am Oszilloskop für zwei der drei unbekannten Abschlusswiderständen. Eine Exponentialfunktion wurde an das reflektierte Signal
-    gefittet. Das Ergebniss ist in blau eingezeichnet. 
+    gefittet. Das Ergebnis ist in blau eingezeichnet. Die horizontalen Linien sind die Spannungen welche für die Berechnung des Reflektionsfaktor
+    benutzt wurden.
   }\label{fig:fit}
 \end{figure}
 \subsection{Mehrfachreflektion}
@@ -144,7 +145,7 @@ Die Situation ist im sogenannten Impulsfahrplan in \autoref{fig:impuls} dargeste
 \begin{figure}
   \captionsetup{format=plain}
   \begin{captionbeside}{%
-      Impulsfahrplan für ein \SI{20}{\meter} langes Kabel mit einer Störstelle in 
+      Impulsfahrplan für ein \SI{20}{\meter} langes Kabel mit einer Störstelle in
       der Mitte des Kabels und geschlossenem Ende.
       Das Signal wird am  Anfang des Kabels bei $l = 0$ gemessen, nach einer Zeiteinheit
       erreicht die erste Reflektion an der Störstelle wieder den Anfang des Kabels.
@@ -156,7 +157,7 @@ Die Situation ist im sogenannten Impulsfahrplan in \autoref{fig:impuls} dargeste
   \end{captionbeside}\label{fig:impuls}
 \end{figure}
 
-Gemessen wurde jeweils das Signal eines Rechteckspulses und eines NIM-Pulses. 
+Gemessen wurde jeweils das Signal eines Rechteckspulses und eines NIM-Pulses.
 Der gemessene Signalverlauf ist zusammen mit dem Impulsfahrplan in \autoref{fig:multiple_reflection} aufgetragen.
 Impulsfahrplan und gemessenes Signal stimmen überein.
 
@@ -164,7 +165,7 @@ Impulsfahrplan und gemessenes Signal stimmen überein.
   \centering
   \includegraphics{multiple_reflection.pdf}
   \caption{%
-    Signale einer Recheckspannung (oben) und eines NIM-Pulsers (Mitte) für eine Reihenschaltung eines \SI{50}{\ohm}-Kabels mit einem \SI{75}{\ohm}-Kabel. 
+    Signale einer Recheckspannung (oben) und eines NIM-Pulsers (Mitte) für eine Reihenschaltung eines \SI{50}{\ohm}-Kabels mit einem \SI{75}{\ohm}-Kabel.
     Der Impulsfahrplan (unten) stimmt mit den beobachteten Signalverläufen überein.
   }\label{fig:multiple_reflection}
 \end{figure}
