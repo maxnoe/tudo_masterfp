@@ -30,7 +30,7 @@ def read_nid(filename):
             dtype='float{}'.format(bits),
             count=lines * points,
             offset=bytesread,
-        ).reshape((lines, points))
+        ).reshape((lines, points)).astype('float64')
         bytesread += lines * points * bits // 8
 
     return metadata, data
@@ -47,10 +47,11 @@ if __name__ == '__main__':
     for key, value in metadata['DataSet-Info'].items():
         print(key, value, sep=' = ')
 
-    for i, image in enumerate(data, start=1):
+    fig, ((ax_I1, ax_h1), (ax_I2, ax_h2)) = plt.subplots(2, 2)
 
-        plt.subplot(2, 2, i)
-        plt.imshow(image, cmap='viridis')
-        plt.colorbar(ax=plt.gca())
+    ax_I1.imshow(data['DataSet-0:0'], cmap='viridis')
+    ax_h1.imshow(data['DataSet-0:1'], cmap='viridis')
+    ax_I2.imshow(data['DataSet-1:0'], cmap='viridis')
+    ax_h2.imshow(data['DataSet-1:1'], cmap='viridis')
 
     plt.show()
