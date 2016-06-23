@@ -20,7 +20,7 @@ build/length_measurement.pdf: data/reflek1.csv scripts/plot_length_measurement.p
 build/unknown.pdf: scripts/plot_unknown.py | build
 	$(pyoptions) python scripts/plot_unknown.py
 
-build/time_constant_fit.pdf build/k2a2_c.tex build/k1a6_l.tex : scripts/plot_time_constant_fit.py | build
+build/time_constant_fit.pdf build/k2a2_c.tex build/k2a2_r.tex build/k1a6_l.tex build/k1a6_r.tex: scripts/plot_time_constant_fit.py | build
 	$(pyoptions) python scripts/plot_time_constant_fit.py
 
 build/multiple_reflection.pdf: scripts/plot_multiple_reflection.py | build
@@ -47,7 +47,7 @@ plots = $(addprefix build/, $(addsuffix .pdf, \
 	))
 
 
-build/main.pdf: FORCE $(plots) build/length.tex build/k2a2_c.tex build/k1a6_l.tex| build
+build/main.pdf: FORCE $(plots) build/length.tex build/k2a2_c.tex build/k2a2_r.tex build/k1a6_l.tex build/k1a6_r.tex| build
 	TEXINPUTS=build:..: \
 	BIBINPUTS=..: \
 	max_print_line=1048576 \
@@ -58,7 +58,7 @@ build/main.pdf: FORCE $(plots) build/length.tex build/k2a2_c.tex build/k1a6_l.te
 	  --halt-on-error \
 	main.tex
 
-preview: FORCE $(plots) build/length.tex build/k2a2_c.tex build/k1a6_l.tex| build
+preview: FORCE $(plots) build/length.tex build/k2a2_c.tex build/k2a2_r.tex build/k1a6_l.tex build/k1a6_r.tex| build
 	TEXINPUTS=build:..: \
 	BIBINPUTS=..: \
 	max_print_line=1048576 \
