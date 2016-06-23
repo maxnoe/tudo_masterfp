@@ -106,10 +106,30 @@ Der Anschluss 2 and Kasten 2 entspricht am ehesten dem Abschluss aus Abbildung~\
 \end{figure}
 
 
-Um die Eigenschaften der in den Abschlüssen verbauten Kapazitäten und Induktivitäten zu bestimmen, wird der Zeitverlauf des rücklaufenden Signals vermessen wie in~\ref{ref:telegraph} beschrieben.
+Um die Eigenschaften der in den Abschlüssen verbauten Kapazitäten und Induktivitäten zu bestimmen,
+wird der Zeitverlauf des rücklaufenden Signals vermessen wie in~\ref{ref:telegraph} beschrieben. Zunächst wird der Reflektionsfaktor $\Gamma$ bestimmt.
+Dazu wird das Verhältniss aus der Spannung des hin- und rücklaufenden Signals berechnet. Die Spannungen sind als horizontale Linien in
+Abbildung~\ref{fig:fit} eingezeichnet. Aus dem Reflektionsfaktor lässt sich mit dem Wellenwiderstand des Kabels $Z_0$ über
+\begin{equation}
+  R = - Z_0 \frac{ 1 + \Gamma}{ 1 - \Gamma}
+\end{equation}
+der ohmsche Widerstand des Abschlusses bestimmen.
+Als hinlaufende Spannung wurde jeweils der Mittelwert der Spannungen des Plateaus des Eingangssignal gewählt. Dadurch ergibt sich
+für den Widerstand von Anschluss 2 von Kasten 2 ein Wert von $\input{build/k2a2_r.tex}$. Entsprechend für Anschluss 6 an Kasten 6 ein Widerstand
+von $\input{build/k1a6_r.tex}$.
+Es wurde eine Exponentialfunktion an das Signal gefittet. Die angepasste Funktion ist in blauer Farbe eingezeichnet.
+Die so erhaltene Zeitkonstante wurde mit Tabelle 2 aus der Anleitung in die gewünschten Größen umgerechnet.
+Für die vermutete Kapazität hinter Anschluss 2 an Kasten 2 ergibt sich so $\input{build/k2a2_c.tex}$.
+Die Induktivität hinter Anschluss 6 an Kasten 1 hat einen Wert von $\input{build/k1a6_l.tex}$.
 
-Bla bla $\input{build/k2a2_c.tex}$.
-
+\begin{figure}
+  \centering
+  \includegraphics{time_constant_fit.pdf}
+  \caption{%
+    Signalspannung am Oszilloskop für zwei der drei unbekannten Abschlusswiderständen. Eine Exponentialfunktion wurde an das reflektierte Signal
+    gefittet. Das Ergebniss ist in blau eingezeichnet. 
+  }\label{fig:fit}
+\end{figure}
 \subsection{Mehrfachreflektion}
 
 \begin{figure}
