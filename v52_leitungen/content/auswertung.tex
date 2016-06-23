@@ -112,11 +112,39 @@ Bla bla $\input{build/k2a2_c.tex}$.
 
 \subsection{Mehrfachreflektion}
 
+Für die Untersuchung des Verhaltens von Störstellen in Leitungen wird eine wohldefinierte
+Störstelle durch die Reihenschaltung zweier Koaxialkabel mit unterschiedlicher Impededanz
+erzeugt.
+In diesem Versuch werden zwei \SI{10}{\meter} lange Kabel mit \SI{50}{\ohm} bzw. \SI{75}{\ohm} verwendet.
+Es wird erwartet, dass es Mehrfachreflektionen des Signals, sowohl an den eigentlichen Enden
+des Kabels, als auch an der \enquote{Störstelle}, dem Übergang zwischen den Kabeln gibt.
+
+Die Situation ist im sogenannten Impulsfahrplan in \autoref{fig:impuls} dargestellt.
+
+\begin{figure}
+  \captionsetup{format=plain}
+  \begin{captionbeside}{%
+      Impulsfahrplan für ein \SI{20}{\meter} langes Kabel mit einer Störstelle in 
+      der Mitte des Kabels und geschlossenem Ende.
+      Das Signal wird am  Anfang des Kabels bei $l = 0$ gemessen, nach einer Zeiteinheit
+      erreicht die erste Reflektion an der Störstelle wieder den Anfang des Kabels.
+      Nach vier Zeiteinheiten treffen die erste Reflektion am Ende des Kabels und die
+      zweite Reflektion an der Störstelle ein. Nach 6 Zeiteinheiten treffen bereits vier
+      Signale gleichzeitig am Oszilloskop ein.
+    }%
+    \includegraphics{impuls.pdf}
+  \end{captionbeside}\label{fig:impuls}
+\end{figure}
+
+Gemessen wurde jeweils das Signal eines Rechteckspulses und eines NIM-Pulses. 
+Der gemessene Signalverlauf ist zusammen mit dem Impulsfahrplan in \autoref{fig:multiple_reflection} aufgetragen.
+Impulsfahrplan und gemessenes Signal stimmen überein.
+
 \begin{figure}
   \centering
   \includegraphics{multiple_reflection.pdf}
   \caption{%
-    Signale einer Recheckspannung (oben) und eines NIM-Pulsers (unten) für eine Reihenschalten eines \SI{50}{\ohm}-Kabels mit einem \SI{75}{\ohm}-Kabel.
-    Besonders beim NIM-Pulser lassen sich Mehrfachreflektionen erkennen.
+    Signale einer Recheckspannung (oben) und eines NIM-Pulsers (Mitte) für eine Reihenschaltung eines \SI{50}{\ohm}-Kabels mit einem \SI{75}{\ohm}-Kabel. 
+    Der Impulsfahrplan (unten) stimmt mit den beobachteten Signalverläufen überein.
   }\label{fig:multiple_reflection}
 \end{figure}
