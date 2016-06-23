@@ -84,10 +84,10 @@ if __name__ == '__main__':
     ax_2.plot(df['t']*1e6, df['U'], alpha=0.8, label='Gemessene Spannung')
     ax_2.plot(df_fit['t']*1e6, curve(df_fit['t'], a_0.n, tau.nominal_value, u_0.n), linewidth=2, label='Fit mit Exponentialfunktion')
 
-    fig.tight_layout(pad=0, h_pad=0.5)
     # print('Teh Z yo: {}'.format(usqrt(L/C)))
     ax_2.set_xlabel(r'$t \mathbin{/} \si{\micro\second}$')
     ax_2.set_ylabel(r'$U \mathbin{/} \si{\volt}$')
+    fig.tight_layout(pad=0, h_pad=0.5)
     fig.savefig('build/time_constant_fit.pdf')
 
     ind_tex = '\SI{{{:.2f} \pm {:.2f}}}{{\\nano\\farad}}'.format(C.n*1e9, C.s* 1e9)
