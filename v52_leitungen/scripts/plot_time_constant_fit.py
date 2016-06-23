@@ -3,7 +3,6 @@ import matplotlib.pyplot as plt
 import numpy as np
 import scipy.optimize as opt
 from uncertainties import ufloat
-from uncertainties.umath import sqrt as usqrt
 from uncertainties import correlated_values
 # from IPython import embed
 
