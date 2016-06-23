@@ -74,7 +74,7 @@ Die Messung wird für drei Kabel mit den nominellen Längen \SI{10}{\meter}, \SI
 
 Aus der Zeitdifferenz $\increment \delta$ kann die Länge des Kabels über
 \begin{equation}
-  l = \frac{\increment t \cdot c}{2} = \frac{\increment t c_0 }{2 \sqrt{ε_r}}
+  l = \frac{c \cdot \increment t }{2} = \frac{c_0 \cdot \increment t}{2 \sqrt{ε_r}}
 \end{equation}
 berechnet werden, wobei $c = c_0 / \sqrt{ε_r}$ die Lichtgeschwindigkeit im Koaxialkabel ist.
 Für diesen Versuch sollte $ε_r = \num{2.25}$ angenommen werden.
@@ -83,14 +83,14 @@ Die sich ergebenden Kabellängen sind in \autoref{tab:length} angegeben.
   \centering
   \caption{%
     Laufzeitunterschied $\increment t$ und
-    Kabellänge $l$ für die drei untersuchten Kabel
+    Kabellänge $l$ für die drei untersuchten Kabel.
   }\label{tab:length}
   \input{build/length.tex}
 \end{table}
 
 \subsection{Vermessung von unbekannten Abschlusswiderständen}
-Es sollte der Spannungsverlauf für verschiedene Abschlüsse gemessen werden. Die Abschlüsse können charachteriesiert werden indem die rücklaufenden
-Signale eines Rechteckpulses vermessen werden. Nach Formel 7 der Anleitung~\cite{v52}
+Es sollte der Spannungsverlauf für verschiedene Abschlüsse gemessen werden. Die Abschlüsse können charakteriesiert werden indem die rücklaufenden
+Signale eines Rechteckpulses vermessen werden.
 Mithilfe des Oszilloskops wurde der Zeitverlauf der Spannung für drei unbekannte Abschlusswiderstände aufgenommen.
 Die Abschlüsse befinden sich an Kästen mit durchnummerierten Anschlüssen.
 Getestet wurden die Anschlüsse mit den Nummern 4 und 6 an Kasten 1. An Kasten 2 wurde Anschluss 2 gemessen.
@@ -115,7 +115,7 @@ Der Anschluss 2 and Kasten 2 entspricht am ehesten dem Abschluss aus \autoref{fi
         \caption{Widerstand in Reihe mit Kapazität}
         \label{fig:end_2}
     \end{subfigure}
-    \caption{Die mutmasslichen Abschlüsse der Koaxialkabel and den unmarkierten Kästen.}\label{fig:ends}
+    \caption{Die mutmaßlichen Abschlüsse der Koaxialkabel and den unmarkierten Kästen.}\label{fig:ends}
 \end{figure}
 
 
