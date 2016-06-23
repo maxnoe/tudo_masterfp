@@ -3,7 +3,7 @@ from skimage.exposure import rescale_intensity
 from skimage.feature import peak_local_max
 import numpy as np
 import matplotlib.pyplot as plt
-from IPython import embed
+# from IPython import embed
 
 from scipy.optimize import minimize
 
@@ -18,7 +18,7 @@ def grid_constants(coordinates):
         # print(p)
         ds = distances(p, coordinates)
         #take 5 best distances for graphene
-        g = ds[np.argsort(ds)[1:6]]
+        g = ds[np.argsort(ds)[1:3]]
         g_means.append(g.mean())
         g_stds.append(g.std())
 
@@ -42,37 +42,54 @@ def plane_chisq(params, x, y, z):
 if __name__ == '__main__':
 
     metadata, data = read_nid('data/hopg.nid')
-    width = float(metadata['DataSet-Info']['image size'].replace(',', '.')[:-2])
+    width = metadata.getfloat('DataSet-0:1', 'dim0range') * 1e9
 
-    points = np.linspace(0, width, data[1].shape[0])
+    height_range = metadata.getfloat('DataSet-0:1', 'dim2range')
+    height = data['DataSet-0:1'].astype('float64') * height_range * 1e9
+
+    points = np.linspace(0, width, height.shape[0])
     x, y = np.meshgrid(points, points)
     # embed()
     res = minimize(
         plane_chisq,
-        [0.0001, 0.0001, -0.01],
-        args=(x.ravel(), y.ravel(), data[1].ravel())
+        [0.0, -0.25, height.mean()],
+        args=(x.ravel(), y.ravel(), height.ravel()),
+        # tol=1e-15,
     )
 
-    corrected = data[1] - plane(x, y, *res.x)
+    a, b, c = res.x
+    print(res.x)
+    alpha_x = np.arctan(a)
+    alpha_y = np.arctan(b)
+    print(alpha_x, alpha_y)
 
+    height = height - plane(x, y, *res.x)
     coordinates = peak_local_max(
-        rescale_intensity(corrected),
-        min_distance=7,
-    )
-    print(coordinates)
+        rescale_intensity(height),
+        min_distance=6,
+    ).astype('float64')
 
-    coordinates = coordinates * width / corrected.shape[0]
+    x = x / np.cos(alpha_x)
+    y = y / np.cos(alpha_y)
+
+    coordinates[:, 0] = coordinates[:, 0] * x.max() / height.shape[0]
+    coordinates[:, 1] = coordinates[:, 1] * y.max() / height.shape[1]
+
     g, err = grid_constants(coordinates)
+    print('g = {} +- {}'.format(g.mean(), g.std()))
     g_string = '\SI{{{:.4f} \pm {:.5f}}}{{\\nano\\meter}}'.format(g.mean(), err.mean())
     with open('build/grid_constant.tex', 'w') as f:
         f.write(g_string)
 
     fig = plt.figure()
     ax = fig.add_subplot(1, 1, 1, aspect=1)
-    plot = ax.pcolormesh(x, y, corrected, cmap='inferno')
-    ax.plot(coordinates[:, 1], coordinates[:, 0], '.', ms=2.5)
-    fig.colorbar(plot, ax=ax)
-    ax.set_xlim(0, width)
-    ax.set_ylim(0, width)
+    plot = ax.pcolormesh(x, y, height, cmap='viridis')
 
-    fig.savefig('build/plots/hopg.pdf')
+    ax.plot(coordinates[:, 1], coordinates[:, 0], '.', ms=3)
+    fig.colorbar(plot, ax=ax)
+
+    ax.set_xlim(0, x.max())
+    ax.set_ylim(0, y.max())
+    plt.show()
+
+    # fig.savefig('build/plots/hopg.pdf')

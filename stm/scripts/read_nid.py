@@ -19,21 +19,21 @@ def read_nid(filename):
         if re.match('DataSet-[0-9]+:[0-9]+', key)
     ]
 
-    data = []
+    data = {}
     bytesread = 0
     for key in keys:
         points = metadata.getint(key, 'points')
         lines = metadata.getint(key, 'lines')
         bits = metadata.getint(key, 'savebits')
-        data.append(np.frombuffer(
+        data[key] = np.frombuffer(
             raw_data,
             dtype='float{}'.format(bits),
             count=lines * points,
             offset=bytesread,
-        ).reshape((lines, points)))
+        ).reshape((lines, points))
         bytesread += lines * points * bits // 8
 
-    return metadata, np.array(data)
+    return metadata, data
 
 if __name__ == '__main__':
     import sys

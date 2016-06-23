@@ -3,13 +3,23 @@
 
 \subsection{Messung der Kabeleigenschaften}
 
+Die Messung der Kabeleigenschaften des \SI{85}{\meter} \texttt{RG-58} Kabels mit dem LCR-Messgerät liefert die in \autoref{fig:lcrg} dargestellten Werte.
+Über die magische Formel~\cite{querleitwert}
+\begin{equation}
+  G = \frac{R \cdot C}{L}
+\end{equation}
+wird der Querleitwert berechnet. Dieser ist ebenfalls in \autoref{fig:lcrg} aufgetragen.
+
 \begin{figure}
   \centering
   \includegraphics{lcrg.pdf}
-  \caption{Widerstand $R$, Kapazität $C$, Induktivität $L$ und Querleitwert $G$ für das \texttt{RG-58}-Kabel mit einer Länge von \SI{85}{\meter} in Abhängigkeit der Frequenz der angelegten Sinusspannung.}
+  \caption{%
+    Widerstandsbelag $R$, Kapazitätsbelag $C$, Induktivitätsbelag $L$ und Querleitbelag $G$ für das \texttt{RG-58}-Kabel mit einer Länge von \SI{85}{\meter} in Abhängigkeit der Frequenz der angelegten Sinusspannung.}
   \label{fig:lcrg}
 \end{figure}
 
+Wie sich erkennen lässt, konnte der für diese Messung interessante Frequenz-Bereich zwischen \SI{20}{\kilo\hertz} und \SI{100}{\kilo\hertz} mit dem zur Verfügung stehendem Messgerät nicht untersucht werden.
+Es fällt lediglich auf, dass für den Messwert bei \SI{100}{\kilo\hertz} alle gemessenen und berechneten Werten deutlich höher liegen als bei den anderen Frequenzen.
 
 \subsection{Messung der Dämpfungskonstante}
 
@@ -49,6 +59,9 @@ da das Oszilloskop bereits die Amplitude $A$ in \si{\deci\bel} ermittelt, ergibt
 
 \subsection{Bestimmung der Kabellänge}
 
+Für die Messung der Kabellänge werden NIM-Pulse auf die einzelnen Kabel mit geschlossenem Ende gegeben und die Zeitdifferenz $\increment t$ zwischen dem Puls und seiner Reflektion gemessen. 
+Der Signalverlauf ist in \autoref{fig:length} beispielhaft für das Kabel mit einer Länge von \SI{20}{\meter} dargestellt.
+
 \begin{figure}
   \centering
   \includegraphics{length_measurement.pdf}
@@ -57,41 +70,52 @@ da das Oszilloskop bereits die Amplitude $A$ in \si{\deci\bel} ermittelt, ergibt
   }\label{fig:length}
 \end{figure}
 
+Die Messung wird für drei Kabel mit den nominellen Längen \SI{10}{\meter}, \SI{20}{\meter} und \SI{85}{\meter} durchgeführt.
+
+Aus der Zeitdifferenz $\increment \delta$ kann die Länge des Kabels über
+\begin{equation}
+  l = \frac{c \cdot \increment t }{2} = \frac{c_0 \cdot \increment t}{2 \sqrt{ε_r}}
+\end{equation}
+berechnet werden, wobei $c = c_0 / \sqrt{ε_r}$ die Lichtgeschwindigkeit im Koaxialkabel ist.
+Für diesen Versuch sollte $ε_r = \num{2.25}$ angenommen werden.
+Die sich ergebenden Kabellängen sind in \autoref{tab:length} angegeben.
 \begin{table}
   \centering
   \caption{%
     Laufzeitunterschied $\increment t$ und
-    Kabellänge $l$ für die drei untersuchten Kabel
+    Kabellänge $l$ für die drei untersuchten Kabel.
   }\label{tab:length}
   \input{build/length.tex}
 \end{table}
 
 \subsection{Vermessung von unbekannten Abschlusswiderständen}
-Es sollte der Spannungsverlauf für verschiedene Abschlüsse gemessen werden. Die Abschlüsse können charachteriesiert werden indem die rücklaufenden
-Signale eines Rechteckpulses vermessen werden. Nach Formel 7 der Anleitung~\cite{v52}
+Es sollte der Spannungsverlauf für verschiedene Abschlüsse gemessen werden. Die Abschlüsse können charakteriesiert werden indem die rücklaufenden
+Signale eines Rechteckpulses vermessen werden.
 Mithilfe des Oszilloskops wurde der Zeitverlauf der Spannung für drei unbekannte Abschlusswiderstände aufgenommen.
 Die Abschlüsse befinden sich an Kästen mit durchnummerierten Anschlüssen.
 Getestet wurden die Anschlüsse mit den Nummern 4 und 6 an Kasten 1. An Kasten 2 wurde Anschluss 2 gemessen.
 Die aufgezeichneten Spannungsverläufe werden mit denen verglichen, welche in Tabelle 2 der Anleitung~\cite{v52} dargestellt sind.
 Die Spannungskurve für Anschluss 4 und 6 von Kasten 1 ähnelt dem Verlauf von Reihe 4 in Tabelle 2.
-Es handelt sich also mutmasslich um einen Abschlusses welcher aus einer Reihenschaltung aus ohmschen Widerstand und Induktivität besteht (siehe
-Abbildung~\ref{fig:end_1}).
-Der Anschluss 2 and Kasten 2 entspricht am ehesten dem Abschluss aus Abbildung~\ref{fig:end_2}.
+Es handelt sich also mutmaßlich um einen Abschluss, welcher aus einer Reihenschaltung aus ohmschen Widerstand und Induktivität besteht (siehe
+\autoref{fig:end_1}).
+Der Anschluss 2 and Kasten 2 entspricht am ehesten dem Abschluss aus \autoref{fig:end_2}.
 
 \begin{figure}
     \centering
     \begin{subfigure}[b]{0.45\textwidth}
+      \centering
         \input{./pictures/end_1.tex}
         \caption{Widerstand in Reihe mit Induktivität}
         \label{fig:end_1}
     \end{subfigure}
     ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc.
     \begin{subfigure}[b]{0.45\textwidth}
+        \centering
         \input{./pictures/end_2.tex}
         \caption{Widerstand in Reihe mit Kapazität}
         \label{fig:end_2}
     \end{subfigure}
-    \caption{Die mutmasslichen Abschlüsse der Koaxialkabel and den unmarkierten Kästen.}\label{fig:ends}
+    \caption{Die mutmaßlichen Abschlüsse der Koaxialkabel and den unmarkierten Kästen.}\label{fig:ends}
 \end{figure}
 
 
