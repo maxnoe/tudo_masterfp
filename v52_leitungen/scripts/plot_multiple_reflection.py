@@ -50,11 +50,15 @@ if __name__ == '__main__':
     ax3.set_xlabel(r'$t \mathbin{/} T$')
     ax3.set_xticks(T * np.arange(7))
 
+    ax3.plot(a(T*3+d, T*4+d, T*4-d, T*6-d), [10, 20 -d, 20-d, 0], color=color[0], linestyle=linestyle)
+
     ax3.plot(T * a(0, 2, 4, 6), a(0, 20, 0, 20), color=color[0])
     ax3.plot(T * a(1, 2, 4, 6), a(10, 0, 20, 0), color=color[1])
     ax3.plot(T * a(3, 4, 6) + d, a(10, 0, 20), color=color[1])
     ax3.plot(T * a(5, 6) + d, a(10, 0), linestyle=linestyle, color=color[1])
     ax3.plot(T * a(5, 6) + 2 * d, a(10, 0), color=color[0], linestyle=linestyle)
+    ax3.plot(T * a(5, 6) - d, a(10, 20), color=color[0], linestyle=linestyle)
+    ax3.plot(T * a(5, 6) + 2 * d, a(10, 20), color=color[1], linestyle=linestyle)
 
     ax3.set_xlabel(r'$t \mathbin{/} \si{\micro\second}$')
     ax3.set_xlim(-0.05, 0.35)
