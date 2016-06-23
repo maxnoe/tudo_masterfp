@@ -49,21 +49,19 @@ if __name__ == '__main__':
     coordinates = peak_local_max(
         rescale_intensity(height),
         min_distance=6,
-    )
+    ).astype('float64')
 
     x = x / np.cos(alpha_x)
     y = y / np.cos(alpha_y)
 
-    coords_scaled = np.empty_like(coordinates, dtype=float)
-    coords_scaled[:, 0] = coordinates[:, 0].astype(float) * x.max() / height.shape[0]
-    coords_scaled[:, 1] = coordinates[:, 1].astype(float) * y.max() / height.shape[1]
-    print(coords_scaled)
+    coordinates[:, 0] = coordinates[:, 0] * x.max() / height.shape[0]
+    coordinates[:, 1] = coordinates[:, 1] * y.max() / height.shape[1]
 
     fig = plt.figure()
     ax = fig.add_subplot(1, 1, 1, aspect=1)
     plot = ax.pcolormesh(x, y, height, cmap='viridis')
 
-    ax.plot(coords_scaled[:, 1], coords_scaled[:, 0], '.', ms=3)
+    ax.plot(coordinates[:, 1], coordinates[:, 0], '.', ms=3)
     fig.colorbar(plot, ax=ax)
 
     ax.set_xlim(0, x.max())
