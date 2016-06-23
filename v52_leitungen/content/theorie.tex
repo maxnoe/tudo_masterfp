@@ -52,6 +52,7 @@ In einem physikalischen Leiter kommt es außerdem zu Ohmschen Verlusten. Zu dem 
 
 
 \subsection{Telegraphengleichung}
+\label{ref:telegraph}
 Die Ausbreitung der elektromagnetischen Wellen kann durch die Telegraphengleichung beschrieben werden.
 Es handelt sich dabei um eine gedämpfte Wellengleichung.
 
@@ -66,10 +67,25 @@ Die Lösungen dieser Gleichung sind gedämpfte Schwingungen der Form
 \end{equation}
 Wobei $\alpha$ und $\beta$ frequenzabhängige Dämpfungkonstanten sind.
 
+Im Anwendungsgebiet der Signalübertragung ist das Verhalten von Spannungspulsen auf der Leitung Untersuchungsgegenstand.
+Am Ende des Koaxialkabels befindet sind in aller Regel ein Verbraucher mit kapazitiven oder induktiven Verhalten.
+Um die Eigenschaften des Verbrauchers zu messen, werden die reflektierten Spannungspulse aufgezeichnet.
+Die Form des rücklaufenden Signals $U_r$ folgt aus der Laplace-Transformation des hinlaufenden Signals $U_h$ und dem
+Relelektionskoefizienten des Verbrauchers $\Gamma$.
+\begin{equation}
+  U_r(t) = \mathfrak{L}(\Gamma(p) \cdot U_h(p))
+\end{equation}
+
+Der Zeitverlauf der rücklaufenden Spannung folgt, für induktive und kapazitive Abschlüsse, einer Exponentialfunktion
+mit spezifischer Zeitkonstanten. Die Verläufe und Zeitkonstanten für verschiedene Abschlüsse sind im Anhang der
+Anleitung~\cite{v52} zu finden.
+
+
+
 \section{Vorbereitungsaufgaben}
 In der Vorbereitungsaufgabe sollten einige Leitungskonstanten für ein Koaxialkabel mit einem Innendurchmesser von $d = \SI{0.9}{\mm}$,
 einem Außendurchmesser $D = \SI{2.95}{\mm}$  und einem Dielektrikum mit $\epsilon = 2.25$ berechnet werden.
-Nach den Formeln in Tabelle 1 der Anleitung\cite{anleitung} ergibts sich der Kapazitätsbelag zu $C = \SI{0.105}{\nano\farad \per \meter}$
+Nach den Formeln in Tabelle 1 der Anleitung\cite{v52} ergibts sich der Kapazitätsbelag zu $C = \SI{0.105}{\nano\farad \per \meter}$
 Entsprechend ist der Induktivitätsbelag $ L = \SI{237.4}{\nano \henry \per \meter}$.
 Nimmt man den Leitungswiderstand als klein an, so lässt sich die Phasengeschwindigkeit nach $v = \sfrac{1}{\sqrt{L C}}$ berechnen zu
-\SI{199861.6}{\kilo\meter\per\second}.
+\SI{199861.6}{\kilo\meter\per\second}. Das sind etwa $\sfrac{2}{3}$ der Vakuumlichtgeschwindigkeit $c_0$.
