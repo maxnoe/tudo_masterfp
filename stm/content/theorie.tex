@@ -1,3 +1,51 @@
-\section{Einleitung}
-% In diesem Versuch soll die Relaxationszeit von Dipolen in Kristallen vermessen werden.
-%
+\section{Rastertunnelmikroskopie}
+
+In diesem Versuch sollen mithilfe der Rastertunnelmikroskopie verschiedene
+Materialproben untersucht werden.
+Die Technik erlaubt es, die Elektronendichte an der Oberfläche von Materialien mit atomarer Auflösung zu untersuchen.
+
+Im folgenden wird zunächst ein Überblick über die verwendete Technik gegeben, 
+die in diesem Versuch verwendet wird.
+
+\subsection{Grundlagen}
+
+Wie bei allen Ausprägungen der Rastersondenmikroskopie wird bei der Rastertunnelmikroskopie eine Messsonde über die Oberfläche der zu untersuchenden Probe bewegt.
+In regelmäßigen Abständen wird die Messgröße bestimmt.
+Diese ist bei der Rastertunnelmikroskopie der durch den Tunneleffekt ausgelöste Strom zwischen Probe und Sonde.
+Je nach Vorzeichen der angelegten Spannung zwischen Sonde und Probe können entweder die besetzten oder die unbesetzten Zustände im Material untersucht werden.
+Im Falle eines Potentialgefälles in Richtung der Probe können Elektronen aus der Sonde in unbesetzte Zustände in der Probe tunneln.
+Im umgekehrten Fall können Elektronen aus dem Material in die Sonde gelangen und es werden somit die besetzten Zustände des Materials vermessen.
+
+In erster Ordnung Störungstheorie ergibt sich ein exponentieller Zusammenhang zwischen dem Abstand $d$ der Sonde von der Probe und dem Tunnelstrom $I_T$:
+\begin{equation}
+  I_T \propto \frac{U}{d} \exp\!\left(- Kd \sqrt{\bar{φ}}\right),
+  \quad \text{\cite[(VI.1)]{lueth}}
+\end{equation}
+wobei $U$ die Potentialdifferenz zwischen Sonde und Probe, $\bar{φ}$ die mittlere Arbeitsarbeit der Probe und $K$ eine Konstante abhängig vom Material zwischen Probe und Sonde ist.
+Dieser Zusammenhang sorgt für die große Empfindlichkeit für Unterschiede in der Materialhöhe bzw.\ der Elektronendichte.
+Große Herausforderungen sind daher eine ausreichend genaue Platzierung der Sonde und das Unterbinden von Störeinflüssen wie Erschütterungen und Vibrationen.
+
+Die benötigte Genauigkeit zur Platzierung der Sonde wird in den meisten Rastertunnelmikroskopen durch Piezokristalle erreicht.
+Die Ausdehnung dieser Kristalle lassen sich durch das anlegen einer Spannung in der erforderlichen Präzision manipulieren.
+
+Da der Tunnelstrom von der Stärke des $E$-Feldes dominiert wird,
+ist außerdem die Preparation der Sonde von großer Bedeutung.
+Die Spitze muss atomare Dimensionen erreichen, um lokal $E$-Felder in der benötigten Größe erzeugen zu können.
+In diesem Versuch wird Platin-Iridium-Draht gerissen, um eine möglichst geeignete Spitze zu erhalten.
+
+Während viele aufwendigere Aufbauten im Vakuum arbeiten, wird das Rastertunnelmikroskop in diesem Versuch bei Normaldruck betrieben.
+
+\subsection{Messmethoden}
+
+Beim Rastertunnelmikroskop werden zwei grundsätzlich Verschiedene Messmethoden verwendet:
+\begin{enumerate}[noitemsep]
+  \item Messung bei konstanter Höhe
+  \item Messung bei konstantem Tunnelstrom
+\end{enumerate}
+
+Die erste Methode ist empfindlich aus Höhenunterschiede de Probe, so ist es möglich, dass die Spitze die Probe berührt und zerstört wird.
+Bei der Messung mit konstantem Strom wird dies vermieden. 
+Diese Methode ist allerdings deutlich aufwendiger, da an jedem Messpunkt zunächst die Höhe, bei dem der gewünschte Tunnelstrom erreicht wird, ermittelt werden muss.
+Dies geschieht üblicherweise mit einem Regelkreis zwischen der am Piezokristall angelegten Spannung und dem gemessenen Tunnelstrom.
+
+Um Veränderungen in der Austrittsarbeit von der Topologie der Probe unterscheiden zu können, kann zusätzlich zum Tunnelstrom bzw.\ der Höhe der Probe auch die Änderung des Tunnelstroms in Abhängigkeit der Höhe an jedem Messpunkt aufgenommen werden.
