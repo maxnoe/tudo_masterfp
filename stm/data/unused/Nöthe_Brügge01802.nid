@@ -1,0 +1,987 @@
+[DataSet]
+Version=2
+GroupCount=2
+Gr0-Name=Scan forward
+Gr0-ID=0
+Gr0-Count=24
+Gr1-Name=Scan backward
+Gr1-ID=0
+Gr1-Count=24
+Gr0-Ch0=DataSet-0:0
+Gr0-Ch1=DataSet-0:1
+Gr1-Ch0=DataSet-1:0
+Gr1-Ch1=DataSet-1:1
+SetInfos=DataSet-Info
+InfoSetCount=3
+InfoSet0=DataSetInfos
+InfoSet1=Calibration
+InfoSet2=Parameters
+
+[DataSet-Info]
+-- Scan --=--------
+Image size=2,5nm
+Scan direction=Prepare...
+Time/Line=99,8ms
+Points=128 
+Lines=128 
+X-Slope=0 °
+Y-Slope=0 °
+Rotation=0 °
+X-Pos=0 m
+Y-Pos=0 m
+Z-Plane=0 m
+Const. Height-Mode=Disabled
+Date=18-05-2016
+Time=10:39:27
+-- Feedback --=--------
+Setpoint=1nA
+P-Gain=1000 
+I-Gain=2000 
+D-Gain=0 
+P-Gain2=0 
+I-Gain2=1000 
+D-Gain2=0 
+Tip voltage=50,4mV
+Feedback mode=Free
+Feedback algo.=Adaptive PID
+Error range=200nA
+Ampl. Ctrl. mode=Const. Drive
+-- Global --=--------
+Op. mode=STM
+Head type=STM
+Scan head=61-14-086.hed
+Software ver.=3.4.0.5
+Firmware ver.=3.4.0.0
+Controller S/N=061-14-086
+-- Module --=--------
+Controller Board=2
+USB Module=4
+
+[DataSet\DataSetInfos]
+SubSectionCount=4
+SubSection0=Scan
+SubSection1=Feedback
+SubSection2=Global
+SubSection3=Module
+
+[DataSet\DataSetInfos\Scan]
+SubSectionCount=0
+Image size=2,5nm
+Scan direction=Prepare...
+Time/Line=99,8ms
+Points=128 
+Lines=128 
+X-Slope=0 °
+Y-Slope=0 °
+Rotation=0 °
+X-Pos=0 m
+Y-Pos=0 m
+Z-Plane=0 m
+Const. Height-Mode=Disabled
+Date=18-05-2016
+Time=10:39:27
+
+[DataSet\DataSetInfos\Feedback]
+SubSectionCount=0
+Setpoint=1nA
+P-Gain=1000 
+I-Gain=2000 
+D-Gain=0 
+P-Gain2=0 
+I-Gain2=1000 
+D-Gain2=0 
+Tip voltage=50,4mV
+Feedback mode=Free
+Feedback algo.=Adaptive PID
+Error range=200nA
+Ampl. Ctrl. mode=Const. Drive
+
+[DataSet\DataSetInfos\Global]
+SubSectionCount=0
+Op. mode=STM
+Head type=STM
+Scan head=61-14-086.hed
+Software ver.=3.4.0.5
+Firmware ver.=3.4.0.0
+Controller S/N=061-14-086
+
+[DataSet\DataSetInfos\Module]
+SubSectionCount=0
+Controller Board=2
+USB Module=4
+
+[DataSet\Calibration]
+SubSectionCount=2
+SubSection0=Scanhead
+SubSection1=Cantilever
+
+[DataSet\Calibration\Scanhead]
+SubSectionCount=0
+Version=6
+HeadTyp=STM
+SerialNo=uncal STM
+RevisionNo=1
+ScanFit=None
+CtrlInPol=Positiv
+AnalogOut2Pol=Negativ
+AnalogOut3Pol=Negativ
+ZAxisPol=Positiv
+ZAxisAnalogOut2Pol=Negativ
+ZAxisAnalogOut3Pol=Negativ
+Ch0Corr=Sub
+SetPointCheck=Add
+InCount=22
+In0=0,Channel0,Tip Current,A,1e-007,0
+In1=1,Channel1,Z-Axis,m,1e-007,0
+In2=2,Channel2,Not defined,V,35,0
+In3=3,Channel3,Not defined 1,V,10,0
+In4=4,Channel4,Not defined,V,10,0
+In5=5,TipSignalDC,Tip Current,A,1e-007,0
+In6=6,TipSignalAC,Not defined,V,10,0
+In7=7,TipPhase,Not defined,V,90,0
+In8=8,Lever Current,Not defined,V,10,0
+In9=9,User Input0,User input 1,V,10,0
+In10=10,User Input1,User input 2,V,10,0
+In11=11,HeadSig2,Not defined 1,V,10,0
+In12=12,Channel5,User input 1,V,10,0
+In13=13,Channel6,User input 2,V,10,0
+In14=16,TipSignalDC1,Deflection,V,10,0
+In15=17,TipSignalDC2,Deflection,N,1,0
+In16=18,SensorSignal1,SensorSignal,W,0.005,0
+In17=19,SensorSignal2,SensorSignal,A,0.0005,0
+In18=20,Channel7,Z-Axis,m,1e-007,0
+In19=21,XAxisSensor,X-Axis Position,m,0.0001,0
+In20=22,YAxisSensor,Y-Axis Position,m,0.0001,0
+In21=23,ZAxisSensor,Z-Axis Position,m,1e-005,0
+OutCount=9
+Out0=0,ScanAxis0,X-Axis,m,2.885e-007,0
+Out1=1,ScanAxis1,Y-Axis,m,2.465e-007,0
+Out2=2,ScanAxis2,Z-Axis,m,1e-007,0
+Out3=4,AnalogOut0,Tip voltage,V,10,0
+Out4=5,AnalogOut1,Not defined,V,10,0
+Out5=6,AnalogOut2,User Output 1,V,10,0
+Out6=7,AnalogOut3,User Output 2,V,10,0
+Out7=8,DriveAmp,Not defined,V,1,0
+Out8=9,MixedOut4,User Output C,V,10,0
+ScanCorrCount=1
+ScanCorrA=0
+ScanCorrB=0
+ScanCorrC=0
+ScanCorrD=0
+ScanCorrE=0
+ScanCorrF=0
+ScanCorrG=0
+ScanCorrH=0
+ScanCorrI=0
+ScanCorrJ=0
+ScanCorrK=0
+ScanCorrL=0
+ScanCorrM=0
+ScanCorrN=0
+ScanCorrO=0
+ScanCorrTableRot=0
+ScanCorrRotX=0
+ScanCorrRotY=0
+ScanScaleZ=3276.8
+ScanScaleXY=256
+ZRangeFit=None
+ZRangeCorrCount=1
+ZRangeCorrA=1
+ZRangeCorrB=0
+ZRangeCorrC=0
+ZRangeCorrD=0
+ApproachStartPos=-1
+MaxApproachSpeed=0.6
+ManualMoveSpeed=1
+DefaultDynRefAmp=0.05
+DefaultDynRefAmpLiquid=0.2
+DefaultForceModRefAmp=1
+DetectorABGainAC=3.5
+CompDcWithZ=0
+VideoSupport=1
+HasLaserOnOffCtrl=0
+HasZPositionSensor=0
+ZPositionSensorPol=Negativ
+SensorStatusMode=1
+SensorStatusPol=Negativ
+SensorStatusMeterRange=0.0866142;0.102362;0.102362;0.811024;0.811024;0.913386
+ApproachStatusMode=1
+ApproachStatusPol=Positiv
+ApproachStatusMeterRange=-1;-0.9;0.9;1
+LaserWavelength=0
+
+[DataSet\Calibration\Cantilever]
+SubSectionCount=0
+
+[DataSet\Parameters]
+SubSectionCount=7
+SubSection0=Approach
+SubSection1=ZFeedback
+SubSection2=Lithography
+SubSection3=Imaging
+SubSection4=SignalIO
+SubSection5=Spectroscopy
+SubSection6=SPMSystem
+
+[DataSet\Parameters\Approach]
+SubSectionCount=0
+ApproachSteps=L[10000]*[]
+WithdrawSteps=L[20]*[]
+AutoPeriode=D[0]*[s]
+MovePeriode=D[0]*[s]
+StepSlope=L[6]*[]
+AutoStartScan=B[1]*[]
+AutoReloadParameter=B[0]*[]
+ApproachSpeed=D[0.700122]*[%]
+ManualSpeed=D[1]*[]
+AFMApproachMode=L[0]*[]
+AFMStepByStepSpeed=D[1]*[]
+AFMStepByStepSlope=D[1e-006]*[m/s]
+
+[DataSet\Parameters\ZFeedback]
+SubSectionCount=0
+PGain=L[1000]*[]
+IGain=L[2000]*[]
+DGain=L[0]*[]
+PGain2=L[0]*[]
+IGain2=L[1000]*[]
+DGain2=L[0]*[]
+SetPoint=D[1.00101e-009]*[A]
+SetPointForce=D[2e-008]*[N]
+SetPointDC=D[1.00101e-009]*[A]
+SetPointAmp=D[50]*[%]
+SetPointPhase=D[1]*[V]
+SetPointForceUnitMode=L[2]*[]
+SetPointForce_V=D[0.273]*[]
+SetPointForce_m=D[0.0001]*[]
+SetPointForce_N=D[2e-008]*[]
+ChGainRegError=L[0]*[]
+FeedbackMode=L[0]*[]
+Algorithm=L[1]*[]
+RefFrq=D[170000]*[Hz]
+RefAmplitude=D[0.05]*[V]
+RefPhase=D[90.022]*[°]
+CoarseSweepStartFrq=D[350]*[]
+CoarseSweepEndFrq=D[650]*[]
+CoarseSweepStepFrq=D[100.002]*[]
+FineSweepStartFrq=D[130000]*[]
+FineSweepEndFrq=D[210000]*[]
+FineSweepStepFrq=D[100]*[]
+ManualSweepStartFrq=D[130000]*[]
+ManualSweepEndFrq=D[210000]*[]
+ManualSweepStepFrq=D[100]*[]
+AutoCalFrqPeak=B[1]*[]
+AutoCalPhase=B[1]*[]
+DynamicAmp=D[0.199744]*[V]
+CalRefPlotGraph=B[0]*[]
+ForceModFrq=D[20000]*[Hz]
+ForceModAmp=D[0.8]*[V]
+AutoFrqSweepRange=B[1]*[]
+AmpCtrlMode=L[0]*[]
+FrqPeakReduceAir=D[20]*[%]
+FrqPeakUpperSideAir=B[1]*[]
+FrqPeakReduceLiquid=D[5]*[%]
+FrqPeakUpperSideLiquid=B[0]*[]
+RegMoveMode=L[0]*[]
+DynamicMeasureBW=L[6]*[]
+RegOutputSel=L[0]*[]
+KPFMModFrq=D[100]*[Hz]
+KPFMModAmp=D[0]*[V]
+KPFMModPhase=D[0]*[°]
+KPFMMeasureBWSel=L[0]*[]
+KPFMCtrlEnabled=B[0]*[]
+KPFMSetPoint=D[0]*[V]
+KPFMPGain=D[0]*[]
+KPFMIGain=D[0]*[]
+
+[DataSet\Parameters\Lithography]
+SubSectionCount=0
+ModuleLevel=L[0]*[]
+OpMode=L[1]*[]
+InactivePenMode=L[0]*[]
+AutoChartSettings=B[1]*[]
+AutoCapture=B[1]*[]
+XYMoveSpeed=D[1e-005]*[m/s]
+ZMoveSpeed=D[1e-006]*[m/s]
+LiftTipAbsZPos=D[0]*[m]
+
+[DataSet\Parameters\Imaging]
+SubSectionCount=0
+ModuleLevel=L[1]*[]
+ScanRange=V[2.5e-009,2.5e-009,0]*[m,m,m]
+ScanOffset=V[0,0,0]*[m,m,m]
+ScanRotation=V[0,0,0]*[°,°,°]
+ScanTime=V[0.099822,0.099822,0]*[s,s,s]
+Datapoints=V[128,128,0]*[,,]
+MeasureMask=L[3]*[]
+ScanMode=L[0]*[]
+OverScanSize=D[0]*[%]
+FirstScanlineRep=L[1]*[]
+SyncOutMode=L[0]*[]
+LineMode=L[0]*[]
+RelTipPos=D[5e-009]*[m]
+AutoSlopeCorrection=B[0]*[]
+AutoDeleteBuffer=B[1]*[]
+AutoChartSettings=B[1]*[]
+AutoCapture=B[1]*[]
+
+[DataSet\Parameters\SignalIO]
+SubSectionCount=0
+UserDAC0=D[0]*[V]
+UserDAC1=D[0]*[V]
+EnableUserADC0=B[0]*[]
+EnableUserADC1=B[0]*[]
+TipSignalMode=L[0]*[]
+ExcitationMode=L[0]*[]
+User0CtrlMode=L[0]*[]
+User0InputPol=L[0]*[]
+User0OutputFlag=L[0]*[]
+User0SetPoint=D[0]*[V]
+User0IGain=L[1000]*[]
+MonitorOut0=L[0]*[]
+MonitorOut1=L[0]*[]
+
+[DataSet\Parameters\Spectroscopy]
+SubSectionCount=0
+ModuleLevel=L[0]*[]
+OutputType=L[0]*[]
+Repetition=L[1]*[]
+RepetitionMode=L[0]*[]
+FwModTime=D[12.7996]*[s]
+BwModTime=D[12.7996]*[s]
+ModRelValue=B[1]*[]
+FwModDatapoints=L[32767]*[]
+BwModDatapoints=L[32767]*[]
+SyncOutMode=L[0]*[]
+FeedbackActive=B[0]*[]
+AutoChartSettings=B[1]*[]
+AutoCapture=B[1]*[]
+SpecEndMode=L[1]*[]
+FwModRange=D[1.27996e-007]*[m]
+BwModRange=D[-1.27996e-007]*[m]
+XYMoveSpeed=D[1e-005]*[m/s]
+StartOffset=D[-1e-008]*[m]
+StartOffsetMoveSpeed=D[2e-008]*[m/s]
+FwMoveSpeed=D[1e-008]*[m/s]
+BwMoveSpeed=D[1e-008]*[m/s]
+FwSamplingRate=D[2560]*[Hz]
+BwSamplingRate=D[2560]*[Hz]
+FwModMode=L[0]*[]
+BwModMode=L[0]*[]
+FwModStopValue=D[5.00504e-009]*[A]
+BwModStopValue=D[0]*[A]
+FwModStopMode=L[1]*[]
+BwModStopMode=L[1]*[]
+FwPauseTime=D[0]*[s]
+BwPauseTime=D[0]*[s]
+FwPauseDatapoints=L[0]*[]
+BwPauseDatapoints=L[0]*[]
+FwPauseMode=L[0]*[]
+BwPauseMode=L[0]*[]
+AutoRecalibrateProbeInterval=L[0]*[]
+PressurePulseValue=D[0]*[bar]
+PressurePulseDuration=D[0]*[s]
+PressurePulseRelative=B[0]*[]
+PressurePulseActive=B[0]*[]
+PressureActionId=L[0]*[]
+
+[DataSet\Parameters\SPMSystem]
+SubSectionCount=0
+AOut0=D[0.0503555]*[V]
+AOut1=D[0]*[V]
+SPMMode=L[1]*[]
+VideoSource=L[0]*[]
+VideoTopLight=D[100]*[%]
+VideoSideLight=D[100]*[%]
+VideoTopBrightness=D[80]*[]
+VideoSideBrightness=D[80]*[]
+VideoTopContrast=D[70]*[]
+VideoSideContrast=D[70]*[]
+FlexVideoTopExpTime=L[60]*[]
+FlexVideoSideExpTime=L[60]*[]
+FlexVideoTopGain=L[8]*[]
+FlexVideoSideGain=L[8]*[]
+FlexVideoTopADCLevel=L[2]*[]
+FlexVideoSideADCLevel=L[2]*[]
+FlexVideoTopRatioR=D[1]*[]
+FlexVideoSideRatioR=D[1]*[]
+FlexVideoTopRatioG=D[1]*[]
+FlexVideoSideRatioG=D[1]*[]
+FlexVideoTopRatioB=D[1]*[]
+FlexVideoSideRatioB=D[1]*[]
+FlexVideoTopRatioGamma=D[1]*[]
+FlexVideoSideRatioGamma=D[1]*[]
+FlexVideoTopAutoLevels=B[1]*[]
+FlexVideoSideAutoLevels=B[1]*[]
+HighResVideoTopExpTime=L[60]*[]
+HighResVideoSideExpTime=L[60]*[]
+HighResVideoTopGain=L[25]*[]
+HighResVideoSideGain=L[8]*[]
+HighResVideoTopADCLevel=L[2]*[]
+HighResVideoSideADCLevel=L[2]*[]
+HighResVideoTopRatioR=D[1]*[]
+HighResVideoSideRatioR=D[1]*[]
+HighResVideoTopRatioG=D[0.8]*[]
+HighResVideoSideRatioG=D[1]*[]
+HighResVideoTopRatioB=D[0.8]*[]
+HighResVideoSideRatioB=D[1]*[]
+HighResVideoTopRatioGamma=D[0.9]*[]
+HighResVideoSideRatioGamma=D[1]*[]
+HighResVideoTopAutoLevels=B[1]*[]
+HighResVideoSideAutoLevels=B[1]*[]
+ActiveSensorByGUID=S[{7C725C17-AB98-465d-AADA-D6D453C769DA}]*[]
+MeasEnv=L[0]*[]
+SystemStateIdleZAxisMode=L[0]*[]
+SystemStateIdleMixOut4Mode=L[3]*[]
+SystemStateIdleXYAxisMode=L[0]*[]
+SystemStateIdleZAxisValue=D[0]*[m]
+KPFMModeEnabled=B[0]*[]
+
+[DataSet-0:0]
+Version=2
+Points=128
+Lines=128
+Frame=Scan forward
+CurLine=0
+Dim0Name=X*
+Dim0Unit=m
+Dim0Range=2.5e-009
+Dim0Min=0
+Dim1Name=Y*
+Dim1Unit=m
+Dim1Range=2.5e-009
+Dim1Min=0
+Dim2Name=Tip Current
+Dim2Unit=A
+Dim2Range=2e-007
+Dim2Min=-1e-007
+SaveMode=Binary
+SaveBits=16
+SaveSign=Signed
+SaveOrder=Intel
+
+[DataSet-0:1]
+Version=2
+Points=128
+Lines=128
+Frame=Scan forward
+CurLine=0
+Dim0Name=X*
+Dim0Unit=m
+Dim0Range=2.5e-009
+Dim0Min=0
+Dim1Name=Y*
+Dim1Unit=m
+Dim1Range=2.5e-009
+Dim1Min=0
+Dim2Name=Z-Axis
+Dim2Unit=m
+Dim2Range=2e-007
+Dim2Min=-1e-007
+SaveMode=Binary
+SaveBits=16
+SaveSign=Signed
+SaveOrder=Intel
+
+[DataSet-1:0]
+Version=2
+Points=128
+Lines=128
+Frame=Scan backward
+CurLine=0
+Dim0Name=X*
+Dim0Unit=m
+Dim0Range=2.5e-009
+Dim0Min=0
+Dim1Name=Y*
+Dim1Unit=m
+Dim1Range=2.5e-009
+Dim1Min=0
+Dim2Name=Tip Current
+Dim2Unit=A
+Dim2Range=2e-007
+Dim2Min=-1e-007
+SaveMode=Binary
+SaveBits=16
+SaveSign=Signed
+SaveOrder=Intel
+
+[DataSet-1:1]
+Version=2
+Points=128
+Lines=128
+Frame=Scan backward
+CurLine=0
+Dim0Name=X*
+Dim0Unit=m
+Dim0Range=2.5e-009
+Dim0Min=0
+Dim1Name=Y*
+Dim1Unit=m
+Dim1Range=2.5e-009
+Dim1Min=0
+Dim2Name=Z-Axis
+Dim2Unit=m
+Dim2Range=2e-007
+Dim2Min=-1e-007
+SaveMode=Binary
+SaveBits=16
+SaveSign=Signed
+SaveOrder=Intel
+
+[SetView]
+ViewWidth=652
+ViewHeight=527
+ViewCount=4
+View0=SetView-View0
+View1=SetView-View1
+View2=SetView-View2
+View3=SetView-View3
+
+[SetView-View0]
+ViewTyp=1
+LineOp=5
+Channel=1
+Frame=0
+ViewSize=256
+ViewMode=0
+GraphMode=1
+AspectRatio=0
+AutoZRange=1
+ZRange=-9,8
+ParCount=3
+Par0=1,Shading,0
+Par1=1,DeltaGain,5
+Par2=1,Smooth,0
+
+[SetView-View1]
+ViewTyp=0
+LineOp=1
+Channel=1
+Frame=1
+ViewSize=256
+ViewMode=0
+GraphMode=1
+AspectRatio=0
+AutoZRange=1
+ZRange=-25,25
+ParCount=3
+Par0=0,ReverseLine,0
+Par1=0,XAxisMin,0
+Par2=0,XAxisMax,2.5e-009
+
+[SetView-View2]
+ViewTyp=1
+LineOp=1
+Channel=1
+Frame=1
+ViewSize=256
+ViewMode=0
+GraphMode=1
+AspectRatio=0
+AutoZRange=1
+ZRange=-9,8
+ParCount=11
+Par0=1,Shading,0
+Par1=1,DeltaGain,5
+Par2=1,Smooth,0
+Par3=2,Rotation,306
+Par4=2,Tilt,30
+Par5=2,ZScale,0.3
+Par6=2,Zoom,1.09
+Par7=2,PosX,0.125
+Par8=2,PosY,0.055
+Par9=2,LightRot,0
+Par10=2,LightTilt,70
+
+[SetView-View3]
+ViewTyp=0
+LineOp=1
+Channel=1
+Frame=0
+ViewSize=256
+ViewMode=0
+GraphMode=1
+AspectRatio=0
+AutoZRange=1
+ZRange=-32,24
+ParCount=3
+Par0=0,ReverseLine,0
+Par1=0,XAxisMin,0
+Par2=0,XAxisMax,2.5e-009
+
+
+#!TE;V2MOFWNNO`>HG\?T8CBTA5;LRFBAQEPBFaL`D5CH>D9G[N[aUEGMEEE`XI?G]G7BLJATX9JB=<?A:PWHEJJS7\VP6OPF@X?C?RLFFVFBFJDMLMG<3?A@>>EQTGB4@7IH_T(GGKD4MZKQ:QQ<8LRGLK=DM?B_OA??BJK?IF@FIHWTWIFKPNDP7NWAMCGRR2+-N=FCKNCGMQSNI8A=OOKWAVN?@5PGUTFWN>PF=MQ>C2MQA3ANLBG22FL;WXUWJ`RNDC4I<J:T[H?RCZKXN\Z<5-=aGELRRVVDIQMORMO@=HIOWPZSMHMYBY@;.=J>BI;4K1NF=eBGSCQMLQaN4ZLDEFEHPE;>_L;[;C8EOJ_E=DACE@GRDK/_fJdOg`NR;URWEBFPOHQNOHKGR[UX>#DGRJBFK[@LQHZSQAAFERN?LYbj[\PUbI3!)0JjVkSQ;B42=8:>3T>0URNbO!LDS`b[HRaSXOV[ZGSUFBCHOF,2ZjdD9LBilw{WW?O^IEGNUT>JFHTLT+!95O5FKQTSB4>XUOONPDB7@IQQECBCDMQKR47MeIOUSTD7&FTYIVODB7NIaJL<4OcX\FMD7A8%6L8:]BC3?3& 7K;GE>J1 1-5DRTEMCJRcefHIWTVN8?\O2AUOQMI%4E>GKZRN?\a\D>\LNOGXgRENkvvZAF:_MS`ZIA-M>>=HDQ41:M6THB293PA=DAD4;GON:EA/Nepj^IEKC<A,Fbdg\DJ=>?UGZnCM>-,FPRSW[M'55HGVAFV@J8BH?.%?>[OOJB7ND7(8,BPLQFB@f_b`[]EUNGDH>CV_D0D2>>@NgZ&& .:55.W<;O\hSI4JFC/H^A]__WNMBLbjge~pS.57R=9IZLIRR]R)$JB1;=:H01TJGSHU5"(-?IRRRLQAN@AHPRZIHcZKNKBDETMJ^D=OGNAIFK3*.J>HbN?F@BRgLZRQWSJTL<ZJ7XKUDNHK6AWmmS>HMd8]K7`[P=DEPQSPFKQ2KMMLAPQJOGKCLBEOHEQ<1?B/<E).%MesUH\I2Cl]=0GD0IHA4LQ[m;+?N^OOQ[QJEF3?/-5@GP@D;AGWXGKcBLUZ]K\?S=Md`QC?VG:aX\RCJRGSOACK<&FY@SESNN?,>BOFPJBRABG?>PIHJGNJ0HJAAGJ<2@^8<JFRG?GTPE<1HKMHPKF\MNH/*>ZK\F?8NC<?:;>BLG<C[IKH4JBFV`8+R<T9LN^<LMUCQOHGCNB[G^VCXKEB=DVCJQ6TECB<ZO>@PCDGXPE@;N>DPPQLQNXHJJR9GDM=?TLM?G:64E/?N\KMO=F=A;<LGU5Q+NF8BKLDOFDJHSLLFCHAQEOKS4J4\?IQGFCPBNBFBDEE@9TJR^OJDHDWAMGZT@UQ[OJ<A>GWBLJZ+^ALGU;CBBKWE=DJX6GC@?A@RSNM@:IfG2)4SQ]MR@UOT5?G-;TLCBI>6HE1;DN_FLF6N8CHN=XFaL7B=C78Z:X0GPHNJaDPA@H?SGOHAHTMHSCE8RSLD8ZFJ?@@MDQ>CDPON?<QHG@EDEHCX?QU>=IYNLRPLMKJNZu^THINFXA8PFFP@VBLP[<CBDKDMDJISZ[LF8FWC6FMOV@A\<J5CD9=BPVFGNGHTW8DMTFQD7NHL<=PAZT@KIP;?JY<^5KBGGP=@FAH;PCMKRGPCCMG7JNHJGTML@YGQNHKNH;B4Bg[/UKQC=>U;N2KKPL[KUFCKUEFGMKMHMAB5C/CIH7JU@6CHARNKRBALS<FCOKVXCR\>SAA=SDD3XO@DKBFJO5@HH?\UGRFM6JE?CKNNFPLFFBFEFHHO\Q,[HG4DLGMQMKWPRCKH;MEHE>KSNV>GB?HEOKTBHSMQLOO@@C@KKKSUH0J@>]JIDBD<PMELK7GUHIGk7HK?>MWDPECOLMBEBTMK_]ZY/FCB@POCHUNCAFSCMJ>7MFF[DD<;CSN?OE?:MKM8CMRUXDEBHR^IR=DGONH>NK=JHWF@O4D6H;DIHNAMB?>QH;UH>BLVQRI@>C5;ED9CFUPAGF>KP@R?G:5$.U/2:BXbVIHTe>FQL<WPLaOSEKFLGGHGWJF7D;OEUGAFIGJMH>BE7.6XTOe\aJAJK@MG>QO[b?ALO@:8AJC46:C8IEMBEO@M@KMGI>7-?%5JXWDMXVTOG@FMC7CXS@C<C0E]H8=K4<TP<:FYNO77CRVANKOH85APaB30JKF<J0FXFG_B5=S]WH-4WlE3DBUMMEG<CWG^UQKIGL5.6PDI?8P?VgLcZ^FEP=NTKMN<>J/:G?G=G4A=FG;7>O\FP/'/(:3MCGBPCORYjhHLX0N@:BFUGQFB=B0>IOkL@7169FEON50<TRBPdcJScOLSY^HB4>>6QZUNHaPSKTI:LL.</DOW[BA;B;KJ?KDE@;LKY?GT9FLa@HTV=8??EQEACU^]]-*<TNMB@L<MS@ZKB;'6-1'6PMQJG[H 9Tc@DJ1=(K\‡eVVLPJB>A\Q`S(0$1OJF39-GICMCJHD9:41FGP5HRBTO8M?:De\dcAGDAF5FLU\R[\ARL;D`ZK=DFGVLRFF?@\pgBBKEJAKX]UKC40]a+0NJ]?B;#CPK!;<@_J6CH;@>?MUSXUA4KASC@GCRUFL<PMWZU3.=FTP?AMeLKFHLKHM-NMGMSW]_TRL\V@HETUMBBIKKIeRJ;GRSZSPJNCC9#LjIKONJ@JL_kUDTgJ)%7E`ND&*4A6LIT[iSB. 2?QlCHSSDHSJ12.@VR>;<PIHU5N5+/5PPXCCFO_>R?CD;IH@Q[XRSDTcDM8JG3KDB>E?PaHMWRMA>EXR^IPKHDQ;EW85:LB5A>;=PNG=U^N@CVLUABM@Q<\‹`XRXOAH?WNOURK8d6U@DE5,=>=<b;HH>9AcMFFAGSGJ>ANL?Z=DIVMJA=;><T^]OFKFFHOENSbPJMCIQIFGEJ_>IcH?UHQZ=-;N_SVCLMOOMNMEJW55.?ATFELKHBO?:=GGQMEUNNP@F6P\LO[WLDCQAAC2?NOCX63<BG^[FEYT=FGZSPCE_EU]@PG@7>AC@DIICFJ?:AMDETTJPHTLF>QCEY4PXUSOKFHKIH[4_HC0X>TMNBA;F8AGNJYE=@FKE^H^EFOaHFCSdJE?G>RHCD@IGnNEPQRHPDJM>9M=NT9NPQSAJGR@JLANPFDF@K8M7IIUVAFJ<FJHD@WKJHP=D7>AJ:NNFF?F:@98AISJ_AF%2AM=>AFO<R>KUTI;HIKFMBTM\NLHFKEM:@CJMULKAGMLSAHMP>XSHGHP@?2AQKPHA?BSB@BF=LAVMBNTB<F@MGVMBGHCMGN2DBAFRQFCEC@:DFF\HANVOAFJ?N5B?H69H?KNHAQAA=TGTLJH=ASJH,DJKS>PMRFNG@KJ8VKALSP=A=WNKT2JWJOMRGRPG<CT@P9GHTHLDKR@OZZGMH`DAKNARJCWJQ>ENBMQHYDHTEJEKDO?M@cWHSPGKC=@M4JDDH<ELOCJ/AFCTSJ>J7TLRBN-QGISDBFJBO5<(KAXHERARRMS=LEIFCM7=3JELHCQ5KMDGI>+NCJ6SEOKNJRGH<VUK4?<7\HC=MHL(BRFH@:7JaT>POX:6>aBO7FO75DGSK@MHEOOAEDFI@<:9;KNGJH5NH4PRHI=OJ@FKO=QBIRN;M8OPJBA,7HKUI-MH?G2F4D@NMHEN>8?CXJUQYaRHPK=8]GOW_BLGA?KJ<AWOEB1HIAH:H?_OeRLFC>FTUST[@<SKNKKKNS[O67E>AMVDNH7?5;646JDOPQ1(0MM]\bR<NLE8bbQ=,HEPUZQK33C2F8<CCWh]EGQSJZISJ6KhB!''%C4#-6;2Lbp?&B>_O?4K5GO@Rd\XW^T6;d`ljUQWTMaY\\__OC%&=Xp`TRD?KODB`EIQfSVWS+-WC=::>H5LC==J$NkgDC:=*@'E\[EMO?;DLMTW<ANJMDQ@221MZW>BFQNS=I,#2D4AUQ\^[@?@Z‚qpVCBPT;(`;"5L>#1@;&*87`_c,2L6F:A2?9*<H&AL80M]KSkG58HAZaRMIQW}sX^EBK<=.MKCM5:T[o[O:=Y]^SM?HRv|L4>bGK?I+/I_E17KQ\>J>:GNQeNMLHBLO>J‚@/00vZ##5RMK>WYO6"$AhaPS>0.A{LIDUWWQZZS=o€[>;+?DR\l6-:OTWFEWE<DQeWISM7,)K;I]m‹zk`SHOL-&NjxZMPHDaP9HN~daWDK<5+ FgMBNaDPA"S€€{_RF 4AEJH<DC8&Dhb^^*JBJHH`bfN1XEDGN3->MMrGNBPNFN5-<RYPO<<MLPT@@JR$-P_KQ_V[Z@DQk`TQTE<CAAHANQ:CZ]OTQP%2QUSKAMTaGDQ\GH\JQ6NFNVMEKF[DJa`K`ZeRWEB[MXM=EMBM;4&-50>:HEWQC9<=MF<HKTG^@8;AUG<LHNOKG=PADJ>JbM?\ACF@S;J=*G\POPNAEAHKMDG^?GPY]OSbEMKHECR8E33?@JHMGH=0/ETlVSZ4#?>7G?GC@3(=UUNSVRE;JHbG*'80FHGQD>076=EV\OVNSWcO:0NTDFEED8C7:n;GQZI@VCARZETIJRKOaL4446EGIAQK56GL#:XONNJOCNZL=PRXFTPJJSF<AIUA2:HMJ7P<CJXRO-0FUQHNB@3?<cWDQIFFGG?:67DFVBQ?E+6[gH?UQMQYSJP`]fnDVSLIW@DMAXOM:SKHJEHTFWASGSEEEPCR;8<M<PIP6OWI<LKQKUFHH?H;9MUWFAKUBC?CBd;.B=20>GF\JAHJIbhM(6KXPGL2B;DG68B8ETR=JI7LXFLMOWD@@ZDPG^OFHAM6L@S8]BKLQ\8CGN>GT]K;KLR@>EDJ6JE=QXEKLOEKJ<6J_=QJEB@?>FIFPTCbgGR<SBHJ5R7IFN=UGIN;I?<NMRMNRIK8p:E?LDJEQEZRD48MTBPP?KLD>OHMHVM8LOK7`KPJKB<@7T>N;EG8H7G_@G2OTDO3G@?SN?;QjOM:F6G\[>?N<8PB=TT?O>=A>DB`GP/=LK[M>X_"NOY??H@57MYBPQKJ7_FEE4@V?FLTJM@hGGBCd/[FRGGDBK8JC>RVBOCR^G>W<OM?OCCG<@N3VHQKSMPS:RJO8R@XBF;?X76A@JH8ZG<IN)G;4ONOZ=DRALI]MV?J=6@MHAUDLBIL>H2BO:P.>7K:8JDRAOU?QSDDONN?TI.N1ZO=Q@GGFH=OPDfCR6AFMXPTJ8NJTNE>@P@W<XROOIDR7PARYCXGDUC0W_PSLO<aQP89MECNAKHJN\NNOA;TF6WhW9G_M>MGA5bARqVQ$NDCUESQDQ,EB`LMJM?MSM<8_QK2OHALFYDLFhLK@I??OHIGFMBGWB2P<5@UC8?7EC/ZRbbPO@XTQK:<,CACO^R@JCITE;SB@0JMS2KH@C?M?AF:W<G@NLMFP@MD6DG?L5DR1L%HNRZLIHBAIAKFECQO?=QNET U@V7WEFJ?8,ATC;6APGB8:6WY^T^U_cfrP[;?UPTPOJJD[K6*GS>IC@A,2QAY@1OIEAAH5OEO>L;SZhX3><$\P3AZ#8BYMUVEROKVNA4BcCHD51B8ODQI=MB35?FBAGG@:=QHE:9PPD?PR,TSJR[MLWUfP<$NTTOCI\RKABLVRaV7>LRA/MMGLJUF?A-0?@bc`fFLGZPWBX}x`dH[Q;(NOBNVWH5??3D`TOLKD^NE:JSNUP+.\D\O=18/@U69B(FKK57IF%/b`OQTFEIF=E`h^_OHLQVhKD?UHDI@F>HS[MRf‡[CVJGN>:6E.5=JB:CZPA=D]ZY^X`EF-EGPSa{V3 #5XT[WA2H:XnKHV\J;dP`C8DGOHOG6A,CTY>=8UQ`7;F=F[62F^T?D@DJdP.2B;@EKMOQ6K0>;,8CF:JCFO@45KN`X=BGHL@Qlkgvl=46J;FZ=paX:^p2?IT<SQH  :RQQCKE@WHF&51DONVHSY`T^ACOK>RVH*@HHEOFM=OWIPScbD&@BETLUIE`ZHJSXCM@PJ=HAZJR@EXT?.<;BS6@>OKH>CG4(P2QG1Cci[LAJ5CM@AHD@MPPMPLN?EH\N?JL<W@?\_fCCCKOJA@<VOX@7'4ONOMY-00?CN9dH`94T:1,3>CIaLVTDG6HN_bQFdDH>FOUSPH/GQWNQH7D,,52B\TLIQ0FHAGIB9$"ADW@SMST9C5BJHPPNH=NPC@G6O@TMQHMIHo[L[H;JHSGB9GFFHKMJREKDCSDMHQPBVGOLZ<0HKKZDPZS<BC25HfTVGUE^967=KRSGLS?DFKGC<K@KKP?EGDEX88MD^YTSR>ARF=2O?17KECGXB8LBHLC2<TNHEMG=4;6<GHUFGN>@8BCHM@AM?KNSHXADDNHQ@LJGAK8<>K[M?L?JHM<L@DEMHFB?A;:;8WGIRJNSCI4E2'JU8HKAGNABRHJLQc@GARPIJG4C_JZXLG[POC]THN_AMLTSQJP>9Fc1KII\DNLJJDPMH9IT5D=CLMHN6DLTM-EbEGP;EQTSXNF8HOXA?GPTEJOORF?@I2HPUSB;@KMLA9QLHC=D@QSZPP@EHM7X[=\LYLDF@J>F<RTOH2QP<BG8CKU`VIRM3UOEJKEXDXANJFK5BVDOE4@GbL4F;bLTPZFWM=;B?OK;AHCi>WH>5RRVG8ECLOK^S@G4:>JH_gTBD:AGONCPE=ORSTEC6CANWP<PROIF[:EABDMVWGHM8D@H;TQKXQDHM>BJbL9XKMGH^4"BHCMD?DFQHTS?DHBNSDWHCNHF4GSIPDLOSGI=dLEPSY_HQOBCa=PD>8-?FbJ?B8GNI4M_^QA=EC<V4?F8@SV;?8@QDOT@8XPA<LHGLG>@7ZAM^WPTCX77HG6VcA/?8M:EA?JQNK*CADD_N>aF%U5L0-GMCH?;@ECTWRND=hPETLJgNL5GC<C<F(;IB4TH^_bQ48EUlNBF<DZK@IKBM2;#6EXUVGFF2NQ=1<PJICLAAEVV8c^VJbPD73EBGM;>53:DAQM1?4NR@QHNLIH^QTPBC6AJLQJOJ[";<OOQG?3>boEE(-;?/+DPhLNd68>>TN>LZOTL.;%=JGNQ=A<6;B;GFG6M@CHKLK-=\_kXYLSKGBbdg8WE>=U[CBA?_cAN5?BCJMOFON;25C?@RB>;<0OSUMHXogOJ;%%=LD=ZK\>'503:/0>=<(;5(:KIXJfREDccA8>IIHMHGJUAC-;GD;>9>VPR-918)<<IQ8C.3\Wpv0+E8;XU>I;4<GDKSKNQQDSTGB4#E=4TTF-:_mhfcOW\}BD\wf;*NPQW`Xn<&*LBfVP]bVKJNFR=0NHcJPQ-,dhloSFQDB??4QOQ5"*1;HJ[M8T]4/PLGA.7HMJF2=JJMU<?(?BQGC@>,DB:WPSBX\U@?iV<'2%=EMIHX19G)$=S\fFLL1!0HZ^eSRQRP]I_C+6FJUIBODN>#%'BRNMX8?UTJ@PJc86Y^EB8?7?SQofeo^WL=CKP6+!;AOI?B0<?5:@J\OPHPL>A<:W@>.><-&]M-CWpXHKW/GIX@($8/KZ?96!;thRFG?GGHEJ:' +?NNJ==C@avH,_n_N7?YH.HXll@(@;F?AGRh[VBRNF@HZEWU>[K12HFKHLBBA<5nD†_pXAHA9\c2W[rhn8JC6?)4=LKGM\Xtn:-@OSPEDHF-)1<DTGIJ?:C:H>>FEG`DPFP@QUBOPiS55?:WJNA?A91.DDYTBaVGmN-,!@?NFKNG-5/$BGJW_>QFA^POXQ]RQAHN\LP6ZhSR?VNgINLP268-=NL<DUIUH(%MNNJG7@3=B=<?RPQJMK@@_FKGQRN?GG>415@FU8GPffAEKPPI7$IIUWROQ^FT[tg?0?SFMTJG<,:><Z@RARFLBPG9T^IDW@>DMNdwC]j_KcCmWHN^hY^N_BH?=WD0+,@NUTANMAWdFCSHIAPBJ=Q@4^TJJLIF<@RLnHBD644@\RWI1IB]cI;MGCOQMJO.$>TJ<AMK_BJJHUPJKFIJPHHE?<@k2<ODP?D4+:MkC_6[D>?GOC6=SJ\LKIR<QPaYERIZN<OH1M6RG?JL[INMOGJ=5OBI>L>SNL>MDHAC:@ICJDMKKTPdL,G?\PBCHB=:49PX?IE\>MARY=BCJHGMS+?EB==O?GWO?OOBSHUa@X8KCX?MIMA4,KPBOCLACO>7I@LN\PDCFAN@><EJH=BK?5?ABHSOPNZMP:HB:B\C7E?KJMVH=EA?=?CVHKASQMI>DQL7LOGSNPQKL9FENLJ[.RKIS>I>FZ:RCEMFKC7\P<IEGOPDKJ7GVMHGQL<>SHD=BDKT:?@UB<ADM:PJ`9@K/RM6UGG_=KIKN<QMB)MBAKJANYBVKEXAD8JDMNTZA@F;D?`RCTOG0J<4MP6HJgOXIPDRB?GRM&KXQHAOS0HDPEG?GMKL?OAF>RRE26???KNGPD<GBR0@9DE>7<MJQ_VQF:GB@OS7:QDDL@QMDJ[YSDOEGJOC6RLCSBA;XWPFPJ==JSFUT_][IMLMLGP;GME`R=;JUR]?W6N6Q`_HX2PODQ/HI-DSPGHN<KR\Zda[MFHMN#,DG9ReX\SHR\S_G>(O;PEU\TPDH`HF</MOIOBKH>OPFUHD;QMR[FRQJUB1JLfHE9G=QRXTB8CM>SJXEK[[GFERXN>BCSMEBBDM6OM>IL1S@E;G@Q@=RMDWKGB8(JOXS\ENTT.=N9C;G=e€c;A\O=@;(/OlR-ATDZP?KMN:EC[QH?>UBG3XJUPSVVH@D=SUOA9?P/OpldXXPV5DMa@39@FRJAJKOQSJNHO@BGL>H;;SLIFJNN7BEDC=PXG>XOJHQIKH=WQ<fSAB`\2P\Ne]DCQN<VewZ9JIEPHRQQ;>L=:ALFKEL@@EJKQNXVMG8;[WOOJG`V\[FHGQ;iu[XQTQ8>AXI4B@<Xn`S[g[o^>FsHOHCCMHBWN88&5<E[UMCHG7a<2-7GJRO=.T\9<II?C?J!/'0l}X\JJEYfVFA-G;R[hJGRXTI8D@GT;8!Phi\RJ.D48FXhiY]DQRGQALopWfZJBR\M1H0;?NC>=RFOP\^D5a\LJ %B`tYS4>>EQ7Ace`YOHHRZEnrfB@CGX8l[R121<FUOCWSUCFCX:MR6NPeZK8AG<,+:fek]GPD;L:XTEB%& -MNX]BO>2kue{bVELG5)9QlRUGCH7OSH@@S<XVQV_N6IS`#-A@@47><^rI#42E>CES69"??UWUSYJ2!+Hdj;_NELMRTiNbJ@,$/YWR7L>>@auxoh^QJSIIB=]MWmVSOIJELRb8?PQUH@K9:C/O;<HC;DMI]FG6GHIUHIDEKE@-OVm^JOpWKYReF1:H7MSMWB>"3/DQKOPFH?5?JpqGUJQA[REAMD82$>fA8QMDBEPNZ71C0ED2:4-'HpOa‚Y:PKKC5B<<E]JG[ICBE;<HaG?U@=:DW7SHAQV>@LSC<=B.&\`UM@OFQBDnnr=FJ=DRDJ?3(?V]=WHMD8NJMj]DILPShO@>8EGTXVQX]MWH?12HfX4*';DUA?LPO>fTmacN_G5>?\f\ACXXLKMVC6&/4DDDOX=?WEQ=CC4HPTN=_PV:<T\TFG>GA5D\N/B<JHVCIFA<AhESB^?KHG70;>SBQTI@BbAP>6D=+%*;ANJTCNO8;Q:!37REBK@RAES]NUCO>PBGRH=*7LMJ@P4CDHC?KLKI_7Aa>WN^6=P>KKBQFGD6NORQSCANEQ?&4>HHVWFLIE6LCDJBNGMB@2JGDMWEN[@AWVG@27;E\B/@@Q>LlFBKG>3OHRNOXCHF<0HcBTGRRDEPH:;9IBQ[AMJAKBIIBCKHKA?S?GEA>UKUCRBVI=BGQJL[=MBT@RP<@LGQRIJS6M@<@DAPR@IGEBC2BLBTRI[HMJGUGFAX4;HONDMGQN?J@A;KFH@T=E6I>OBH4DVKMW=;E9D?^S[KSA5J>MJ:@JJh@H>_CND<<GQWHRIGO8ZQI<DVJSLTTA;NRK4K`"LTEQMBEH9LQ?AKLGEFGJKRPR9MGYR>FIH@S;>MINKIZCBE@8=H<OQU<GEOGA7BL8R/KJRBJ=:7=La=[AMHM>CA6:KdCKETUGFIEBAOHS=4NBMIFJcJ]DCNMSOEJQ7:RNLPHPIMS>J9JM<>FABAP@HJOA@?S]DDBI^KLJCDOKEK`\QMHHD:NRWKOKSCNB=;C\\>RXOHG>;8]EFUgLKDKEgCIK8CGNA^F<NMA5PNSNG?PGNNLO?=[MG=HHUBPDBCO;BM5>DTFN3LBR;D:=8OOB@W@?PBRJ__PHKHLKQB5DKA>>D[A^[J<CUN9;0EGLF2KH=<OJIRR/UJ>HVN\BFOLULZCID4>MG/>=6:ME=S>QXQMGJI><FBJH<5?MDWQEGGAQC2DDE>A;D?KA?32KGGPA;KL+WA4OB;,.DJFBN<DJCPVHDIGXP.@SCEMFABDENMH_AA/JE>HDAENEBNReUQGK\/]JCJLPS?3<88N>8DVE4FBT^WdKLLONJ525HHI=ACKDF]WETFCW>;7\[TBJLBGKFEMG;HA_B;FBFCOTMO3;OBNRMRCTH<15P/RWL_DV@HHJFFA8<<=7FI/.+,HR@EPFG>LC>@W8J?N1OL>A_TBDWAV:L>@7FGK]VKIWF>455KTZh\RENAB3fgJ3XVLC><G/<5"IEYP9,!?ENQ<RP]frJMFRK@D?U[_Z?%78D=WQA#/#6?ENNQ]QDRVL:=DP24@6J2W^F[X?eF^@FKahGFSW?FPBBI<JHNeIFNCATD=H=Q?GTGML<@DHC^dafa;8J>8</]SK]SGATU\OB@<HP\TU_SO?N?HYOGQLG<1HKON?##SJNIXGIAIY8:8PV^BGRK:P=USDK@4HMUM:N /O\Z=N[V[VaO]bd\TUA[^G 400DA>IGAdJ?Xb8?DM^MH>65HeRD+XA+0EHPBC5OOUVKV`MKLR<;!04(,R=I?LKLJ-5bpjDAP[FK2HB76FCIJ\IBEQUQFQdOOIGAMa((X^`IKMM@<LuxacNMBL=><;&-K`WZCBHZUOM8A5>J@4=/9>=DJjS926+<SS@?0*)+QXYMJJK>TFAA>0KR?L?BMS7FE<n`RLD>CL`[b-#AC>C<KDRLNC@8H[LP@XPKR>7BMHSPN35%526;M\LNOMWP79+?RJL1T\W*"N4CU8@FHJBM5J;9:Jp\HZAX>C6@p]^WRKMQVU140X;3JOE=OZ\WSs\\<MFQS6;JA&CAMCQFOUR5[fOOPCM`A<ABCB34H@@RKRO@G6%,NXoOBJOANK@hTRHBCCHD9.2'0JA=GWIVFHEFUIO_@C6KDDXQKO>DML?NRJLSM]eT4 :<JG[RJGGKEGCQS>CGO>*7,9I>OR;?C^<NQRKP?A7>TFNDOOL[AKCO;FATD74COSHV=Ag`M?\TZC>PZMF@DFHN3SGNTQCKLU5EK<5B?>6JG]UFOGD3$*CeNQA?L?ATHPAOCMXNCD:FLA1hPDFJM3AQYUM?=OCCKJ=N@FIENABLMT;GVSG\QAQIXMHY8;DM=RHAd;JN@>CAJOEBHRCKL@ABHZOGOK:MBJ>L]5TLCBNDTKQMUQF9FBHGRGWAKM>=T<SEP[8VCB>>UC?>PREDK=@BPGG<TNEfBM>D]NHA?LRSEHUHF77LUNQGaHDD6458aL?NLME?BB=@BNMGUHDJEA2RE=ROF=QOMBM<L:G>EJZO=HQD7MPH6DCKY?2@EA?N:SHRFOM;I@DNF;=JPSQOO;NDGBDAY=IKKJBFE@N@DPCIJM>?QEE@JP^NQQMUGQFA8BORGGBO?MT:LEB4?IFHJFBKIMP[POOGCDPSEEBHIHMQH?ADILJJEJ@OEMLOM:FGGFUFQOVD>JGGJBQC@RJZFNYA@D;@R_V[[P.KGDFAF=FIOGASJ:?DG-=LE=?UPFL;RPMJ9JUMBOM=>6@5HSRPFTLPI8KHGKNHPVLGCORMGGENL@FALU?PGPF>FOCIINLABCLDL[GJAPUPB8G2ATTUDFJFWBP4E'FH=88/]FVQE]=QAOCNFB>=Y@4GOEaPD8NND\]VES=;KJFHJJBCKK>@7WDMDA;JXTLAKEaOIVH?FRHDPAO9H=E=AHJCH^BDHNG>G@J8ZH/GEG<HBQAHQCCFF'KMI=TSEB>KEaK5NRTLHT8X7XCPJ>@<IKNCJF9@RZER<?=RRC1;D>H@4GJ:AL@CEFRORQG;M<IbXK9D5N<>?,,?;5IbZZQERGEVDVMB7WNOAH88RA\\UY]QQ[S>GM?*028N<AC_UF231DPG;K>QKHHGIBCLB=K[OQ8?#=B8;5@<=?BOE:UPEKH]J?H<1#?HDC?EE@<DHQ+:PJJFPSL%6<>ANI@STHQ_SD0347HUS[^XNX\fbH@NDJ^HKL@UWKO@Y`KNVO9NP:FTWgNO8JVEOYD97;7NRE=TQOc`W0D>JCEH4;WDU@LR[H>MB)Ywxu{_SEXT<D1g€wu`dQ8<32MAY<!/EU[X`ZS3WQ, 3=ACGEN18G24JTHNOMJWAXbF-3GZaKRF2(&7=X_;@<AOcP[Mm`N=7FH_@?32/?>IfQVQG?4;@:HUqB?G1D@KG\gv}fbRDCR@3?BdEZL;D\oPR;QZ`^]N5-B@DOKFJ[W\OS3AE:[]HOaxl9;VB^K0/9 "8;ocd@6HFfa`g)-"8B`xZcMGt\8<YO>50C<TwMSL<?CHJRnt|LG\NPZI1-EspMUDHU+//MC5?WQ)JN2=FKGE5MT^<8CZGUSZO+$(F@N?J6X@8,5IE26@?RQaR_=*D\MUKMIQA#&NfUFKAATAQXRe^bONLOSKMEECPRK6HG<&/"Z?M:?OFC;=&56?dKLMIMMQEiX296KFNeegSLNHVKH"8XBUET\:;01?]CH\M@:A7KIF`dGJOHIBRv†Z>A>OGJB2WSWlQUQWET?NNL\JA8N?PKH;98;.20J>>HP_N0.4^hQ[SJU;METB^HCEYLHH7JE5!7=KS[;aWUOOQkhR()HDD;I@GDWEahdV=FPJEA %Lt@T:OU_?@D=F9@`IFJNS7?F-OnUaFC`?;PF;CW:ECH:QPPOTK`<@OLSBIP\VZiF[=GEN<AZ\Jbj<[7FP;?MSPOgHQ>?NNJFCDPH<FF6-@@EGNPdF289HVMKDXDG?JNGYkQFGKWJ?JB/2CLHKIQFKEQ@8>@^GGBOATE=N;JBCQRQIOR>=7:QJNGWNG?M<FDHLS3FQFGD?A9QHRW=CMDLKMFWB_YA=LLIOHGD@53A4.HNT@?M66/NN0?EXNLFCPLZcM<VTPCUCHB-<F5TCTKJM<D<CCLc=KG<EIN<FPEJSOIKNFBADSU7@SRNDP>>A>GDRJKUDNI;NHHGHLUGTJFEH>DHQGV?MJYI_HG@;CNKJNJULQGJBPIFBE]LNQMFBE@GMDFOPJEZG8<6[77QHFS@VEAJHJDZPGFN?NKGLKRD=NOQGQFDK?LFIKAD;D=SCHJIJXCPLB;HJ?FKDZRGLP;HE8DFHPQV5PMR>UCFCUSBS[FZLUCV>ECDND[XC=HG1=OHDL;HXKFLGCSIA?JGU8H5OC3GJ.G_LDDMEOFJP9PAEHLSGO=BKG7CE>JADYNHMEG>HFFJ]KLVPA8EKH=G8HGHEC@HQ=JGH?J?CK=H7JJFFFGNCe9;OH?KFWIF?BNJSCN@NJUA<59=TDKOQOLBL=KKFDMDSA>ZGG9GGKD]SD<NK:BMM>MHGWNRL9F=M<_MCLEF@6J_I7<WS9FMAPHAH;gHCFJMTYQ-FKGOP;D@I6?EF@DN[8CCEK;RMTOE`MCPJK?<MFRLNKKBHKDPQ4I?@M\9>UW?>:BFMJ>@DDCXP;5H6EDM`POQQFFAB@QI@EI?ESRINCIIK>:DK?MDFH3MO?2>0=GFMQ@LLH?ZM\@;XFGHJF=?SZQONBL9XM?@9EEN<:TR_AKUBCIL?BPSH@DE,CNOJFTUNBJ$<LUVCH@AK2?I9E@<VHSK`aWM:"?D6:1+<G8+BBCDHHRT@LLOPFB9<P]jlKA;XdL:LK;EJMKPMJXMI2UDPFR1CZU6XGPEFSEN^\HLER:FINNNEJQOTTZA8'BSR2F3C><66@=7;IGJRJHIETP,MKD>:CH,GWF:W@CE1=LDGKHPLF6/AGQA\GLTfABKVC>X\QJ<A?=><</9JXKQTFDGO[[W@H=38@>?""=PHSTCEG@7TXJAOPONMKD??\_lXPePON1FA8C;2EL=FKP<98?@.MRRXRG>4:LO*?JKW`MEIX^hF3=EMCE181qlZTHJWGP3824LGB.'5/EXTQFC+3bppA)BAJ?HA2Jng86;48PHWdX,$+PSSURLL8"i\HK[GGQBHS37GPC3J:2T71.&;>I8F@FD<DNK7<<-1<@FPli~[^EUR>?_PNK40jQTNPIKI_O3$"/[scrCLSB3D8.NZ^b17FBCLNQVˆX=8A26?M_T)!O€qW=PNFLX8'4sj^TbO=85QI7D;KP_S<03Dc[7/F4JEFVVD;B<08TH3;?8,0,NZPNhS;;",1=H>TZI=D7PANO2;Vfaa[VXS^UWCeY5'ER>AD=6@g^YDB6EC1?@B%!JBID@MR<GK-,YNFLLKMK=Q@OG?^KAXhBNaWCABLQHKDF=ZawhDSWZQ>QSEf<'&9_BAD=F%LNmgBTGO>E7GEKKR;%$77HFG=RS>8*&>IG20TFD9PQJ0>QDLCL>6\ntbPVOSPGHOHM/!C>UF@OTQLPLCEQQNTEGEPS]CKJIR];G@TA=:RFIW4?\G?E<7;HVR>@F;=<HHBMWOTHHDXDOOe[K.1EG8:RR[(+  ,PI8GPEDH7=AQNQEBGHLX==5>>QGJTB;BQ]/,>LQNNCSFNd?EC4OHGMPHQOp;AJIS?O?=K_QEIMKJNCOJ@FKDOH7QS>HAFOAKNK@CNQGFH<ROVTR3!2AI@JDMOA:3DNLPFGIGOQXF>HHBOB@DRI5==DH[KO@Q>NF7CXUK[?;BGQFV\@|GNTGDNPUfVXHX[FTPDS3B2N<KG[@VJ2BLDC?BQT>;=@??E/?6ER@ZBEOBMH9QH@(;ON@CDSDB>=TRQOATBTRH>?)C^^=JHBGBRT600^EI;G=JD?TO6:2@D=IPJSG=QJJGHFDGJEMCGG@GNNPOIHUIILCGKLSKMGB=8B?BISIO[G8HEF;F@JCM@FKDKBHIGDED8MKX>PJ=BDD,<ISV<HO?H[TJ+!1@OVOX57;e^@78H<S_@LB6LAMOS`BG@?T@LK=eFK0@=GCC86;DM=ML^]MWF7=T?J[;BER;=J];BKHTOBOP2RQ8?8S@V>[H]MPUMJCHC57NMDEG2?M;\R:D=\JXH<:4;KFNILHNMSMZ=5PPOZOX?<G6NC@IZDRYMKaPACPHZIBC<=68?WXQ@FGHCMU5E@K2HKDHA8:JXAHD<IANHUQFM>D;KNSNVBADJSN?FFO7KALQU;2EL?P=@S>RH=XFW?SBE=DOJPUQKPGPGMFYcL6?ANKSHBTUBF7A0OQNLE@8PDJJZY_YM@4Q>GWc\KFBTMTDXJ45)0D8ED8,CCEHBUCMOGU^N?W^=HH=FHQKRK?0MWGGSNUOING74N>^HX@[KND;>GKEMPQNKNDHM<:NKS;@SQKSQKHBV?QI=F6:\GCKXPFF@JTHCDCQG@bICM6C?DCFALJJ>F.G=8M@bUIPL@FJDL<JSGF:9J4@IX\JJJ>A=D@PTBc[HUKOFMML>N@O><GAPSN;WI/=A<SPIQD;3?/@<:AH]UDBDXPJ6H7SKON=<7QMN@BEH>[OS6W?S_HOD;<QOK/F75CEDD-UEXG`fT>=EJ]c``O;NIJDTHO>JHPC9>KQTH7HRI=9FEJ<F:8(QULRRTN80:..AFUNP=UGa_JK@3APXlG\[P?PMBBV9EJ3CaHMVNPN?6F4:DLBLDLODMH==SH<MZh_I]ZPB(BKR@VPG?RQ52$0FS[MHILFJ/GFPF/V=AUYQCKX_OTDX_VXFIN=OLPX{nPI@GJZK8QZps='/(55\l_k_GT'Sec9SR>KVJQ5(<SMWSV71!CJBHQ`LDN@I?AZTPISS\HE?Q\†{[P7E#)'@7,D@WG>LNLR=D@CDP@\O?DRFS/4<xjVhNH7IS4#ENDQQFOZg^M&&+416RNQDY`WE3@CL?E<4RR@:?5GDFCNKI"7Gd]^D`adN!!1SK8EH[WNTBI[_Vl[FF1. B:Q]8R.%FO?CCB62AHNPP5H+C\GNBE;0&65GFQMQ`4043GMhRgRneYahQHW`P>IGPQc](:F=+#'`3=?IEBXH,GE\cfdZR7;UYPJMWYQZQ@L@>AHO[dQ&%10<9^W@Gd^R~iT"3";DZKHREL2In|lfK;KRG'-L\`X]T=>FSIV[ohA 4?[WUMLV+,?bF=JTLFVlNDJ5*CTQSWaQ@@A=H6>E8/#1T7k^H\JE/A`hS>:N,"17Qu~W;71<6MHXX7@ֹלֹלָלֳלֳל¹ל¾ל½ל¿לָלַלֵלַלֽלֵלִלִלֻלֲלָלֲלֵלֲלִלֳלֱל¿ל¿לִלֶלּלֹלֹלִלָלַלַלֻלּלׁל־לÊלÊלּלÊלÊלֶלִלֵלֳלֶלֽלּלֶלָלּלֻלָלֳלֶלֵלִלֲלִלֶלְלֱל¿לֱלֲל½לְלְל¼לְלֱל¾ל¸ל²ל¶ל°ל±ל÷ל¼ל¸ל¹ל÷ל½ל¸ל¾ל½לֳל»ל¼ל½ל¼ל¹ל½ל»ל½ל»לְלֳלֳלְלֲל¿ל¿ל¼ל½ל»ל½ל¾לֱלֱלֲלְלֱל¾ל¿ל¼ל½ל½ל¾לְלְלְל¾לָלֻלָלֵל־ל־לַלַלֶלֶלָלַלָלּלַלּלַלֹלֻלַלְל¿לֹלֻלֵלָלָלָלÊלֵל¾לֶלÊלָלַלָלִלֵלֶלָלÊלÊלÊלָלַלֶלִלִלִלֶלֶלַלַלָלֹלÊלֵלֵלַלִלֵלֵלֵלָלÊלִלַלֵלֶלִלֲלֵלִלֵלֶלֵלֳלֶלֵלֵלֶלֳלֱלֱלְלְל¿לֳל¿לֵלֶלֵלֶלִלֱל¿ל¿ל¾לֱלֱלְלֲלֲלֳלְל¾ל¿ל¾ל¼ל¹ל¼ל½לְל¾לְלֲלֳלֲלְל¿ל¿ל¾ל»ל¼ל¿לְלְלֱלּל־לֿלׁלׂל׃ל׀לֿלֻלֽלֻלֽלֽלֻלÊלֿלֽל־לֽלֿלֽלֽלּלָלַלÊלÊלֻלÊלּל׀לֿלֻלּלֿלֻלָלַלַלָלֹלÊלּלּלָלֹלֶלֶלֶלֶלֶלֶלֹלֻלּלֻלÊלֹלַלֵלִלִלֶלַלַלֶלֶלֵלֶלֵלֶלֶלֲלְלֲלֵלֳלֳלֵלִלֶלֵלֵלְלְלֱל¿לְלְלִלֳלֶלֶלֶלֱלֲלְל¾ל¾לֳל¿לֱלֱלִלֲלֳלֱל½ל½ל¾ל¾ל½ל¿ל¼ל¿לֲלֳלֱל¿ל¿ל¾ל¾ל»ל»ל½ל¾לֱלֵלֹלֽל־לׁלׁלׂלׁל־לֿל־לֽלÊלֹלÊלֽלֿלֿלֿלֿלֿלֿלֽלֽלּלÊלֹלֻלּלֿלׂלׂל׀לֽלÊלֹלֵלִלֳלִלֶלָלֻלֽלָלÊלֻלֹלָלֶלַלֶלָלּלֹלֽלּלÊלÊלÊלֵלֳלֵלֳלִלִלֲלֶלֵלֶלֶלֶלָלֶלֵלֶלָלַלֹלÊלÊלַלֵלֶלֵלֶלִלֵלֵלַלֵלֶלָלָלֵלֶלֲלֱלְל¿לֱלֲלֶלֶלֵלֶלֶלֳלֱלֲלֲלֲלֲלֵלֳלֳלֵלֵלֲלֳלֲל¾ל»ל»ל½ל½לְלֱלִלָלּל־ל׀ל־ל׀ל־לֽלÊלָלָלַלָלֽלÊלּלּלֿל־ל־לֻלÊלÊלֹלָלֹלÊלֽלֽלֽלֽלÊלֹלָלָלַלַלַלִלַלָלֹלֹלֻלÊלָלַלָלֶלַלַלֶלֶלַלָלÊלָלִלֳלֵלַלֶלֵלִלִלֳלֵלֱלֲלִלֶלֳלִלֳלֲלִלֳלֵלַלֵלֶלֳלְל¿ל¾ל¾לְלֳלֳלִלָלַלָלַלִל¿ל½ל½לְלֲלֲלֲלִלֶלֵלֳלְל¿ל¿ל¿ל¿ל¾ל½לְלֱלִלִלֵלֵלֳלֲל½ל¿ל¾ל½ל¾לְלֲלֵלַלּלֻלֹלּלֽלֽלֽלֽלֹלַלֻלֻלÊלֽל־לׁלֿל׀ל׀לֽלÊלָלָלָלֹלֻלֽל־לֿלֽלֽלָלÊלֻלÊלÊלֶלַלָלÊלֻלֽלּלֹלֹלִלֱל¾לְלֲלֵלֵלֶלַלֶלֵלִלֱלֳלַלֲלֲלֳלֱלֲלְלֳלִלֲלֲלֳלֲל¿לֱלֱלֳלֳלַלַלֶלַלֶלָלֲלְלֳלִלֳלָלÊלֹלָלֵלִלִלֲלֱלֲלִלִלֶלֹלַלַלַלֱלֱל¾ל½לְל½ל¿לְלֲלֳלֵלִלְל½ל÷ל¸ל»ל÷לְלְלֵלַלָלÊלֻלּלּלֿלֿלּלֻלָלָלÊלÊלֻל־לׁלֿלֽלֽלֽלֻלָלַלֹלÊלַלֹל־ל־לׂל׃ל־ל־לֹלָלַלֶלַלֹלÊל־לֿלּלֻלÊלָלַלֵלֳלֲלֱלֲלִלֶלַלֹלַלַלֱלְלְלֱלֱלֱלֲלֳלֲל¿לֳלִלֳלֳלֲלֱל¿ל¿ל¾לֳלֵלֵלֵלֶלַלִלֲל¿ל¾ל¿ל¿לֵלֵלֵלִלִלִל¾ל¾לְל¿לֲלֲלֵלֳל¾לֱלֱלֱלְלְל¿ל¼ל½לֱלִלַלִלֶלֵלֲל½ל¼ל»ל»ל¿ל½ל»לֳלֵלֹלֽלֽלֽלֽלֽלֽלֻלÊלÊלַלֵלֵלַלֿלּלׂל׀ל׀לֿלֽלֻלֹלַלÊלּל־לֿל׀לׁלֿלֿלֽלֽלֻלֶלִלֶלֶלֹלֻלֽלּלֻלÊלֶלִלִלֵלֵלִלֳלֹלֹלָלÊלֹלַלַלִל¿ל¿לְלֲלֵלִלֲלֵלֱלֲלֲלֱלֱלְלֱלֲלֲלִלֶלָלֵלֳלִלֱל¿ל¾ל½ל¾לְלָלֵלִלִלִלֲל¿ל»ל¼ל»ל½לְלֱלִלֶלֵלִלֲל¼ל¿ל½ל¼ל¾ל¾לֱלֳלֵלֶלִלֳל¿ל¾ל¼ל¼ל½ל¾לֱלַלַלֻלּל־לֻלֽלֽלּל־ל־לֽלֹלַלַלֵלֹלÊלֻלֻלֽלֽלָלָלָלָלֵלִלָלָלÊלֻלֽלֻלÊלַלָלֵלֵלַלֵלָלַלÊלּלֹלֶלָלַלֵלֶלֳלֱלֵלָלֽלָלָלֶלֵלִלֳלֱל¾לֱלִלֵלֵלֵלÊלֳלִלֳלְלִלֱלֳלֵלֵלֶלַלִלֶלֶלֲלֲלֱל½לֱלְלֱלֵלֵלֵלֵלֵלֳלֱל¾ל¼ל½ל¿ל½לִלְלֳלֳלִל¿ל¿ל¿ל½ל¿ל¿לַלַלֶלַלַלֶלֶלֲלְל¾ל»ל½ל¾לֲלֶלֶלֵלֹלÊלּל־ל־לֽלֽלֽלֹלֻלֳלֵלֵלִלַלÊלֹלÊלֻלֹלֶלֶלֳלֳלִלַלָלÊלָלֹלָלָלָלֹלֳלֲלֲלֵלֵלּלÊלַלָלֽלֻלֶלֵלֲלִלֱלֳלֵלֹלָלִלֶלִלֳלֱלְל¾ל¿ל¿לֶלֻלִלֳלֳלֵלֶלֲלֲלֱלְלֱלֲלֳלֶלֲלֵלֳלֲל¿ל¾ל¿ל÷ל¿ל½לֳלָלַלָלִלִלֱל½ל¾ל¾ל¼ל¿לֵלֲלֶלֳלִלֲל¾ל¿לְל»ל¹ל¿ל¿לֲלֲלִלִלֳלֱל½ל¾ל¸ל¹ל¼לֲלֳלֶלַלֹלֻלּלֽלÊלּלֿלּלֹלָלֶלִלָלָלÊלֹלּלÊלÊלַלֹלֵלֲלֲלֲלֲלִלָלַלֹלָלÊלÊלָלַלָל־לֳלַלֳלֿלּלּלּלÊלÊלֶלִלֳלֱלֵלֵלֻלֹלֻלÊלֹלָלִלִלֳלֵלַלּלֻלֽלֹלּלָלֻלֻלֹלָלֶלֵלֶלַלַלֶלָלָלַלֵלֵלְלֲלֲלֱלֲלֲלֳלֵלֲלֱלֲל¾ל¾ל÷ל»ל¿ל½לֱלֲלֲלִלֱל¿ל¿ל¹ל¼ל»ל÷ל¼ל¾לַלֱלֶלֵלַלַלּלֶלֱלֱלֲלֱלּלÊלֹלֹלֻל׀לÊלּלֻלָלָלֶלֳלִלִלֶלָלֹלַלֵלַלַלֵלֵלֳלֲלֱלִלִלֻלֹלֻלֽלּלÊלֻלִלֱלֳלַלָלָלַלֹלָלַלַלָל¿לְל¿ל¼לָלÊלֹלֹלֹלָלָלָלÊלָלֲלֶלִל־לֻלÊלָלֶלֻלָלָלַלֲלֵלֱלְלֳלַלֹלÊלָלַלָלַלַלָלִלֶלַלÊלּלֽלֽלֽלֹלֻלֽלÊלַלְלֳלֵלֶלַלֶלַלַלָלִלֳל»לְלְלֲלֲלִלֱלֲלִלִל¿ל·ל·ל»לְלֲל׳לÊלֹלÊלֽלױלׁלׁלׂלֿלֻלָלֶלֲלְלֳלֶלֹלֹלֻלÊלָלֵלַלֵלֲלֱל¾לֵלֵלָלÊלָלֶלִלִלֱל¾ל¿ל½לֱלֵלֽלÊלֻלֹלֹלֵלִלֵלֳלֲלֲלָלֽל׀לׁל־לּלֻלֽלּלִלֱלִלÊלֻלֶלֶלַלָלֽלֻלַלֵלֱלֲלֱלֵלּלָלÊלֻלּלÊלּלֿלֵלֲלֹלÊלֹלֹלָלֳלִלֶלֶל¾ל¸ל¶ל¶ל¾לֳלֲלִלֲלֲלְל¼ל÷ל½ל÷לֵלֱלֳלֵלִלֱלֲל¿ל½ל¼ל¸ל·ל²ל¸ל¾ל׳לֶלÊלÊלֽלּלּלֽל־לֹלָלָלֵלִלֵלֹלֽל־לֽלׁלֿלּל־ל־ל׀לװלׂל־לֽלÊלÊל׀לׁלּלֽלֽל׃לֿלÊלֹלּלֶלּלּלֽלֻלֻלֿלױלױלױלׁלֿל־ל־ל־לּלÊלּלּלֿלׁל־לֻלÊלָלּלֹלֻלֻלֿלÊלֽל׀לׁל־לֻלֻלּלּלÊלÊלֻלֻלÊלּלֿלּלÊלָלֹלַלַלָלַלֹלֽלֹלֽלֹלַלֵלָלֻלֻלֹלֹלָלֹלÊלֽלֻלָלָלֹלֶלֶלֵלֶלֵלÊלÊלֻלֿלּלֽלַלָל¿ל»ל¾לֱלֱלָלֶלַלÊלַלֶלֵלֳלֳלְלֱלֲלÊלֽלֿלÊלׁל׀לֽלִלֲלֲלֳלֹלּלֻלÊלֽלֿלׁל־לׂלׁלֽלׁלֿלֿל׀לֽלֿל׀ל׀לׂל׃לװלױלׂלׂל־ל־ל־ל־לּל־לֿל־ל׀לׁלׂלׂלֹלֻלֽלֽלּלֽל־ל־ל־ל׀לּלֽלֻלָלָלֹלֹלֹלַלֶלֵלÊלÊלַלֹלָלַלַלַלֶלַלֻל׀לֹלּלֻלָלִלֳלֵלֵלֵלֵלֵלָלַלַלֶלֵלֵלֵלֵלִלֵלַלָלֹלֶלּלÊלÊלֻלÊל׀לֱלֲלֹל־לֻל־ל־לׂלֿלױלײל׳לױלײלװלׂלװל׀לׂלׁלׂל׃לװל׳לװלױלׂל׃לׂלׁלֿלׂל׀לׂל׃לװל׳לױלׂל׃לׁלׂלׁלׂל־לׁל־לֿלׁל׃לװל׃לּלֽלÊלֹלַלֵלָלֹלֻלֿלֻל־לֶלֻלÊלֹלָלֶלֹלֻלֽלֽלֻלÊלÊלֻלÊלÊלּלֻלÊלֽלֿל׀לֿלֿלֻלֻלָלַלֹלÊלÊלֻלֿל־ל׀לׁלָלֽלֹלֻלָלֶלַלֹלֹלּלֽל־לֽלֻלÊלָלֹלֹלָלֹלֻלֽלֽלּלֻלֹלֶלײלÚלÚלײלײל׳לװלױלװל׃לױל״ל״ל׳לױל׳לװלׂלװלׂל׀לֿלװלװלײלױל״לױלײל׃לׁל׀לֿל׃לװלׁלװל׳לײלײלֿלׁלֿלֿלֿלּלֽלֿל־לֿלׂלׂלװלׁל־לֽלֻלּל־לֽלֽלׂלװלׂלֿלֻל־לֿל־לֿלֽל־לּלֽלֿלׁל׃לׁלֿלֻלֻלֻלּלּלֿלׁלׂלׁלֿל־לּלֻלֻלֻלÊלֻלÊלֿל־לֿל׀ל־לֻלÊלָלֵלֵלַלֻלּל־לֽלֽלֻלֻלַלָלַלֶלֵלַלַלָלÊלֽלÊלַלֶל״לÚל׳לױל׃לׂל׃לװלװלױלײלÙל׳ל״ל׳לװל׃ל׃ל׀ל׀לׁלׂלׂלװל״לײל״לװל׃ל׃לׂלׂל׀לׁל׃ל׃לײל׳לװלײלױלׂלׁלֿלֽל־לֿלׂלױלװלױלױלװל׀ל׀לֿלֽל־לֽל׀ל׃ל׃ל׃לװלׁלֻלֽלֽלֿל׀לֽלּלֽלֽל־לׁל׃לֿל־לֹלָלֻלֽל־ל־ל׀לֿל־לֿל־לÊלֹלֹלָלÊלֻל־לֽל־ל־לֿל־לּלֹלָלֹלֹלÊל־לֽל׀לֽלּלֻלָלֶלֶלֵלֶלַלÊלֻלֽלֿלּלÊלֻלֹלÙלÛל׳לװלׂל׀ל׀לֿלׁלׁל׃לױל׳ל״לװלױלײלױלװל׃לׁלׁלװלװלײל״ל׳לײלױלׂל׀לֽלֻל־לׂלׂל׃לÙלװלײל׃לׂל־לֻלֻלÊלּלֽל׀ל׃לױלׂלׁל׀לֽלּלֹלֹלֻלÊלֿלֿל׀לׁל׀לֹלֽל־לֻלּלֻלֻלֹלֻלֽלֽלֿלֽלֻלÊלÊלֻלֻלֹלֽלֽלֽל־לֿלּלֻלֹלַלֵלֵלָלַלַל־לּלּלּלָלַלִלִלֶלַלַלֹלּלּלֻלֹלָלֵלֲלֲלִלֵלַלָלֹלÊלֹלֻלַלֳלױל׳לװל׃לׁל׀לֿלֿלׁל־לׁלױלײלײלÚל״ל׃לׁלֿלׂלׁלױלױלײלײלװל׳לױל׃ל׀ל׳לֿל־ל־ל־לֿלׁלװלװלװלװלׂלֿלֽלּל־ל־ל־ל׃לׁלׂל׀ל׀לֿלּלֹלÊלֹלָלÊלּל־ל־לֿל׀לֻלֽל־ל־לּלֽלֻלֹל־לֽל־לֽלּלּלֻלָלֹלַלÊלֹלֻל־ל־ל׀ל׀לֽלÊלֹלÊלַלֻלֽלּלֽל־ל־ל־לÊלַלֵלֵלֶלַלֹלֻלֻלּלֻלֻלֻלֹלַלֶלִלֳלֵלָלֹלÊלֻלֹלֹלַלױלװל׃ל׃לֿלֿלֽלÊלֽלֿלֿלׂל׃לױלײל׀לׁלֿל־לֽלÊלּל־לׁלױל׃לװל׃לׂלֿל־ל־ל־ל־ל׀ל׀לװלװלױלװלׂל־לֽל־לֽל־לֽל׀לװלױלױלװלװלׁל׀לֽל־לּלֽלֿלׁלׂלװלׂלׂלׁל׀לׁל׀לׁלֿלּלֽלׁלׁל־לֿל־לֽלֹלָלָלÊלֻלֻלֽל׀ל׃ל׀לֿלֽלֹלַלַלַלַלÊלּלּל־לֽלÊלַלֶלֶלִלִלִלֶלֹלÊלּלֻלֻלֻלֻלֶלֶלֵלֲלֵלֹלÊלֹלÊלÊלַלַל״ל״לױלױל׃לֿל־לׂלֿל׀ל׃ל״לױל׳לײלױלׂלׂל׀לֿלֽלֽלֽל׃ל׃לײלװל׃לװל׀לׁל׀לֽלֿלֿל׃לױלױלױל׃ל׀לֽלֽלֽלֽל־ל־לֽל־לױלײלײל׃ל׀לֿלּלÊלֻלַל־לֿל׃לװל׃ל׃לׁל׀ל׀ל׀ל׀לֿלֽלּלֻלֽל־לֽלֿלֿלֽלÊלֶלַלֹלÊלׁלֽל־ל־לֽלÊלÊלֶלֵלִלֲלַלֻלÊלÊלÊלÊלָלָלֶלֵלֳלֵלֶלֳלֶלֻלÊלֻלÊלַלֵלֲלְלֲלֲלִלֵלִלֵלִלֵלֵלßלÙלÙלװלװל׃לֿלֽלֽל׀לׁלװל׃לױלײלױלׂלֿלֽלׁל־לּלֽלׁלײלװל׳לײל״לײלװלֿלׁלֽלֽלױלׁל״לװלׁל׀לֽלּלֹלֹלַלֶלֿל־ל׃ל׳לױלׂלׁל׀לּלֻלÊלָלֻלׁלײלײלׂלׂל׀לֽלּלּלּלֹלַלָלָלֽלּלֽלֻלÊלÊלָלַלַלָלֻלּלֽלֽלֽלÊלֶלֵלֱלֳלֱלֳלָלָלָלֻלֻלֻלָלֵלֳלֱלֱלְלֶלֻלֹלֽלÊלÊלÊלַלֳלֳלְלֱלֲלֶלֹלּלÊלֹלÊלֹלÜל״לױלװל׃לֿלֽלּל־לּלׂלׂלװלװלױלװלװלײל׃ל׀לּלּל־לׁלױל׳לÚלÙלײל׃ל׃ל׀לֻלÊל־ל־ל־לױל׳ל׳ל׃לׁל׀לֽלֻלָלַלÊלּלֿל־לֿל־לֽלּלÊלֹלָלַלֵלִלֻל־לֻלּלֻלÊל־ל־ל־לÊלֻלַלַלֹלַלֻלּלÊלֹלÊלַלַלֶלָל־לׁל׀לֿלֿלÊלָלֵלֵלֳלֳלַלֿל־לֻלּלׁל־לֻלֶלֹלֵלֶלֹלֳלֶלּלּלָלÊלֹלÊלֵלֲלֲלִלֹלֵלֽלׁל׀לֻלׁלÙל״לײל׳לױלׁל׀לֿלׁלֿל־לׁלׁלײלױל׃ל׃ל׀ל־לּל־לּלׁל׀לׁל׃לױל׃ל׃ל׀לֿלֽלÊלֹלÊלֻלֽלװלװל׃לװל׃ל׀לֽלּלָלÊלÊל־ל׃ל׃לױלׂלׁלֿלּלֹלַלֵלּלׁלּל־לװל״לװלׁל׃לׂלײלװלׂלׂל׀לײלÙלÛלÚלÝלÜלßלÙלÚלׁל־ל־לײל״ל׳ל״לײל׀לּלÊלֹלֹלִל־לֿל׃לױלװל׀לֿלֹלֲלֳלִל¿לִלּלֿל־ל־לÊלָלֵלֱלֳל¿ל¾לֱלֲלּלֻל׀לֶלֶלÙלÚל״ל׳לױלׂלׁל־ל׀לּלֿלױל״ל׳לױל׃לװל׀ל׀לֿלּלּלֽלװלװל׃ל״ל״ל׳ל׃לײלׂלׁלֿל׀ל׃ל׳לÛלÜלÙלÚלÙלײלÙל׃לֻלֿלװלּלׁלױלװלׁל׀לֿלֽלָלַלֵלָלַלֻלֻלֽלֽלׁלׁל׀לֿל׀לֿלֻלֽלֹלֿלׁלֽלֿל׀ל־לֹלָלֶלָלÊל׃לׁל׀לׁלׂלׂלװלװלװלֻלֹלֹלֹלֹל׀ל׀ל־לׁל׀לֽלÊלֶלֶלֵלֹלׁלׂל׀לׂל׃ל׃לׁל־ל׀לֻל׀לֿלׁלֿלׁלׁל־ל׀לÚלÛלÜלÜל״ל״לױל׀לֿל׃לֿלױלÙלÙלÙלײל׳לÙל׳לײלּל׀ל׀לֿל׳לײל׳ל׳לÙלױלÝלבלÜלÛל״לׁל׳לÙל״ל״לÚלÛלÙלÚלױל׳ל׳לײלÙלׂל׀לױלײל׳לÚלÚלײלÛלÝלÙל׃לײל״לׂל׳לׁלײלױל״ל׳לײלײלײלױל׃לױלײלװלװלÛל״לÝלÛל׳לױלװלװלײלױלױלױל׳לÚל׳ל״ל׳ל׀ל׀ל׀ל־לׂלֿלׁל׃לׂלײלװל׃לֿלׂל׃לװלׁל׃לװלׁלײל׳לײל״לײלװלׂלֿלֹלֽל־ל׃לÛלÝלÛלÙלÝלÛלÚל׀לֽלֿלׂל׳לÚלÙלײלÛלױל״לÛלאלאלבלÜלÞלÞל״לÜלÜלÞלÛלÜלאלאלÜלÛלײלװלׁלׂלׁל׀ל׃לׂלײלÛלÜלßלÚלÚלÜלÝלÚלÙלÛלÜלÝלÜלÝלÜלÝלÙל׳ל׳לױל׳לײלײלײל׳לױל׃לײל׳לױל׃ל״לׁל׀לׂלװלײלÛלÚלÙלׁלװלׂל׃לׁלׁלװלֽלװלײלײל׃לװל׃ל׃ל׃ל׀לׁל׃לׂלױלÙל״ל׳ל׃לװלׂל־לׁל׀לׂל׀לׂל׀לױלׁלׂלׂלׂלׁלׁלֿלׂל׃לױלÙלÙלÜל׳לױלÙלÚל׳לײלױלײלÚלÚלÛלײלׂלׂלױלÚלÛלÛלÜלױלױל״ל׃ל׳לױל׃לװלׁל׃ל׀לֹלָלַלֽל׃לװל׀לֿלװלױלׂלײלׁל׃לײל׳לױלװל־לֽלׁלׁל׳ל״לױל״לײל׃ל׃לׁלׂלֿל׃ל׀לװלװלײל׳לײל׳לװלױלװלױל׳לÙלÚלÚלÛלÙלײלױלױלׁלַלֿל־ל־לׁל׳ל׃לװלװל׀לּלÊלֽלּלֿלׂל׀לׁלװלֿלֿלּלּלּלֹלֻלÊל׀לױלױלױלױלׂל׃ל׀לֽלֹלֽלֽל־לÙלÝלÝלÞלßלÝלאלßלדלחלאלßלÛלÚלÚלÚלÚלÝלÝלÞלאלבלאלÛלÚל״לÛלÚלÛל״לÛלÛלÜלÝלßלÛל״לÙלÚלÙלÜלÛלÜלÛלÛלÛלÜלÙלׂלײלװלײלװלײלÙל״לÜלÜלÛלÚלÙלײלײלױל׳לױלױלװלײלײל״לÛל״לÙלײלװלױלײלײל״לױל״לÙלײל׃לױל׃לׁלׂלױלײל״ל׳לײל׳ל״ל׳לױלױלװלׂל׀לׂלׁל׃ל׳ל׳לױלֿל׃לׂל׃לׂל׃לױלװלװלײל׳לÙלײל׃לױלװל׃לׁלֿלֿלÙלÛלÚלÜלאלגלדלהלדלאלאלÝלÛלÚלÜלÝלÞלÞלÞלÞלÜלÜלÛלÛלÙל״ל״ל״לÛלÛלÜלÝלÛלÝלאלÝלÛלÜלÝל׳ל׳ל׳ל״לÛלÞלÜלÝלÚלÙלױלײלװלױל״לÜלÙלÚלÚלÝלÚלÝלÙלײלװלװל׳ל״לױלװלׂלװל׃לױלװלװל׃ל׃לׂלװלײל׳לÙלÙל׳לװל׃לװל׃ל׃לׁל׃לױל׳ל׳ל״ל״ל׳לױל׀ל׀לׁלׂלׁלׁל׃לװל׃לװלװל׃לׂלׂל־לֽלֽלֿל׀ל׃ל׃ל׃לׁלּלּלֿלֿל׀לֿלֿלÚלÚלÚלÛלÜלÛלßלגלÝלÞלאלÞלÝלÛלÙלÚלÛלÜלÜלÞלßלבלאלÜלÝלÛלÜלÚלÞלÚלÜלÝלßלאלÜלÛל׳לװלױלײל׳ל״לÛלÜלÜלÜלÜלÙלÙלÙל״לÙל״לױלױלװלײלÛלÛל״ל׳לװלװלױלױלײלױלװלװל׃לײלױלײלײלױל׃לײל׃לױלײל״לÙלÙל׳ל״ל״לװלׂל׀ל׀ל׃ל״לÙלÚל׳ל״ל׳לײל׃לׂל׀ל׀ל׀לׂלױלÙל״ל׳לײלױל׃ל׃ל׀לׁלׂל׃לװלײלװל׃ל׃ל׃ל׀ל׀לÊלÊלֻלֽלÝלÝלÚלÚלÝלßלולגלהלולגלßלÝלÚלÚלÛלÜלÞלÞלאלבלבלÞלßלבלÞלÛלÚל׳לÛלÞלאלגלßלבלßלÜלÛלÚלÚלײלײל״לÚלÞלÞלßלÝלÜל׳לײל״ל׳לÙלÚלÛלÜלÝלÞלÜלÚלÚלÙל״לױל״ל״ל״לױלײל׳לײל״לÙלÙל״לÛלÚלײל׳לÙלÜלÜלÚל״לײלײלװל׳לװלװלװלײל״לÚל׳לÙלײלױלװלױלױלׂלװל׳ל׳לÙל״ל׳לײלװלײלױלװלׂל׃לװל׃ל׃ל׃לװלװלױל׃לׂלּלֽלֿלÜלÜלÜלÜלÝלßלÞלÜלßלßלßלÛלÜלÛלÚלÝלÜלÙלÜלÜלÝלßלÞלÞלÚל״לױלװל׳ל׳לÙל״ל״ל״ל״לÙל׳לױלװל׃לװלװל״לÙלÞלÞלÛלÜלÜלÚל״לױלױלװל׳לÚלÙלÚלÚלÛלÚלײלײלׂל׀ל׃ל׳לײלײלױלײלױל׳לÚלײלױל׃לׂלׁלׂלײלױלײלײל׃לׂלֿלֿל׀לֿל־ל׀לׁל׃לװלױלׂלׁל׀ל־ל־לּלּל׀לװל׳לײלױלװלׂלׁלֿל־לֻלֹלֻלֿל׀ל׃ל׀ל׀לׂל׀ל־לֻלַלֹלÊל׳לÚלײלÙלÛלÙלÜלאלבלÞלßלÝלÜלÛלÚלÝלÝלÙלÛלÞלÝלÞל״ל״לײלײלױל׃לױלײל״לÚלÝלßלÛלÛל״ל״לװלװלױל״לÚלßלÞלאלÝלÛלÙל׳לױלװלװלײלײל״לÚלÛלÛלÚלÙל׳ל׃לׂל׀לÙלÞלÛלÚל׳לÙלÙלÛל׳לײלװלװלװל׃לװל׳לÛלÚלÚלÚל׳לײלׂלׂלׁל׃לװל״לÝל״ל׳לײלײלׂלׁלֿל׀לֿלׂלװלױלÙל״לױלׂלׂלֽלּל־לּל־ל׀לׂלׂלױלװלׂלֿל־לֽלּלּלÊלױלÝלÛלÚל׳לײלÚלÛלÛלÜלÞלÜלÛל״לÚל״ל׳ל׳לÙלÚלÜלÞל׳לÙלײלױלׂל׀לׂלׂלװלװלÛלÛלÜל״ל׳לױלװלׂלׁלׁל׃לÚלÛלÝלÝלÛלÙל׳לױל׃לֿל׀ל״לÛלÛלÜלÜלÜלßלÛל״לױלװלבלÚלײלױלױלײלװלױלױל׃לׁלׂלׁלׂלׂלױל׳ל״ל״לÙלװל׀לֿלֽלּלֿלׂל׃ל׃לױל׳לׁל־לֿלֽלÊלÊלָלֹלֻלֿל׀לׁל׃לׂל׀לּלֻלּלÊלÊל־ל׀לױל׃לװל׀לּלֻלֹלַלָלֹלÙל׳לײלױל׃לÙלÜלßלÛלאלÞלÝלÚל׳לױלװל׃לױל׳ל״לÛלÚלÛל״ל׳לװלײל׃לׁלװלװלװל׳ל״ל״לÙלײל׃ל׀ל׀ל׀ל׀ל׀ל׃ל״לײל׳ל״ל״ל׳ל׳לײלׁלּלֽלׂלײל״ל״ל״ל״ל׳ל׃ל׀לֿלױלÚלױלׂלׂל׃לװל״לױלװלׂל׀לׁלֿלׁל־לױלÙלÙלÚל׳לװלׁל־לֽלּלׂלׂל׳לױל׳לװלױלׂל־לֻלÊלֹלÊלֹל׃ל״לײלׁלׁלׁלֽלֻלָלַלֹלÊלּל־ל־ל־ל־לֻלֹלֹלַלֶלָלכלדלבלולדלßלßלßלÞלבלÝלÛלÜלÙל׳לײלױלÙלÛלßלßלאלßלÝלÛלÜלÛל׳לÙלװלײלÜלבלÞלאל״לÙלײלײלײלׁלײלײלױל״לÜלאלßלÞלßל״לױל׃לׁלױל׳לÚלבלßלאלÜלÝלÚלײלׂלÛלÜלÚל׳ל״ל״לײלױל״לÚלׁלֿל׀לֿלׁלױלאלÞלÜלÞלÝל׳לׂלׂל׃לׂל־לׁל׃לÚלÙלÛלÙל׳לװלׂלֿל׀לּל־ל׳ל׳לÙל״ל״לױלׁל׀ל׀לÊל־ל׳ל׀לױלױלײלÙלױלױלׁלֻלֹלÊלÞלÛל״ל״לÚלÚלבלÝלהלגלאלדלßלבלÜלßלÞלולולהלהלהלהלאלגלÜלײלװל׃לװל׃ל׳לÛלÜלÞל׳לÝל״לײלװלׁל׀ל׃לׂלÙלßלÝלאלÜל״לײלױלױלׂל׳ל״ל׳ל״לÝלÝל׳ל״ל׳ל׳לױלאלבלÞלגלגלאלÝלדלדלגלהלולדלדלבל״לÞלÝלאלאלאלÝלױלׂלֿלׁלÝלÜלÝלÛלßלדלבלהלגלהלÞלÜלבלבלÜל״לÙלßלÝלÝלÙלÚלֿלּל־לÙלײלײל״לײלׂלײלװלׁלײלßלÚלÞלÝלÜלÛלÙלÙלÙלדלדלולדלאלדלÞלÛלÛלױל׳להלÛלÜלÝלבלÞלÜלÙלÙלװל׃לׁלײלÙלÚלÝלßלÝלÚלÝלÙל׳לׂלׁלׁל״לױלÙלÛלÝלÚלÚלװלÙלװלׂלֿלׁלÛלױלײל״לÙלÚלÜלÙל׳לÛלױל׳לׂל׀לװלױלױלױלױל׀ל׃ל־לֽלׂל׀ל״לÚל״לײלײלײל׳לׂלֿלֿלֹלֿלׂל׳ל״לÙל׳לÛלÛלױלײלÛלגלÚלßל״לßלßלדלדלבלולגלÛלÙלײל״ל״לװלײלÙל״לÚלßלÜלßלÝלחלßלבלזלחלילדלזלדלבלאלזלטלללטלךלולגלדלדלבלבלדלבלדלהלטלטלהלהלÚל׳לÞלבלהלÞלÝלÙלÜלײלׁלױלװלÚלÙלÛלßלאלאלגלßלÚלÝלÞלאלבלולהלולגלßלדלדלהלחלÝלגלאלאלאלÜלÜלßלÛלדלÜלÚל׃לױל׃ל״לÛלÝלÞלאלÜלÞלאלולהלßל״ל״לÛל״ל׳ל׳לÙלÜלÞלßלßלÙלÙלײלײלÛלÜלÜלÝלßלßלÝלבלאלßל׳לÝלÞלÞלÜלÜל׳לÞלÜלאלÝלÝלדלדלחלהלאלאלÝלÞלßלßלגלולולזלולהלÜלßלÞלÝלאלבלאלÛלÜלהלזלטלךלזלבלÛלגלגלולבלגלחלאלדלדלגלבלÞלÝלÜלÚלאלßלאלÞלהלדלדלßלÝלÛלÛלÞלÞלÞלÚלבלדלדלײלÛלÚלײלײלׂל״לÚלÜל׳לאלהלדלÝלßלÜלÙלÚלÜלÜלÞלÝלגלדלהלאלßלÙלÜלÛלÚלÞלÝלÚלÜלÞלÞלÞלÞלÙלÝלÛלÙלײל׳לÙלÜלÝלאלבלßלÚלÚלׂל׃לװלװל׳לÛלÝלÝלÝלÙלכלמלםלילךלחלזלגלהלהלולדלזלחלילחלחלטלולדלגלבלזלולהלחלךלחלטלהלזלולÜלÞלבלדלÞלדלהלÞלגלÝלÛלßלÛלאלÚלÝלßלגלגלדלגלÞלÜל״ל׳לÚלÛלÛלÛלßלבלבלßלױלÙל״לÝלÝלÚלגלÞלאלÞלבלבלגלגלאלßלßלÛלÜלÜלÝלאלבלגלבלגלÞלÛלÚלÜלÝלאלßלגלדלדלאלאלבלÝלÝלÜלײלÛלÞלÝלÜלÝלÞלÞלÝלÛלÙל״לױל׃לײל״לÚלÙלßלßלÜלילזלילטלךלהלבלÞלבלדלזלזלטלולחלדלטלדלולדלגלבלגלדלבלדלדלגלזלהלÚלÚלגלßלÞלבלדלÞלהלהלזלהלולדלßלÝלÞלÞלßלגלßלדלגלגלבלßל״לÛלÜלÞלאלßלבלבלדלÞלÞלÞלאלגלאלאלאלאלßלÝלÞלÞלÞלÝלÝלÝלÜלÛלÝלÜלÚלÝלאלבלßלßלÝלÝלÛלÚלÜלÜלÜלÝלגלßלÝלÜלÚל״לÙלײלײל״ל׳ל״לÚלÛלÞלÛל״ל׳לײלױלׂלױלÙלÙלÛלÜלÜלÜלךלךלךלללכלזלולדלגלולולזלולטלךלמלןלללםלכלחלזלדלולטלטלילטלזלילטלגלגלßלבלגלאלהלולחלטלטלהלדלגלגלגלהלדלזלדלזלהלבלבלדלאלאלבלבלßלÞלßלגלדלבלגלזלזלדלולהלהלדלולגלדלהלאלבלÝלאלאלאלßלאלßלגלהלגלבלדלהלאלÞלÜלÛלÝלאלבלגלבלßלßלßלÚלײלײל״ל״לÛלÞלÞלÝלאלאלÞלÞלÝלÜלÜלÜל״לײלÙלÛלÝלÛלכלםלםלןלללכלטלולהלולילילכלטלךלללםלללחלהלדלגלגלהלהלזלזלטלללךלךלהלהלטלולהלדלטלילכלכלללילילחלולדלגלהלזלחלכלטלטלדלהלבלßלגלגלדלהלזלחלולזלהלולזלחלדלגלדלבלהלטלהלהלגלאלßלדלÞלאלגלגלהלבלדלדלגלבלגלÞלאלÞלÞלÜלÜלגלדלדלדלגלבלאלÝלÞלÜלÛלÜלÞלאלÞלßלאלßלÜלÙלÛל״לÜלÝלבלגלßלÝלßלילללםלםלסלןלךלילהלגלהלהלכלילךלןלללםלכלטלהלהלטלהלזלחלללילללםלךלולדלגלהלולחלכלךלכלכלךלטלולגלבלבלדלזלחלךלךלכלךלךלחלדלאלÞלÝלבלהלגלהלולבלßלבלגלבלגלבלßלßלאלגלהלולזלדלגלבלßלÞלאלßלבלהלולחלדלהלולדלßלאלאלגלגלחלחלךלחלהלגלÞלÛל׳לÚלÜלßלדלזלהלדלדלÞלÞלÝלÙלÚלÙלÝלגלהלגלגלגלמלךלנלםלןלללךלילחלחלילילםלכלןלללמלךלכלילדלהלולולחלךלךלמלכלטלחלטלהלהלולדלהלזלזלךלךלילחלזלזלולגלדלדלדלולילכלךלךלחלהלבלÞלאלÞלבלזלחלזלולדלבלגלגלהלגלדלולאלטלולהלחלזלבלבלßלßלßלßלחלזלחלטלחלולאלבלÞלÛלÛלÜלÛלהלהלולולזלהלßלßלÞלÝלÚלבלבלדלדלגלבלßלÜלÞלÜל״ל״לÜלאלגלהלאלהלילללמלטלילטלחלולדלהלדלולחלךלכלמלללללכלחלולדלזלטלילמלףלעלסלמלללכלטלטלטלגלךלזלכלללןלמלןלללטלךלולדלזלזלזלטלחלללטלהלדלגלבלßלßלגלולולטלולזלהלזלולולהלגלבלדלאלבלאלבלאלגלאלÝלÞלÜלÜלהלבלבלזלהלדלבלÞלÛלÚל״לÛלÝלדלבלולגלגלאלÝלÜלÚל״ל״לÚלÞלßלדלהלאלאלÞלÞלÛל״לÜלÚלÛלÝלזלהלולטלךלךלמלכלךלחלולולדלגלגלהלזלטלםלםלכלחלולגלאלאלגלאלגלזלחלחלולהלהלגלßלßלÞלÝלדלולזלחלילילזלבלßלßלÝלßלאלולילטלךלחלזלולאלאלÞלÝלÜלÝלאלאלאלגלאלגלבלאלÝלÝלÜלÝלבלבלולדלגלßלßלÝלײל׳ל׳לÛלÝלאלזלולולולגלÞלÜלÚל״לÙלÝלÞלבלגלאלÞלÛלÙל״לױלײל׃לױלÙלÜלÝלגלאלÞלÛלÛלײלױלÜלדלגלדלהלולםלנלמלמלסלןלללךלילכלחלךלךלמלןלנלןלמלךלזלולגלבלאלגלהלםלללילחלהלולדלגלולאלדלהלטלכלכלילךלזלדלדלחלßלßלבלגלחלזלטלזלזלזלהלßלÝלÝלÝלהלםלזלזלזלדלזלהלולולאלÝלאלולםלטלכלםלכלכלללהלבלגלמלםלןלמלנלןלעלעלפלנלםלךלמלמלךלכלךלילללםלםלנלסלכלמלםלללכלךלךלילכלילללךלגלדלטלהלולגלגלילםלסלצלץלץלסלנלללםלולמלץלןלפלןלעלסלןלןלכלטלבלגלגלךלסלסלפלןלסלףלמלםלךלגלגלדלללמלןלמלמלנלזלחלזלדלבלהלהלטלכלןלםלףלפלעלץלךלחלכלךלםלמלילהלהלילכלחלהלßלבלבלולזלךלטלםלמלכלחלגלבלולךלכלךלכלילמלחלללכלדל״לÜלגלךלזלילילללםלכלםלןלנלםלמלמלךלכלללללמלנלןלללכלדלßלבלדלדלגלדלעלמלסלסלףלץלסלמלילטלדלילמלעלנלסלץלץלפלעלשלקלפלןלםלםלףלפלפלפלפלצלןלכלללטלבלגלזלולילןלמלםלןלילזלדלדלגלÛלדלזלדלדלאלולÞלÙלÚלÚלױל׳לÜלÛלßלÚלÙלÞלאלולדלßלÞלאלגלזלחלםלכלךלולולולÚלÚלÝלגלולולולולולולגלÛלבלהלבלדלטלחלךלולטלילטלדלםלטלחלטלדלהלטלךלכלללכלךלילאלÞלגלולגלולחלסלסלןלמלנלמלללעלםלילטלולגלילסלןלסלנלםלעלעלץלצלמלגלילמלםלךלילםלמלנלןלכלחלדלחלדלהלךלכלךלכלטלמלחלßלבלגלÝלולכלךלילחלחלזלßלßלßלÛל׳לÞלבלחלדלבלזלולטלכלילהלללללילללטלםלללםלןלןלללךלכלילכלכלךלסלנלנלנלמלמלףלמלדלחלילללילךלםלםלמלםלללטלולולהלחלחלזלזלכלכלמלןלמלמלטלולחלחלקלפלעלעלפלפלצלצלץלצלרלרלקלסלףלסלעלףלפלצלרלקלקלקלעלסלסלנלמלסלץלץלצלשלûלפלעלעלנלנלנלסלנלנלמלעלעלףלעלכלילילךלילילךלךלללמלעלנלסלמלכלטלזלכלילךלטלךלכלכלכלללמלכלכלכלךלכלללךלםלמלןלםלםלךלילךלילכלללמלןלסלנלםלללםלילולולטלךלילכלמלכלללהלחלולזלזלהלחלךלכלםלכלילחלךלולולזלןלצלעלףלפלפלצלץלץלקלקלקלפלףלנלףלעלצלעלצלצלתלשלץלצלףלפלץלצלץלקלפלףלעלץלץלצלפלפלףלסלןלעלעלץלץלצלץלץלפלעלסלנלםלללםלמלעלףלעלעלנלנלןלמלנלןלןלםלמלםלנלםלמלילךלללכלםלמלמלןלןלסלסלמלללילללךלטלללםלםלמלמלךלםלללילזלךלילילךלללמלמלןלילילילילילטלילחלילילךלילללךלכלילחלולדלצלעלסלעלעלסלעלעלףלצלצלפלעלמלסלמלןלמלכלנלןלעלצלנלעלנלמלםלןלמלםלנלףלץלףלעלנלעלפלסלסלנלןלסלפלעלףלץלףלעלנלםלםלםלםלםלמלמלםלןלמלסלללכלילילללטלילכלכלךלללכלםלכלללמלללטלילכלךלןלןלמלטלךלךלךלחלילילכלללללללללללטלזלחלטלילכלילםלןלןלםלםלחלולדלדלגלגלגלגלהלחלילזלולבלאלÞלאלץלרלףלנלעלעלפלץלקלקלשלצלצלץלףלנלנלנלסלעלףלקלצלשלץלץלפלנלמלמלנלעלסלנלעלעלעלןלםלםלםלללנלסלסלנלסלפלפלפלעלםלםלךלםלמלמלסלןלעלנלםלןלללםלןלמלמלכלנלנלמלנלמלןלךלטלילחלטלללןלןלמלללםלטלחלחלחלטלחלטלילנלןלןלןלמלללכלילזלזלחלטלםלללמלכלכלחלזלאלßלßלאלדלהלחלזלטלטלזלזלבלאלגלןלעלןלםלןלםלנלעלףלףלףלפלעלנלנלמלסלףלעלףלסלסלףלץלצלקלףלפלץלעלמלסלסלסלסלףלעלסלןלןלנלןלםלמלןלסלסלנלסלמלמלללךלילכלםלללםלסלעלףלנלנלמלןלםלנלמלמלללםלךלכלךלךלטלחלילךלךלזלזלכלםלכלכלךלהלהלדלולכלךלטלךלללללכלםלםלךלילהלדלזלחלחלםלמלללילחלולזלדלולולזלחלכלכלךלילילילדלולÞלפלעלףלנלןלנלןלסלףלקלרלרלצלצלפלמלללכלךלןלץלפלץלץלצלפלנלםלכלםלםלמלסלעלקלפלףלעלםלמלכלללללללםלןלןלנלנלםלנלילכלםלןלםלנלםלןלסלמלנלמלךלמלכלעלכלללךלךלילךלכלטלטלהלגלהלדלהלדלילכלכלללךלטלחלהלבלגלדלזלךלםלםלםלכלטלזלהלדלבלגלחלטלטלךלטלטלךלילזלזלהלהלולולללכלללךלילטלחלגלבלסלסלנלםלםלנלעלעלקלצלרלצלצלפלעלנלעלסלןלףלפלעלקלץלפלפלןלללסלםלמלןלסלסלףלפלףלפלנלנלמלךלךלכלןלףלעלפלףלןלנלןלמלךלטלךלללמלמלסלןלףלנלמלךלעלףלףלנלללםלללמלללטלחלטלזלולדלהלטלללמלללםלםלטלךלחלהלחלללןלעלנלמלללללילטלזלולהלהלילךלללמלמלמלםלטלחלולדלולטלןלעלןלמלללךלךלחלדלגלפלנלןלמלםלמלצלפלץלרלצלעלסלסלנלעלםלללכלמלסלעלפלץלשלקלפלפלןלללילכלםלנלסלץלץלנלמלמלךלכלילטלמלכלנלנלסלןלסלמלךלחלילךלםלכלכלפלץלעלףלסלללנלףלמלנלןלללךלללםלמלםלמלמלךלילךלךלטלסלםלםלכלילזלדלאלגלגלדלחלכלכלולדלחלחלחלולבלדלחלטלללילםלללללחלילולדלגלולזלחלךלכלןלכלחלולדלזלסלסלמלללםלללנלףלצלשלתלפלצלעלעלנלםלילללםלללנלשלûלשל‎לקלנלמלמלםלילילללםלןלןלמלםלךלילילחלזלילךלםלמלנלןלללללכלילךלחלולךלכלמלללמלללךלילכלללללםלחלכלךלטלמלללללכלטלהלהלזלםלמלםלמלמלךלטלטלולהלגלבלהלץלףלםלנלףלנלןלילךלחלזלילכלףלסלעלצלפלסלעלןלחלחלךלןלפלןלםלעלנלםלטלולדלקלעלנלןלכלילללםלןלסלףלףלעלףלסלםלללכלטלללמלנלנלסלפלעלנלמלךלילללךלמלןלקלףלףלמלנלסלללךלחלילללמלפלתלפלעלעלןלילילזלדלולמלעלןלסלמלמלנלללןלמלללכלךלללטלכלךלםלךלךלכלזלגלטלכלללנלןלסלסלמלןלכלחלטלחלחלךלףלףלעלףלףלסלעלםלטלטלללסלסלנלנלסלנלךלילחלולגלזלכלםלםלעלנלנלכלללםלולפלעלנלםלכלךלללמלסלתלûלשלשלקלפלסלןלןלףלףלפלפלרלתלצלצלףלעלנלנלכלכלעלףלרלשלüלשלרלשלץלףלמלםלןלסלקלצלרלקלפלפלמלמלכלילפלקלשלרלקלשלרלשלץלןלץלצלץלףלעלןלמלףלנלןלמלחלזלולדלהלזלםלסלסלנלפלףלףלכלטלזלחלמלנלנלסלעלנלםלךלילילאלגלהלנלנלנלנלךלכלילגלבלÞלÝלללםלללןלסלעלמלמלןלכלרלתלקלעלןלעלנלצלüלקלתלרלצלרלעלנלכלךלילךלמלנלצלפלףלעלסלמלכלםלכלטלןלץלקלץלקלעלנלסלנלטלחלטלףלץלקלףלעלסלץלסלמלכלמלנלדלזלןלקלפלסלףלקלםלסלסלעלעלעלסלעלץלפלץלץלשלפלסלנלקלקלרלצלפלצלקלרלרלרלשלרלרלפלץלנלףלסלסלסלעלסלכלהלגלהלילמלןלןלנלמלםלךלטלזלללנלנלםלנלןלןלמלטלךלטלטלÿלםםםםםם ם ם ם‎לשלûלûלרלüלרלסלללסלשלשלשלרלשלûל‎ל‏לÿל‏ל ם ם‏לüל‏לüל‎לüל‏לüלüל םûלûלשלצלשלצלקלקלצלתלûלÿלםץלשלץלקלץלרלשלשלקלשלנלעלעלףלפלנלץלץלקלרלשלשלûלûלüלתלüלûלרלקלצלצלץלשלûלûלרלשלקלקלץלץלפלפלעלףלשלתלשלשלרלץלפלסלסלןלפלרלצלשלקלצלרלףלפלעלעלנלסלסלעלףלצלüלרלüל‎לûלתלצלץלüלüלûלתלüלתלüל‏ל‏לםÿל‏לüל‎ל‎לûלתלûל‏לÿל‏לÿלüלüלשלתלשלשלûלתלüלתלûלתל‏לüלüל‏לשלרלצלצלקלûלתל‎ל‎לתלקלעלףלנלסלסלףלסלסלךלמלמלנלןלעלסלסלסלףלץלרלעלפלפלנלףלעלסלעלעלעלסלףלףלץלשלקלצלקלףלעלןלמלעלפלץלףלץלץלצלצלצלץלנלןלםלנלעלפלףלץלפלףלףלףלסלמלןלנלנלסלצלרלרלרלשלתלףלןלםלקלשלקלקלקלתלרלûלרלüלûלüלתלשלüלüלûלûל‎ל‎לםם םÿל‏לüל‏לüל‎לûלüל‎לÿלםםםםÿל‎לשלתלרלûלüל‎ל‏לÿל‎ל‎לשלפלףלקלקלצלקלרלףלצלתלץלפלףלףלףלפלץלףלפלצלפלצלפלעלעלסלעלנלסלסלסלסלפלץלץלץלףלנלפלףלףלפלפלפלרלקלקלץלצלףלעלסלנלמלעלץלףלףלףלפלץלעלףלקלףלסלףלפלףלץלüלתל‏לüל‎לûלüלüלשלûלשלרלשלתלüלפלקלץלפלףלקלקלצלקלץלץלרלרלüלüלüלÿלûלשלרלרלרלשלüל‏לםםם םÿלüל‎לûלשלûלûלüלÿל‏ל םÿל םÿל ם‎ל‎ל‎לûל‎לûלüלüלüלûלתלתלרלקלץלףלףלףלץלצלצלסלסלמלןלללךלכלמלםלללנלנלסלסלנלםלכלללכלכלםלמלןלןלעלןלמלללמלםלםלנלןלסלעלעלןלעלמלנלמלמלמלןלמלןלסלסלצל‎לםםם םûל‎לתלüלתלתלשלûלüל‏לםםüלüל‎ל‎לüלתלûלתלûלתלûל‏לÿל םÿל‏ל‎לüלÿל‏לüלüלûלם‎ל םÿל‏לüלûלûל‏ל‎ל‎ל‎לÿל‏ל‏ל‎לתלקלקלשלתלקלûלüלüלתלקלרלשלשלצלקלקלףלףלףלץלץלצלץלצלצלפלץלצלקלץלסלפלפלקלקלצלףלנלףלנלןלסלסלףלפלפלץלקלקלץלסלמלמלנלףלצלתלצלûלשלץלףלעלסלסלעלצלקלקלתלשלûל‎ל‏לûל ם‎ל‏ל‏ל‎לÿלתלתלüל‎ל‎ל‎ל ם‏לÿל‎ל‎לÿלרלשלüלתל םüל‏לÿל‎לûלרלרלץלצלקלקלûל‎לÿל‎לûלתלתלתלûל‎לתלצלרלûל‎ל‎לûלשלקלצלקלרלקלצלרלשלשלקלקלרלקלשלשלפלצלץלץלקלץלתלûלצלקלקלץלסלעלפלפלפלץלפלצלרלקלרלףלמלןלןלןלסלףלפלפלרלפלעלנלןלמלללםלמלנלנלףלעלסלנלנלםלמלללכלךלמלנלןלשלûל‎ל‎ל ם‏לûלשלשלשלקל‏ל‎לüל‎ל‏ל‎לםםםםם‎לשלüל‏לüל‎לםם םÿל‏ל‎לüלüלקלûלקלקלשלüלüלüלûלûלתלרלץלץלרלשלÿל‎לם םÿלüלשלקלץלעלףלצלקלשלשלץלשלצלרלץלקלץלצלצלצלקלקלקלפלץלעלסלןלעלןלףלףלסלףלצלץלףלץלעלםלםלםלםלןלעלץלצלףלצלףלנלמלנלםלןלנלעלפלקלץלצלפלעלסלןלםלללכלןלנלצלûל‎לüלüל‎ל‎לÿל‏לüל‏לüלüלשלצלקלüלüל‎לüלûלûלשלתלרלצלפלץל‎ל‎לüל‎ל‎לüלûלÿל‏לתלשלתלשלרלûל‏לÿל‏ל‎לüל‎לתלקלתלüלûל םםÿלÿל‏לשלקלץלקלקלפלשל‎לûלשלתלקלשלץלרלץלצלעלעלעלרלûלרלרלקלצלףלפלפלנלנלעלףלצלרלשלצלעלפלסלסלםלמלעלצלצלתלץלףלסלנלמלםלללסלמלףלפלפלעלסלסלןלםלםלמלללםלמלסלצל‏לתלûל‏ל‏לÿלÿלÿל‏לרלץלצלקלרלתלûלÿל‏ל‎ל‎לתלרלצלץלקלצלשלûלüל‎ל‏ל‎לûלûלÿלרלשלשלüלüלüל‏לקלüלתלתלתלפלפלעלץלקלתל‎ל‎לüלתלקלרלצלפלףלףלצל‏ל‎לתל‏לשלûלרלצלףלעלנלסלףלצלפלפלפלעלעלןלנלנלםלםלנלעלעלפלפלסלסלמלכלםלםלםלנלסלקלצלףלעלנלןלןלםלךלמלנלקלפלצלצלצלסלןלמלללםלללנלקלצלרלתלüלüל םםםם םüלתלשלקלקלרלרלûלתלüל‎לûלתלקלרלשלףלףלצלüלüל‏לüלüל‏לשלרלצלץלץלקלקלûלקלרלקלץלצלפלסלנלןלנלעלץלקל‏לשלתלרלקלףלעלעלנלףלצלûלףלצלפלפלפלסלץלןלנלעלפלץלרלצלüלרלקלףלסלסלנלמלןלףלץלפלץלעלעלסלםלםלללןלןלץלüלתלרלשלץלסלעלמלמלסלסלצלûלüלûלשלצלפלנלכלילכלךלןלרלשלקל‎לÿלÿל‎לûלûלשלקלקלףלףלץלץלרלקלûלםüלשלתלשלצלףלשלפלרלשל‎לםםüל‎לûלפלץלרלץלקלשלÿלם ם‏ל‎לüלשלףלעלףלףלפל‎ל‏ל םםÿלüלתלצלץלפלפלצלתלûלץלרלץלרלץלקלעלסלסלנלץלצלûלתל‏לשלעלפלנלעלסלסלרלצלשלרלצלףלנלנלםלךלםלםלסלקלרלשל‏לקלץלףלמלללכלכלמלפלפלץלץלעלעלנלכלכלכלילללעלעלרלשלתל‎לûל םÿל‏לüלûלצלץלץלףלצלרל‏לםםםםם םûלצלצלצלקלûלםםםםם םÿל‎לüלצלצל םםםםםם ם‏לûלףלצל‎לםםםם‎לÿל‎לÿלüלץלעלסלץלםüלתלרלרלתל‎לûלצלףלףלףלתלשלûלüל‎ל‏לצלפלסלנלכלםלץלרלשלשלüלםÿלקלפלצלקלנלסל‏לרלרלüלüל ם ם‎לתלקלןלעלקלתלשלûלüל‏לתלתלרלתל‎ל‎לûל‎לפלצלקלûל‏לûל‎לüלüלתלקלפלףלץלפלרלתל‎לםםם‏לüלקלץלץלסלקלשלÿלÿל‏ל‏לÿלûלשלץלעלסלעלüל םםÿלם םÿל‎לקלפלסלפל‎לÿל םüל‏לüל‎לûלרלסלןלןלנל‏ל‎ל‏לשלûלםÿלÿל‏לתלףלףלשלקלתלüלשלרלקלעלףלןלךלןלכלצלüל‎לשלûלתלÿל‎לüל םüלצלûל‏ל‎ל‎לûלÿלûלתלÿל‎לüלרלתל‎ל‎לשלשלûל‏לתל‎ל‎ל‎לשלüלשלקלפלüלםםםםםםםםםםםםםםםםםםםםםÿלץלצלüלםםםםםםם‏לשלצלסלשלםםםםםÿל םüלצלןלץלעלןלץלÿל ם םÿלÿלÿלםםםם ם‏ל‏ל‏לûלםםםםÿלûלשלשלüל‏לûלüלûלûלתל‏לםםÿלûלרל‏לÿלÿל‎לûלüלם‏לם ם‎לתל‏לרלרלשלתלûלûל‏לÿלםûלתלüלûלשלתלתלשלüלûל‎לÿלüל‎לûלתלûלץלתלÿלםםםםם	ם
+ם
+םם
+םםםםםםם	ם	םםםםם	םםםםםםםםםםםםםםםםםםםÿלם םםםüלûל םםםÿלםÿלÿלםםםםםםüלÿל‎לüל‏ל םםם םם ם‏ל םÿל‏ל ם ם םםםםםםÿלüלûל‎לûלüלüלûלûלםםÿלÿל‏ל‏ל‏לüלûלרלüלûל םםם ם םÿלüלûלûלûלתל‏ל‏ל‏ל םüלשלרלתלם
+ם	םםםםםםםםםםםםםםםםםםםםםם
+םםםםםםםםםםםםםםםםם ם םüלםם םםםםםםםםםם ם םםםםם‎לם‏לüל‏לüל‎לÿל ם םם‏לÿלםםם‏ל םÿל םםםםםםםÿל‎ל‎לתלתלתלÿל‎לüל ם םםםםÿל‏לüלüלüלÿל םםםם ם‏לם‎לתלשלשלשלûל‎ל ם ם‏ל‎לתלשלם	ם	םםםםםםםםם
+םםם	םםםםםםםםםםםםםם םםםםםםםםםםםםםםÿלÿל‏לםםםםםםםםםםםÿל םםםםםםםם םם םםםÿל םםםםם ם םם ם‏ל‏לÿל םÿלם םם‏ל‏לשלתלûלüלתלûלûל‎לםםÿלüל‎לüלüלüלûלüל‎לüל‎ל‏ל‎ל‎לüלûלשלרלצלרלשלûל‏לÿל ם‎לתלתלםםםםםםםםםםם	ם
+םםםםםםםםםםם	ם
+ם	ם	ם	םםםם‏ל‎לםםםםםםםםםם םם םםםםםםםםםÿלÿלםםםםםםםם םשלםםםםםםם םםםםם‏לüלשלשלûל‏לÿלםם םÿל‎ל‎לüלתלשלûלüלüל‏לÿל‏ל‎לûלתלקלרלצלפלקלשלתלûלתלתלשלקלצלקלצלץלקלקלüל‎לûלûלשלקלץלם
+םםםםםםםםםםם	םםםםםם ם םÿל‏ל‎לûלÿלםםם‏לÿלםÿל‎ל‏ל‏לםםםםםםÿלםÿל םÿל‏ל םםםםםÿל ם ם ם ם‏ל‏ל םםםםםםםםםםם םÿל םםםםםÿל‎לÿלÿלüל‎לüל‏לםםםםםüלüלûלתלרלûלüלûלüל‏לשלקלץלץלפלצלצלקלצלקלתלשלûלשלüלתלקלפלקלץלקלתלûלüלüלתלüלשלםםםםםםםםםםםםםםםםם ם ם ם‏ל‏ל‏לםםםםםםÿלםÿל ם םÿלםםםםםםם‏לםם ם‏לÿלםםםםםםם ם‏ל ם‏לÿלםםםםםםםÿלÿל‏ל‏לÿל ם םםם‏ל‏ל‏לûל‏ל‎ל‎לüלüל ם םÿל‏ל‏ל ם‎לשלתלרלûלרל‎לüלתלûלתלרלקלûלתלשלשלשלתלתל‏לÿלûלüלפלץלפלץלץלץלרל‎לûלûלרלרלצלםםםםםÿל םÿל םםם	ם	םםםםםםםםם םםםם	םםםםםÿל‏לÿל םםםםםםםםם ם ם‎לüלûל‎לםםםםם ם‏לüלשל‎לüל‎לÿל םםםם‎לÿלםÿלÿל םüל‏ל‏ל‏לםםם‏לûלקלצלץלקלûל‏לםם םüלûלשלצלץלץלקלתל‏ל‏לםם‏לüלקלףלףלפלץלשלתל‎לüל‎לûלרלץלצלצלרלצלףלüלתל‏לÿל םüלתלםם
+םםםםםםםםםםם
+ם
+ם	םם	םםםםםםם	םםםםםםםÿל‏לÿלםםםםםםםםםÿלÿל‏לםÿלם	םםםםםüלûלûל‎ל‏לםÿל םםםםםםםםםםםםםםםםם‏לרלשלûלûלûל‎לÿלםםםםüלûלüלשלשלüלûלüל‎לם םם‏ל‎לûלצלקלקלüלûלüל ם םÿלüלרלץלץלץלפלצלתל‎לüל םÿל‎לüלםםם	ם	םםם ם םםם	ם	ם	םם
+םםםם‏לםםםםםםםםםם‏ל‏ל‏לÿל‎לםםםםם	םםםם‏ל‏ל םםםםםםםםםםÿלÿלםםםם
+םם	ם	םםםםםםםםםםםםםם‏ל‎לüל‏ל םםםםםםם‎לüל‎ל‎ל‎לÿלםםÿלםםם‎לüלûלשלתלתלûל םםםםÿל‏ל‎לûלרל‏לüל‎לםםםם ם םüלםםם	םם	םםםםםםם
+םםםםםםם םÿלםםם
+םם
+ם	םםםםם םםםם	םם
+ם	םםםםםÿלÿלÿלםםםםםםםםםם‎לשל‎ל‎ל םםםםם‎לםם םם םÿל‏לםםםם םם‎לüל‎ל‏לם םםםםםם‏ל‎ל‏לרלüלםÿלםםםםם‏לüלשלקלשלצלשלתלם םםםüלûלרלצלשלûל‏לם‏לûלüלûלשלםםםם
+םםםםםםםםםםם	ם	םםםםÿל‏לםם	םםםםםםםÿלם םםםםםםםםםםם‎ל‎ל‎לםםם
+ם	םםםםםם‏לםםםםםםםםםםםםםםםםםם
+ם	םםםüל‎לÿלםםםםםםםüלתלשלץל‏לÿל‎לםםם םÿלÿלüלרלקלקלקלשלüלםםםםםüלרלûלשלףלשל‎לÿלüלÿל‎לםתלםםםםםםםםםםםםםםםםםםםםםםםםםםםם
+ם
+םםםםםם
+םםםםםםם
+םםם םםםםםם	םםםםםüלתלם	םםם	ם	םםםםםםםםםםם	םם	םםםםםÿלÿלםם
+םםםםםםםםםÿלüלםםםםםם
+ם
+םםםםם
+ם	םםםםםםםםםÿל‏לםםםםםםםםםםםםם	םםםם	םםםםםםםםםםםםםםםםםםם
+ם	םםםםםםםםםם
+םםםםם	םםם
+םםםםםםםםםםםÿל	םם	םםםםם	םם	ם
+ם
+ם	םםםם
+םם
+םםםםםםםםם	ם	םם	םם
+ם
+םם	םםם
+ם	ם	ם	ם	ם
+ם
+םםםם	םםםםםםםםםםם	םםםםםםםםםםםםםםםםםםםםםםםם
+ם
+םםםםםםםםםם	םםם	םםםÿלÿל‎לüלÿלם
+ם
+ם	םםםםםםםם
+םםםם
+םםםםםםםםםםםםםםם
+םם	םםםםם
+ם
+ם	ם
+ם	םםםםםםםםם	ם
+םם	ם
+ם
+םםםםםם
+םםםםםםם	ם
+ם	ם	םםםםםםםםם
+ם	ם	םם	םםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםם	םם
+םםםםםםםםם	ם
+םםם
+םםם
+ם
+םם	םםם
+ם	ם
+ם	םם
+םםם	ם
+ם	ם	םםםם	ם
+םם
+םםם	םם
+םם	םם	םם	ם	ם
+ם
+ם	ם	םםםםםם	םם
+םםםםםםםםםםםםםםםםם םÿלםםםםםםםםםם ם םםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםם
+ם
+םםםםםםםםם	ם	םם
+ם	םםםםםםם
+ם
+םםםםם	ם
+ם
+םם	ם	ם	םם	ם	םםם
+םם	ם
+םםם	םםםםםםםם	ם	םםםםםםםםםםםםם	ם	םםםםםם םםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםם
+ם
+ם
+םםםםםםםםםםםם	ם
+ם
+ם
+ם
+ם
+ם
+םםםםםםםם
+םםםםםםםם	םםםםםם
+ם
+ם
+םםםם
+ם	ם	םםם	ם	םםםםםם
+םם
+ם	םםםםםם
+ם
+םםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםם
+םםםםםםםםם
+ם	םםםםםםםםם
+םםם	םםםםםםםםםםםםםם
+ם
+םםםםםםם	םם	םםםםם
+ם	ם
+ם
+םםםםםםםםםםםםםםםם
+םםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםם
+םםםם	םםםםםםםם
+ם	םם
+םםםםםםםםם
+ם	םםם
+םםםםםםםםםםםםם
+ם
+םם
+םםםם
+ם
+םםםם	ם	םםם
+םם
+ם	םםםםםםם
+םםם
+םםםםםÿלםם
+ם
+ם	ם
+םםםםםםםםםםםםם
+םםםםÿלÿל ם םםםםםםםםםםםםםםם
+ם
+ם
+םםםםםםםםםםםםםםםםםםםםםם
+ם
+םם	ם
+םםםםםםםםםםםםםםםםםםםםם	ם
+ם	ם
+ם	םםםםם	םםםםםםםם	םםםםםם
+םםםםםםםםם
+ם	םםםםםםםםםם
+םם
+םםם	םםםםםםםם	םםםםם‏לüל‎ל‏ל םםםםםםםםםםםםםםםםםםםםםםםם
+ם
+םםם	םםםםםםםםםם
+םםם	םםםםםםםםםם
+םםםםםםםםםםם
+ם	ם	םםםם	םם	ם
+םם
+ם
+םםםםםם	םםםם	ם	םםםםםםםםםםם	םםםםםםםםםםם	םםםםםםםםםםםם	םםםםםÿלÿל‎ל‏ל‏לם
+ם	ם
+םםםםםםםםםםםםםםםםםםםםםםם
+םםםםםםםםםםםםםםםםםםםםםםםם	םםםםםםםםםםםם	םםם
+םם	םםם
+ם	םםםם	םםםם
+םםםםםם	םםםםםם	םםםםםם	םםםם םםםםםםםםםםםםםםםם
+םם
+םםםםם‏לם םםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםם
+ם
+םםםםםםםם	םםםםםםםםםםםםםםםםםםםםםםםםםם	ם	םםםםםםםםםם
+םםם
+םםםםםםםםםםםםםםםםםםםם	םםםÿלםםםםםםם
+םםםם‏ל םüלםם	םם
+םםםםםםםםםםם
+ם	םםםםםםםםםםםםםם	םםםםםםםםםם	םםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםם	םםםםם
+םםםםם
+םםםםםם םםםםםםםםםםםםםםם	ם	םםםםםם‏לüל‎לÿלםםםם
+ם
+ם	םםםÿלםםםם	ם
+םםםםםםםםםםםם	ם
+םםםםםםםםםםםם
+ם	םםםםםםםם
+םםםםםםםםםםםםםםםםםם
+םםםםםםםםםםםםםם	םם	ם
+ם	םםםםםםם
+םםםםםםםםםםםםםםםםםםםםםםםםםםםםם
+םםםםםם	םם
+םםםם
+םםםםÿלםםםםםםםםםםםםםםם	ם
+ם
+םםםםםםםםםםםם
+םםםםםםםםםםם
+ם
+םםםםםםםםםםםםם
+םםםםםםםםםםם	םםםםםםםםםםםם	ם	ם	ם
+םםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםם
+םם	םם	םםםםםםםםםםםםםםםםם
+ם	םם	םםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםם
+םםםםםםםם
+םםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםם	םםםםםםםםםםםםםםםםםםם
+םםםםםםםםםםםםם	םם	ם	םםםםםםםםםםםםםםםםםםםםםםםםםם
+םםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםם
+םםםםםםםםםםםםםםםם
+םם	םם
+םםםםםםםם	םם
+םםםםםםםםםםם	םםםםםםםםםםםםם
+םםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםם"ם ם ם םםםםםםםםםם םםםםםםםםםםםם ם!םםםםםםםםםםםםם םםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםם םםםםםםםםםםםם םם םםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםם$ם$ם#ם!ם"םםםם םםםם ם"ם"ם"םםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםם
+םם	םםםםםםםםםםםםםםםםםםםםם!ם#ם$ם#ם ם םםםםםםם ם םםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםם	םםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםם!ם םםםםםםםםםםםםםםםםםםםםםםם!םםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםם םםםםםםםםםםםםםםםםםםםםםםםםםםם!ם ם!םםםםםםםםםםםםםםםםםםםםםםםםם"םםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםם!םםםםםםםםםםםםםםםםםםםםםםםםםםם'ם$ם%ם#ם םםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםם םםםםםם ם!ם!ם םםםםםםםםםםםםםםםםםםםםםםם
+םםםםםםםםם-ם+ם*ם'ם'ם%ם#ם"םםםםם#ם"ם$ם#ם םםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםם ם#םםם$ם#ם#ם#ם$ם$ם(ם!ם#ם$ם#ם"ם#ם%ם&ם'ם%ם$ם%ם"ם"ם"ם"ם!םם"םםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםם*ם*ם-ם,ם-ם*ם.ם)ם(ם&םםםם"ם!ם"ם םםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםם!ם"ם#ם#םםםם ם!םם!םם"םם ם םםםם ם#ם#ם#ם%ם!ם#ם"ם"םםםםםםם םםםםםםםםםםםםםםםםםםםםםםםםםם
+ם	םםםםםם'ם*ם)ם*ם(ם)ם&ם'םםםםםם#ם%ם ם$ם$םם םםםםםםם ם םםםםםםםםםםםםםםםםםםםםםם"ם!םםםםםםם םםם"ם!ם#ם םםםםם"ם"ם#ם"ם"ם"ם"ם#ם!ם#ם&ם$ם%ם&ם)ם*ם(ם&ם$ם"ם!ם ם!ם"ם"ם"ם%ם%ם$ם#ם%ם!ם םםםםם"ם םםםםםםםםםםם	םםםÿל םÿלםםםםם$ם%ם$ם&ם ם#ם#םםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםם ם!ם!ם!םםםםםםםםםם ם"ם!םם ם םםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםם ם!םםםםםםםםםם!םם"ם!ם!ם"ם#ם#ם!םם!םם#ם$ם%ם%ם!ם#ם%ם#םם ם םם!ם"ם#ם$ם%ם$ם&ם'ם'ם"ם"ם!םםםם!ם#ם"ם&ם'ם!םםם םםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםם!ם!ם"ם םם ם"םםםםם!ם ם ם ם ם#ם!םםםםם!םם םם!םם ם#ם#ם&ם'ם(ם'ם$ם!ם"ם ם$ם)ם$ם(ם)ם(ם'ם&ם#ם#ם!ם ם ם"ם#ם$ם%ם(ם'ם$ם ם םםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםם"םם םםםםםםםםםםםםם םםם ם!ם"םםם$ם$ם#ם%ם&ם%ם&ם%ם&ם&ם(ם'ם(ם'ם#ם#ם&ם#ם$ם#ם"ם$ם%ם&ם'ם$ם$ם%ם$ם#ם ם ם ם"ם#ם&ם'ם(ם'ם%ם"ם ם#ם"ם םםםםםםםםםםםםםםםם!ם!םםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםם!ם ם ם!ם"ם!ם%ם%ם$ם םם ם!םם"ם!ם"ם#ם&ם%ם'ם$ם$ם%ם)ם(ם&ם#ם)ם'ם&ם$ם&ם#ם!םם!ם#ם%ם$ם&ם%ם(ם*ם(ם)ם&ם"ם םםם!ם"ם"ם$ם$ם%ם#ם"םםםם םםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםם ם!םםםםםםםםם%ם%ם!ם"ם#ם$ם$ם$ם&ם%ם$ם$ם$ם"ם!ם!ם#ם$ם!ם"ם&ם%ם&ם%ם$ם%ם םםםםם#ם$ם$ם$ם$ם"ם"ם םםםם!ם ם"ם&ם$ם$ם%ם%ם%ם!םםם ם"ם"ם"ם#ם"םםםםםםםםםםם ם!ם#םם"ם!ם!םםםםםם!ם!ם"ם םםםםםםםםםםם ם ם םםםםםםםםםםםםםםםםםםםםםםםםםםםםםם$ם"ם ם!ם#ם#ם%ם%ם)ם*ם'ם(ם(ם*ם(ם$ם"ם"ם"ם"ם%ם&ם(ם'ם'ם&ם$ם"ם"ם!ם ם!ם#ם$ם#ם%ם%ם%ם!םםםםם!ם"ם#ם%ם#ם!םםםםםם!םםםם"ם"ם#ם םםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםם!ם םםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםY4BRJD5FEBAJQPURV6hFQUU>VFMFCA_ME?R2MG7FJGOL=DEB7<O7SL6QT5MBJbKEJAGCG@LLJ[MFMHFD<1;DKKDKB=[[BQGGB7>*<MCK?H>LJ/KJ@P-<6DSRHNCGA@QO7<V>H@=MWFE@OQ<RNQ]WCQAMDT@H=SVQKJ?=ASRIFZVORB]GDANHPGTRC?8MRTBPRGOQ%A;+>MKI<BIMQQP=A@IIO[JBFM_HMAFAXFXdO6LLANXD=P^Q^G\BMOMFNDO?@MK1ZKJ;2JAS9JYT0D1IVWGTDBJNLRMH5LNAGP?^[QW`M:U`F3NB;RL4)@<P]`<T\P4Ry^?>PDBE?LNZ\UJMDNAGE36A>2GM^WFCHDLD5\NH@@CI`HMIA@::TMLM?GAAE8;6";JZA6B@OO.01<XPH0FB@LSQBKQH\IUMO?45PDCNEGDS4EddD46<>JM@.5$&*JKdU`JB=LWdzt\@9BO;FTYuobS=?&*=`b;^Hb@qEDBHGRGfs[hV0>KEN[O?B1@JKV]=>.S???9;GD@R\_P_NMSLGWHOG88;@FVZNUC4]BDIDJXak`Z@B:XUWGFH;+6'/3LT,K>So[}uTIHD6CbegrmXHF8@;CJ@Ma?E=iqW>DE<@SaQQ{bMQJ8LIGGHDD?FeUcC;SFGGCPCBFGCHHBM5R4;LU>B@9KKUGTEJFD@PIC@J=X_FQ=H8NHD?MQR_xEW^K3;OXWI40;N]PYTRB0;I-'1KPVMBEJJCBTDJLN:H<7+<7T/&APTJEFH0GAAJ:E3/MWWcNH@I=4C\d`^jLEH>MD401 :>J?DJEGIGbpZIPK=GAAQG8+9OS[DVOO=2//J]cJG@KEV]ldhZ@H@HGHHEDOG8?DMNVQPWX^H<NN@HDHF?O?/ALTSQ:8EJETHU82006,58C[GXKD8A>G:FO;>D\MHEPW?NDFH95CSCUL<WBEGQJFFC>dRD7:5P>RM\Gh|N\>MKK`geZ:).IMJL8G55BGEKQHPUH[?JLm\SA;=CDOeabL?L9BKERIMDGIG63"$>_WHHCRSWG\TF=0?4CIAKH4Qc@<78IDDLD>;FC;CANCIOQ[^NVPHBPF:GPKIFmd\MHBMVSRTRKPLRS;KNFJG=/CO=_N?IQKHE/=GZRS5@B6>ESLB?BL9EFCCLAOSTLqK3HCOMTO_V6LQ:*H6CKAK<6@HGG4=DK5EGFLZ`P=HD<@FK?4E6V_jT@FNSJAABTMWMD87GBGXUBD3PMBA>EN]MVg^OU@BAMG[:AIA7HCJ_XYQ[bM:6.?E<HJCFEE?UPG]UUNH;B54>HMJTI?GA?DG=FADGBEQ?@QPOSCL\GN:HE=F?IROBKKHWJHEEUSAJP9SRDD98IHNBH>=LHMH@JM>LLGAA?DITJGN?RLLBDO?BMHAeMBLVCB?P?<C?;8B9GCRRAK?1BS5HBXONXSeRCEG@Z5HHQPDJK=FELN@KT7D<KB?IAB<R[WGA?JM>NTNHO^?J<PNM=J@AGCHDO7He5FKIAQKHJMGPPLPOHXREN9GQ.DEPLSQLGL>M8OMDGB<BS8THLM>EHMPL<QLXTD@NFBPLHOHPHEA>BHHRQBJVGXEN<G:QP[VI6GQJKPHNAXGT;M6[-?ELHZR<T6JYIEVBJFHIDMVONFF>KUNR?DHB><\HGQASA?FXI?O@H;PDOGHBAH;FOFDKGI3?JE:ODJPNAGVLFRKMLNC4WGQLKASKJVRH@?DMU+PN/`B8:DGLDgHMWUGBIE=F@BD4WO=?>E?ECDJ8G6@LE?feUF<?NANMESVD><LH@DLDPK;LHMQNDEIXJLDFCHQMFC?XBRGD;PMHGC:<MZ0GREMM^=?==J?A?JGN;GP\RB?FGFCRC<MKW[FQC7OSBITHQPNWIFM4GOFLPLIPE<DXXMVIJB<>TIFRBQCK8RWEMNL\[aULB2BJQOEOGHM;F@=VJ-@LHPEBCISDRTQR<JNRFEH,J6QPQLG;DHNXBAAVE>EJNRC\=;MGOD\N=QIA@I'@IHHEAF;B6\IOSEMLHQ@>KK;>62>:EHJLENKU@B2PLLMQt\B."$SD@EO`MJIGGCPCA@KFKTKFAHAFN5G=FCE?:M?;RJ5NVUJARSHOUPIOPDCDP[F28@hpd`CJC9NT?XSG)&CE@V5@U`^6$<GR\G9ENJSKAA+<BO=;.'1ARQJ=OR7GSD?-8Ye\[WDNNDJBQOfHHOPM=BA8CINM@>7LBL?GIQBOPUHVK@2LG8ODFSJKCGQAP?X>@G55KOLG;EUhrw_6QEA<FUJcl_I>;ALA?IUXB\OHM:C:ETFa_os860AIB8;EJIMG5>@8ERF<8FRgFJINfWU?MAEPGXB6NUMdGIHIXLMA,GdTO@@D]_aQR??:AKNACFIT?FXcQ^OXCBRJL9Sk[X]SNLg[Rb_PGNOGR<53]~aWC99AEV`XWi\63/5ADEOBZd]J5@75FGXD9!6SB\U930>H?@7@RMLGJfSBA>?HWT<TSJabVMFOVK-Qe\FJ114'4?LhD>XO@@6?@D>FZ^\V?HWPE?XUWEOnl_MLZLFHH^afrV?>;@=RP[ABFD3CVUNTKOH65ccD06QK]PRZHHKa]S=RM<>G=FXLCUTPMZQDHVJO=SPFLD>D:EB0MOJ38EKLM@T^FZc_NPH2??MO\`H?4KI\NS?5DKC_QP>E>GE5;WWGR<E>C@B?MVC)1@DN@3A<6FQ`HA:]VHSH+FOOIAHE;F/HN+7P0J=OE\__ECGK;YLJQ<K1@GJIEBCBDANAoKO$=Xna?99JUHEDLGDU?QA,JZP;JQWJMKJ77HPR>KKJFRK;RM@2:ADTAJhPJETIE;A7?CXRKFGUkO<1>;HLF?KPMAHSR@BPNH?CKJIWaS5FGDSM:ABBFBA<OAGLOMUkGBQB@PMWME@4J89HG\k\SIJD=;@H<IDFNGFIG48LADZE;@@MLSI7BIH@OM`7CHF7:CPCLI/_EYh9QSOMUF>TE6VUKHl@=GB@FX6EMAQB<>AF@AAP^CPTABHJ7KTIIKNSJ<NGLQKTKOPE@H?GHNI;O]KJGN=K@MUAGRGZKJCLC:528@GOJ<[<NEJ=bB_s\WK5BK:@5@FR=CLI@PFLRA>:D<A]IRIFAFBHG@MK`NRCQ>ED?@5DTTYFONFH;5JZBIRO>AJ?LCL@HSEJbJ;2DCZ_GPF?M7;L=PABQGPHRSNDC5QFTFQDMG@CD@LTMGT>SDKIA]AL=MBP?QBVFMQ=H<GIGNEGOOGXJ<FCFETVOWRKDLN=EFK<MDOPB<>FCBCLXEQJEAFBDB<CUFPLR@IGCCROFHPBFBR9JNIFPKMEPJFHI?@FJAQcT;<SASTBAEHHUIE`BBJHDUE8CQIOMD=QP@J>PVDH?OZUNEAF8aN<SR6JCVJ7KEHC]MO[NPQGDFGKMHEBH6M><S>KPPMQUODECJ?VMOL[><OZ=F@OCNPDSNEK:KLSTFOFK?MHA?HK<Q.FP;WH8'5`FE?GQ47H7[MGH4TAYBGHPB8D`OLP>7F>ZDDOGWH@NASEHDL7RRACGGJJL4RAE\DMOER4KS[LEK?KMIPOAQWO>>F;GI4EFNX8ABBGJ]EQ\C8HFX_VJKBAU>I5MKPNINEEPK?6ZJC<5[A?WB@RDRTG5@CNR^UO6XZNUS5HVESIIFAD<+DPNCP@NDOMOL>G4UPTJF@>P@?CTMMCH8F=<J,HLGPC"MX^HS?<:J:LW_WDNCFA=8N@9PX<M@CF;DK/KEF9Ga7H7*K?EU>Q_"OQE.DMJARXOKLQ2DA=PCQAEMSF1@OPDBH;>>^B;2HW@MIJDNFC&GQHQ<WJUHR=`I4KR?4BK=F)GdOL;<:CNSJT]VWV@AP:6RSDELC==CWcfkId}9=@85EISK>ECOOalcM2?O:F<CN\PX[ODSZYE==KjN,&>]N2HB;>H-u|a`TIaMD<520kOE-@PQYnP570?<+5;M_[M..">HJ4Hb^UD<49H5V9/7;,'__ZRWVMF3$2U[_>Gb]VF=;/0'Do{}lC?C0=B^†rZ>.8EMLD6+dƒX@?JABJAH3WorbiUTA=NLPUZaDPFO>BbShuLH:BF[NB6TCVhL<B>CB+474Ow…W8;VSNF254\^]AI<BHA3"AdƒX9H-QA8GI>N: 0-0JIAHE9DLO?\xg6>SFXbgi…e`FKVJRULQ[nupS821aRZQO;*;+S=FNdW_RVZH:<HAAF;%",3rxdVWZI@h`B.*2*4GWIO@P-3J +]N>12D<%"TsqPZUQ:MPALUc\F_cPCIGHb\MqnB3?=GGHOKS>5QYH>M<:AEE5?3%#FF=MMN<>PDRCKN_GJF38<PPDSE>KH@DI?>7,<DFCKQ@MC6;8BHNC<AEHN^QenU^NJ;:MVLNLS[XCHBP\V}N6GBHE2?RP^LAD?DQEB-32DM?WQHHKSHNFEFRG7CJPTHbdK>4C?4ZPMX>JU.GAGABMJ@M9SS[=DP[\pDD5<n2DE6D=VP@q<DOA:8H;@VFFRgKB<B8+JBMGN;Z?:?R3TSNO?HDBRBBUCH;<GA<=[FPR4<D9;REEYNNQOaZVDEIBJOF*2JK?HENU5UXFF:T;E=TA>TID6JGNB?O=RH>JC?566DMJY0SKPP=<;8U<HMG^UWEOCIA5EDWOJ=CKIJDPXK9>@HFFMf;S@IH9LHLIO?JeKOQJHAMJY=JO;4<FAH<KahaM$&$:;7AKI`]LM6d?@=BD>=T?>=ND5NFKGKSDNKVdHRLIHGPKD`FM>@HCTSGJSN?@@F=<O?UASHHA=;J\T@FD5GHZE[@GQJPA7H<R;W>LLOC<P8TDBWEKNI=EKQM<IF=FVU?LI;JDJHMcGKhB6>JHBEJ@[GUF>>EK<FMJRMBA8H>LJDLHSECI;8EG=[MOPJ8BG3=CLHOKCLB39??c\HOL\MMF@FGd@JJ?1IFA?PUNHDE?6BDAPDF?NMJCGKPMEHGOD>TAO2\PZJCe9MS7O8B8Q8QSKC4LLFNAE>:@GLTQTDC;IX=JHJ1SHD8NM@HBHYaHPFIBF3C<IKZGD2HHDM;C;WCHKGTCnKP;BFBJGE>CEQH(XEI6TQOMNCF>I?HOSHKKCCJDFKOLKAADWFHKEJRUV2AGD=PO<_HEQN_DOBGJ0FNBKD<F1NcQK%O]@MWG4FG;\PHJ<8PFI0<GSRQJMJ<:^<ECFDHDUPA?FCDA>XE[De?OAJDWI=?M`M;JZM]CBCANN^T1@SE6KJ@Z:Ig=MDFER@U;QG?#-@NRXA6=ELBT#&-SYNP71MNM[E6"<L9E7ECZe_Q=KLFKHZa`GDWBaO2X;\]AG9PU,GCCOKB@@DOZ,^E;@CF6HNSQXü W=8RQQ\8Q;HR]ONJNFQTZ]2<@MI<H8FEBZZF;GAKUMG?H3:7C2RAITLS?HScMB0FI6@L?GKBO%GBC]OH[;E='WZ=DCT^<];CBCBXCJ7<TeT1PISJ`N7Z4WUJQQJ;JOS=SDHSBNGBG<VMB_]FHaL8SDE3GFONE5:GOKC\=bJICM:GKBHO[BMW??H=KC?B0:DDRX]0<I?IQ\FEQTKK@FL]Sj„FBVkaONGDB<NFSS_ZFAG.HBB"86^XQM@6>>:>EE__N*6.DPH2.@'=KSC;5@E=C#"@CEU85BHSq;1DZb?7A"=JQ_^kfeHSKNSSG4D7NX?76PW_Yc]CJX1?EB<AQ_nPURY47Thi^LW`]YVDH;<XQJBD?XQezfO4BDXF?7+Z]RO;%79=GS`cp‡^Ra^YZ+,?40>e<EJHQ3(>56PGIA;90'/#V|_gaK;'IRJ-'(<MNUE?>:7D0)10@FTJ:LG6LOB#00KFJDRJHTdfvnmECMRSW9@V-H)1*?6=CAP`@RPTMYFONJ;!5tamb<@(JX(<J.(:E:6E<T^N=HFFXO^RfMQCEQUE%3SK32NDDBKO8;B@=<?;B21OqKH1E@JV]t\J[G]ZZCNVPCPCOXNPS413<4JA6HCSHKG@ILQ@@68\UZRHMPI<4?XQfBB<GCDGNIB5C^eHWEE8GNDLGECQ<A47BLOSKOWLIKT;1AHUN@NRR??>GIHFGBAGIO[VSPLBQJDBNJ:2A5aIRBPEQ;FT?=S58G>B8JRLVF79OE@PZXPA@DE\Y?=OG;M=A[JB?CF5M`TM>_O;@K8KCLC7W7=aa:)8=O9=A<^Ub?O7OGDKDN?EI7A6KM5AC\VK@JTF<PBOHOZC?`PNRERU;CS;K@TTQRB>=E?RDHGIUDFUTKAKQ`LDCQQH>7EPCNNRL]A\3NZPUQ-FAPgXTAQ9GHNPFDQHGJN:EOSCTCFG?6HC?JNPJN<]?GH<D2XA;FVSFCJQG4AHAH7GD@V=G5:76P[DDNO]WaA4C?S=CTPMHHB0;65ADCI>TUFZf3F\3J^ASMUNEQ>FCH@?DQ@PCAFNa7>8TRNC_=E8?HP9<HSXH;COECHC[LRM<<A4R@LTCLFOCDG?68ABFK@>@Qf\H=SGRN?JIKQ?NI?GSOF@B7XFP:9=KQ=EIGGGKRGG`SCS:;ZQDNNF]JCH\H21FQJPP9JBJFC?QCW1L8C.ENBL^IMRDEUA8<I?PIEQ<WJ<?EUICDPRKW>ANJMAOQZENLJJIYKIJ@KPS>E5TMEJI86VL@RG[K>8AG?UPGZ@GjSK<@>KZESHJQZ=K<;S;?AADc?BE=HU@HHBTYBRNJ?7AD4AS<JCXPHMACENcJ0AZCK6KGCNFJSD^ZHAO9DP`CJ7HOOPHLBFJ8WJQ;PS?W>THPG?ESIDCHJU[DNCCHLNLRUFJ@DCCO@GTSRIM4CQIAAJBBEXOD?<IHDIPGEPKHLHPE<'8AODldCS83K9NHQDOlH@?DBJEWMFVTTJ>EBIKIMEPLTE@]]GS=8?4BKCJ\FP>=E=KESR<ACEO<:QDDG97?ScY;8ZBMJRH8RNaU?G8?<B6L'4YLJ?6>WPD8K/@LQWLK-<?H;LDMGOTELGJNLAUHPORB@IX>AM>>PDKAP6:XY+45J?FHVIONQEPO97*;KEAS<?59:<GOE8F9HOVT7QVMNNQMM>=A&M91B>SBTM%@4BJK\Za]?!RM;6(8@?HA>MS5aAWUJQ&2WiReUNA7B<JQSOS--GLB?F,;[\]T@8(,`>HTDLEBKRdRHN(4=&GaX[8CC4E[PMAPOTSZST47N6B@OhnB=SH;MLB:4+%'KcSP\FU_J/XJ`2(<9IPPQ4PRE3%R3UC7/+,-'?QaX?HHMmjT1+;PS<<<M^`pdQSB;>1Q[YP?@e[E[8PCIEA7KIlo{W574KNHBXrfI7&;4-JJ:MCbdXE>NP;=B^T0.:Kh^I4=?-*2E^hTQHC4]FOtjA(BK@4EZA4;CH^fJD@^aO_1/+;YiNJ=DL>JFTso^WSY59"4BVL71GbP<RZI4E6(P\}€o]LPW?C[wQBEO607=1BR;1(<6=I`DTPdWVROE|dR^JO^]kup}Q?P/<J0AO_PJPPE8-:]A"%4<HK@>B^[-:/CJMK5>`E;@bi3=BD€{SA;JWPMcaV]K)5?JQOBVq‰hwoOGJEMCG<3DP4?5O:GQ[{q|a,8JEU/JI7M:M‚33?28VJNfeh¡˜SF^SY;%@9<C3DdhSD9@PfC *:QHBOTG2*]X]F<UddC8253=N>MRQFIMSF,5ZQKSB81Bj}…UCC<;MI:R1>IGSH@>F'4 ;[|ME@>JTQO?FUKZBKMIK0%87YaJ?LOONH-$><10OD:Ai3IP\Q\G3FLMVqePK679(3=@B6DH0>K;9Nf81\G>>h{sZDZB7H62CCOS@1BM>GS3-R;EnTN9=a^B=NQQXN;L@P=IEGDNQDwUER?=CQL1>FG2.NN868OBSK=LUOF6<CJ=;C8O?GGLP<ORMHCQWPVC;Q*@MPQG8A>ADSVN7C?@HJLaMH7FA7AL7FKV`?33:7R@ELOMcKGO?JEGAWJ?Ee_\EF[BH8GCgJhPBBG56P=Q\KPMU]dO<DUOKN`W[M;BHBAH]EAJK?H@HAA@PeLDF>HE<A@ORca4hFKJKA5<@H>F[THZHC8LC=HDX<;>FVNX9Hb@ETBQXMXQ:==N?MAUBNZBDDEVQ=OZDQ]HG>BA:T;=ZGBONGBGNANLORINPYCZBESF8V@QCJF;97PJTHDFD:FIB<:GOM?N>8GHZM@7L5=DASJn8MMCIL;=BKKF<GVOI??B1CRAUEA@;ACFG@PCQN6BWC?KQ5@POD`AFBQE><PLY<O=L5BAIEMCJPORUFBJ?MLHENJGG4=G=KUOFCKU@GF==?KFJMVDRI9`KLW@:F<D=CRQGPMBG8D<F@1IMRB7=@@P5GEPUJEHBD?@OE?XPEAFD9E[MEIWHOm=DH5TANINT\IF>C<?I>C>HNWKBPACK?Te@KMOFD>@FSIIAD\BFJL9SINSUJE@WPCJOWQ4>VAQ1GCLSRFL@GF;JPTPPOGI5KIU>FML=UM;=OHO=PQ<GZBDMF?7CCBb1V]M<5GZRHJPMTGDS5<=FPYNHL65M@U[|lO?CKMEMIK6>8J,;EGL<GU@FSOEUKHK<OR8QP@O<<NAJLF?DRHWICWfKLGML>FLL=DQNMMPJN8MKSKEC\E4GU?GIVDLGNgd_PUnhYUQHKAJWXSC:QQaARd-;HD`?QPUVJBGCSQCFDMMJ+.DMN54>4THBC(=EJWFa>KG@<T-\N7@#P).SZMB#%CPM?=EH\KP]*=QMH<4NOJ?LB;KJ[MBKCLHGA>X8CDH9>MPRUQ0;:BU7GRCPLWGGGGU<=R=JK/NO=G?:LRXaefS7<CKDKPTha]ƒcfNUF8NLPFMBWTMHQ\QKI?Y7KNGDG0K472FGJA@F=+;.CSEF?QX]ZaP/!6F*W\\XXh8>9BUJ6E]H1<Ocb]Q3HCT\zsgXaTEB8?JG<GMBSZJIOH=<BX@#2H3F<.=>Zk^eJ<5898G1E:LASISAAB::NRNAMT[KTQ-)@@6A@OX\ZX\[RA<SNNVW:HwWKI<@FQP]\0 ;R:FT8?CUSHD<8HOPM@TN01H>GHJBFKJLkkk?#4@BM_F?Qq{r‰b>8883ERg|^D5JaPNSX8AS@PAf=(6EPKNTPIPHC2XVTNOI=<\s†?C4Q`NMB?CGBC@;>36;B=NS?oMG1mdX@M=Ru01#(8ISM4,.Mc`hXhebSsh8"1N_\HCK4%ARhabDBBK8KUWGtXISBGKGJK=;KPSSPH/,6*J;DHCoPGS?.KHL>4?K>@MQMCBAFANRURT~m84;:6K\fmC4@>@KN<;HH6<8=<]_403JB5lw{IPG=IXS^BG8/3:@;4<48+,:[H<MSYBfT?A*1KFW\VG[CN<=_\cm3==G>F^NbgeN9D+8>FNPQX8D?>aPLSKZXlQ=WU8RR:RTXK6MSI@FUMBEZKOAC88LQR@<JH<NE<>BPF./0EoXdSB14WQFD:->NO<7S;MI.7JGNBB>GNXLFSXBFHEMMWB7!=.!DJQv]b–rmC8:ER=KCDO/35CKMUDGHZ]xhE@23CK?+6QJ]CTM<475P\LHB<]SO=HM]NFJK3H>46QAFHEA4H>PHBHJA>ONMILD?HERFGQRXBKJB^8ZQ9X[KP=8:T_dC5.1KBOIHLCJfE>JEPRZLA4TAFR?6=,ENJxMG?BFDO>LhID<E$ROXHS76ITDTF@E35G^bg`dcHJ9FE;UHI]T7B67>DS<GKNPPF:MA<@7R?HSYK?fMS>3LHBPICLEFNKK@D<A<?Fa5L?QPBKEGG?:?OF`C:MC9DPNE`<P9KH=IK@@_=P:@OQ[<0DRUFPEJLMVG8DU4HUUAF:4FC9PCTCNL;H]0S8JJYHNJ>8IJZDJSLNJHLM:BI>H=AKHDMF6OWVcE=]HHGGLA;IHH8?;EO??GMRECJ<?MNHCEFHTGN>08>KKR7\C@GRE;C@?HZSDVD>FE<=DKK5FMCI<C>I?RHP@SNHHCIMGCBYFPWKB=72LJGE5MOO=;G[;EANA;PBCSFNXGN@=?FLKHM`cHEDCGNINHBRZEP>0@2>TQOAQOLF@MJSHNM=DKDP<F<ADIHRDRL??ACJHEUMMQGCDOGFOTDG<NHX1EG@GKPNCC9RNG6>6@6>FR@\GATLULQB==VXV;OONGCIC>AD^E5RFEO>8EIV=OKEUI;TN?5PQH<O^VEO?@:;JH<MNA]BJJCKM@JTMCa@A;DKEXIOLKRJGHNBK;FHJQN?JAD:RCGJUQMMGCG@CAD^QKGUO4EP:@KNL?CNAC@SHHR87GGLNHXP4M<DFOP>JRNWMCNI:KD@CC<NKGQ4F;K;OIQ?LMCAJKHC@DEFH\F9;9NQK?EKS=BTCI,B<Ad6CH?EJPL>CBXQHMJDXALGOFBFJSBGN=CNG@IP=EFDH@@ULCA5JO4>3HX=778GMKGOIANARTBPN=ZJ6AMCKCPFMWKTPK@MEGF?HI:/>@C@KFMP^TW=@EC@;FHXZMR=@HOCB=HMIROJCKPEN:CBHKPWFPJEOHA=KA-1&8"BGCDM?LFWUFELA;BCGCE@EHJ9KT@HLJEJDAG<>APIJU^VHR@R`V>8GFCOTL_;Q$MA7AI:K57COOHIKGBG@>X\OFBQHOCJQ^=KP``iccCCHCHWBPFNFFJ>PGX:H?280TaWOGTTKK<PCUH[U]RY[=E6@=MSMY;NLRS?EV^VdjhLF@BD@A^S^TeGPEKJXJXA>3=HGDSIHIFRZ]^cd\EISKLEC\ZTdVHAHBC@0'?JUN=@?BNCR]qomPET[;HGE=%Gz`[@_[`kU@8ABL]BD4-[TAJCHQ]4.-,@L;J?*L@<H\I>))C2N6TOUNIDWIGAHEG(16\\[NA:HmJP85*9=:GC=GZrfyrAC^TIELM,"OjF7=4C?6-F0KL8+>AQFUWNZZ\cHFZVgI<AJLC_BWgg^G<16B>>BC7Oodq^YJLRXd\aZWHKK:D?MURVP=L;WSXhhF9W1OSL;FXNKC:KQIHdXGXEA@88/8606GJHBDJ_fd]Q^RAHPCKjmH53 SKBGXWNJ4AQƒat‹IKBA=:HIL?5FWl\hURMHB=#"9FLBCH@/?N-2N[\R@8=;EC&2L@.>9@TY6J]8/6[eaQ;HQ@HcEEDBXIR=2>F_~—lP[GS8FAHFBQX_FBD9@JN=7;<RRN@HC6KACgVS?0./HLUEGTRXUj7AC7UB6LUXTcr;HCS>7CFNpVB66@KaG<E)SRC/>MFPUCP<7US\J_OHCF+A_=7,"-;NREWgG?1;SjTJ=8AdAMC\>8@oWLNAJERhfR|?@6BKOFDIBDER][xX]R@A3OTLRfP?FBZK>SHOCf`iRH3?A@U[K;7&JdABKCKFJXQNCTFKBB7Eb94BO;948I;9;H9C(6S_I@C5DNER@9H;CBPD@WHPJJEEL]=@=;:SXLLRBDMAM???OBEO`HRW9DD?DLVDNN;FHD5?58N?cg^DDJBH3HWQMKcgMAA07OH9DK4:KWPZD6GPVHPC?0XVXHEBGNQMSMC/BWH:YG;T;oZC=TS7BHM?:>:2A?@ODEGTOHZJ>JO;R;OB^JRRZ?7@gC6?HLCG=XZK<ACP3GQ<@bsMDGHRP4G$BGASOFI?2SUJ`KEM<7TA;ELMJ`OPMCLDAHILMQZMFKKC<ESDQHISBX^KDE>KDRFN=7<G>ADNOCXHEU?8@SaCGKLOWPUFTSQ1GEGF>JUJPAAHWJFJ?\>LKEFKGDN5HDNEXQ<^CGLHAOFDXRG9AF>>CHC1EIJVDP>LHEH@MKSFFGOHAELHSMNNLI;EJF>DJUCL\SE?@FQC;QJJNNNF>A7PJAMV:GNHNAWR@FH8LKA^6V?FI;<48TEBPKQE6<JAEFDD?NIHG?;TGI>HRMOWFZDABECJK[CGLBFEOG\J1DOP>TMHNTI<BDWYER6HP]NAEINJQJOEONCENDLNMLC>HHKNI:PXKPA?ZDVRCCL4JDW=KQF`77GKAUANMJGTPON?3@HGPQGMH7D>FARTCGOOMAJJD?ILIHHR&XV<HRMKJDGE7>QXA@VRHFT>GTHFJBHKGUBCCPHGJSH:FTH=KB=NI=E?CRRLG1GHLCAC>P.PEKKECNP:WDEMMGLCNR?RFALKE;TTHAIJGGBJAE2B;LETIL>M;TO?RODXBFHOK<QH=K8DF@CLMD<4=CMJDB@=M=OQbR@HDLIVXXMGP;H>I7CKJR9DQZSSLNJJJAKHFJSJ[OFNB=DQMJUJMUBXLBMGF;,PERXFG?J<_EBSCEFJHCGKKBDHHHOBASIJMCELKCGN?<FAUAI?DHXNN=@C:?08<:5.0A;D=OPHGNVUCK]_GBDHE@AGXVNK@DH<G<A[KUP0KVSDAJ6KNSEDG0A>C>O6OCHRARD]IU=P8DGOL^NAG@HOA>A=M45<TP5@HK@744IN>OUCD@baqF?RA=:A;8I9Fj[`UGHB?%IOTC@ONHH@@OJK=6;h]cMLKH4<MUKD>?F?MH<;CMPD66Y=IO_UZV=CAZh^c_@DMHG7AHCDF2>GFF@MDIWNS@[YI:>E:?FUZ1FRKFLUOH!0(C7<G:B1B<&'Z`[O7>S@P4BVf_PCE<JL.G>2<V`=G@CJKHSJRP_eS4H<LM<@H;U{^D@ID7.LPL9>'(.XdbTY^Eb^//7RCHOOHB60QSL@@WRD;#1UTZ]MI?WHU?'I>H@6HB\Y602?SBB6R`[s\R[S@@PDTcalbTGL9;>@N[B767@C+>83]PNORlp^qu()<JF8:HP?>9"+35FBHMVMsC2!6L?EJRnl_:B7C<Cf><K]dXxqWJ=A-/4LVj‡ZksIBT\:<>-FM]R[MF4I\Z07;*1(5O^GVW*'M3D:B7<S[EW[W\>&H]\KGENC<3AD)<mcHCIOB5,>/3BUPFVU=@W‚soK>CM9<?APbNA=8<IDJOVX>&3>AA/WaTCdlhkBF?MA;H@K_bfU=AAPR6041PWUW_G8FSboo^X9@JBDQ?1.)5<5(70OFA*&QSd]OI]QV_aCMRJ4>QOLTT</NnFDSYHKJGGRJPWg`RB7QAZO@@IQJZZW<I5U_OMGSPf_Z476RA`7ABJDKB*2CTQ>43:NDGQFMIFP;?5M+6b78MRGFJFAZR?8=CONM=;XHPWJ16.586\FJMNREBTTUM>DJO^M59-HG>PE@VVQTQAI`?F@7FLZqSBMCPMLGAQG@MGG<AS<EGKMH_HUT?@KA7GXIdhS^QRMKGDP^R;0)CEBAbTRP\L<KEL>T>AG>BPBJAOPJFKA71BTGHGNfcB=:JCBKHHKLO?;NGEOAEECJUIMUA@DIJMJPIBE?CABFG<GHI]A8GAQ@?8OFTSD38EAFOO@BUNL@?KF>IEEZAH?>J:3FH:E@KDJ=AfEMMA6LFCZGK;T]CPW@PM<C?X6KCLBB;;M\QPQCGBTANEMJA?<PRS<BG:;GB1B\KGBIADTMQIJLLK^1O7CM@3UPH_N5GE6V?P@8@SLN<G@MBDXBVQMJBJDBJQM<JP8EG>KNUXECPCETNKBPQI=B;EHG;LLCPD?DH?FWRPJDXBFHL'KMRbGQDHJM?G?ABGHFUCFF/>K=PZ;FQVSD9DJNL5DDdPNBKIEHMJI?>AYDAAKQQTJIXH[K9>BBNOE?LJ8[HRPJOIBNFAD@8MF@JSK<VE;RCSAKGE=L?FM1HOLJLU<CEM:LMSHFRBKZJH;GU@FNIJMG<;BHCQ?HNOE=>DGQOKJKB@HBICOZGG88HJQNLDW8DMKXTKBLNTJ2P8?EVXG<FEIB=JZIISD:TE@EIBXODQ^HHX;TGMSIQLN85DKVA@QADG?D@Q9LCKAO;L'4ESAGR=>UL<QHRFCJ=OIGOMJ<B5DNBDMVN@^dmae8J@CMUK73JQBICSZe;HEBB@NCOKNOMGRN;GJN?HHFGGHNJ7H@JS;NBJQL@G7aCGUFF;VSIKHAG@B_8X\7[^_MDEJHENG>RLQJIFO7FGFR TGHGKCHFKK7FJOXVD5PURNUCDRD4=JQQMCNGHXKR=ENQ]KC EGQK<I=KKGKA<KFFSCEQPOSOTK2EDA7HRDP<BRUFLLJDTPDCBJ4NVLF?H<P:D]WO@uDBTXRH>YJDGDBAMTfT<\_<JKB>>S\MYJGMGHYGOM?7BSbU_QEJHJLED7BDMRHXHCO4JCB@B\R2A?A@DM=aFE3&+IH2<C\<9>9#D=8=CCV]XTPFA!@=@_QCK4XaNTPFSBGGW]dgMJ1<KVUO78`QOD?]RMQUMJL^YO]GMJ4>=@'.<VS?EFFTTIU2@nSOXWfPgUSWA=NJ7G<24??:CH;:IK?LH.37QRHOF?I@51_ZKK?@]t>252PBNNPF@2!47(08KQGP<*9>DHOXBDCM`_ReRH<KJ7IEW[vZ!=+2VRNAZ7 1VjtPBLH<GP`hCKKPHO/[99OOIG5:?<=9SL`VRBZMCQ@RGV?BDJESI:7B0:4FD<=?L*$IJKHGScnZ@\TH7+4NCE8BFOYOVIKHDEkCL''ART]TKT?6<;1QnbTI:JHOQ1"!-/cU828E_HSDWT`SjvZ-MN`;OGXJme\PCDJG[LBBC:2JASPVJKW]]IjH@7JKL=<Rlƒa:1';K_pXgRE-"3<2CUWYE*,=HXOEDMRa„wnD3@2?R;QX8BLpX;=AMLWD)4<[TBH?OAUOajJKG*%<JEPV;SNQb_pXpVK>>FOA4;D>OHJZSREMASTAJ6PKNQOLA4D66HLXN7NJ~B=7F>TILALG`E6FF@:?QXGT<F;EN68AHQABRQTDER;8NAES@D`\YB?:GMPKSJBAEMQCYR>JB?5;;LM.>Y\[hFJH+> -(>B;8PTLLC-4%3.=I@<<=?7A?e=DMIGF1'cGVGtG34GHIOUJ<5cNaVBI>DIBDNPWEZT<J=8KL7=;OQDHGR>LM:DQNAO<ADF7WcPFEM]sTHNHSHMCQ6HMP?gUGFLG55&!@WRQJE?H102,>GGJFCTHJHAaRJLDGD>4]6<7BbCDCDCKMODHCNB3BJ@BKJDXRKUKB?PEO>IKXNreWEJMQKDMOf_N\PPG:F;JA>E6=?XTJOOKGNHKHHSXNH;EBK;\HIU:7AB@M>MCVLAHNLXMD>>ALOZAD>HHGKJ@@CMHSWDC@8TCJ9ROMLL@F@JUMC>M@GJ1PBQJ=@LCNGVHUS/MC=PPDRHT=5J<=GGAA@>GES]<TYLASR<B7I^GGCGGPO@D=YYXbOM8@bQJI;5EU\@MFA1XU<EYJBFG,M@DHCKZ=RY?8<>HGKRQIMBFM2GUCLE@EGJMKKLA>ZQGRIASZJ?PO@NBMMAKUHK@5GEJWGK;INNCEM\?E==JNFCG[XGKDAKIPGVh?F?=DE@FOWNM\PC?I=_@MLGG=AKTF?YUM;@RORMFLD\IENL\?A>7PXN>DGA=GM??MSJLB,OMG6GXSHSLMSJYA7FYKB<WAOGKJJAND>OM8UER[XC2PLPROM>G8R>IKLQ]J<;7,M>JHReB->HNHZA@LD@`PF?PCI3AI5XJQL;QPPBKK8HQT?<Sgc_LELB//OLTRRHOH6GBTAD4KA:FHCNHOYP?WF@<NRNRKOGQ;9AHEE@TNQVTIUHXEOHG?I:>JJU9;=?:GXHI3-FY56p:8?C>;6CFH,5BNF?HBL7<4?F,4GYzus^hUGQgh[ $+GL=QFWGHU?CUH\4<EPIHO>g_NQKG3@ZO3H/ZQJHUd@;L>>J?L^RQHH8BJ?=R4ACMRG;HXGC>TMRHAHKHBFYJLHU<NQOQ=5RKTPBD6XHG;=OQOB=VVC54<;E8RHH]]?VKKH6VEFOUdTC-4+4NT2NDHHRHRWLN<FUD:AN\KJM[FN?NNG<AECL[@JHDA@NPRGLMRXJIFQ=HNON9GIE^QUP:OBAJE?JNQJFVKZ>K>MBGBJGXEKBIICH<IL>0DMG2=(B:<D?KADE"/UMMPH>IAFX"?PR:DPUMOF]D8TIC5,<71TJPGD6N<4OJHKFQGG:P;NLPJGO?MN8;=E/1AUdNGQDYOERENG\NRREY@VGMQ*OCY[HAHHELC;"7AGIAJJMBQ239KORGFD\FC_fa^HP7DObRfdF5<JLPSJRQTMC>/1_eN+?=>09_BCN7RZVQDXXFA,>@&WtVHN@LGSd[hW\686?I0VBI67V]_WCHZA@J@M?N[?ADOPKIGPH@=TGIGESSNgR@BAP<M>T[T{zG**7<KM'D]x_*<4RK@,RT:24BMZNEM@KEBQBODQC &XKPG@TCKA?3J=JKGbeZHXhIMcWJ7:O_HBL .)NQ]?PF-+;LB2KPGAVH<>PNRF?ZWPPO@:C.V7H<AW7+?4U@M:1:5PJ9:0wZDBYPTM8-5>A: 0EwHXFB5ESIDIECSBWEc\<=LOh}knH(2+P9EEJ6Ih`G9LL95JHMR%.GSPIBGFUR,N=SXJ;ID?MG>WfS_S4/*1>AQuitc7'+6FB06)!=]S[[^I6gjuvxczpWHFQE9`af],7HDG 8B2MFGRx‘¡_>A3?6HkcRO6AYHO,/ZPC><6CDNe|OW/HS?;2<0! +7D99KSKBJ+<=h_HC@@FFGk\.@/D;84OFEIEJZTNDXOB5>?35/4':GW9,(4Ox?KAMֲלִלֳל½ל¹ל½לֵלִלֵלָלָלֹלֻלֻלַלֳלְלֹלְלִלֶלִלֳלֶלֶלֻלּלÊלֻלֻלָלַלֶלֶלֶלֹלַלֶלֹלָלֹלַלֲלֱלִלֵלֵלֳלֶלֹלַלֻלָלֶלָלֵלֶלֵלֵלִלֵלֶלֵלֶלַלַלֵלֳלֲלֳלֱלֱלֶלִלֵלֵלָלֵלֳלֱלְל¿לֱלֱלֱלֲלֳלַלֶלֵלֳלֲל¼ל¾ל¾ל¾ל¾ל½לֱלֲלַלִלֱלֲלְל¾ל¾ל¾ל¼ל½לֲלֱלֲלֶלְלֱלְל¾לְל÷ל÷ל÷ל¹ל¼ל¾לְלֱל¾לֶלֻלֿלַלֹלָלָלֹלַלֵלָלָלֻלּלֹלֻלּלָלָלֹלַלַלֶלֹלֶלÊלÊל־ל־לֻלֻלֻלֻלּלֻלֹלּל־לֻלֹלּלֻלֹלֹלֶלֵלֶלֱלִלֹלָלֹלֹלַלֶלֶלֳלִלֳלֵלֶלַלֵלֹלָלִלֶלִל½לֱל¿ל¾לְלֲלֱל¿ל¼לֳלִלִלְלְל¿לְלֱלֲלֵלֶלֵלֶלֵלֱלְל¿לְלֱלְל¿לֱלֲלֵלֲלֲלְל¾ל¾ל¾ל¿ל¿לְלֳלְלֲלֳלַלֵלֳלֱל¿ל¿ל¿ל¾ל¿לְלֱל¿לֱלֲלֹלÊלÊלֹלּלֶלַלֹלֹלָלָלֻלָלּלּלֽלָלּלֶלָלַלַלַלֹלַלֹלֻלּלÊלּלֻלֶלִלֵלֶלֶלַלֹלÊלּלֻלÊלָלַלֶלֵלֳלִלֳלֵלָלֶלַלֹלֹלַלֵלֳלִלֵלֵלָלֹלָלֹלָלֳלֱלִלֱלֳלֳלֲלִלִלִלֵלֵלֲלֲל¾לְל½ל¾ל¿לְל¾לֳלֶלֲלִלִלֲלְלְל¾לֱלֱל¿לֳלֶלִלֳלֲלְל¿ל¾ל¾ל¾ל¿לֱלֵלֶלִלִלֵלֳלְל¼ל¼ל¼ל½ל¾ל¾לְלֲלֱלֳלֿל־ל־ל־לֽלÊלÊלÊלֹלÊלֹלּלֽלֽלֿלֿלֿלֽלֻלÊלָלÊלַלֹלֹלֻלּלֿל־לֿלּלÊלָלַלֶלַלַלֹלָלֶלֻלֹלָלָלֵלֵלֶלֵלֶלֹלָלּלּלֻלֻלָלַלַלֶלֶלֹלֹלÊלּלּלּלַלִלִלֳלֵלַלָלַלָלָלֽלֽלֽלֹלַלָלִלִלֶלַלַלַלֹלÊלֹלֹלַלֹלֳלֲלֳלֵלַלַלָלִלַלַלֶלֶלַלִלֲלֲלֲלֳלִלֵלִלֵלֲלֳלֲל¿ל½ל½ל¾ל½לֳלֳלִלֵלֹלֻל־ל׀ל׀ל׀לֿלֽלָלַלִלַלָלֻלּלֿלֽלֿלֽלÊלֶלֵלָלֶלַלֻלֻל־ל׀לׁל־לּלַלֳלֳלֳלֵלָלֻלÊלּלֹלָלֹלֳלֳלֵלֶלִלַלַלַלֹלÊלÊלָלָלַלֶלֵלִלֶלֶלַלַלֶלִלֵלַלֲל¾ל¿לְלֵלֲלָלָלַלֶלֱלֵלִלֳלֱלְלֱלֲלִלֵלִלֲלֱלֳלֲלְל¿ל¾לְל¿לֲלֳלְלֳלֲלֲלֲל¼ל¼לֱל¿ל¾לֱלֲלֱלֱלִל¾ל½ל¼ל»ל¼ל÷ל¾ל½ל¿לֳלֲלֳלֻלּלֽל־לֽלֻלÊלָלַלָלֹלַלָלֹלּלּל־לֽלֽלֽלÊלַלַלֹלֹלֻלֻל־לּלֽל־לּלֹלַלֶלֵלַלַלֻלּל־לÊלָלָלֵלֲלֲלֲלֳלֶלֹלֻלֽלֽלÊלַלַלֶלֳלֳלֵלֵלֵלֹלָלֹלַלַלֲלְלְל¿לֲלֳלַלַלָלֶלֳלֳלֱלֱלֱל¿ל¿לְלֳלֳלֲלֶלֶלֳלְל½ל½ל½ל¾ל½ל¿לֱלֳלִלֵלִלֲל¿ל¿ל¼ל¼ל¼ל¾ל¿ל¿ל¿לֲלֲלֱל¿ל¹ל·ל·ל¹ל¹ל¼ל¿ל¾ל½לֲלֹלÊלּלֻלֽלֻלַלֶלֵלֵלֵלֳלֶלָלֹלÊלÊלÊלֹלָלֵלֳלִלֲלֵלַלֶלֻלֻלÊלֻלֹלַלֲלֳלֳלֵלֶלֹלֻלÊלֻלָלֹלֶלֶלֵלֵלֲלֲלֲלֳלֵלֵלָלֵלֱלֳלֳלֳלֳלֳלִלִלֵלֵלֵלֲלֱל¾ל½ל¾ל½ל½ל¿לֲלֲלֳלֲלֳלְלֲלֱלְל¿ל¾לֱלֳלִלִלֶלִלֱל¿ל¼ל»ל»ל½ל¿ל¿לֱלֱלֱלֱלְל¼ל»ל»ל»ל½לְלְלֳלֵלֵלִלֱל½ל¾ל»ל»ל»ל¼ל»ל¼לֱלֱלֲלַלֹלֻלֹלÊלÊלֻלַלַלֵלֵלִלַלָלָלּלÊלּלָלַלַלִלִלֵלִלֵלֹלÊלֽלּלֻלÊלָלֶלִלַלֹלֹלּלֻלּל־לֽלּלֹלֶלֲלֲלֳלֶלֻלּלֻלּלּלֶלֶלָלֶלִלֶלֹלָלּלֽל׀לֻלָלַלַלַלֲלֶלֲלֲלֶלֵלֳלֶלֶלֵלֵלֱלְל¾לְלֲלֳלֲלְלִלְל¾ל¾ל½ל¿ל¾ל¾ל½ל¾לְלֲלֶלֱלֳלְלְל½ל»ל¼ל»לֱלֶלֵלָלַלֳלֳלֱל¾ל½ל÷לְלֱלֳלֶלֵלֶלֵלֶלֹלֹלÊלֻלָלֲלְלֱלֲלֲלִלֵלֹלֹלּלֻלֻלÊלָלֳלֳלִלֶלÊלÊלּלֻלֻלֹלֹלָלַלֵלֲלִלָלÊלּלֽלּלֽלÊלֹלֶלֶלֳלִלַלÊלּלּלּלֻלֻלָלַלַלֵלַלַלַלÊלÊלÊלֹלָלַלֵלֳלֳלִלִלָלÊלֹלÊלֻלֹלַלִלֲל¿ל¾לְלֱלִלֵלֳלֳלֲלֱל¾ל¾ל½ל»ל¾ל¾לְלֱלֳלֳלֲלֳל¿ל¿ל÷ל¸ל÷ל÷ל¹ל¾לֱלֱלֲלֱלְל¾ל¼ל¹ל¼ל½ל½לְלִלִלָלÊלָלֽלּלֽלֻלּלֻלֹלÊלֵלַלֶלÊלÊלֹלּלÊלֹלֶלִלֳלֵלֳלֶלֹלÊלּלÊלÊלֻלַלֶלֵלֱלֱלִלַלֱלֳלָלֹלֶלַלַלֶל¿ל¿ל¾ל¾לְלֲלִלֶלֵלֵלֵלֶלִלֳלֱלֲלֱלֵלִלֲל¿לֲלֲלְל¼ל¼ל½ל¿ל¾לְלֱלִלִלֵלֳלֳל½ל¹ל¼ל÷ל÷ל¼לְל¿לְלֳלְל¿ל»ל»ל·ל¸ל·ל÷ל¼ל¿ל¿לֲל¿ל¿ל¾ל»ל¸ל¸ל·ל·ל»ל½ל¾ל¿לֲלֱל¼ל¹לµל·ל¶ל÷ל½לְלֲלֲלֹלּלּלּלֻלּלֻלֹלִלֳלֲלִלִלָלֶלֵלֹלÊלָלַלַלִלֱלֶלִלָלָלÊלָלֹלֹלָלֻלַלֵלִל¿לֳלֹלֹלָלֹלֹלֹלֻלֳלְל¾ל¿לְלֱלֵלֶלֹלֶלֶלֶלֳלֵלֱלִלֲלֳלֳלֶלֶלֵלֳלִלֲל¿לְלְל¾לֲלֲלֵלָלַלֵלֶלֵל¾ל¾ל¿ל¿לֱלֳלֳלִלֱלֱלָלֳלְל¼ל½ל½ל¾לְלֲלֱלֲלִלֱלֳלְל¿ל¼ל¿לֲל¿לִלָלֳלִלֹלִלֵלִלֲל¸ל¹ל¼לְלְלֳלֵלֵלÊלֻלֿלֿל׀לֿלֽלּלֶלÊלִלֳלֶלּלָל־לֻלֻלַלֵלַלֲלֳלֲלִלֶלַלֹלÊלַלּלÊלֹלֳלֱלֳלֳלֳלֵלֵלֵלֵלַלֶלֵל¿לֱלְלִלֶלֵלַלֳלֵלֳלִלֲלֱלְלִלֵלֵלֵלֵלֶלֹלֹלָלֶלִל¾ל½לֲלָלֳלֱלֲלִלֳלֶלָלָלֹלÊלֻלֶלֽלׁל־לֿלֽלּלֽל־לֻלÊלּלÊלָלַלֶלִלֵלִלֲלֳל¾ל¹ל÷ל»לֲלֱל¿לֵלֲלִלֱלְל¿ל»ל·ל¶ל·ל½ל¾ל¾לְלֹלֿלֽלּלֿל׀לּלֿלֹלָלַלֵלֶלֶלַלֶלֶלָלÊלֻלֹלֶלֲלֱלֲלֳלֵלָלֹלּלּלָלֵלֲל¿לְלֱלִלָלּל׀לֻלָלּלֻלÊלָלְלֲלֱלֵלֶל־לÊלָלֶלֲלְלַלֹלַלֵלִלֳלֵלֶלָלֶלִל½לֳל¼לֲל½לִלַלֹלַלÊלָלִלֹלַלֿלׁלֻלָלֹלֶלַלֶלַלָלֹלּלֿלֿלֽלּלֻלÊלֹלÊלÊל־לֻלֿל־לּלÊלּלֽלÊלֹלÊלָלֹלֶלֶלֻלָלֱל¿לֱל¿לֱלֳלֳל׳לײלװל׃ל׀לׂל׃ל׃לײל״לÙלײלװלײלװלׂל׃לׂל׃ל׃לױלױלױלׂלֽלּל׀לׂל־לּלּלÊלֻלֵלֲל¿לְל־לֽלּלּל־לֻלֽלֻלֽלּלִלְלֱלֶלÊלÊלֻלֶלּלֶלֲלֶל½לֱל¿לֲלֵלַלֹלָלֵלֶלֶלֲל÷ל»ל¾ל¿לֲלֶלַלֶלֶלִלֶלֳל¼ל¿לִלַלֶלָלַלָלֶלֵלּלּלֽל־לÊלָלֻלֻלֻלÊלֹלָלֻלֹלּל־לÊלֹלָלֵלִלֵלִלִלֳלָלÊלÊלֽלַלÊלָלֶלֵלֵלׁל־לׁל׃לװל׃לׂלׁל׀לׁלׁל׀ל׀לֽלּלּלֿל־ל׀לׁל׃לױל׳לױלׂלׂלׂלׁלׂלׂלׂלֿלׂל׃לֿלׂלׂלׂלּל־לּלֽלּלּל׀לׂלװלׂלׂל׀לֿל׀לֿל־לׁלׁל׀לׁל׀ל׀לֿלÊלֹלֻלֹלָלַלֲלֵלִלָלׁלׁלּלֹלֻלֹלֻלָלָלֹלָלֻלÊלָלֻלÊלָלֶלֳלִלֵלֵלִלֶלÊלֽלֽלֹלֹלַלַלָלֹלֹלֹלֹלָל־לֿלֿלּלÊלַלַלָלָלַלָלֹלּלֽלּלּלÊלÊלַלֶלֵלֶלÊלֽלֽלּלּל־ל־ל׀ל׀לׂל׃לּלֻלׂל־לֿל׀לֿלׂלׁלׂל׃לׂלׂלֿל׃ל׀ל׀לׂלׁלׂלׂלװלװל׃ל׃לֿלׂלֿל־לֽלּלֻלֿלׁלׂלׁלׁל׀לֿל׀לּלֽל־ל־לׁלׁלׂלׁלֿלּלֽלּלÊלÊלֻלֹלֹל־ל־לֽלֽלּלÊלָלֹלÊלÊלֻלֹלּלֿלֿלּלֽלÊלÊלָלֵלֶלָלָלּלÊלֽלֿלÊלַלַלֶלִלֶלֵלֶלֹלÊלֻלּלּלÊלֹלַלַלִלֶלֵלֶלָלֻל־לֽלַלַלָלַלֶלֻלֽלֿלֿלׂלֿלׁלׂלװלׂל׃לױלױל׀ל׀ל׃לׂלׁלׂלׂלׂלׂל׃לׂלׂלׁל־לֿלֿלֿל׀לׁל׀לׂלױלׂלׂלׂל־לֻלֽלֽל־לֿלֿל׀לׁלׁלׁל׀ל־לֻלֽלֽלּלֽל־לֽל־ל־לּלֿל־לֽלּלֽלּלּל־לֽלֿלׁלׁלֽלֿלֽלֻלÊלַלֹלּלֿלֿלֽלֿלֿלֽל־לֽלָלַלָלָלֻלÊלָלּלֻלֹלֻלÊלָלַלִלֶלַלֹלÊלÊלֻלּלֻלÊלָלֵלַלֶלֵלֶלָלָלֻלֻלÊלָלַלִלֳלױלױל׃ל׀לׁלׁלׁל׀לׂל׃לױלײל׳לױלװלׂלֿל׀לֿלֿל׀ל׀לױלװלׂל׀לֽלּלּלֹלָלÊלֻלֿלֿלׂלֿל׀ל־ל־לּלֽלֻלּלֻלׂל׃ל׃לׁל־לּלֻלּלֻלּלּל־לֿל׀ל׀ל־ל׀לֿל׀ל־לּלÊלֽל־ל׀לֿלׁלׁל׃לׂלװלֿלּלֹלֹלֻלÊלּלּלֽל־ל־לֽלֻלָלָלֶלÊלÊלֽל־ל׀לׁלּלֽלÊלָלָלַלָלÊלֻל־לֽל־לּלֻלֽלֹלַלֶלֻלֻלֻלֻלֿלֿל־ל־לֻלֹלַלֵל״לױלװלׁלֿל־לֿלװלױלײל׃לװלװל׃לׂלׁלׂלֿל׀לׁלׂלװלײל׳לױלװל׃לׁל־לֿל־ל׀לֿל׀לױלװלװל׃לׁלֽלֿלֽלֽל־לֿלׂלײל׃לװלױלׂלֿלֿלֻלֻלÊלֻלּל־ל׀ל־ל־לֽלּלÊלֻלֻלֽלֻל־לֽלֿל׀לֿלּלÊלָלֹלַלֶלÊלֹלֹלÊלּלֽלֽלֹלָלָלֶלַלַלֹלּלֽל־לֹלֻלÊלָלֹלֹלֶלִלַלָלָלÊלּלֻלÊלֹלֵלִל¿לֲלֳלֶלַלֻלֹלֻלֻלָלֶלֵלֱלÙל׳לׂל׀ל׀ל׀לׁלׁלװלװלײלײל׳ל״ל׳לװלׂל׀לׁלֿלׁלװל״ל׳לײלװל׃לׁל׀לֽל־לֿל׀ל׃לװל׃לׂלׂלֽלֽלֻלּלֻלֽלֽלֽל׀לֿלֿל׀לֿל־לֽלֽלֻלֻלּלֽלׁלׁלׁלׁל־לּלֻלÊלֹלֹלÊלֽלֿלׁלׁל׀לׁל׀לּלֻלÊלֻלּלֻל־לֽלׂל׀ל׀לּלÊלֻלֹלֹלָלÊלּלֽל־לּלֻלÊלֹלֶלִלִלֵלֶלֵלָלÊלֽל־לֿלֻלָלָלִלֲלֵלָלֹלֹלֹלÊלּלֹלֵלֲלֳל׳ל׳לױלװל׃לׁלׂלׂל׃ל׃לׂלװלװלײלװל׃ל־לֽלֿל־לׂל׃לװל׃לװל׃ל׃ל׃לֿל־לֿלֿלׂלׂלױל׳לױל״לׂלׁלֽלּלֿל־לֽל׀לׂלױלױלֿל־לֿל־לֽלֻלֻלּלֽל׀לׁל׀לֿלֽלֽלּלֹלֹלָלֻלֻל־לֿלֿל־לֽלֽלֹלַלֶלַלֹלֽלּל־לֽלֽלׁלֿל־לֻלָלַלַלַלֹלּל־ל־ל־לּלֻלָלַלַלֹלÊלּלֽלׁלׁלׁלֿלֻלָלֶלֵלֶלֶלָלֵלÊלÊלÊלÊלַלַלֳלִל׃לװל׀ל־לֽל־ל־לׁלׁלׂל׃ל׳ל״לײלװל׃לֿלֽלֻלֻל־ל׃לׂלׂלׂלׂל׀ל־לֻלֻלÊלֻלּלֽלֽל׀לֿלׁלֿלֽל־לֻלֹלֹלַלּלֽלֿל־לֽל־לּלּלּל־לֽלֽלֻל־ל־לֽלּלֽלֻלֻלַלַלַלָלֹלÊלֽלֻלֿלֻלֽלÊלַלֵלִלֵלַלÊלּלּלֽלֽלּלÊלֵלֳלֶלֶלֶלָלֹלֻלּלּלÊלֹלִלֲלֱלֳלִלָלָלÊלֻלÊלּלֻלַלֵלֲלֱלֱלִלִלַלֹלֹלָלÊלֶלִלֳלױלױלױלׁלֿלֽל׀ל׀ל׳ל״לÚלÛלÙלÙלÙל׃לװל׀ל־ל־לׂל׃לװל׳ל״לײל׳לװל׀ל׀ל־לֻלּל׀לׂלׂלװלׂלֿלֿלֽלֻלÊלֻלּל־לֿל׀ל׃לׁל־ל־לּלֻלָלֶלֹלÊלֻל־לּלּלּלּלָלֵלֶלִלֵלָלָלÊלּלֽלֻלÊלָלִלִלִלֵלָלֹל־לֽל־ל־לּלֹלָלַלֶלֵלֽל־לׂלׂל׀לֿל׀לׁל׃ל׀לּלֶלֶל־לׁל׀לׂל׃ל׀לֿלֶלַלֵלֵלָלֿלׁל׀לֿל־לֻלÊל׀לַלַלÜלײלÙלװלׂלֿלׁלׂלװל״ל׳ל״לÙל״ל׃לׂלׂל־ל׀ל׃לױל״ל״לÚלױלÚל׳ל׃ל׃ל־ל׀לׁלװלױל״לײלױלױלױל׀לׁלֿלָלֻל־לֿל׃לױלװלײלױלׂל־ל־לֻלֻלֿל׀ל׀לׁלֿלׁלׁל׀לÊלÊלֹלֻלֿל׃לױלװלׂלֿלׁלׁלֻלֹלֹלָלֻלֿלׁלׂלׂל־ל־לֿלֻלÊלַלָלַלּלֻלÊלÊלֻלּלֽלֽלּלָלֳלַלֳלֳלֵלֹלֻל־לַלֹלֹלֲלֲלֱלֱלֵלֳלֶלÊלֻלֽלּלּלַל־לÙל״לױלױלּלּלֽלֻל׀לׁלװלױלײל׃לֿלֽלÊלָלָלָלֻלֿלׁלׁלױל׃לׂלֽלּלֹלַלַלֹלֹל־ל׀לׁל׃לױלֿלּלֹלֹלֻל־לׁלׂל׃ל״לÚלױלװלׂל־לָלֻלֹלּלׁל׀ל׀ל׃לׂלׂלֽלַלֶלֳלֳלֶלÊלֿל׃ל׀לּלֻלֻלֶלֶלֲלֲלָלָלֽלֻלֿלׂל׀לּלֹלַלֵלֳלֶלַלֹל׀לׁל׀לׁלֿלּלֽלַלֶלֻלּלֽלׂלׁל׀לֿל־לֽלÊלֲלְלֲלֲלַלֶלֹלÊלֻלÊלָלַלִל״לÚלÙלÛלװלֽלֿלֽל׀ל׃לױלײל״לײלױלװלֽלּלָלָלֿל׀לׁלװלײלװל׃לׂל־לֹלָלÊלÊלֻלׁלׂלׂל׃ל׃לװל־לּלַלַלָלÊלֿלׂלׁל׃לֿלּלÊלָלָלֹלֹלּלֿלׁלֿלׂל׃לׂל׀לֽלֻלַלַלֹלÊל־ל׃ל׀ל־לÊלָלֵלֲלֲלִלֵלּל־לֽל־ל׀ל־לֽלֻלָלֲלֳלֵלָלָל־ל׀לׁלֿלֿל־לֵלֳלֹלֽלּלׂלׂל׀ל׀לׂלױלׂלװלױלױלװלÊלּלֿלֿלֿלׂל׀ל־לׁל־ל״לÙלײל׃לײלÛלױל׃לÚלÛלÞלÛלÜלÜלÚלÜלÚלׁלּל־ל׀לׁלװל״לױל׃לײלׁל׀לÙלײל׃לֿלׂלÙלÙל׳לײלÚל״לÙלױלֽלּלֻלֽלֿלױלײל׳ל׳לײלײלײלÙלÚלÙל׳ל״ל״לÙלÙל״לÚלÝלÞלÝלÜל״ל׳לײלױלׁלװל׃ל־לֽלָלֳלֹלֽלֻלּלׁל׀לװל׀לׁל׀לּלֻלַלֵלֵלֹלֿלׁלװלֿל־לֿלֿל׀לׂל׃לׁלׂל׀לׂל־לֽל׀לּלױלײלײלÚלײלװל׃ל׀לׁל׃ל׀לׁלװלװל׃לÛלÚלװלÜלװלׁל׀לׂל״ל׳לÚלײל״לÙלÛל״ל״לÝלÛלװל׀לּלּלּל׃ל׃לײלֽלֽלׁל׀לׁלֻלֹלֿל׀לײלװלװל׃לׂלװלÛלױלּלֽל׀לֿל׃ל׀ל׀לׁלÚלײלÜל״ל׃לױלװל׃ל״ל׃לÙל״לÜלÝל״לÚל״לױלװלׂלׂלׂלׂל״לÚלÜלÜלÛל״ל׃לײל׳ל׃לױלױל״לױלװל״ל״ל׳לׂלװלױלװל׃לװלֿלׁל׃לױל׳לױלװלֿלֽלֽלֽלֿלֻלװלׁלײלײלױלװלׂלׁלֽל־לׁלׁלֿלׁלײלװלÚלÙלÚלÜל׃ל׳לאלÚלÚלÞלÝלÜל״ל׳ל׳לÜלÞלאלגלבלÝלÜלÜל״לÚלÚלÚלÙלÙלÜלÞלÜלÜל״לױל׃לׂלװלװל״לÞלÝלÛלÛלÙלײלװל׃ל׃ל׃לװל׀לװלÙלװלÚל״לׂלּלֹל־לֿל׃לװלװל׳ל׳לײלױלײל׃לׁל׃לׂלׁלױל׃ל׳ל״ל״לÛל׳לװלׂל׃ל׀ל־ל׀ל־לׁלײל׳לװלױלװלׂלׁלֿל־ל־ל׀לׂלײלÚל״לױלװל׃לֿלּל־לÊלֽלׁל׃לװלװל׃לׁלֿל׀לֽלּלּלÊלֿלֽלׁלÛלÛלÛלÝל׳לÞלאל׳לÜלÚל׳ל׳לÙלÙלÙלÙלÞלÜלÙלÚלײלÙל׃לײלײלײלÚלײלÚלÝלאלÞלÜלÚלÙלײלײלײלװל״לײלײלÛלÜלÜלÛלÚל׳לײלÙלÙל״לÛלÛלÛלÛלÙל״לײל׳לױלװל׃לׂל׳ל״לÙל׳לÙלװלױל־ל־לׁלׂלׂלװלÙלÛלÛלÚלÙלױלׁלׂל׃לׂל׃לװלױל׳לÙל״ל׳ל״לײלװלׂל׃לׂלׂלױלײלײלײל׳לװל׃לׂלֿל׀לׁלׁלׁלװלױלױלװל־לׁלׂלׂלֿלֽלּל־לׁל׀ל׳לÚלÚלÛלÝלאלאלאלßלÝלÛלÙלײל״ל׳ל׳ל׳לÜלבלßלÚל״לÙל״ל״לÙלÛלÚלÛלÛלÜלÛלÞלÝלÚל״לײלײלײל׳לÚלÚלÙלÝלÝל׳לÙל״לױלײלÙלÙלÜלÜלÝלÜלÙלײלױלׁלױלׂל׃לׁל׃לׂלװלÚלÙלÚל״לײלׂלׂלׂל׃לׂל׃לײל׳לÙלÚל׳לױלׂלװלֿל־ל־ל׀ל׀ל׃לײלׂלׂל׀לֿלּלּל־לÊל׀לֽל׃לװלׂלֿלּל־לֽלֿל׀לׁל׃לׂלׂלװל׃לֿל׀לֽלֽל־ל־לׂל־לׁלׁלÙלÛלÚלÛלßלÞלßלÛלÙלÙלÚל״ל״לÜלÙלÛלÜלÙלÞלÞלÚלÜלÚלÙלÙל״לױל״לÚלÝלÚל׳לÙל׳לײלÚל״ל׳לױלÙל״לÛלÛלÝלÜל״ל׳לײלײלױלױלױלײלÙלÙלÙלÙלÙלÚלױלײל׳ל׳ל׳ל׳לÙלÛלÜלÚלÜלÝלÙלױל׃לׁלװל׳ל״לÚלÙלÚלÙל׳לײלײלװלװלׂלױלױלױל״ל״ל״לױלװלׁלׂל׀ל׀ל׀לׂל׃לװלײל׳ל׃ל׀לֿלֽל־לֽל׀ל׀ל׀ל׃לױל׃ל׀לֿלֽלּלֿל׀ל׀לֿלׂלֽל׳ל״לÚלÞלאלßלבלßלßלÞלÛלÚלÚלÚלÛלÜלÝלßלßלבלÜלײל״לÚלÜלÚלÚלÜלÝלÞלÞלאלאלאלאלÛלÝלÝלÛלÝלÜלÝלßלÞלÝלÜלÜלßלÜלÙל׳לÚל׳לÛלÚלÚלÜלÝלÜלÚלÚל״ל״לײל׳לÙלÝלÝלÝלÝלÛל׳לÙלװלװלױלװלײלÛלÜלÛלÙלײל׃לׂלױלװלװל׳ל׳לÙלÛלÚלÛלÛל״ל״לװלׁל׀לװלײלױלÙל״ל״ל׳ל׳לװלֿלֽל־לׁל׃ל׃לױלÙלײלױלױלׁל־לֿלׁלֿלֿל׀ל׀לÜלÛלÝלאלבלגלדלבלÞלÝלÜלÝלÙלÙלÚלÜלÞלßלßלאלאלאלÚלÙלÙל׳לײל״לÙלÚלÛלÚל״ל׳ל׳ל׳לׂלׂל׃לװל״ל״לÙלÚלÚל״לװל׀לׁלׁלׁל׃לױל׳ל׳ל״לÚל״לײלױלױלװלײלװלױל׳ל׳ל״לײלÙלװלׂל׃לׂלׂלׁלׂלװל״לײל׳ל׳לױלׂל׀לֿלֿלֿל׀לׂלװלװל׃ל׃לׁל־לֽלֽלֽל־ל־ל׀לׂלׂלׁל׃לׂל׃ל׀לּלּלּלּל־ל־לֿלׂל׃לׁלֿל־לÊלּלֻלֻלֽלֿלֽלÙלÝלÙלÚלבלאלאלאלאלßלÞלÛלÚל״לÜלÝלÜלßלßלÞלÜלÚלÛלײלÙלÙלÙלÝלÜלÝלßלÜלÜלÛלÛלÙל׳לײלװלױלװלÚלÙלÜלÚל״ל״לױלױלװל׃לײלײלװל״לÚלÙלÙלײלױלײל׃לװלׂלװלױל׳לײלײלײלײלׁל׀ל־ל׀ל׀לװל״לÙלÜלבלÚל״לױלױל׳לׁלװלױלװלÙל״לÙל״לױלÙל׀ל׀ל׀לֿלׁלׁלױלױלײל״לׂלׁלֿל׀לּל־ל־ל׀לׂלׁלװל׃ל׃לׁלֿלֻלֹלָלָלֻלֽל־לױלÙלÚלÛלÛלßלÞלÜלÝלÚלÛלÚלױלײלײלÙלßלÞלÞלאלגלßלÚלÙלװלװל׳לײלÜלßלßלßלßלÛלÚל׳לױלװלװלײלײלÙלÜלÚלÚלÙלױלׁל׀לֿל׀לֿל׃ל׳לײל׳לױלױלװל׀לװלׁלױלׂלׂלװלÙל״לײל״לײל׃לׁלׁלֿלׂל׃לױל״לײלÙלײלײלױלׁלֿל־לֿלׂל״לÙל״לÙל׃לײלײלײלֿלֽלּל׀לװל״ל׳לÙלÙל׳לÙלװלׂלֿלֿל־ל׀לװלÚלÚלÙלÛלÙלױל׀ל־לÊלַלֹלֻלֻלױל׃לװלÚלÜלÞלגלגלßלבל׳לÚלװלױלױל׳לÛלÞלßלßלגלÙלÙלÚלװל׃לׂלׁלױלײל׳לײלױלׂל׃לׂלׂלׁל׃ל׀לׁלװלײלװל״לױלװלװלׂלׁלּלּלֽלֿלׂלװלװלױל׃לׂל׃ל׀ל״ל־ל׀ל׀ל׃ל׳לײל׳לÙלׂל׀ל־לֻלּלּלֿלׁל׃לװלװלװל׀לֽלֻלּלֽל־ל׃לׁל׃ל׳ל׳לÙל׃ל׀לׁלֽלֻלÊלֽלֿל־לׂלױל׃לׂלױלֽלֻלÊלÊלּל־ל׀לײלײלÚלׂל׃לּלÊלֹלֶלַלָלָלײלװל׃ל״לÛלבלגלגלאלאלÚלÚלײל׃לױלÚלÙלÜלÛלÝלÜלÜל״לײלײל׀לׁלׁל׳ל״לÙלÜלÛלÚל׳לױלׂלׂל׀ל׀לׂלװל׳ל״לÛלÛל׳ל׃לׂלׁלׁלׂל׃ל׃לױלױלױלײלװלװלװל׳לÙל׀לׁלװלÚלÜלÚלÞלÛלÛלÛלׂלׂל׀לׁלױלÛלÝלÚלבלÞלÜלÛלײל׀ל׀לװלÚלÚלÝלÛלÛלÝלßלÛלׁל׀ל׃לֿל׃לײל״ל״לßלÙל״לײלֿלֹלֻלÊלּל׃ל׃לײלױלײלװל׀לֿלּלֻלֹלÊלֿלײלאלÚלÝלÞלגלÝלבלגלßלבלהלזלÙלÚלÚלÚלÝלדלהלהלולולגלÞלÜל״לÚלÚלÜלבלÝלÛלאלÜלÚל״לײלױלׂל׃לױלÝלבלÝלÚלÙלÙלÙל״לÛלאלÚלÚלÜלגלÝלÛל״ל׳לÚל׃לÚל״ל׃לÙל״לÜלÜלאלÝלגלבלÚל׳ל׳לÞלßלßלßלÜלßלÜלßלדלהלדלגלÚל״ל׳ל״לÛלßלבלÞלגלדלהלבלזלבלאלבלÜלÞלÞלאלÞלÞלÞלÝלׁלֻלֽלװלײלװל׃לױלׁל׃לװל׃לּלּל־לװלÛלÙלÚלÙלßלגלחלהלזלבלבלבלÚלÚל׃לײלױלÝלÞלאלאלÞלÜלÚלÛלÞלגלÝלÝלחלבלדלבלולדלדלÞלÚלױלײלÚלÞלבלזלולדלבלדלÝלÙלÚלÙלײל׳לÝלÚלÜלÜלÙלÞלאלÙלÙלÞלÜלÝלÝלÝלÛלÜלÜלדלזלחלזלזלגלÝלולÚלÛלßלאלגלÞלßלÝלבלבלÝלÝלÚלÚלÜל״ל׳לÛלÜלאלÞלװלװל׳לבלßלױלÙל״לױל׳לאלאלÜלאל׳לװל׃ל׃ל׀לװל׃ל׃ל׃לÜלÜלÝלÜל״ל״לÛל׳לױלײלßלאלהלהלגלבלאלאלßל״ל׃לׁלװלײלÚלßלßלולבלבלÜלÝלײלÙלײלÚלÛלßלÜלÙלÛלגלדל׳לײלÛלÞלבלאל״ל׳ל׳לÛלÝלÝלײל׀לׁלÜלßלßלאלדלדלגלהלאלÜלÝלװל״ל׳לÛלÝלבלÜלÞלÚלדלגלדלהלגלבלÞלאלßלÞלאלגלבלגלהלגלÜלÞלÞלÞלÝלÞלÝלßלÛלגלגלגלאלßלÚלßלÙלÚלßלÞלÜלבלאלדלגלבלאלדלÜלÜלבלÜלÛלÛלÝלÞלÜלאלÜלÚלךלזלהלÞלÝלבלÞלגלהלאלגלולכלםלולטלזלגלדלבלßלגלדלולילךלדלזלÞלÝלבלÞלÞלÞלהלולזלדלזלÝלדלÛלÜלאלבלבלדלבלהלדלזלולולÞלאלßלÞלבלבלבלדלאלßלגלאלÝלÛלÝלßלÝלÞלÝלÞלßלÜלװל׃לױל׳לÛלÛלÚלÚל׳לÚלÛלאלÝלÚל׳ל׳לׂל׳לÚלײלױלױלÚלÜלÝלׁל׀לֿלױלׁלׂלײלײלײל״לÛל״לÙלױל״לׂלׁל׳לׂלװלÛלױלÝלÛלÙלÙלÛלײלךלטלחלדלÜלßלÚלÝלגלבלולךלהלחלחלזלדלולולבלדלאלבלאלאל׃לֿל׃לׂלßלÝלÙלÝלאלÛלÜלבלהלבלÝלßלÛלÛלÛל״לÜלÞלßלדלדלדלאלÝלדלÛלÙל׳לÝלßלÝלאלÞלגלבלדלßלÞלÛלÜלÛלßלאלדלגלדלולßלßלÜלÚלÜלÚלÙלßלגלדלגלאלגלבלÞלÝלÝלÜלÛלÛלÝלÝלÝלאלבלאלÜלÚלײל״ל׳לױלÙל״ל׳לÜלßלÛל׳לױלױלױלײלװל׀לױל״לÞלÞלאלבל״לכלכלילחלילדלגלולולדלטלחלילילחלזלהלגלגלßלבלגלולדלזלהלחלולבלבלÜלÜלÞלÝלßלßלבלגלדלהלÜל׳לÜלßלÝלÝלßלßלדלהלולדלולבלÞלÛלÛלÝלÞלßלאלאלÝלÞלזלולÜלßלÝלÝלÞלגלגלהלחלאלÜלÞלÝלÜלÛלÜלÛלÝלÛלאלאלßלאלאלßלÝלÛלÛלÛלÛלÞלאלאלאלÝלÞלÚל״לÚלÙלÙל״לÜלÞלÝלÝלÛלÜלÛלױלױלׁלױלױל׳לÚלÛלÝלאלÞלÚלÙלךלחלגלהלהלבלדלולדלזלטלחלטלטלללטלולבלßלגלדלבלבלהלחלחלזלזלטלזלדלדלגלדלולאלגלהלולדלדלבלבלÞלÝלÛלבלאלגלדלזלהלßלבלßלאלאלדלהלדלדלהלבלהלזלהלÞלÛלÝלÜלÞלאלגלדלהלהלחלדלÛלÚלÛלÚלÝלאלדלהלדלהלÝלÞלÚלÚלÚלÜלÛלÚלÛלאלßלÝלßלÞלÝל׳ל״ל״ל״לÙלÚלÝלÝלßלאלÝלÜל׳לײלײלײל״לÚלÙלÚלÚלÙלÚל״לÙלילכלכלחלהלגלדלהלהלולזלחלילכלכלךלכלזלולהלבלגלהלזלחלחלזלולולהלאלÞלÞלÝלאלדלזלחלזלהלולגלÞלגלבלאלגלגלדלהלדלגלאלדלבלבלגלדלזלהלזלחלזלךלילטלזלגלבלבלßלהלהלילזלהלגלאלאלÞלÝלÞלßלאלולולזלהלבלאלאלÞלÛל״לÝלÝלÞלאלדלהלבלÞלÝלÛלÛלÜלÝלאלßלגלגלדלגלßלÜלÛלÛלÚלÜלÚלÝלÝלßלבלבלÞלßלאלםלכלןלמלילחלחלחלחלילכלללןלנלמלללכלזלזלולהלולטלטלטלךלילךלטלולהלגלגלדלהלחלטלזלולולולדלגלאלßלהלולולחלחלחלחלחלדלאלבלßלßלאלולגלהלגלדלולדלבלÝלבלגלהלדלהלולולזלהלבלאלאלÞלÞלßלאלבלדלולדלבלבלבלאלÛלÝלßלÞלבלדלהלחלולאלגלאלÞלÚלÚלÝלßלßלגלבלבלßלÝלÜלÚל״לÙלÙלÜלÞלאלגלדלבלßלÞלללכלךלךלזלולטלהלחלזלכלךלםלכלכלללזלדלדלגלהלזלטלכלךלםלללילחלהלבלאלגלגלזלךלללךלךלטלחלולדלהלדלבלולךלךלילללכלחלילולולבלאלזלדלחלכלטלחלחלילßלÛלÝלÝלאלזלדלזלטלולחלדלßלאלÜלÚל״לßלאלבלדלהלדלבלÜלÙלÛלÙלÝלÞלגלהלהלולולזלßלÝלÞלÙלÜלÜלÞלאלבלהלדלבלבלÞלÝלÛלÚלÚלÛלאלבלדלגלזלהלßלנלףלנלסלןלכלילחלהלולילילםלללןלילולהלגלגלולולחלילךלללךלךלילולבלאלאלאלדלחלכלכלזלךלזלזלאלßלßלאלולזלזלךלךלכלטלילאלÞלÞלאלגלבלדלדלאלולדלגלßלÞלÝלßלהלהלטלךלכלךלולזלדלßלÞלÝלÝלÜלגלולולדלדלהלבלÝלÛל״לÜלÝלאלולזלילזלחלגלולÝלÛלÛלÝלבלßלזלבלבלדלבלÛל״ל׳ל״לÚלÜלÝלאלגלהלולגלגלךלללםלכלטלהלדלגלגלזלולזלחלילחלילולהלאלאלגלבלהלהלזלטלחלךלכלטלגלÞלדלאלבלטלכלךלכלםלןלילגלזלגלßלטלללךלנלסלכלםלטלהלאלבלגלדלטלטלחלחלךלכלךלדלבלÚלÜלגלדלהלגלולחלחלחלהלÞלÝלÙלÝלבלדלולולגלהלהלגלÝלÙלÚלÚלÞלאלבלדלהלולגלדלÜל׳ל״ל״לÛלגלבלולחלדלהלדלßלÙלÙל׃ל׀לׁלױלÚלÝלßלßלגלגלללןלנלמלזלדלולגלגלבלדלזלךלללכלטלחלדלגלÞלßלÝלÞלאלדלהלחלזלהלגלÞלÜלÞלÜלÝלבלולזלחלולחלולאלßלאלÛלßלאלבלהלךלחלהלהלßלÜלבלÜלßלבלגלבלÝלדלטלולßלאלÜלÚלÝלßלבלזלחלזלזלבלולÙלבל׳לÜלßלהלזלזלולחלדלדלאלÛלÝלßלÞלßלדלזלולהלהלאלßלײלÛלׂל׳לÜלבלולהלהלדלהלßלÜלÚלÙלאלאלולזלדלחלחלולÝלפלסלכלןלםלילהלולהלזלללכלילכלללילםלזלולגלÞלßלבלחלחלזלטלילכלזלדלאלßלאלהלטלזלטלכלילטלטלÞלÝלÚלÜלאלחלילולטלהלולולאלßלבלÞלאלהלבלולילכלךלטלבלבלילטלכלכלטלםלללכלכלכלילחלאלßלגלולמלמלכלללכלטלםלמלףלןלךלךלחלחלחלטלךלולדלזלבלÙלÙלÙלהלחלדלטלחלחלטלהלזלÞל׳לײלÙלÙלבלולילהלולגלנלםלםלםלךלךלגלßלÝלאלטלטלכלךלםלכלילחלßלßלÝלאלבלהלחלללללללםלללללכלולÞלאלדלילללםלללכלכלזלגלגלגלדלטלםלללללסלםלכלךלדלßלÝלולחלזלזלמלללטלכלךלזלÞלÝלבלדלילםלללךלללמלמלסלנלנלנלעלןלןלכלללםלםלעלמלנלסלללםלךלךלללךלךלילךלחלטלחל״ל׳לÛלאלגלולדלדלדלאלגלÜל״לװל׳לאלבלבלהלהלחלחלץלץלףלסלנלללכלבלגלאלדלךלךלםלסלםלללמלולהלÞלאלהלזלךלםלמלםלכלןלעלעלסלןלןלןלללןלמלןלסלעלעלפלץלעלןלעלללןלסלןלמלןלנלןלללטלגלטלילילךלללללמלילמלסלללטלטלללךלללללםלךלללמלסלעלנלנלללללחלטלילילטלכלילךלזלחלטלולטלחלזלטלטלךלכלךלכלללךלזלזלחלחלהלטלטלולכלילחלזלולולאלגלזלולטלסלףלףלנלץלקלצלףלץלסלפלסלסלןלכלמלןלעלצלץלצלףלמלןלנלנלןלםלןלעלסלסלמלםלסלסלםלמלכלללןלןלןלכלךלללכלטלךלללללמלןלםלכלמלםלמלילםלכלטלללכלכלכלנלנלסלןלנלמלטלללםלללכלכלללנלןלםלללםלללךלהלחלחלילילילילזלךלךלילזלטלחלזלחלחלטלללללללםלילזלהלולהלדלהלחלטלזלילךלולחלולולולדלזלזלץלפלףלףלץלצלצלרלץלקלצלפלףלנלנלנלמלעלףלץלץלנלפלנלכלםלמלנלסלנלעלפלףלפלףלסלעלנלנלמלםלנלסלףלפלסלןלמלםלללךלכלמלללןלסלנלמלםלנלילכלטלכלךלללמלילךלסלמלםלטלחלחלטלללכלללםלןלףלסלןלללטלללךלטלכלללמלמלןלםלילטלטלטלחלחלךלטלכלללמלןלללללללילילטלילילךלללללללללכלכלכלכלטלחלולגלםלעלנלעלףלףלעלףלצלצלץלףלןלנלמלןלןלעלפלץלץלףלעלףלסלמלללםלןלנלנלעלפלץלץלסלנלללםלללןלמלסלסלףלףלפלעלנלןלכלללםלםלןלפלףלףלעלסלםלךלםלללמלמלףלסלסלמלעלמלןלנלםלללילללכלםלןלםלםלמלמלןלללךלילךלםלןלסלעלנלמלםלכלךלטלטלטלזלילללםלםלטלולהלגלהלולזלךלילךלכלךלללךלחלטלהלולולולולסלסלנלסלעלפלץלףלפלפלץלפלסלסלסלףלסלקלצלץלתלקלקלףלנלנלנלםלמלסלףלפלץלףלנלנלמלללילךלטלילללעלנלןלמלכלכלכלךלילךלךלמלמלסלןלןלמלךלללללחלטלכלכלםלסלסלסלןלםלללללללילךלילכלללכלמלכלזלילהלולהלולטלטלטלןלסלמלכלטלךלטלזלטלילכלכלןלסלמלךלםלזלהלהלולזלחלללנלטלילילחלחלזלולגלבלבלפלץלעלנלסלפלפלפלפלץלפלעלןלןלנלמלעלץלצלףלצלץלשלעלסלללךלםלןלםלןלעלףלפלנלןלללללילילללםלןלמלנלעלסלפלףלסלללכלטלללךלמלםלללכלכלכלסלךלללךלללןלנלםלנלסלעלסלסלנלילילכלטלכלכלםלןלנלללללילזלזלזלולטלךלכלםלללכלטלחלזלולדלדלולחלךלכלךלכלזלילדלגלהלולדלזלחלךלכלילכלולזלזלבלאלÞלללךלללללמלןלנלסלעלעלעלצלסלםלכלללכלםלןלסלסלפלפלנלמלמלמלמלללללמלקלץלעלנלףלעלכלילטלילללכלםלמלנלןלללךלטלחלללךלךלםלמלןלנלמלןלכלללןלכלןלילטלילםלמלכלחלךלחלהלולזלטלכלללכלןלכלךלילחלזלולזלדלזלחלטלטלנלמלילדלדלהלדלßלהלולזלכלללםלילילחלחלהלדלבלדלגלולחלחלילחלהלגלאלÞלאלהלנלןלללמלםלנלןלןלעלףלסלפלפלסלנלללכלנלםלנלעלןלסלעלנלללךלכלמלעלףלעלץלץלפלץלפלסלםלכלכלןלסלןלפלפלעלסלןלםלךלכלכלעלןלעלעלעלףלנלעלמלץלילילכלךלללנלעלנלמלןלכלםלחלחלחלךלמלסלסלףלסלללכלילטלטלילכלכלסלנלנלמלןלכלחלילולולחלחלכלםלםלםלללךלילטלחלזלהלזלחלנלךלךלךלילחלזלולגלדלהלןלמלםלמלןלנלעלץלקלרלרלצלנלמלכלנלמלללמלסלמלפלץלףלעלםלכלםלללןלףלףלקלקלץלפלףלנלמלנלםלעלפלץלפלשלץלףלעלןלללכלכלכלםלללןלנלסלןלעלללףלחלחלטלךלילילןלךלךלםלילזלולהלולחלחלילללכלללזלילחלדלולטלחלכלללםלםלנלןלטלטלטלולדלטלךלילמלסלנלסלנלילזלחלגלהלזלךלנלנלףלסלםלילהלכלגלדלדלעלללךלכלכלםלןלעלפלעלנלנלללכלילללכלללסלסלףלסלסלנלןלםלללילילךלןלןלסלעלנלעלןלכלכלךלכלללנלפלףלצלפלפלןלןלןלךלללכלנלףלףלפלעלףלסלףלקלמלמלןלףלרלקלרלץלפלסלללטלחלחלחלכלםלסלןלןלןלנלםלזלהלהלזלדלךלךלמלללללללמלטלילדלבלבלדלולטלםלילךלטלילדלאלßלאלגלהלחלךלללםלללולדלבלגלטלגלעלמלילטלםלללףלעלעלעלסלץלללנלילטלחלטלךלללנלנלסלנלםלךלכלטלךלךלללןלסלצלףלסלףלילילטלךלסלפלץלפלפלקלנלנלםלחלילםלמלעלעלסלןלנלפלףלןלףלטלחלכלןלנלנלףלףלעלןלטלילדלזלולךלמלעלסלעלסלסלןלכלךלולדלזלךלללןלנלמלןלםלהלהלגלגלולחלילסלעלםלמלללםלטלאלßלדלולטלםלןלמלןלןלללהלדלÞלÞלגלנלןלןלךלמלץלקלתלתלשלתלרלפלעלםלךלללןלץלקלשלרלשלקלץלנלללללעלצלרלûלצלשלקלץלףלללכלילחלטלםלנלצלעלףלפלללךלכלםלמלנלשלרלצלפלפלץלסלםלנלזלטלטלטלעלנלףלעלנלסלמלולדלגלולילםלסלמלסלעלנלןלםלזלהלולזלכלעלסלףלעלנלןלןלךלזלטלטלמלףלפלנלעלעלעלצלכלםלסלףלנלףלןלםלסלנלןלםלםלילדלÞלאלעלמלךלךלןלףלנלשלפלרלרלצלץלעלןלללכלנלסלעלרלרלץלףלעלללטלכלילעלץלקלפלûלשלשלקלצלעלעלרל‏לûלûלרלשלשלקלרלצלןלףלףלףלצלקלצלפלפלקלעלצלצלללךלסלקלצלצלעלסלנלןלןלחלחלכלמלףלףלץלפלפלפלפלעלןלשלתלשלשלשלרלשלרלצלפלץלפלץלקלצלפלנלעלעלףלנלסלנלףלסלנלץלץלנלסלנלסלנלסלנלנלמלםלןלכלחלרלעלךלךלכלנלץלץלשלûלשלרלûלÿלתלÿל‎ל‎ל‏לûלרלרלקלקלצלצלתלûלקלפלץלצלץלקלתלûלûל‎לüלÿלüלûלתלשלûלüלשלצלתל‎לרלüלתלרלפלצלרלרלץלרלüל‏לüל‎ל‎ל‏לüלשלשלרלקלצלצלרלתלתלרלרלרלשלצלצלפלפלנלצלשלקלשלסלףלףלףלעלפלפלעלףלקלתלץלצלצלףלסלסלמלמלמלןלךלטלכלעלסלסלנלעלסלנלסלעלעלסלפלףלפלץלםםÿלםםםםםÿל‎לצל‏לשל‏לםםםÿלûלûלתלûלתלתלתלüלüל‎לüלûלתלץלץלקלצלצלקלתל‎לüלקלרלתלקלקלץלעלצלףלפלצלפלסלםלנלמלנלףלץלפלצלעלנלפלץלץלפלנלןלסלעלעלפלףלןלפלץלצלפלףלץלנלסלנלסלסלןלסלץלסלףלעלללןלנלנלסלעלסלפלעלקלףלץלעלףלסלנלמלמלנלעלףלףלצלץלנלןלללמלסלסלסלסלפלףלעלצלûלתל‏לÿלתלûלשלüלרלשלקלקלûלרלûלתלûלרלרלקלשלצלצלקלשלרלüלûלüלûל‏לûלתלשלשלרלשלשלשלüל‏לüלûלתלûלתלצלרלקלצלשל‏ל‎לשלשלרלרלצלפלףלקלקלרלתלûלתלקלץלףלעלףלצלקלצלשלקלשלשלרלץלסלףלפלפלףלפלףלצלצלצלףלפלףלעלנלסלנלסלעלףלעלףלןלץלץלעלצלפלעלסלנלנלףלסלפלצלףלסלעלסלנלמלנלעלץלףלץלפלüלשל‏לûלüלרלקלרלצלקלצלצלקלקלüלÿל‎לתלüלתלתלרלקלרלשל‎לÿלםם םÿל‎לüלûלתלתלתלÿל םÿל םÿלüלשלרלרלרלשלûל‎ל‎לüל‎ל‎ל‏לתלפלףלץלעלצלצלצלרלקלץלףלעלנלןלנלםלנלסלסלפלףלסלמלעלנלמלללללמלמלנלנלץלץלץלפלפלסלמלםלמלןלסלףלסלצלסלנלסלנלעלעלעלעלץלףלץלקלפלקלרלץלץלקלסלןלנלנלעלפלףלעלüלÿלüלםםםםüלתלתלûל‏ל םםםםםם םûלשלתלüל‎לÿל םÿלםםםם‏ל‏לüל‏ל‏ל םםםםםםםם‎לûלשלרלשלüלÿל םםם םÿלûלשלץלשלûלûלûלüלתלתלשלרלשלץלעלפלץלשלרלקלצלץלעלמלןלמלנלץלףלפלצלץלûלשלשלרלרלץלסלעלעלפלסלעלפלסלפלףלנלןלנלסלנלעלףלץלצלקלץלקלקלûלקלפלצלסלץלץלשלשלתלשלקלתלüלüלüל‎לüלûלשלקלקלשלתלÿלם םםםםםÿל‎לüל‎ל‏לÿלםםםםםם םüל‎לÿל ם םםםםםÿלûלשלרלצלץלפלפלקלתלûלתלשלעלנלםלןלנלנלןלעלףלפלץלפלץלצלףלסלןלנלףלןלעלץלרלקלץלףלפלצלףלףלפלצלשלתלüלתלקלרלקלסלנלסלעלפלצלתלרלשלצלףלרלמלכלךלםלםלןלעלסלףלעלסלסלמלםלללנלסלנלסלעלףלפלתלûלûל‎לüלûל‎לûלצלףלפלפלקלûלüלûלûלûל‎לûלüלûלצלפלקלתלתלüל‏ל‎לתלûלקלפלץלץלצלשלûלÿלÿל‎לûלרלרלץלףלפלצלצלûלûלתלüלûלקלץלףלצלעלףלפלץלקלûלקלקלץלףלנלנלןלסלףלפלפלקלצלקלתלפלסלנלמלעלסלנלסלסלצלקלףלפלסלסלמלןלףלסלעלץלצלקלתלץלעלמלמלןלללמלנלעלצלרלתלצלףלסלםלסלןלמלסלפלרלץלצלתלüלÿלÿלÿלם םûלשלûלרלרלûלüלüלםûלüל‏לשלקלרלשלשלרלüל‎לûל‎ל‎לתלשלצלףלפלסלץלקלûלüלûלשלקלרלצלקלפלףלפלףלרלשלשלקלצלץלפלץלפלףלפלפלףלצלסלפלףלףלץלעלםלמלמלןלסלצלרלשלצלקלץלףלנלסלנלנלנלצלץלקלרלץלפלסלסלמלמלסלעלפלץלפלפלצלסלמלללךלללמלןלסלסלףלסלףלןלןלללטלטלחלללםלעלעלןלףלתלתלûלרלüל‏ל‎לüל‏לûלשלרלקלשלשל‎ל‎לüלüלשלרלתלצלץלרלתלתל‎לÿלüלüלקלûלצלפלףלץלרלüלûלÿלÿלûלתלקלףלסלעלףלףלרלקלשלתלתלצלצלףלןלנלעלץלץלצלפלקלףלץלףלפלןלםלנלסלעלצלקלרלרלפלסלנלםלןלםלןלסלףלץלצלץלףלסלםלםלםלםלנלעלףלףלקלקלפלץלסלסלללללכלםלףלפלתלעלצלצלקלסלןלןלללמלןלסלקלקלקל‎ל‎ל‏לםÿלÿלÿלשלקלקלקלרלüל‏לÿלÿלם‎לםשלüלצלקלשלשלûלÿל‎ל‏ל‏ל‏ל‎לüלרלרלתלתלûלםםם‏לÿלרלûלסלןלנלפלץלקלץלשלשלץלץלפלסלעלףלףלפלףלקלשלתלרלרלצלץלףלץלנלמלסלפלקלצלשלץלעלמלןלםלןלעלףלףלקלקלקלץלףלעלםלללללךלףלנלפלפלשלפלפלעלנלםלנלמלעלסלקלתלץלץלצלץלףלץלכלךלללללנלמלעלפלשלûל‎ל‎לüלûל‎לתלרלפלצלûלשלûל‏לÿל ם‏לüלתלשלצלץלץלפלתל‎ל‎ל‏לÿלüלûלקלצלץלףלרלûלûל‎לם ם ם‏לתלץלצלפלץלתלüל‎לüל‎לûל‏לצלפלקלףלרלצלקלüל‏ל ם‏לשלקלקלעלעלפלפלצלשלûלûלרלקלרלקלנלמלמלסלנלרלרל‏לüלûלשלשלצלעלנלןלףלרלשלשלתלתלרלתלץלןלמלנלנלפלüלשלתלûלרלתלץלעלמלעלûלÿלקלûלשלרלûלתלÿלÿלםם ם‎לשלצלרלשל םםם	םםםםםםרלרלשלÿלםםםםםםםם‎לûלקלרלםםםםםם‏לםרלץלפלףלרלüל‏לüל‎לüלשלüל‏ל‏לûלרלשלרל‎ל‎לüלüלûלפלפלנלסלצלüל‎ל‏ל‏ל‎ל םÿלûלרלסלסלפל‎ל‏ל‏ל‏ל‎לשלüלûלקלפלפלםלקלשלשלûל‏ל‏לûלשלשלרלתלףלסלנלץלתל‎לתלüלüל‎ל‎ל‏לקלרל‎לüל‎לüלתלשלתלÿלםםםםםÿלüלשלרלרלשלüלםםם םם‎לתלשלרלרלםםםםםםםםםםםםûלüל םםם םםם םצלעלצלקל םûלüל‏ל‏לÿלÿלüל‏לûלסלץלץלרלûלûלתלרלשלץלףלץלםלמלעלצלûל‎ל‎לûלשלתלרלפלםלמלפלץלצלûלשלשלפלקלפלןלךלכלכלנלפלתלרלשלקלקלץלסלמלללםלסלפלרלצלרל‎לקלקלצלפלםלכלפלקלץלתלשלרלשלüל םםםםםםûלרלקלפלקלÿלםםםםםüלüלםםםםםםםםםםםüלתלשלץלצל‎לûל‎ל‏לÿל‏ל‏לתלץלפלעל‎ל םם םם םם‏לÿלÿלשלתלüלתלûלÿל‎ל‎לûלרלקלקלמלכלעלרל‏ל‏ל‎לÿל‏ל םםםםם‏ל‎ל‏ל‎ל‎לüל‎לתל‎לÿל‏לÿלםÿלûלתלüל‏לüל‎לûל‎ל‏לÿל ם‏לÿלüלüלüלûלûלûלüלûלüלüל‎ל‏ל‎לתלûלשלûלקל‏לÿל ם םÿל‏ל‏לשלקלקלûלםם םםם ם‏לשלÿלםםםםםםםםÿלםםםםםםםםםםםםםםםםםםםםם ם םÿל‏לםםםםםםםם םÿלÿל ם םםםםםםםם םÿלÿלüלûלüלם םם םםם‏לüלüל‎לüל‎לüל םÿלם‏לתלשלתלשלקלרלרלץלתל‏ל‎לüל‎לתלתלרלרלרלרלשלûלüל ם םÿל‏לûל‎לתלשל‎ל‏לםםםםÿל‎לשלפלקלרלקלתלÿלÿל םםםםםםם‏לםם‏ל ם םםםםםםםםםםםםםםםםםםםםםם ם םם םÿלםםםם‎לם‎ל ם‏לÿל‏לÿל םםÿלםםםםם םם‏ל‏לüלüל םםםÿלÿל‎לתלתלתלüלûל‎לÿל‎לÿל ם םÿלûלתלרלקלרלשלרלשלתלקלשלקלקלץלפלפלצלץלרלûלתלשלרלüלתלשלתלרלקלםםםםםםÿלםםם	ם	םםםםםםםםםםםם
+םםםםםםם םÿלםםםםםםם םםםםםםםםםםםם ם ם םם םםÿלם םÿל ם‎לÿל‎לûלüל‎ל םםםםםםם‏ל‎ל‎ל‎לüל‎לÿלםםםםםםÿל‎ל‏ל‎לÿלÿלםםם םÿל‏ל‎לüלûלתלûלüל‎ל‎לםםם‏ל‎לüלüלûלüלûל‎לüלÿל ם‏לûל‎לüלûלשל	םםםםםםםם
+םם	םםםםםםם םםםםם	םםםםÿלÿל‏לÿלםםÿלםםםםםםם ם‏ל‏לÿלÿלםםםÿלÿלÿלüל‎לûלüל‏ל‎לÿל‏לÿלûל‎לüלüלתלûלתלüלüלÿלםםם‎לûלתלüלשלüלûל םÿלÿלםםםÿל ם ם‏לÿל‏ל‏ל‏לםםםם‎לüל‎לûלתלûלûל‏ל‎לüל‎ל‎לתלתלתלרלצלקלצלצלקלûלüלûלûלשלשלצלץלץלםםםםםםםםם
+ם
+םםםם	םםםםםםםםםםםםםÿלםםםםםם	ם
+ם
+ם	םםםםםם םםםםםםםםÿל‎ל‎ל‏לםםםםם‏ל םÿל‎לüלûלüלתל‎לûל‎לÿלם םüלתלûלûלûלûל‎לüלםם ם ם ם‏לüלשלûלûלûל‎לÿלםםםםÿלûלתלûלתלשלüלÿלם‎ל‏לם ם‏לתלצלץלפלץלקלתלשלתלשלשלקלפלץלקלםםםםםםםםםםםםםםםםÿלםÿל םםםםםםÿל םם םÿל‏ל םםםםםםםם םÿל‏ל‏ל‏ל‏לםםםםüלÿלÿלüל‎לûלüלüלםםםםםÿל ם‏לתלüל‏לüל‎לםם‏לÿל‏לûלûלתלרלüלתלüלüלûלüל‎לüלתל‎לûלשלתלüל‎לתל‏ל‏ל םם‏לüלתלשלתלרלתלשל‏ל‏לÿלüל‎לüלתלשלרלשלתל‎לûלשל‎ל‎ל‎ל‏לתלתלקלםםםם ם םםם םםםםםםםם ם‏ל‏לםםםםם	םם
+םםםםםםםםםםםםםםÿל‎ל‎ל‏ל‎לÿלםםםםםםםüלûלתלûל‏לÿלÿל‏ל‎לÿל ם‎לûלתלתל‎ל‎ל‏לםםםם םתלרלקלצלתלתלÿלם ם‏לתלûלשלתלקלקלרלûל‎לÿל‏לםםם‎לתלקלתלרלתלÿלÿלםם‏ל‎לתלקלûלצלרלקלשלûל‏ל‎ל‎ל‏לüלתלשלשלםםםםÿלםÿלÿלםםםםםםםםÿל‎לםÿלÿלםםםםםםם‎ל‎לûל‎לםםםםםםםםםüלûלתל‏ל םםםםםםם‏ל‏ל‏ל‎ל‏לÿל ם םÿלÿלüלüלתלתלקלקלשלüל‎ל םםםם‎ל‎לûלשלשלרלרלûלÿל‎ל‎לם‏ל‎לתלתלשלקלûלûל‏לÿל‏לם‏ל‎לûלûלקלרלüלÿל‎לם םם םÿלüלרלפלףלפלצלûלתל‎ל‏לüלüל‏לתלûלםםםםםםםםם
+םםםםםםםם םÿלםםם	םםם	םםםםםÿל םםםם
+םםםםםם‎לûל‎לûלםםםםםםםםםםםםםםםםםםםÿל‎לûל ם‏לםםםםםםם ם‏לשלקלשלםםםםםםם םתל‎לצלץלקל‏לÿלüל‏לüלüלûלשלרלצלקלתלûלüלÿל‎לÿלםםûלרלרלקלרלûל‎ל‎לםÿלÿל‏לםשלשלם
+םםםםם‎לÿלםם	םםםםםם םÿלםםםםםםםםםםתלüלüלםםםם	םם
+םםםם‏ל‎ל‎לÿלםםםםםםםם‎ל‏לÿלםםםםם
+םםםם‏לÿלם םםםם	םםםםÿל‏ל ם‎ל‏לםם	םםםםםÿלתלשלתלשל‎לÿלÿל ם םם‏לüלרלצלצלרלתל‎ל םÿלם‏ל ם‎לüלתלקלקלרלתל‏לüלם ם‎ל‏לûלקלרלםםםם םםםםםם
+םם
+םםםםםם םםםם
+םם
+םםםםם‏לםםם	ם	ם
+םםםםםם‏ל‏ל‏לםםםםםםÿלûלשל‎לשלûלûלÿלÿל ם‎לםםם‏ל‏ל ם‎לםםםםםםםםÿלûלûלתלצלשלםםםםםםÿלשלרלתל‏לםÿלםםםםםםÿלרלצלקלתלÿלםÿלÿלםםםם‎לקלפלץלûל‏לםםםםם‎ל םתלםם	םםםםםםםםם
+םםם
+םםםםםם	םםםםםם
+םםם םÿלםםם
+ם	ם	םםםםםÿל‏לם	ם
+ם
+ם	םםםםםםםםüלÿלםםםםםםםםםםם
+םם
+םםםם	ם	ם	ם	םםםם	ם
+םםםםםםם‎לüלüלםםם
+םםםםםÿלüלשלשלתלÿלûל‎לםםםםםםüלקלתלםםםםםםםםםםÿלםםםםםםם	םםםםםםםםםםÿלםםםםםםםםםםם
+םם
+םםםםםם	םםםם‏ל‎לםם	םםם
+םם
+םם	םם םםםםםם
+ם	ם	םם	םםםםÿלםםםם
+ם
+םםםםםםם
+םם	םםםם
+םםםםםם	םםםםםםםםםםםםםםםםםםםם ם‎ל‎לםםםםםםםםםםם
+םםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםם
+ם	םםם
+םםםםםםםםםם
+םםםםםם
+םםםםם
+ם
+םם	םםםם‎לûל‏ל םם םםםםםםם	םם
+םםםםםםםם
+ם
+ם
+םםםם
+םםםםםםם	םםםםםם
+ם	םםםםםםםם	םםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםם
+ם	םםםם	םםםםםםםםםםםםם‏ל‎לםםםםםםם
+ם	םםםם
+םםםםםםםםםם	םם
+םם	םםםם	םםםםםם
+ם
+ם
+םם
+םםםםםם	ם
+ם	םםםםםםםםםםםם	ם	םםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםם
+םם	םםםםםם
+םםם
+םם
+םםםםםם
+םםםםםםםםםםםםםםם
+םםםםם	םם	ם
+םם	םםםםםםםםםם	ם	םםםם
+םםםםםםם	םםם
+םםםםםםםםםםםםםםםםם ם‏ל ם םםםםםםםםםםם םםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםם
+םםםםםםםםםםםם
+ם	םםםםםםםםםםםםםםםםםםםםם	םםםםםםםםםםםםםםםםםם	ם
+םםםםםםםםםםם	םםםם	ם	ם	םםםםםםםםםםםםםםםםםםםםם
+םםםםםםםםםםםםםםםםםםםםםםםםםם
+םםםםםםםםם	ם
+םםםםםםםםםםםםם	ם
+םםםםםםםםםם
+םםם	ם	ם
+ם	םםם
+ם
+םםםםםםם	םםםםםם
+םםםםםםם	ם	ם	םםםםםםםםםם	םם
+םםםםםםםםםם	םםםםםםםםםםםםםםםםםםםםםםםםם	םם
+םםםםםםםםםםםםםםםםםםםםםםםםםםםם
+םםםםםםםםםם
+ם
+םםםםםםם	םםם	םם
+ם	םםםם	םםםםםםםםם	ם
+םםםםםםםםם	םם	םם
+ם
+ם
+ם
+ם	םםםםםםםםםם
+םםםםםםםם
+ם
+םםםם	םםםÿל‏ל‏לםÿל םםםםםםםםםםםםםםםםםםםםםםם
+ם
+םםם
+םםםםםםםםםםםםםם	םםםםםםם
+ם
+םםםם	םםם
+ם	םם	םם
+ם
+םם
+םםםםםםם
+ם	ם
+םםםםםםםםםםםםםםםםםםם	ם
+םםםםםםם םםםםםם	ם	םםםÿל‏לÿלםםםםם	םםםםםםםÿלםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםם
+םם	םם	ם
+םםםםםםםםםם
+םםם
+םםםםםם
+ם
+םם	ם	ם
+םם
+ם
+םםםםם	םםםםםםםםםםם	ם	םםםםםםםםם	םםםםםםםםםםם	םםםם	םםםםםםםםםםםםםםםם‏ל‏לם םםםםםםםםםםםםםםםםםםםםםםםםםםם
+םםםםםםםםםם
+םםם
+םםם	םםםםםםם	םםם
+ם
+םםםםםםם	םם	םםם
+םםםםםםםם
+םםםם	םםםםםםם
+םםםםםם
+ם	םםםםםם
+םםםםםםם	םם
+ם	םםםם םם םםםםם	םם
+םםם ם‏לÿלםםםם
+םםםםםםםםםםםם	םם
+םםםםםםםםםם
+ם	םם	םםםםםםםםםםםםם
+םםםםםםםםםם	םםםםםםםםם	םםםםם	םםםם
+ם	םםםםםםם	םםםםםםםםםםםםםםםםםםםםםםם
+םםםםםםםםםםםםםםם
+םםםם
+םםם םÿל םםםםם	םםםםםםםםםםםםם
+םםםםםםםםםםם
+ם	ם
+םםםםםםם	םםםםםםם	םםםםםם
+םםםםםםםםםםםםםםםם	םםםםםםםםםםםםםם	םם
+םםם
+ם	םםםםםםםםםםםם
+םםם ם‎לםםםם
+םםםםם
+םםםםםםםםםםםם	םםםם	ם
+םם	ם	םםםםםםםםםםםם
+םם	םםםםםםםםםם	םם
+םםםםםםםםםםם	םםםםםםםםםם	םםם
+םםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםם
+םם	םםםםםםםםםםםםםם	םםםםםםםםםםםםםםםםםםםםם ם‏לםםם
+םםםםםםםםםםםםם
+םםםםםםםםםםםםםםםםםםםםםם
+םםםםם
+םםםםםםםם	םםםםםם	םםםםםםםםםםםם
+םםםםםם
+ם	םםםםםםםםם
+םםםםםםםםםםםםםםםםםםםםםםםםםםםםםםם
+םםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםם
+םםםםםםםם	ם
+םםםם
+םםםםם	םםםםם	םםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםם
+םםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםם	םם
+םםםםםםםםםםםםםםם
+םםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםם	ם	םםםםםםםםםםםםם
+םםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםם
+םםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםם	ם	םםםםםםםםםםם ם םם םםםםםםםםםםםםםםםםםםםםםםם םםםםםםםםםםם ם םםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםם&ם%ם"םםםםםםםםםם םםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםם
+ם
+ם
+ם
+םםםםםםםם"ם#םםםםםםםםםם"ם"ם"םםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםם	םםםםםםםםםםםםםםםםםםםםםםםם!םם םםםםםםםם!םם!ם םםםםםםםםםם!םםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםם
+םםםםםםםםםםםםם	ם
+םםםםםםםםםם!ם!ם!םםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםם
+ם
+ם	םםםםםםםםםם$ם(ם)ם'ם$ם&ם$ם"םם$ם'ם'ם'ם'ם'ם&ם&ם$םםםםםם!ם ם םםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםם!ם"םםםםםםם!םםםם"ם#ם!ם ם!םםםםםם#ם#ם$ם#ם!ם!םםםםםםםםםםםםםםםםםםםם,ם,ם*ם,ם.ם,ם1ם.ם,ם.ם)ם$ם%ם'ם#ם םםםםםםםםםםםםםםםםםםםםםםםםםםם
+ם	ם	ם	םםםםםםםםםםםםםםםםםםםם םםם#ם ם םםםםם ם"ם$ם#ם'ם&ם$ם#ם#ם"ם ם ם"ם!ם!ם$ם#ם$ם$ם"םםםםםםםםם םםםםםםםםםםםםםםםם	םםםםםםםםם)ם)ם(ם.ם-ם.ם0ם/ם/ם+ם)ם)ם'ם%ם#ם ם םםםםםםםםםםםםםםםםםםםםםםםםםםםם	םםםםםםםםםם
+ם
+םםםםםםםםם#ם$ם(ם)ם(ם)ם&ם%ם%ם)ם%ם(ם)ם,ם,ם/ם/ם.ם.ם)ם)ם&ם#ם#ם"ם&ם'ם&ם(ם#ם$ם"ם םםםםםםםםםםם	םםםםםםם	ם
+ם	םםםםםם
+םםםםםם'ם&ם&ם&ם(ם(ם)ם)ם'ם(ם&ם&ם%ם&ם&ם&ם&ם)ם'ם&ם'ם&ם$ם"ם#ם!םםםם םםםםםםםםםםםםםםם#םם!םםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםם םםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםם%ם&ם$ם#ם"ם%ם&ם(ם%ם$םם"ם ם ם!ם ם"ם"ם$ם ם!ם!ם#ם!םם םםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםם!ם!ם!םם םםםםםםםםם םםם םםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםם!ם!םם ם םםםםםםםםם"םם$ם"ם"ם םםםםםםם ם!ם$ם"ם םםםםםםםם!םםם!םם םםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםם!םםםםםםםםםםםםםםםםםםםםםםם!םםם םםםםםםםםםםם םםםםםםםםם ם!ם$ם$ם&ם&ם!ם#ם&ם"ם$ם&ם%ם"ם#ם$ם'ם%ם$ם#ם%ם&ם$ם!ם"ם"ם"ם#ם"ם%ם%ם'ם'ם'ם(ם&ם$ם!ם ם ם"ם#םם$םם%ם ם םםםםםםם ם!םםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםם ם#ם ם!ם םםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםם!ם!ם#ם ם#ם#ם"ם!ם םם ם"ם#ם&ם#ם&ם&ם(ם(ם$ם"ם ם ם!ם$ם(ם(ם(ם)ם'ם%ם%ם'ם'ם%ם&ם%ם'ם)ם*ם)ם*ם)ם&ם"םם םם ם ם#ם!ם ם"ם םםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםם!םם ם םםםםםםם!ם$ם&ם)ם&ם'ם&ם%ם%ם ם!ם!ם&ם&ם&ם$ם%ם'ם%ם%ם"ם םם ם$ם&ם'ם+ם&ם"ם!ם ם םםם ם#ם"ם ם$ם#םםםםםםםםםם םםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםם#ם#ם"ם!ם#ם#ם#ם#ם-ם(ם&ם%ם"ם ם ם ם!ם$ם"ם#ם$ם#ם$ם"ם םם!ם"ם#ם"ם$ם'ם&ם&ם%ם$םםםםםם ם"ם"ם!םםם"ם"ם"ם םםם םםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםם!ם ם םםםםםםםםםםםםםםםםםםםםם

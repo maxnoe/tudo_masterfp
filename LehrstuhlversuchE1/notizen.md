@@ -39,7 +39,7 @@ Dazu kann die sehr einfach zu bedienende PyVisa libary benutzt werden
 [http://pyvisa.readthedocs.io/en/stable/](http://pyvisa.readthedocs.io/en/stable/).
 
 Für die einfache integration in Laboraufbauten mit anderen Steuerbaren Geräten, soll das Gerät mit einem Labview Programm bedient werden.
-Der Hersteller liefert dazu SubVis, LabView subroutinen, mit denen das Netzteil gesteuert werden kann.  Außerdem gibt es vom Hersteller einige Beispielprogramme
+Der Hersteller liefert dazu SubVIs, LabView subroutinen, mit denen das Netzteil gesteuert werden kann.  Außerdem gibt es vom Hersteller einige Beispielprogramme
 mit denen unter anderem der interne Funktionsgenerator des PS 9080 benutzt werden kann.
 
 
@@ -75,4 +75,4 @@ XY Daten für den Funktionsgenerator geladen werden können. Desweiteren kann ü
 diesen Anschluss die Firmware aktualisiert werden. Dies konnte allerdings nicht geschehen da der Touchscreen defekt ist.
 
 Das Gerät war außerdem extrem instabil und stürtzte häufiger komplett ab und konnte nur durch einen Neustart wieder bentutzt werden.  Die Umstände dieser Fehlfunktionen
-liesen sich nicht einwandfrei reproduzieren.
+ließen sich nicht einwandfrei reproduzieren.
