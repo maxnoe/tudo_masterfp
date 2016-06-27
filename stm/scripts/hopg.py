@@ -104,6 +104,7 @@ def grid(path, name, key):
     fig = plt.figure()
     ax = fig.add_subplot(1, 1, 1, aspect=1)
     plot = ax.pcolormesh(x, y, height, cmap='inferno')
+    plot.set_rasterized(True)
 
     ax.plot(peaks[:, 1], peaks[:, 0], 'w.', ms=3)
     fig.colorbar(plot, ax=ax)
