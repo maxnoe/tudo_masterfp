@@ -1,6 +1,60 @@
 \section{Auswertung}
 \label{sec:Auswertung}
 
+Die von der Software des Rastertunnelmikroskops geschriebenen Dateien enthalten einen Kopf mit Metadaten, der das Format von \texttt{.ini} aufweist.
+Nach einem Steuerzeichen (\texttt{\#!}) folgen die Daten in einem binären Block als 16-bit \texttt{float}s.
+
+\subsection{HOPG}
+
+Zur Berechnung der Gitterkonstanten und Winkel in Graphit werden zwei Bilder des Rastertunnelmikroskops genutzt, die mit einer unterschiedlich Messrichtung aufgenommen wurden.
+In der gemessenen Höhenverteilung zeigt sich ein deutliches Gefälle, um dies zu korrigieren, wird eine Ebene an die Höhe angepasst und das Ergebnis abgezogen.
+In \autoref{fig:hopg_up} und \autoref{fig:hopg_down} sind die so korrgierten Messwerte dargestellt.
+
+Zum auffinden der lokalen Maxima wird die Bibiliothek \texttt{scikit-image}~\cite{skimage} genutzt.
+Per Hand werden eine Reihe und eine Diagonale zur Ermittlung des Winkels und der Gitterkonstanten gewählt.
+Auf den ausgewählten Punkten wird eine lineare Regression durchgeführt.
+Aus den Steigungen dieser beiden Geraden ergibt sich der Winkel zwischen den Basisvektoren durch
+\begin{equation}
+  α = \arctan(m_1) -\arctan(m_2).
+\end{equation}
+Für die Aufnahme in \enquote{up}-Richtung ergibt sich:
+\begin{equation}
+  \input{./build/grid_angle_up.tex}.
+\end{equation}
+Für die Aufnahme in \enquote{down}-Richtung ergibt sich:
+\begin{equation}
+  \input{./build/grid_angle_down.tex}.
+\end{equation}
+Für die Gitterkonstanten in die jeweilige Richtung ergibt sich für die \enquote{up}-Aufnahme:
+\begin{align}
+  g_\text{horizontal} &= \input{./build/grid_constant_horizontal_up.tex} \\
+  g_\text{diagonal} &= \input{./build/grid_constant_diagonal_up.tex} \\
+\shortintertext{und}
+  g_\text{horizontal} &= \input{./build/grid_constant_horizontal_down.tex} \\
+  g_\text{diagonal} &= \input{./build/grid_constant_diagonal_down.tex}
+\end{align}
+für die \enquote{down}-Aufnahme.
+
+\begin{figure}
+  \centering
+  \includegraphics{hopg_up.pdf}
+  \caption{%
+    Rastertunnel-Aufnahme der HOPG Oberfläche in \enquote{up}-Richtung.
+    In weiß sind die gefundenen lokalen Maxima dargestellt. Die farbig markierten Punkte wurden zur Berechnung der Gittervektoren verwendet.
+    Die Linien zeigen das Ergebnis der Linearen Regression.
+  }\label{fig:hopg_up}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics{hopg_down.pdf}
+  \caption{%
+    Rastertunnel-Aufnahme der HOPG Oberfläche in \enquote{down}-Richtung.
+  }\label{fig:hopg_down}
+\end{figure}
+
+\subsection{HOPG}
+
 \begin{figure}
   \centering
   \includegraphics{gold.pdf}
@@ -30,3 +84,4 @@ und damit berechnet sich die Höhe der Stufenkante zu
 \begin{equation}
   \increment h = \input{height.tex}.
 \end{equation}
+

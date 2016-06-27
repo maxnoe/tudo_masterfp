@@ -5,7 +5,7 @@ mplfiles = ../matplotlibrc ../header-matplotlib.tex
 pyoptions = MATPLOTLIBRC=$(shell pwd)/../ TEXINPUTS=$(shell pwd)/..:build:
 
 
-build/plots/hopg.pdf: data/hopg.nid scripts/hopg.py scripts/read_nid.py $(mplfiles) | build/plots
+build/plots/hopg_up.pdf build/plots/hopg.pdf_down.pdf: data/hopg.nid scripts/hopg.py scripts/read_nid.py $(mplfiles) | build/plots
 	$(pyoptions) python scripts/hopg.py
 
 build/plots/gold.pdf: data/gold.nid scripts/gold.py scripts/read_nid.py $(mplfiles) | build/plots
@@ -13,7 +13,8 @@ build/plots/gold.pdf: data/gold.nid scripts/gold.py scripts/read_nid.py $(mplfil
 
 
 plots = $(addprefix build/plots/, $(addsuffix .pdf, \
-	hopg \
+	hopg_up \
+	hopg_down \
 	gold \
 	))
 

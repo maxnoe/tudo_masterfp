@@ -107,7 +107,7 @@ def grid(path, name, key):
     plot.set_rasterized(True)
 
     ax.plot(peaks[:, 1], peaks[:, 0], 'w.', ms=3)
-    fig.colorbar(plot, ax=ax)
+    fig.colorbar(plot, ax=ax, label=r'$z \mathbin{/} \si{\nano\meter}$')
 
     # print(peaks)
 
@@ -177,7 +177,7 @@ def grid(path, name, key):
     with open('build/grid_constant_horizontal_{}.tex'.format(name), 'w') as f:
         f.write(g_string)
 
-    g_string = '${:.2f} \pm {:.2f}$'.format(correction_factor.n, correction_factor.s)
+    g_string = r'$\num{{{:.2f} \pm {:.2f}}}$'.format(correction_factor.n, correction_factor.s)
     with open('build/correction_factor_{}.tex'.format(name), 'w') as f:
         f.write(g_string)
 
@@ -187,11 +187,14 @@ def grid(path, name, key):
         f.write(g_string)
 
     angle = angle_diagonal - angle_horizontal
-    g_string = '\\ang{{{:.2f} \pm {:.2f}}}'.format(angle.n, angle.s)
+    g_string = '\\ang{{{:.2f} \pm {:.2f}}}'.format(np.rad2deg(angle.n), np.rad2deg(angle.s))
     with open('build/grid_angle_{}.tex'.format(name), 'w') as f:
         f.write(g_string)
 
     # plt.show()
+    ax.set_xlabel(r'$x \mathbin{/} \si{\nano\meter}$')
+    ax.set_ylabel(r'$y \mathbin{/} \si{\nano\meter}$')
+    fig.tight_layout(pad=0)
     fig.savefig('build/plots/hopg_{}.pdf'.format(name))
 
 
