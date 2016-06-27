@@ -3,6 +3,7 @@
 
 Die von der Software des Rastertunnelmikroskops geschriebenen Dateien enthalten einen Kopf mit Metadaten, der das Format von \texttt{.ini} aufweist.
 Nach einem Steuerzeichen (\texttt{\#!}) folgen die Daten in einem binären Block als 16-bit \texttt{float}s.
+Zum Einlesen der Daten wird daher eine Kombination aus dem \texttt{configparser} Modul der \texttt{python} Standardbibliothek~\cite{configparser} und \texttt{numpy}~\cite{numpy} verwendet.~\cite{readnid}
 
 \subsection{HOPG}
 
@@ -53,21 +54,13 @@ für die \enquote{down}-Aufnahme.
   }\label{fig:hopg_down}
 \end{figure}
 
-\subsection{HOPG}
+\subsection{Gold}
 
 \begin{figure}
   \centering
   \includegraphics{gold.pdf}
   \caption{Rastertunnelmikrosp-Aufnahme einer Goldprobe.}
   \label{fig:gold}
-\end{figure}
-
-
-\begin{figure}
-  \centering
-  \includegraphics{height_profile.pdf}
-  \caption{Höhenprofil bei $x=\SI{4.88}{\nano\meter}$, entsprechend einer Spalte aus \autoref{fig:gold}. Vor und nach der Stufenkante wurde eine lineare Regression durchgeführt.}
-  \label{fig:profile}
 \end{figure}
 
 Um die höhe einer Stufenkante aus dem Bild der Goldprobe zu bestimmen, wird ein Höhenprofil bei $x=\SI{4.88}{\nano\meter}$ betrachtet.
@@ -77,6 +70,16 @@ Der Abstand der beiden Geraden berechnet sich zu
   \increment h = \cos(\arctan(m)) \cdot (b_1 - b_2).
 \end{equation}
 Hierbei bezeichnet $m$ die Steigung der beiden Geraden, sowie $b_1$ und $b_2$ den $y$\=/Achsenabschnitt bezeichnen.
+
+\begin{figure}
+  \centering
+  \includegraphics{height_profile.pdf}
+  \caption{%
+    Höhenprofil bei $x=\SI{4.88}{\nano\meter}$,
+    entsprechend einer Spalte aus \autoref{fig:gold}.
+    Vor und nach der Stufenkante wurde eine lineare Regression durchgeführt.}\label{fig:profile}
+\end{figure}
+
 
 Aus dem Fit ergeben sich:
 \input{fitresults.tex}

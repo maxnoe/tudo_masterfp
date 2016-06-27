@@ -28,7 +28,7 @@ if __name__ == '__main__':
     lower = np.percentile(height, 5)
     upper = np.percentile(height, 95)
 
-    plot = ax.pcolormesh(x, y, height, cmap='viridis', vmin=lower, vmax=upper)
+    plot = ax.pcolormesh(x, y, height, cmap='inferno', vmin=lower, vmax=upper)
     plot.set_rasterized(True)
 
     fig.colorbar(plot, ax=ax, label=r'$z \mathbin{/} \si{\nano\meter}$')
