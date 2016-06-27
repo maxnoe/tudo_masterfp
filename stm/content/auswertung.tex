@@ -1,2 +1,28 @@
 \section{Auswertung}
 \label{sec:Auswertung}
+
+\begin{figure}
+  \centering
+  \includegraphics{gold.pdf}
+  \caption{Rastertunnelmikrosp-Aufnahme einer Goldprobe.}
+  \label{fig:gold}
+\end{figure}
+
+
+\begin{figure}
+  \centering
+  \includegraphics{height_profile.pdf}
+  \caption{Höhenprofil bei $x=\SI{4.88}{\nano\meter}$, entsprechend einer Spalte aus \autoref{fig:gold}. Vor und nach der Stufenkante wurde eine lineare Regression durchgeführt.}
+  \label{fig:profile}
+\end{figure}
+
+Um die höhe einer Stufenkante aus dem Bild der Goldprobe zu bestimmen, wird ein Höhenprofil bei $x=\SI{4.88}{\nano\meter}$ betrachtet.
+Vor und hinter der Stufenkante bei  $y \approx \SI{260}{\nano\meter}$ wird eine Lineare Regression durchgeführt.
+Der Abstand der beiden Geraden berechnet sich zu
+\begin{equation}
+  \increment h = \cos(\arctan(m)) \cdot (b_1 - b_2).
+\end{equation}
+Hierbei bezeichnet $m$ die Steigung der beiden Geraden, sowie $b_1$ und $b_2$ den $y$\=/Achsenabschnitt bezeichnen.
+
+Aus dem Fit ergeben sich:
+\input{fitresults.tex}

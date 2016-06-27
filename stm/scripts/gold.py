@@ -6,6 +6,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 from scipy.optimize import curve_fit
 from functools import partial
+from uncertainties import ufloat, correlated_values
+import uncertainties.unumpy as unp
 
 
 if __name__ == '__main__':
@@ -21,39 +23,66 @@ if __name__ == '__main__':
     points = np.linspace(0, width, height.shape[0])
     y, x = np.meshgrid(points, points)
 
-    # fig = plt.figure()
-    # ax = fig.add_subplot(1, 1, 1, aspect=1)
-    # lower = np.percentile(height, 5)
-    # upper = np.percentile(height, 95)
+    fig = plt.figure()
+    ax = fig.add_subplot(1, 1, 1, aspect=1)
+    lower = np.percentile(height, 5)
+    upper = np.percentile(height, 95)
 
-    # plot = ax.pcolormesh(x, y, height, cmap='viridis', vmin=lower, vmax=upper)
+    plot = ax.pcolormesh(x, y, height, cmap='viridis', vmin=lower, vmax=upper)
+    plot.set_rasterized(True)
 
-    # fig.colorbar(plot, ax=ax)
+    fig.colorbar(plot, ax=ax, label=r'$z \mathbin{/} \si{\nano\meter}$')
 
-    # ax.set_xlim(0, x.max())
-    # ax.set_ylim(0, y.max())
-    # # fig.savefig('build/plots/hopg.pdf')
-    # plt.show()
+    ax.set_xlim(0, x.max())
+    ax.set_ylim(0, y.max())
+
+    ax.set_xlabel(r'$x \mathbin{/} \si{\nano\meter}$')
+    ax.set_ylabel(r'$y \mathbin{/} \si{\nano\meter}$')
+
+    fig.tight_layout(pad=0)
+    fig.savefig('build/plots/gold.pdf')
 
     def linear(x, a, b):
-        return a * (x - 110) + b
+        return a * (x - 260) + b
 
     profile_height = height[50]
-    profile_x = y[50]
+    profile_y = y[50]
 
-    mask = (profile_x > 150) & (profile_x < 350)
-    mask1 = (profile_x > 170) & (profile_x < 255)
-    mask2 = (profile_x > 265) & (profile_x < 330)
-    profile_x -= 150
+    mask = (profile_y > 150) & (profile_y < 350)
+    mask1 = (profile_y > 210) & (profile_y < 255)
+    mask2 = (profile_y > 265) & (profile_y < 310)
+    # profile_y -= 150
 
-    (a1, b1), cov1 = curve_fit(linear, profile_x[mask1], profile_height[mask1])
-    (a2, b2), cov2 = curve_fit(linear, profile_x[mask2], profile_height[mask2])
+    params1, cov1 = curve_fit(linear, profile_y[mask1], profile_height[mask1])
+    params2, cov2 = curve_fit(linear, profile_y[mask2], profile_height[mask2])
+    a1, b1 = correlated_values(params1, cov1)
+    a2, b2 = correlated_values(params2, cov2)
     print(a1, b1)
     print(a2, b2)
 
-    print(np.cos(np.arctan(a1)) * (b1 - b2))
+    with open('build/fitresults.tex', 'w') as f:
+        lines = [
+            r'\begin{align}',
+            r'm_1 &= \num{{{:0.3f} +- {:0.3f}}} & b_1 &= \SI{{{:0.3f} +- {:0.3f}}}{{\nano\meter}} \\'.format(a1.n, a1.s, b1.n, b1.s),
+            r'm_2 &= \num{{{:0.3f} +- {:0.3f}}} & b_2 &= \SI{{{:0.3f} +- {:0.3f}}}{{\nano\meter}}'.format(a2.n, a2.s, b2.n, b2.s),
+            r'\end{align}',
+        ]
+        f.write('\n'.join(lines) + '\n')
 
-    plt.plot(profile_x[mask], profile_height[mask])
-    plt.plot(profile_x[mask1], linear(profile_x[mask1], a1, b1))
-    plt.plot(profile_x[mask2], linear(profile_x[mask2], a2, b2))
-    plt.show()
+    a = 0.5 * (a1 + a2)
+
+    delta_h = unp.cos(unp.arctan(a)) * (b1 - b2)
+    with open('build/height.tex', 'w') as f:
+        f.write(r'\SI{{{:.1f} +- {:.1f}}}{{\pico\meter}}'.format(
+            delta_h.n * 1000, delta_h.s * 1000)
+        )
+        f.write('\n')
+
+    fig, ax = plt.subplots()
+    ax.plot(profile_y[mask], profile_height[mask], lw=0.5)
+    ax.plot(profile_y[mask1], linear(profile_y[mask1], *params1))
+    ax.plot(profile_y[mask2], linear(profile_y[mask2], *params2))
+    ax.set_xlabel(r'$y \mathbin{/} \si{\nano\meter}$')
+    ax.set_ylabel(r'$z \mathbin{/} \si{\nano\meter}$')
+    fig.tight_layout(pad=0)
+    fig.savefig('build/plots/height_profile.pdf')

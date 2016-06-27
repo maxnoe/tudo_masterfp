@@ -2,20 +2,24 @@ all: build/main.pdf
 
 mplfiles = ../matplotlibrc ../header-matplotlib.tex
 
-pyoptions = MATPLOTLIBRC=$(shell pwd)/../ TEXINPUTS=$(shell pwd)/..: 
+pyoptions = MATPLOTLIBRC=$(shell pwd)/../ TEXINPUTS=$(shell pwd)/..:build:
 
 
 build/plots/hopg.pdf: data/hopg.nid scripts/hopg.py scripts/read_nid.py $(mplfiles) | build/plots
 	$(pyoptions) python scripts/hopg.py
 
+build/plots/gold.pdf: data/gold.nid scripts/gold.py scripts/read_nid.py $(mplfiles) | build/plots
+	$(pyoptions) python scripts/gold.py
+
 
 plots = $(addprefix build/plots/, $(addsuffix .pdf, \
 	hopg \
+	gold \
 	))
 
 
 build/main.pdf: FORCE $(plots) | build
-	TEXINPUTS=build:..: \
+	TEXINPUTS=build:build/plots:..: \
 	BIBINPUTS=..: \
 	max_print_line=1048576 \
 	latexmk \
@@ -26,7 +30,7 @@ build/main.pdf: FORCE $(plots) | build
 	main.tex
 
 preview: FORCE $(plots) | build
-	TEXINPUTS=build:..: \
+	TEXINPUTS=build:build/plots:..: \
 	BIBINPUTS=..: \
 	max_print_line=1048576 \
 	latexmk \
