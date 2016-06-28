@@ -6,8 +6,18 @@ Nach einem Steuerzeichen (\texttt{\#!}) folgen die Daten in einem binären Block
 Zum Einlesen der Daten wird daher eine Kombination aus dem \texttt{configparser} Modul der \texttt{python} Standardbibliothek~\cite{configparser} und \texttt{numpy}~\cite{numpy} verwendet.~\cite{readnid}
 
 \subsection{HOPG}
+\begin{figure}
+  \centering
+  \includegraphics{hopg_uncorrected}
+  \caption{%
+    Tunnelstrom $I$ (oben) und Höhe $z$ (unten) für die beiden Aufnahmen von HOPG.
+    Es lässt sich deutlich eine schiefe Ebene in der Höhe erkennen.%
+  }\label{fig:uncorrected}
+\end{figure}
 
 Zur Berechnung der Gitterkonstanten und Winkel in Graphit werden zwei Bilder des Rastertunnelmikroskops genutzt, die mit einer unterschiedlich Messrichtung aufgenommen wurden.
+Höhenverteilung und Tunnelstrom für diese beiden Aufnahmen ist in \autoref{fig:uncorrected} aufgetragen.
+
 In der gemessenen Höhenverteilung zeigt sich ein deutliches Gefälle, um dies zu korrigieren, wird eine Ebene an die Höhe angepasst und das Ergebnis abgezogen.
 In \autoref{fig:hopg_up} und \autoref{fig:hopg_down} sind die so korrgierten Messwerte dargestellt.
 
