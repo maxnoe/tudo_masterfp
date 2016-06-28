@@ -11,10 +11,14 @@ build/plots/hopg_up.pdf build/plots/hopg.pdf_down.pdf: data/hopg.nid scripts/hop
 build/plots/gold.pdf: data/gold.nid scripts/gold.py scripts/read_nid.py $(mplfiles) | build/plots
 	$(pyoptions) python scripts/gold.py
 
+build/plots/hopg_uncorrected.pdf: data/hopg.nid scripts/plot_uncorrected_hopg.py scripts/read_nid.py $(mplfiles) | build/plots
+	$(pyoptions) python scripts/plot_uncorrected_hopg.py
+
 
 plots = $(addprefix build/plots/, $(addsuffix .pdf, \
 	hopg_up \
 	hopg_down \
+	hopg_uncorrected \
 	gold \
 	))
 
