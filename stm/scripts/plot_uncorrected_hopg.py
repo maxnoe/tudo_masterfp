@@ -48,12 +48,13 @@ if __name__ == '__main__':
     axs[0][0].set_xticklabels([])
     axs[0][0].set_ylabel(r'$y \mathbin{/} \si{\nano\meter}$')
     axs[0][0].set_title('up')
+    axs[0][0].set_title(metadata['DataSet-0:0']['Frame'])
 
     axs[0][1].set_xticklabels([])
     axs[0][1].set_yticklabels([])
     axs[0][1].set_xlabel('')
     axs[0][1].set_ylabel('')
-    axs[0][1].set_title('down')
+    axs[0][1].set_title(metadata['DataSet-1:0']['Frame'])
 
     axs[1][0].set_ylabel(r'$y \mathbin{/} \si{\nano\meter}$')
     axs[1][0].set_xlabel(r'$x \mathbin{/} \si{\nano\meter}$')
