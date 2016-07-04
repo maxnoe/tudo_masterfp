@@ -21,7 +21,7 @@ Höhenverteilung und Tunnelstrom für diese beiden Aufnahmen ist in \autoref{fig
 In der gemessenen Höhenverteilung zeigt sich ein deutliches Gefälle, um dies zu korrigieren, wird eine Ebene an die Höhe angepasst und das Ergebnis abgezogen.
 In \autoref{fig:hopg_up} und \autoref{fig:hopg_down} sind die so korrgierten Messwerte dargestellt.
 
-Zum auffinden der lokalen Maxima wird die Bibiliothek \texttt{scikit-image}~\cite{skimage} genutzt.
+Zum Auffinden der lokalen Maxima wird die Bibiliothek \texttt{scikit-image}~\cite{skimage} genutzt.
 Per Hand werden eine Reihe und eine Diagonale zur Ermittlung des Winkels und der Gitterkonstanten gewählt.
 Auf den ausgewählten Punkten wird eine lineare Regression durchgeführt.
 Aus den Steigungen dieser beiden Geraden ergibt sich der Winkel zwischen den Basisvektoren durch
@@ -36,6 +36,8 @@ Für die Aufnahme in \enquote{down}-Richtung ergibt sich:
 \begin{equation}
   \input{./build/grid_angle_down.tex}.
 \end{equation}
+
+Zur Bestimmung der Gitterkonstante wird der mittlere Abstand zwischen den ausgwählten Punkten bestimmt.
 Für die Gitterkonstanten in die jeweilige Richtung ergibt sich für die \enquote{up}-Aufnahme:
 \begin{align}
   g_\text{horizontal} &= \input{./build/grid_constant_horizontal_up.tex} \\
@@ -52,7 +54,7 @@ für die \enquote{down}-Aufnahme.
   \caption{%
     Rastertunnel-Aufnahme der HOPG Oberfläche in \enquote{up}-Richtung.
     In weiß sind die gefundenen lokalen Maxima dargestellt. Die farbig markierten Punkte wurden zur Berechnung der Gittervektoren verwendet.
-    Die Linien zeigen das Ergebnis der Linearen Regression.
+    Die Linien zeigen das Ergebnis der linearen Regression.
   }\label{fig:hopg_up}
 \end{figure}
 
@@ -73,13 +75,13 @@ für die \enquote{down}-Aufnahme.
   \label{fig:gold}
 \end{figure}
 
-Um die höhe einer Stufenkante aus dem Bild der Goldprobe zu bestimmen, wird ein Höhenprofil bei $x=\SI{4.88}{\nano\meter}$ betrachtet.
-Vor und hinter der Stufenkante bei  $y \approx \SI{260}{\nano\meter}$ wird eine Lineare Regression durchgeführt.
+Um die Höhe einer Stufenkante aus dem Bild der Goldprobe zu bestimmen, wird ein Höhenprofil bei $x=\SI{4.88}{\nano\meter}$ betrachtet.
+Vor und hinter der Stufenkante bei  $y \approx \SI{260}{\nano\meter}$ wird eine lineare Regression durchgeführt.
 Der Abstand der beiden Geraden berechnet sich zu
 \begin{equation}
   \increment h = \cos(\arctan(m)) \cdot (b_1 - b_2).
 \end{equation}
-Hierbei bezeichnet $m$ die Steigung der beiden Geraden, sowie $b_1$ und $b_2$ den $y$\=/Achsenabschnitt bezeichnen.
+Hierbei bezeichnet $m$ die Steigung der beiden Geraden, sowie $b_1$ und $b_2$ den $y$\=/Achsenabschnitt.
 
 \begin{figure}
   \centering
@@ -97,4 +99,3 @@ und damit berechnet sich die Höhe der Stufenkante zu
 \begin{equation}
   \increment h = \input{height.tex}.
 \end{equation}
-

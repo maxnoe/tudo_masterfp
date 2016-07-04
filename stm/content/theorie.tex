@@ -1,35 +1,55 @@
 \section{Rastertunnelmikroskopie}
 
-In diesem Versuch sollen mithilfe der Rastertunnelmikroskopie verschiedene
-Materialproben untersucht werden.
+In diesem Versuch sollen mithilfe der Rastertunnelmikroskopie verschiedene Materialproben untersucht werden.
 Die Technik erlaubt es, die Elektronendichte an der Oberfläche von Materialien mit atomarer Auflösung zu untersuchen.
 
-Im folgenden wird zunächst ein Überblick über die verwendete Technik gegeben,
-die in diesem Versuch verwendet wird.
+Im Folgenden wird zunächst ein Überblick über die verwendete Technik gegeben, die in diesem Versuch benutzt wird.
 
 \subsection{Grundlagen}
 
 Wie bei allen Ausprägungen der Rastersondenmikroskopie wird bei der Rastertunnelmikroskopie eine Messsonde über die Oberfläche der zu untersuchenden Probe bewegt.
-In regelmäßigen Abständen wird die Messgröße bestimmt.
-Diese ist bei der Rastertunnelmikroskopie der durch den Tunneleffekt ausgelöste Strom zwischen Probe und Sonde.
+Bei der Rastertunnelmikroskopie wird eine Spannung wird zwischen der Oberfläche und der Messonde angelegt. Diese Spannung wird so eingestellt, dass
+durch den Tunneleffekt ein messbarer Strom zwischen Probe und Sonde entsteht.
+Während sich die Messsonde über die Oberfläche bewegt wird in regelmäßigen Abständen die Messgröße aufgezeichnet.
+
 Je nach Vorzeichen der angelegten Spannung zwischen Sonde und Probe können entweder die besetzten oder die unbesetzten Zustände im Material untersucht werden.
-Im Falle eines Potentialgefälles in Richtung der Probe können Elektronen aus der Sonde in unbesetzte Zustände in der Probe tunneln.
+Im Falle eines Potentialgefälles in Richtung der Spitze, können Elektronen aus der Sonde in unbesetzte Zustände in der Probe tunneln.
 Im umgekehrten Fall können Elektronen aus dem Material in die Sonde gelangen und es werden somit die besetzten Zustände des Materials vermessen.
 
-In erster Ordnung Störungstheorie ergibt sich ein exponentieller Zusammenhang zwischen dem Abstand $d$ der Sonde von der Probe und dem Tunnelstrom $I_T$:
+Im vereinfachten Fall einer eindimensionalen Potentialbarriere ergibt sich in erster Ordnung Störungstheorie ein exponentieller Zusammenhang zwischen dem Abstand
+$d$ der Sonde von der Probe und dem Tunnelstrom $I_T$:
 \begin{equation}
   I_T \propto \frac{U}{d} \exp\!\left(- Kd \sqrt{\bar{φ}}\right),
   \quad \text{\cite[(VI.1)]{lueth}}
 \end{equation}
-wobei $U$ die Potentialdifferenz zwischen Sonde und Probe, $\bar{φ}$ die mittlere Austrittsarbeit der Probe und $K$ eine Konstante abhängig vom Material zwischen Probe und Sonde ist.
+wobei $U$ die Potentialdifferenz zwischen Sonde und Probe, $\bar{φ}$ die mittlere Austrittsarbeit der Probe und der Spitze. $K$ ist eine Konstante welche abhängig vom Material zwischen Probe und Sonde ist.
 Dieser Zusammenhang sorgt für die große Empfindlichkeit für Unterschiede in der Materialhöhe bzw.\ der Elektronendichte.
 Große Herausforderungen sind daher eine ausreichend genaue Platzierung der Sonde und das Unterbinden von Störeinflüssen wie Erschütterungen und Vibrationen.
 
 Die benötigte Genauigkeit zur Platzierung der Sonde wird in den meisten Rastertunnelmikroskopen durch Piezokristalle erreicht.
-Die Ausdehnung dieser Kristalle lassen sich durch das anlegen einer Spannung in der erforderlichen Präzision manipulieren.
+Die Ausdehnung dieser Kristalle lassen sich durch das Anlegen einer Spannung in der erforderlichen Präzision manipulieren.
+In Piezokristallen bilden sich durch Deformation Dipole in den Kristallzellen welche ein makroskopisches elektrisches Feld zur Folge haben.
+Andersrum dehnen sich die Kristalle bei anlegen eines externen elektrische Feldes aufgrund des inversen piezoelektrischen Effekts aus.
+Der Piezoeffekt tritt in Kristallen auf welche keine Punktsymmetrie haben. Leitende Materialien mit freien Elektronen weisen keinen
+Piezoeffekt in diesem Sinne auf.
+Der optimale Piezokristall verhält sich nach einem einfachen linearen Zusammenhang:
+\begin{equation}
+  S = d E,
+\end{equation}
+wobei $S$ die relative Ausdehnung des Materials, $E$ die angelegte Spannung und $d$ der Piezokoeffizient des Materials ist.
+In der Regel weisen Piezokristalle jedoch einige ungewünschte Eigenschaften auf welche Störeinfluss auf die Aufnahmen des STM haben können.
+Die Ausdehnung von Piezokristallen geht nur in erster Näherung linear mit angelegter Spannung. In der Praxis können
+Abweichungen vom optimalen linearen Verlauf in Höhe von bis zu \SI{25}{\percent}\cite[2.2.1]{lueth}.
+Wird diese Abweichung nicht korrigiert können Fehler bei der Höhenmessung entstehen.
+Außerdem treten Hystereseeffekte auf. So ist die Änderung der Ausdehnung des Kristalls bei ansteigendem externen Feld nicht die Gleiche wie bei
+abfallenden Feld. Da die Spitze über dem Material Ständig die Richtung wechselt, können dadurch Fehler bei der Positionierung der Spitze entstehen.
+
+
+Eine weitere Fehlerquelle ist der sogenannte thermische Drift. Die Probe kann je nach Umgebungstemperatur ihre Ausdehnung ändern. Entsprechend sollte
+die Temperatur während der Messung möglichst konstant gehalten werden.
 
 Da der Tunnelstrom von der Stärke des $E$-Feldes dominiert wird,
-ist außerdem die Preparation der Sonde von großer Bedeutung.
+ist außerdem die Präparation der Sonde von großer Bedeutung.
 Die Spitze muss atomare Dimensionen erreichen, um lokal $E$-Felder in der benötigten Größe erzeugen zu können.
 In diesem Versuch wird Platin-Iridium-Draht gerissen, um eine möglichst geeignete Spitze zu erhalten.
 
@@ -40,7 +60,7 @@ Es muss keine aufwendige Fourieranalyse der Messergebnisse geschehen um eine Int
 
 \subsection{Messmethoden}
 
-Beim Rastertunnelmikroskop werden zwei grundsätzlich Verschiedene Messmethoden verwendet:
+Beim Rastertunnelmikroskop werden zwei grundsätzlich verschiedene Messmethoden verwendet:
 \begin{enumerate}
   \item Messung bei konstanter Höhe
   \item Messung bei konstantem Tunnelstrom
@@ -57,8 +77,8 @@ Um Veränderungen in der Austrittsarbeit von der Topologie der Probe unterscheid
 
 \paragraph{HOPG}
 \enquote{Highly oriented pyrolitic graphite}~(HOPG) ist eine spezielle Variante des Graphit.
-Graphit ist der Name für die feste  Kristallform von Kohlenstoff. Graphit und HOPG besitzt ein hexagonales Gitter  welches sich in zweidimensionalen
-schichten anordnet. Die Schichten sind zueinander versetzt. So liegen immer zwei Atome, zumindest von Oben betrachtet,  übereinander. An diesen
+Graphit ist der Name für die Kristallform von Kohlenstoff welche in der Natur am häufigsten auftritt. Graphit und HOPG besitzt ein hexagonales Gitter  welches sich in zweidimensionalen
+Schichten anordnet. Die Schichten sind zueinander versetzt. So liegen immer zwei Atome, zumindest von oben betrachtet,  übereinander. An diesen
 Positionen ist die Elektronendichte, und damit auch der Tunnelstrom zur STM Spitze, am höchsten. An diesen Orten werden also die Maxima im Bild erwartet.
 Abbildung~\ref{fig:hopg_structure} zeigt eine schematische Darstellung der Graphit Gitterstruktur.
 \begin{figure}
@@ -74,5 +94,8 @@ Der Literaturwert für die Gitterkonstante beträgt \SI{2.46}{\angstrom}~\cite{s
 
 \paragraph{Gold}
 Gold weist auf der Oberfläche sogenannte Stufenkanten auf. Die Höhe dieser Stufenkanten soll in diesem Versuch bestimmt werden.
-Gold hat eine kubisch flächenzentrierte Gitteranordnung. Wenn die Oberfläche von Gold diese Gitterstruktur nicht aufbricht, dann werden Stufenkanten
-in der Goldoberfläche ein Vielfaches der Gitterkonstante betragen.
+Gold hat eine kubisch flächenzentrierte Gitteranordnung. Die Netzebenen der zu untersuchenden Goldprobe entsprechen den millerschen Indizes von  (111)
+und somit einen Abstand in Abhängigkeit der Gitterkonstante $a=\SI{407.82}{\pico\meter}$ von $\sfrac{a}{\sqrt{3}} = \num{235.45}$.
+Die Stufenkanten auf der Goldoberfläche sollten demnach eine Höhe von einigen vielfachen des Netzebenenabstands besitzen.
+Da Gold ein guter Leiter ist, ist es schwierig die atomare Auflösung der Oberfläche zu Messen. Die Tunnelströme sind weniger lokalisiert
+als bei Graphit.

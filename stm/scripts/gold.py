@@ -78,6 +78,16 @@ if __name__ == '__main__':
         )
         f.write('\n')
 
+    grid_constant_gold = 407.82
+    step_factor =  np.sqrt(3)*delta_h*1000/grid_constant_gold
+    print(step_factor)
+    with open('build/step_factor.tex', 'w') as f:
+        f.write(r'\num{{{:.1f} +- {:.1f}}}'.format(
+            step_factor.n, step_factor.s)
+        )
+        f.write('\n')
+
+
     fig, ax = plt.subplots()
     ax.plot(profile_y[mask], profile_height[mask], lw=0.5)
     ax.plot(profile_y[mask1], linear(profile_y[mask1], *params1))
