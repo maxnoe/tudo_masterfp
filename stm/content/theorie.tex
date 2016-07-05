@@ -70,8 +70,28 @@ Die erste Methode ist empfindlich auf Höhenunterschiede der Probe, so ist es m�
 Bei der Messung mit konstantem Strom wird dies vermieden.
 Diese Methode ist allerdings deutlich aufwendiger, da an jedem Messpunkt zunächst die Höhe, bei dem der gewünschte Tunnelstrom erreicht wird, ermittelt werden muss.
 Dies geschieht üblicherweise mit einem Regelkreis zwischen der am Piezokristall angelegten Spannung und dem gemessenen Tunnelstrom.
+Laut Gerätehandbuch wird ein PID Regelkreis verwendet um die höhe der Spitze anzupassen:
 
-Um Veränderungen in der Austrittsarbeit von der Topologie der Probe unterscheiden zu können, kann zusätzlich zum Tunnelstrom bzw.\ der Höhe der Probe auch die Änderung des Tunnelstroms in Abhängigkeit der Höhe an jedem Messpunkt aufgenommen werden.
+\begin{displayquote}
+  A standard PID controller is used for Z-Feedback.~\cite{naio}
+\end{displayquote}
+
+Ein PID Regler wird benutzt um Abweichungen $e(t)$ einer Prozessvariable vom eingestellten Sollwert zu korrigieren.
+Der PID Regler besteht im mathematischen Sinne aus einer gewichteten Summe aus drei Korrekturtermen:
+
+\begin{description}
+  \item[proportional(P)] Korrektur in Abhängigkeit der aktuellen Abweichung. $P \cdot e(t)$
+  \item[integral(I)] Korrektur in Abhängigkeit der kummulierten vergangenen Abweichung. $I \cdot \int_0^t e(\tau) \dif{\tau}$
+  \item[derivative(D)] Korrektur in Abhängigkeit der aktuellen Änderung. $D \cdot \dd{e(t)}{t}$
+\end{description}
+
+Die Gesamtkorrektur wird also in abhängigkeit der drei Parameter $P$, $I$, $D$ eingestellt zu
+\begin{equation*}
+  K(t) = P \cdot e(t) + I \cdot \int_0^t e(\tau) \dif{\tau} + D \cdot \dd{e(t)}{t}.
+\end{equation*}
+
+Um Veränderungen in der Austrittsarbeit von der Topologie der Probe unterscheiden zu können,
+kann zusätzlich zum Tunnelstrom bzw.\ der Höhe der Probe auch die Änderung des Tunnelstroms in Abhängigkeit der Höhe an jedem Messpunkt aufgenommen werden.
 
 \subsection{Zu untersuchende Proben}
 
