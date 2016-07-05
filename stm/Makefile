@@ -11,14 +11,14 @@ build/plots/hopg_up.pdf build/plots/hopg.pdf_down.pdf: data/Noethe_Bruegge_049_h
 build/plots/gold.pdf: data/Noethe_Bruegge_053_gold1.nid scripts/gold.py scripts/read_nid.py $(mplfiles) | build/plots
 	$(pyoptions) python scripts/gold.py
 
-build/plots/hopg_uncorrected1.pdf: data/Noethe_Bruegge_049_hopg1.nid scripts/plot_uncorrected_hopg.py scripts/read_nid.py $(mplfiles) | build/plots
+build/plots/hopg_uncorrected1.pdf: data/Noethe_Bruegge_049_hopg1.nid scripts/read_nid.py $(mplfiles) | build/plots
 	$(pyoptions) python scripts/read_nid.py \
 		data/Noethe_Bruegge_049_hopg1.nid \
 		-o build/plots/hopg_uncorrected1.pdf
 
-build/plots/hopg_uncorrected2.pdf: data/Noethe_Bruegge_050_hopg1.nid scripts/plot_uncorrected_hopg.py scripts/read_nid.py $(mplfiles) | build/plots
+build/plots/hopg_uncorrected2.pdf: data/Noethe_Bruegge_050_hopg2.nid scripts/read_nid.py $(mplfiles) | build/plots
 	$(pyoptions) python scripts/read_nid.py \
-		data/Noethe_Bruegge_050_hopg1.nid \
+		data/Noethe_Bruegge_050_hopg2.nid \
 		-o build/plots/hopg_uncorrected2.pdf
 
 plots = $(addprefix build/plots/, $(addsuffix .pdf, \
