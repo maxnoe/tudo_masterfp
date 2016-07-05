@@ -1,6 +1,18 @@
+'''
+Usage:
+    read_nid <inputfile> [options]
+
+Options:
+    -o <outpufile>    Save plot to <outputfile>
+'''
+
 import numpy as np
 from configparser import ConfigParser
 import re
+from mpl_toolkits.axes_grid1 import make_axes_locatable
+from docopt import docopt
+
+label = r'${} \,/\, \mathrm{{{}}}$'
 
 
 def read_nid(filename):
@@ -36,22 +48,72 @@ def read_nid(filename):
     return metadata, data
 
 if __name__ == '__main__':
-    import sys
     import matplotlib.pyplot as plt
+    args = docopt(__doc__)
 
-    metadata, data = read_nid(sys.argv[1])
+    metadata, data = read_nid(args['<inputfile>'])
 
-    print(40 * '=')
-    print('{string: ^40}'.format(string='Metadata'))
-    print(40 * '=')
-    for key, value in metadata['DataSet-Info'].items():
-        print(key, value, sep=' = ')
+    fig, axs = plt.subplots(2, 2)
+    width, height = fig.get_size_inches()
+    fig.set_size_inches(width, 0.75 * width)
 
-    fig, ((ax_I1, ax_h1), (ax_I2, ax_h2)) = plt.subplots(2, 2)
+    current_label = label.format('I', 'pA')
+    height_label = label.format('z', 'nm')
 
-    ax_I1.imshow(data['DataSet-0:0'], cmap='viridis')
-    ax_h1.imshow(data['DataSet-0:1'], cmap='viridis')
-    ax_I2.imshow(data['DataSet-1:0'], cmap='viridis')
-    ax_h2.imshow(data['DataSet-1:1'], cmap='viridis')
+    for i in range(2):
+        for j in range(2):
+            ax = axs[j][i]
+            divider = make_axes_locatable(ax)
+            cax = divider.append_axes("right", size="5%", pad=0.02)
 
-    plt.show()
+            key = 'DataSet-{}:{}'.format(i, j)
+            width = metadata.getfloat(key, 'dim0range') * 1e9
+            height = metadata.getfloat(key, 'dim1range') * 1e9
+            scale = metadata.getfloat(key, 'dim2range')
+
+            if j == 0:
+                scale *= 1e12
+            else:
+                scale *= 1e9
+
+            if j == 1:
+                data[key] -= np.nanmin(data[key])
+
+            img = data[key] * scale
+            p = ax.imshow(
+                img,
+                cmap='inferno',
+                extent=(0, width, 0, height),
+                interpolation='nearest',
+                vmin=np.nanmin(img.ravel()),
+                vmax=np.nanmax(img.ravel()),
+            )
+            p.set_rasterized(True)
+            fig.colorbar(
+                p, cax=cax,
+                label=current_label if j == 0 else height_label,
+            )
+            ax.grid(False)
+
+    axs[0][0].set_xticklabels([])
+    axs[0][0].set_ylabel(label.format('y', 'nm'))
+    axs[0][0].set_title('up')
+    axs[0][0].set_title(metadata['DataSet-0:0']['Frame'])
+
+    axs[0][1].set_xticklabels([])
+    axs[0][1].set_yticklabels([])
+    axs[0][1].set_xlabel('')
+    axs[0][1].set_ylabel('')
+    axs[0][1].set_title(metadata['DataSet-1:0']['Frame'])
+
+    axs[1][0].set_xlabel(label.format('x', 'nm'))
+    axs[1][0].set_ylabel(label.format('y', 'nm'))
+
+    axs[1][1].set_xlabel(label.format('x', 'nm'))
+    axs[1][1].set_yticklabels([])
+
+    fig.tight_layout(pad=0)
+    if args['-o']:
+        fig.savefig(args['-o'])
+    else:
+        plt.show()
