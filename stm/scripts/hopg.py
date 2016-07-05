@@ -200,6 +200,6 @@ def grid(path, name, key):
 
 if __name__ == '__main__':
     print('up')
-    grid('./data/hopg.nid', 'up', 'DataSet-0:1')
+    grid('./data/Noethe_Bruegge_049_hopg1.nid', 'up', 'DataSet-0:1')
     print('down')
-    grid('./data/hopg.nid', 'down', 'DataSet-1:1')
+    grid('./data/Noethe_Bruegge_049_hopg1.nid', 'down', 'DataSet-1:1')

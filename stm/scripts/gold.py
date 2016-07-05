@@ -13,7 +13,7 @@ import uncertainties.unumpy as unp
 if __name__ == '__main__':
 
     key = 'DataSet-1:1'
-    metadata, data = read_nid('data/gold.nid')
+    metadata, data = read_nid('data/Noethe_Bruegge_053_gold1.nid')
     width = metadata.getfloat(key, 'dim0range') * 1e9
 
     height_range = metadata.getfloat(key, 'dim2range')
