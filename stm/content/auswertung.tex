@@ -28,17 +28,17 @@ Aus den Steigungen dieser beiden Geraden ergibt sich der Winkel zwischen den Bas
 \begin{equation}
   α = \arctan(m_1) -\arctan(m_2).
 \end{equation}
-Für die Aufnahme in \enquote{up}-Richtung ergibt sich:
+Für die Aufnahme in \enquote{forward}-Richtung ergibt sich:
 \begin{equation}
   \input{./build/grid_angle_up.tex}.
 \end{equation}
-Für die Aufnahme in \enquote{down}-Richtung ergibt sich:
+Für die Aufnahme in \enquote{backward}-Richtung ergibt sich:
 \begin{equation}
   \input{./build/grid_angle_down.tex}.
 \end{equation}
 
 Zur Bestimmung der Gitterkonstante wird der mittlere Abstand zwischen den ausgwählten Punkten bestimmt.
-Für die Gitterkonstanten in die jeweilige Richtung ergibt sich für die \enquote{up}-Aufnahme:
+Für die Gitterkonstanten in die jeweilige Richtung ergibt sich für die \enquote{forward}-Aufnahme:
 \begin{align}
   g_\text{horizontal} &= \input{./build/grid_constant_horizontal_up.tex} \\
   g_\text{diagonal} &= \input{./build/grid_constant_diagonal_up.tex} \\
@@ -46,13 +46,13 @@ Für die Gitterkonstanten in die jeweilige Richtung ergibt sich für die \enquot
   g_\text{horizontal} &= \input{./build/grid_constant_horizontal_down.tex} \\
   g_\text{diagonal} &= \input{./build/grid_constant_diagonal_down.tex}
 \end{align}
-für die \enquote{down}-Aufnahme.
+für die \enquote{backward}-Aufnahme.
 
 \begin{figure}
   \centering
   \includegraphics{hopg_up.pdf}
   \caption{%
-    Rastertunnel-Aufnahme der HOPG Oberfläche in \enquote{up}-Richtung.
+    Rastertunnel-Aufnahme der HOPG Oberfläche in \enquote{forward}-Richtung.
     In weiß sind die gefundenen lokalen Maxima dargestellt. Die farbig markierten Punkte wurden zur Berechnung der Gittervektoren verwendet.
     Die Linien zeigen das Ergebnis der linearen Regression.
   }\label{fig:hopg_up}
@@ -62,7 +62,7 @@ für die \enquote{down}-Aufnahme.
   \centering
   \includegraphics{hopg_down.pdf}
   \caption{%
-    Rastertunnel-Aufnahme der HOPG Oberfläche in \enquote{down}-Richtung.
+    Rastertunnel-Aufnahme der HOPG Oberfläche in \enquote{backward}-Richtung.
   }\label{fig:hopg_down}
 \end{figure}
 
